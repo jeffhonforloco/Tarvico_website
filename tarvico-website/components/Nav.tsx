@@ -40,21 +40,22 @@ export default function Nav() {
         justifyContent: 'space-between',
         padding: '0 3rem',
         background: scrolled
-          ? 'rgba(8,14,24,0.97)'
-          : 'rgba(8,14,24,0.88)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid var(--gold-border)',
-        transition: 'background 0.3s',
+          ? 'rgba(250,250,248,0.98)'
+          : 'rgba(250,250,248,0.92)',
+        backdropFilter: 'blur(16px)',
+        borderBottom: scrolled ? '1px solid var(--border-w)' : '1px solid transparent',
+        transition: 'background 0.3s, border-color 0.3s',
+        boxShadow: scrolled ? '0 1px 24px rgba(0,0,0,0.06)' : 'none',
       }}
     >
       {/* Logo */}
       <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <Image
-          src="/logo-white.png"
+          src="/logo-name.png"
           alt="Tarvico"
-          width={140}
-          height={40}
-          style={{ objectFit: 'contain', height: 36, width: 'auto' }}
+          width={160}
+          height={44}
+          style={{ objectFit: 'contain', height: 34, width: 'auto' }}
           priority
         />
       </Link>
@@ -73,6 +74,7 @@ export default function Nav() {
               color: pathname === href ? 'var(--text)' : 'var(--text-2)',
               textDecoration: 'none',
               transition: 'color 0.2s',
+              fontWeight: pathname === href ? 500 : 400,
             }}
           >
             {label}
@@ -92,8 +94,9 @@ export default function Nav() {
           padding: '7px 18px',
           textDecoration: 'none',
           transition: 'all 0.2s',
+          fontWeight: 500,
         }}
-        className="hidden md:inline-flex hover:bg-gold/10 hover:border-gold"
+        className="hidden md:inline-flex"
       >
         Contact
       </Link>
@@ -115,13 +118,14 @@ export default function Nav() {
           top: 64,
           left: 0,
           right: 0,
-          background: 'rgba(8,14,24,0.99)',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid var(--gold-border)',
+          background: 'rgba(250,250,248,0.99)',
+          backdropFilter: 'blur(16px)',
+          borderBottom: '1px solid var(--border-w)',
           padding: '1.5rem 2rem 2rem',
           display: 'flex',
           flexDirection: 'column',
           gap: '1.25rem',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
         }}>
           {links.map(({ href, label }) => (
             <Link
@@ -134,6 +138,7 @@ export default function Nav() {
                 textTransform: 'uppercase',
                 color: pathname === href ? 'var(--text)' : 'var(--text-2)',
                 textDecoration: 'none',
+                fontWeight: pathname === href ? 500 : 400,
               }}
             >
               {label}
@@ -149,6 +154,7 @@ export default function Nav() {
               color: 'var(--gold)',
               marginTop: '0.5rem',
               textDecoration: 'none',
+              fontWeight: 500,
             }}
           >
             Contact →

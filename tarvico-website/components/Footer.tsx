@@ -52,13 +52,13 @@ export default function Footer() {
       }}>
         {/* Brand */}
         <div style={{ gridColumn: 'span 2' }}>
-          <div style={{ marginBottom: '0.75rem' }}>
+          <div style={{ marginBottom: '1rem' }}>
             <Image
-              src="/logo-white.png"
+              src="/logo-name.png"
               alt="Tarvico"
               width={160}
               height={46}
-              style={{ objectFit: 'contain', height: 42, width: 'auto' }}
+              style={{ objectFit: 'contain', height: 36, width: 'auto' }}
             />
           </div>
           <div style={{
@@ -72,18 +72,18 @@ export default function Footer() {
               fontSize: '0.6rem',
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
-              color: 'var(--gold-dim)',
+              color: 'var(--gold)',
               fontFamily: '"DM Sans", sans-serif',
-              fontWeight: 400,
+              fontWeight: 500,
             }}>Building Intelligence. Powering Tomorrow.</span>
             <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)' }} />
           </div>
           <p style={{
-            fontSize: '0.8rem',
+            fontSize: '0.85rem',
             color: 'var(--text-2)',
             lineHeight: 1.7,
             maxWidth: 260,
-            fontWeight: 300,
+            fontWeight: 400,
           }}>
             An AI-native holding company building, launching, and scaling the next generation of intelligent software companies.
           </p>
@@ -92,11 +92,12 @@ export default function Footer() {
         {cols.map(col => (
           <div key={col.title}>
             <div style={{
-              fontSize: '0.6rem',
+              fontSize: '0.62rem',
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
               color: 'var(--text-3)',
               marginBottom: '1rem',
+              fontWeight: 500,
             }}>
               {col.title}
             </div>
@@ -106,11 +107,11 @@ export default function Footer() {
                   key={link.label}
                   href={link.href}
                   style={{
-                    fontSize: '0.8rem',
+                    fontSize: '0.85rem',
                     color: 'var(--text-2)',
                     textDecoration: 'none',
                     transition: 'color 0.2s',
-                    fontWeight: 300,
+                    fontWeight: 400,
                   }}
                 >
                   {link.label}
@@ -131,10 +132,10 @@ export default function Footer() {
         flexWrap: 'wrap',
         gap: '1rem',
       }}>
-        <span style={{ fontSize: '0.7rem', color: 'var(--text-3)' }}>
+        <span style={{ fontSize: '0.75rem', color: 'var(--text-3)', fontWeight: 400 }}>
           © {new Date().getFullYear()} Tarvico Inc. All rights reserved.
         </span>
-        <span style={{ fontSize: '0.7rem', color: 'var(--text-3)', letterSpacing: '0.1em' }}>
+        <span style={{ fontSize: '0.75rem', color: 'var(--text-3)', letterSpacing: '0.1em', fontWeight: 400 }}>
           Building the infrastructure layer for the AI era.
         </span>
       </div>
