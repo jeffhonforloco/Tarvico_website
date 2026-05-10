@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const cols = [
   {
@@ -51,23 +52,31 @@ export default function Footer() {
       }}>
         {/* Brand */}
         <div style={{ gridColumn: 'span 2' }}>
+          <div style={{ marginBottom: '0.75rem' }}>
+            <Image
+              src="/logo-white.png"
+              alt="Tarvico"
+              width={160}
+              height={46}
+              style={{ objectFit: 'contain', height: 42, width: 'auto' }}
+            />
+          </div>
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            gap: 10,
+            gap: '0.5rem',
             marginBottom: '1rem',
           }}>
-            <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
-              <path d="M4 4L24 4L14 24L4 4Z" fill="none" stroke="#C9A447" strokeWidth="1" />
-              <path d="M10 14L14 6L18 14" fill="#C9A447" opacity="0.9" />
-            </svg>
+            <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)' }} />
             <span style={{
-              fontFamily: '"Cormorant Garamond", serif',
-              fontSize: '1.1rem',
-              letterSpacing: '0.25em',
+              fontSize: '0.6rem',
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: 'var(--gold-dim)',
+              fontFamily: '"DM Sans", sans-serif',
               fontWeight: 400,
-              color: 'var(--text)',
-            }}>TARVICO</span>
+            }}>Building Intelligence. Powering Tomorrow.</span>
+            <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)' }} />
           </div>
           <p style={{
             fontSize: '0.8rem',
