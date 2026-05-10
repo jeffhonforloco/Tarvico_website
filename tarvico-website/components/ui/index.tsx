@@ -24,7 +24,7 @@ export function Button({ children, href, onClick, variant = 'secondary', style }
     cursor: 'pointer',
     transition: 'all 0.2s',
     fontFamily: '"DM Sans", sans-serif',
-    fontWeight: 400,
+    fontWeight: 500,
     border: 'none',
     ...style,
   }
@@ -32,12 +32,12 @@ export function Button({ children, href, onClick, variant = 'secondary', style }
   const variants: Record<string, CSSProperties> = {
     primary: {
       background: 'var(--gold)',
-      color: '#000',
+      color: '#fff',
     },
     secondary: {
       background: 'transparent',
       color: 'var(--text-2)',
-      border: '1px solid var(--gold-border)',
+      border: '1px solid var(--border-w)',
     },
   }
 
@@ -63,10 +63,11 @@ export function SectionLabel({ children, center }: { children: ReactNode; center
       textTransform: 'uppercase',
       color: 'var(--gold)',
       marginBottom: '1.5rem',
+      fontWeight: 500,
     }}>
-      <span style={{ display: 'block', width: 24, height: 1, background: 'var(--gold)', flexShrink: 0 }} />
+      <span style={{ display: 'block', width: 24, height: 1.5, background: 'var(--gold)', flexShrink: 0 }} />
       {children}
-      {center && <span style={{ display: 'block', width: 24, height: 1, background: 'var(--gold)', flexShrink: 0 }} />}
+      {center && <span style={{ display: 'block', width: 24, height: 1.5, background: 'var(--gold)', flexShrink: 0 }} />}
     </div>
   )
 }
@@ -95,13 +96,14 @@ export function PageHero({
         textTransform: 'uppercase',
         color: 'var(--gold)',
         marginBottom: '1.5rem',
+        fontWeight: 500,
       }}>
         {label}
       </div>
       <h1 style={{
         fontFamily: '"Cormorant Garamond", serif',
         fontSize: 'clamp(3rem, 5vw, 5rem)',
-        fontWeight: 300,
+        fontWeight: 400,
         lineHeight: 1.0,
         marginBottom: '1.5rem',
         color: 'var(--text)',
@@ -110,11 +112,11 @@ export function PageHero({
       </h1>
       {subtitle && (
         <p style={{
-          fontSize: '1rem',
+          fontSize: '1.05rem',
           color: 'var(--text-2)',
-          maxWidth: 520,
-          lineHeight: 1.75,
-          fontWeight: 300,
+          maxWidth: 540,
+          lineHeight: 1.8,
+          fontWeight: 400,
         }}>
           {subtitle}
         </p>
