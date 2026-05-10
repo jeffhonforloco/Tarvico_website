@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:         #070707;
+  --bg-raised:  #0C0C0B;
+  --bg-card:    #111110;
+  --bg-deep:    #181817;
+  --gold:       #C9A447;
+  --gold-light: #D4B55A;
+  --gold-dim:   rgba(201, 164, 71, 0.6);
+  --gold-glow:  rgba(201, 164, 71, 0.07);
+  --gold-border:rgba(201, 164, 71, 0.12);
+  --text:       #EDE9E0;
+  --text-2:     #7A776F;
+  --text-3:     #3A3834;
+  --border-w:   rgba(240, 237, 230, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", -apple-system, sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--gold-border);
+  color: var(--gold-light);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--text-3); }
+
+/* Hero grid background */
+.hero-grid {
+  background-image:
+    linear-gradient(var(--gold-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gold-border) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: gridDrift 20s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes gridDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 80px 80px; }
+}
+
+/* Fade-up animation utilities */
+.animate-fade-up {
+  animation: fadeUp 0.7s ease forwards;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.delay-100 { animation-delay: 100ms; }
+.delay-250 { animation-delay: 250ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-550 { animation-delay: 550ms; }
+
+/* Pulse glow */
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+@keyframes pulseSlow {
+  0%,100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+/* Section label rule */
+.section-label-line::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+/* Org chart */
+.org-item::before {
+  content: '├─ ';
+  color: var(--text-3);
+}
+
+/* Thin grid separator */
+.grid-separator {
+  gap: 1.5px;
+  background: var(--border-w);
+}
+.grid-separator > * {
+  background: var(--bg);
+}
