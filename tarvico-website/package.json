@@ -5,9 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cf": "npx @cloudflare/next-on-pages",
-    "preview": "npx wrangler pages dev .vercel/output/static",
-    "deploy": "npx wrangler pages deploy .vercel/output/static --project-name tarvico-website",
+    "preview": "npx wrangler pages dev out",
+    "deploy": "npx wrangler pages deploy out --project-name tarvico-website",
     "start": "next start",
     "lint": "next lint"
   },
@@ -19,7 +18,6 @@
     "clsx": "^2.1.1"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
