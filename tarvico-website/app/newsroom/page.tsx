@@ -1,3 +1,5 @@
+'use client'
+
 import { PageHero, SectionLabel } from '@/components/ui'
 
 const news = [

@@ -1,3 +1,5 @@
+'use client'
+
 import { PageHero, SectionLabel, Divider } from '@/components/ui'
 
 const values = [
