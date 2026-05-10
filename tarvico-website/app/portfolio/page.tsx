@@ -1,3 +1,5 @@
+'use client'
+
 import { PageHero, Button, SectionLabel, Divider } from '@/components/ui'
 
 const companies = [
