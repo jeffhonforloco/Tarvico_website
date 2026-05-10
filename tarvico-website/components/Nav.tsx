@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
@@ -39,26 +40,23 @@ export default function Nav() {
         justifyContent: 'space-between',
         padding: '0 3rem',
         background: scrolled
-          ? 'rgba(7,7,7,0.96)'
-          : 'rgba(7,7,7,0.85)',
+          ? 'rgba(8,14,24,0.97)'
+          : 'rgba(8,14,24,0.88)',
         backdropFilter: 'blur(12px)',
         borderBottom: '1px solid var(--gold-border)',
         transition: 'background 0.3s',
       }}
     >
       {/* Logo */}
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-          <path d="M4 4L24 4L14 24L4 4Z" fill="none" stroke="#C9A447" strokeWidth="1" />
-          <path d="M10 14L14 6L18 14" fill="#C9A447" opacity="0.9" />
-        </svg>
-        <span style={{
-          fontFamily: '"Cormorant Garamond", serif',
-          fontSize: '1.2rem',
-          letterSpacing: '0.25em',
-          fontWeight: 400,
-          color: 'var(--text)',
-        }}>TARVICO</span>
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+        <Image
+          src="/logo-white.png"
+          alt="Tarvico"
+          width={140}
+          height={40}
+          style={{ objectFit: 'contain', height: 36, width: 'auto' }}
+          priority
+        />
       </Link>
 
       {/* Desktop links */}
@@ -117,7 +115,7 @@ export default function Nav() {
           top: 64,
           left: 0,
           right: 0,
-          background: 'rgba(7,7,7,0.98)',
+          background: 'rgba(8,14,24,0.99)',
           backdropFilter: 'blur(12px)',
           borderBottom: '1px solid var(--gold-border)',
           padding: '1.5rem 2rem 2rem',

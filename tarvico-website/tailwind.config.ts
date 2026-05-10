@@ -10,22 +10,22 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          DEFAULT: '#070707',
-          raised: '#0C0C0B',
-          card:   '#111110',
-          deep:   '#181817',
+          DEFAULT: '#080E18',
+          raised: '#0C1422',
+          card:   '#101A2A',
+          deep:   '#162036',
         },
         gold: {
-          DEFAULT: '#C9A447',
+          DEFAULT: '#C9A44A',
           light:   '#D4B55A',
-          dim:     'rgba(201,164,71,0.6)',
-          glow:    'rgba(201,164,71,0.07)',
-          border:  'rgba(201,164,71,0.12)',
+          dim:     'rgba(201,164,74,0.6)',
+          glow:    'rgba(201,164,74,0.07)',
+          border:  'rgba(201,164,74,0.15)',
         },
         ink: {
           DEFAULT: '#EDE9E0',
-          secondary: '#7A776F',
-          muted:     '#3A3834',
+          secondary: '#7A8494',
+          muted:     '#3A4354',
         },
       },
       fontFamily: {
