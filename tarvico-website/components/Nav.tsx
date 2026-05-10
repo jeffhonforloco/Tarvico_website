@@ -53,9 +53,9 @@ export default function Nav() {
         <Image
           src="/logo-name.png"
           alt="Tarvico"
-          width={160}
-          height={44}
-          style={{ objectFit: 'contain', height: 34, width: 'auto' }}
+          width={220}
+          height={60}
+          style={{ objectFit: 'contain', height: 46, width: 'auto' }}
           priority
         />
       </Link>
