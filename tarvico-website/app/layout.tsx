@@ -73,9 +73,9 @@ export const metadata: Metadata = {
       'Tarvico Inc. builds, acquires, and operates a portfolio of AI-native software and technology ventures — engineered for long-term value creation and global scale.',
     images: [
       {
-        url: '/logo-icon.png',
-        width: 512,
-        height: 512,
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
         alt: 'Tarvico Inc. — Private Technology Holding Company',
         type: 'image/png',
       },
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     title: 'Tarvico Inc. — Private Technology Holding Company',
     description:
       'Building enduring AI-native technology companies for the next global economy.',
-    images: ['/logo-icon.png'],
+    images: ['/opengraph-image'],
   },
   alternates: {
     canonical: 'https://www.tarvico.com',

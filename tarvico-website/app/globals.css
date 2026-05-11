@@ -39,6 +39,41 @@
   --border-m: rgba(255, 255, 255, 0.10);
 }
 
+/* ── Light theme overrides ────────────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg:        #F7F5F1;
+  --bg-raised: #EFECEA;
+  --bg-card:   #E8E5E0;
+  --bg-deep:   #DDD9D2;
+
+  --text:   #1C1A17;
+  --text-2: #6A6760;
+  --text-3: #AEABA4;
+
+  --border-w: rgba(0, 0, 0, 0.07);
+  --border-m: rgba(0, 0, 0, 0.11);
+}
+
+[data-theme="light"] body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+[data-theme="light"] .hero-grid {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+}
+
+[data-theme="light"] .hero-grid-fine {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.018) 1px, transparent 1px);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track { background: var(--bg); }
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: var(--text-3); }
+
 * {
   box-sizing: border-box;
   margin: 0;
