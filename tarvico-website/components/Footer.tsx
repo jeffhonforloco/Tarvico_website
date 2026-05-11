@@ -144,22 +144,20 @@ export default function Footer() {
         flexWrap: 'wrap',
         gap: '1rem',
       }}>
-        <span style={{ fontSize: '0.7rem', color: 'var(--text-3)', fontWeight: 300, display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
-          © {new Date().getFullYear()}
-          <Image
-            src="/logo-transparent.png"
-            alt="Tarvico"
-            width={60}
-            height={25}
-            style={{ objectFit: 'contain', display: 'inline-block', verticalAlign: 'middle' }}
-          />
-          Inc. — Delaware, United States. All rights reserved.
+        <span style={{ fontSize: '0.7rem', color: 'var(--text-3)', fontWeight: 300 }}>
+          © {new Date().getFullYear()} Tarvico Inc. — Delaware, United States. All rights reserved.
         </span>
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          {['Privacy', 'Terms', 'Legal'].map(item => (
-            <span key={item} style={{ fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.1em', cursor: 'default' }}>
-              {item}
-            </span>
+          {[{ label: 'Privacy', href: '/privacy' }, { label: 'Terms', href: '/terms' }, { label: 'Legal', href: '/legal' }].map(item => (
+            <Link
+              key={item.label}
+              href={item.href}
+              style={{ fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.1em', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-2)' }}
+              onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-3)' }}
+            >
+              {item.label}
+            </Link>
           ))}
         </div>
       </div>
