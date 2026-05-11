@@ -26,13 +26,13 @@ export default function Nav() {
   }, [])
 
   return (
-    <nav style={{
+    <nav className="mob-px" style={{
       position: 'fixed',
       top: 0,
       left: 0,
       right: 0,
       zIndex: 100,
-      height: 68,
+      height: 72,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -50,10 +50,10 @@ export default function Nav() {
       <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', gap: '0.85rem' }}>
         <Image
           src="/logo-icon.png"
-          alt="Tarvico"
-          width={40}
-          height={40}
-          style={{ objectFit: 'contain', height: 38, width: 38 }}
+          alt="Tarvico Inc. — A Private Technology Holding Company"
+          width={52}
+          height={52}
+          style={{ objectFit: 'contain', height: 48, width: 48 }}
           priority
         />
         <span style={{
@@ -148,7 +148,7 @@ export default function Nav() {
       {open && (
         <div style={{
           position: 'fixed',
-          top: 68,
+          top: 72,
           left: 0,
           right: 0,
           bottom: 0,

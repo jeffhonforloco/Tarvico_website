@@ -183,3 +183,13 @@ body {
   background: var(--border-w);
 }
 .grid-separator > * { background: var(--bg); }
+
+/* ── Mobile Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .mob-px  { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+  .mob-p   { padding: 4rem 1.25rem !important; }
+  .mob-py  { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+  .mob-stack { grid-template-columns: 1fr !important; }
+  .mob-hide  { display: none !important; }
+  .mob-full  { max-width: 100% !important; width: 100% !important; }
+}

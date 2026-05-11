@@ -130,7 +130,7 @@ export function PageHero({
         inset: 0,
         background: 'radial-gradient(ellipse 70% 70% at 50% 100%, transparent 50%, var(--bg) 100%)',
       }} />
-      <div style={{
+      <div className="mob-px" style={{
         position: 'relative',
         zIndex: 2,
         padding: '9rem 3rem 6rem',

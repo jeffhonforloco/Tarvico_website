@@ -28,7 +28,7 @@ export default function CareersPage() {
         subtitle="We hire exceptional people who think in systems, move with speed, and take genuine ownership of their work. Small teams. Massive ambitions. AI-powered leverage."
       />
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginBottom: '2rem' }}>
           {[
@@ -132,7 +132,7 @@ export default function CareersPage() {
 
         <div style={{ padding: '5rem 0' }}>
           <SectionLabel>Why Tarvico</SectionLabel>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--border-w)', marginTop: '1.5rem' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--border-w)', marginTop: '1.5rem' }}>
             {[
               { t: 'Work on problems that matter', d: 'We build infrastructure for the intelligence economy — systems that will power how organizations work for the next decade. The problems are real, the stakes are high, the work is meaningful.' },
               { t: 'Operate with genuine autonomy', d: 'No bureaucracy. No process theater. You own your domain, make decisions with context, and move fast. We trust exceptional people to do exceptional things.' },

@@ -27,7 +27,7 @@ export default function AboutPage() {
         subtitle="Tarvico is a technology holding company founded on the belief that the most enduring businesses are built with long-term thinking, operational discipline, and a genuine purpose."
       />
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>
 
         <blockquote style={{
           fontFamily: '"Cormorant Garamond", serif',
@@ -47,7 +47,7 @@ export default function AboutPage() {
 
         <SectionLabel>Mission & Philosophy</SectionLabel>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', marginTop: '2.5rem', marginBottom: '6rem' }}>
+        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', marginTop: '2.5rem', marginBottom: '6rem' }}>
           <div>
             {[
               'Tarvico was founded on a simple thesis: the next wave of transformative companies will be built by small, focused teams who combine creativity with technological leverage to accomplish what once required enormous organizations.',

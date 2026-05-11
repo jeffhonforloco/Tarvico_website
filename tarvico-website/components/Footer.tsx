@@ -44,8 +44,8 @@ export default function Footer() {
       background: 'var(--bg-raised)',
       borderTop: '1px solid var(--border-w)',
     }}>
-      <div style={{ padding: '5rem 3rem 0' }}>
-        <div style={{
+      <div className="mob-px" style={{ padding: '5rem 3rem 0' }}>
+        <div className="mob-stack" style={{
           display: 'grid',
           gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr',
           gap: '3rem',
@@ -78,7 +78,7 @@ export default function Footer() {
               fontWeight: 300,
               marginBottom: '1.75rem',
             }}>
-              A private technology holding company that builds, acquires, and operates transformative businesses for the next global economy.
+              A Private Technology Holding Company. Tarvico builds, acquires, and operates enduring AI-native technology ventures for the next global economy.
             </p>
             <div style={{
               display: 'inline-flex',
@@ -144,7 +144,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div style={{
+      <div className="mob-px" style={{
         borderTop: '1px solid var(--border-w)',
         padding: '1.5rem 3rem',
         display: 'flex',
