@@ -1,7 +1,50 @@
 'use client'
 
 import Link from 'next/link'
-import { CSSProperties, ReactNode, useState } from 'react'
+import { CSSProperties, ReactNode, useState, useEffect, useRef } from 'react'
+
+// ─── FadeUp — scroll-triggered reveal ────────────────────────────────────────
+
+export function FadeUp({
+  children,
+  delay = 0,
+  className,
+  style,
+}: {
+  children: ReactNode
+  delay?: number
+  className?: string
+  style?: CSSProperties
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect() } },
+      { threshold: 0.08 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(30px)',
+        transition: `opacity 0.85s cubic-bezier(0.16,1,0.3,1) ${delay}ms, transform 0.85s cubic-bezier(0.16,1,0.3,1) ${delay}ms`,
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  )
+}
 
 // ─── Button ──────────────────────────────────────────────────────────────────
 

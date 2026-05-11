@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Button, SectionLabel, Divider } from '@/components/ui'
+import { Button, SectionLabel, Divider, FadeUp } from '@/components/ui'
 
 const S = {
   section: {
@@ -265,7 +265,7 @@ export default function HomePage() {
       {/* ── COMPANY OVERVIEW ─────────────────────────────────────────────────── */}
       <div className="mob-p" style={S.section}>
         <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '5fr 4fr', gap: '6rem', alignItems: 'start' }}>
-          <div>
+          <FadeUp>
             <SectionLabel>What We Are</SectionLabel>
             <h2 style={{ ...S.h2, maxWidth: 600 }}>
               Not a startup.<br />An institution<br />
@@ -281,9 +281,9 @@ export default function HomePage() {
               Every company in our portfolio is designed for <strong style={{ color: 'var(--text)', fontWeight: 400 }}>long-term compounding</strong> — products that grow more defensible, more intelligent, and more valuable with every passing year.
             </p>
             <Button href="/about" variant="secondary">Our Philosophy →</Button>
-          </div>
+          </FadeUp>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border-w)' }}>
+          <FadeUp delay={150} style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border-w)' }}>
             {[
               { t: 'Incubation First', d: 'Ideas are developed internally before any external launch. We validate with rigor and build with conviction.' },
               { t: 'Intelligence-First Architecture', d: 'Every product is designed around intelligence from day one — not retrofitted. Technology is the operating layer, not a feature.' },
@@ -294,16 +294,16 @@ export default function HomePage() {
                 borderLeft: '2px solid var(--gold-border)',
                 padding: '1.5rem 1.75rem',
                 background: 'var(--bg-card)',
-                transition: 'border-color 0.2s',
+                transition: 'border-color 0.3s, background 0.3s',
               }}
-                onMouseEnter={e => { e.currentTarget.style.borderLeftColor = 'var(--gold)' }}
-                onMouseLeave={e => { e.currentTarget.style.borderLeftColor = 'var(--gold-border)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderLeftColor = 'var(--gold)'; e.currentTarget.style.background = 'var(--bg-raised)' }}
+                onMouseLeave={e => { e.currentTarget.style.borderLeftColor = 'var(--gold-border)'; e.currentTarget.style.background = 'var(--bg-card)' }}
               >
                 <div style={{ fontSize: '0.88rem', color: 'var(--text)', marginBottom: '0.4rem', fontWeight: 400 }}>{p.t}</div>
                 <div style={{ fontSize: '0.82rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 300 }}>{p.d}</div>
               </div>
             ))}
-          </div>
+          </FadeUp>
         </div>
       </div>
 
@@ -312,7 +312,7 @@ export default function HomePage() {
       {/* ── FLAGSHIP: VYTRE AWOS ─────────────────────────────────────────────── */}
       <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)', borderBottom: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '8rem 3rem' }}>
-          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '3.5rem', gap: '2rem', flexWrap: 'wrap' }}>
+          <FadeUp style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '3.5rem', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.5rem' }}>
                 <span style={{
@@ -333,7 +333,7 @@ export default function HomePage() {
               </p>
             </div>
             <Button href="/contact" variant="primary">Request Early Access →</Button>
-          </div>
+          </FadeUp>
 
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
             <div>
@@ -428,14 +428,17 @@ export default function HomePage() {
 
       {/* ── PORTFOLIO PREVIEW ─────────────────────────────────────────────────── */}
       <div className="mob-p" style={S.section}>
-        <SectionLabel>Portfolio</SectionLabel>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
-          <h2 style={{ ...S.h2, marginBottom: 0 }}>Six ventures.<br />One ecosystem.</h2>
-          <Button href="/portfolio" variant="ghost">View All →</Button>
-        </div>
+        <FadeUp>
+          <SectionLabel>Portfolio</SectionLabel>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
+            <h2 style={{ ...S.h2, marginBottom: 0 }}>Six ventures.<br />One ecosystem.</h2>
+            <Button href="/portfolio" variant="ghost">View All →</Button>
+          </div>
+        </FadeUp>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', background: 'var(--border-w)' }}>
-          {portfolio.map(p => (
+          {portfolio.map((p, i) => (
+            <FadeUp key={p.name} delay={i * 80}>
             <div key={p.name}
               style={{ background: 'var(--bg)', padding: '2.5rem', transition: 'background 0.25s', display: 'flex', flexDirection: 'column' }}
               onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)' }}
@@ -466,6 +469,7 @@ export default function HomePage() {
                 >Visit →</a>
               </div>
             </div>
+            </FadeUp>
           ))}
           <Link href="/portfolio" style={{
             background: 'var(--bg-raised)', display: 'flex', alignItems: 'center',
@@ -487,10 +491,13 @@ export default function HomePage() {
       {/* ── PHILOSOPHY ───────────────────────────────────────────────────────── */}
       <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)', borderBottom: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={S.section}>
-          <SectionLabel>Operating Philosophy</SectionLabel>
-          <h2 style={{ ...S.h2, maxWidth: 560 }}>Principles that compound<br />over decades.</h2>
+          <FadeUp>
+            <SectionLabel>Operating Philosophy</SectionLabel>
+            <h2 style={{ ...S.h2, maxWidth: 560 }}>Principles that compound<br />over decades.</h2>
+          </FadeUp>
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginTop: '3.5rem' }}>
-            {philosophy.map(p => (
+            {philosophy.map((p, i) => (
+              <FadeUp key={p.n} delay={i * 70}>
               <div key={p.n} style={{
                 padding: '2.75rem', background: 'var(--bg-raised)',
                 borderTop: '2px solid transparent', transition: 'border-color 0.25s, background 0.25s',
@@ -502,6 +509,7 @@ export default function HomePage() {
                 <div style={{ fontSize: '0.95rem', color: 'var(--text)', marginBottom: '0.85rem', fontWeight: 400 }}>{p.title}</div>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 300 }}>{p.desc}</p>
               </div>
+              </FadeUp>
             ))}
           </div>
         </div>
@@ -511,7 +519,7 @@ export default function HomePage() {
 
       {/* ── FOUNDER LETTER PREVIEW ───────────────────────────────────────────── */}
       <div style={{ borderBottom: '1px solid var(--border-w)' }}>
-        <div style={{ maxWidth: 680, margin: '0 auto', textAlign: 'center', padding: '9rem 3rem' }}>
+        <FadeUp style={{ maxWidth: 680, margin: '0 auto', textAlign: 'center', padding: '9rem 3rem' }}>
           <SectionLabel center>Founder Letter</SectionLabel>
           <blockquote style={{
             fontFamily: '"Cormorant Garamond", serif',
@@ -531,14 +539,14 @@ export default function HomePage() {
             <span style={{ display: 'block', flex: 1, maxWidth: 48, height: 1, background: 'var(--border-w)' }} />
           </div>
           <Button href="/vision" variant="secondary">Read Founder Letter →</Button>
-        </div>
+        </FadeUp>
       </div>
 
       {/* ── FINAL CTA ────────────────────────────────────────────────────────── */}
       <div style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)', textAlign: 'center', padding: '8rem 3rem', position: 'relative', overflow: 'hidden' }}>
         <div className="hero-grid" style={{ position: 'absolute', inset: 0, opacity: 0.4 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 60% at 50% 50%, transparent 30%, var(--bg-raised) 80%)' }} />
-        <div style={{ position: 'relative', zIndex: 2 }}>
+        <FadeUp style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ fontSize: '0.58rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '2.5rem', fontWeight: 500 }}>Tarvico Inc. · 2026</div>
           <h2 style={{
             fontFamily: '"Cormorant Garamond", serif',
@@ -559,7 +567,7 @@ export default function HomePage() {
             <Button href="/contact" variant="primary">Get in Touch →</Button>
             <Button href="/investors" variant="secondary">Investor Relations</Button>
           </div>
-        </div>
+        </FadeUp>
       </div>
     </>
   )

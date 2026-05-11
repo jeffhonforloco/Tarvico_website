@@ -132,7 +132,7 @@ const sections = [
     content: [
       {
         subtitle: 'Legal Notices',
-        body: 'All formal legal notices to Tarvico Inc. should be submitted in writing to:\n\nTarvico Inc.\nLegal Department\nlegal@tarvico.com\nDelaware, United States\n\nFor investor relations inquiries: investors@tarvico.com\nFor general inquiries: contact@tarvico.com',
+        body: 'All formal legal notices to Tarvico Inc. should be submitted in writing to:\n\nTarvico Inc.\nLegal Department\nlegal@tarvico.com\nDelaware, United States\n\nFor investor relations inquiries: investors@tarvico.com\nFor general inquiries: info@tarvico.com',
       },
     ],
   },
