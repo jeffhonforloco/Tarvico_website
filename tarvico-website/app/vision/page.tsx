@@ -1,6 +1,31 @@
-export const metadata = {
-  title: 'Founder Letter — Tarvico Inc.',
-  description: 'Building for the Next Era — A letter from Jeff Honforloco, Founder & CEO of Tarvico Inc.',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Founder Letter',
+  description:
+    'Building for the Next Era — A letter from Jeff Yèmalín Bienvenu Honforloco, Founder & CEO of Tarvico Inc. On the origins of Tarvico, the conviction behind it, and the vision for what comes next.',
+  keywords: [
+    'Tarvico founder letter',
+    'Jeff Honforloco',
+    'Jeff Yèmalín Bienvenu Honforloco',
+    'Tarvico vision',
+    'AI company founder story',
+    'technology holding company vision',
+  ],
+  openGraph: {
+    title: 'Founder Letter — Tarvico Inc.',
+    description:
+      'A letter from Jeff Yèmalín Bienvenu Honforloco, Founder & CEO. On the origins of Tarvico and the vision for enduring AI-native technology companies.',
+    url: 'https://www.tarvico.com/vision',
+  },
+  twitter: {
+    title: 'Founder Letter — Tarvico Inc.',
+    description:
+      'On the origins of Tarvico and the long-term vision from Founder & CEO Jeff Honforloco.',
+  },
+  alternates: {
+    canonical: 'https://www.tarvico.com/vision',
+  },
 }
 
 const paragraphs = [

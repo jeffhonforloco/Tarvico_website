@@ -36,8 +36,9 @@ export function FadeUp({
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(30px)',
+        transform: visible ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.97)',
         transition: `opacity 0.85s cubic-bezier(0.16,1,0.3,1) ${delay}ms, transform 0.85s cubic-bezier(0.16,1,0.3,1) ${delay}ms`,
+        willChange: 'opacity, transform',
         ...style,
       }}
     >
@@ -290,6 +291,63 @@ export function StatusBadge({ status, custom }: { status: StatusType; custom?: s
       {custom ?? cfg.label}
     </span>
   )
+}
+
+// ─── AnimatedBar — scroll-triggered width reveal ──────────────────────────────
+
+export function AnimatedBar({ pct, color }: { pct: number; color: string }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [width, setWidth] = useState(0)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setWidth(pct); obs.disconnect() } },
+      { threshold: 0.1 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [pct])
+
+  return (
+    <div ref={ref} style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+      <div className="bar-reveal" style={{ height: '100%', width: `${width}%`, background: color, opacity: 0.75 }} />
+    </div>
+  )
+}
+
+// ─── AnimatedNumber — scroll-triggered count-up ───────────────────────────────
+
+export function AnimatedNumber({ value, suffix = '' }: { value: number | string; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const [display, setDisplay] = useState<number | string>(typeof value === 'number' ? 0 : value)
+
+  useEffect(() => {
+    if (typeof value !== 'number') return
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        obs.disconnect()
+        const start = performance.now()
+        const duration = 1600
+        const tick = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1)
+          const eased = 1 - Math.pow(1 - progress, 3)
+          setDisplay(Math.round(eased * value))
+          if (progress < 1) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+      },
+      { threshold: 0.2 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [value])
+
+  return <span ref={ref}>{display}{suffix}</span>
 }
 
 // ─── MetricCard ───────────────────────────────────────────────────────────────
