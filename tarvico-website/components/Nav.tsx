@@ -176,7 +176,7 @@ export default function Nav() {
         </Link>
       </div>
 
-      <div className="md:hidden" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      <div className="flex md:hidden" style={{ alignItems: 'center', gap: '0.75rem' }}>
         <button
           onClick={toggleTheme}
           aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
