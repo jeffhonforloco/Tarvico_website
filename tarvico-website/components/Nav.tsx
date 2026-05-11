@@ -36,7 +36,7 @@ export default function Nav() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '0 3rem',
+      padding: '0 3rem 0 1.5rem',
       background: scrolled
         ? 'rgba(7,7,10,0.94)'
         : 'rgba(7,7,10,0.72)',
@@ -47,7 +47,7 @@ export default function Nav() {
         : '1px solid transparent',
       transition: 'background 0.4s ease, border-color 0.4s ease',
     }}>
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', gap: '0.85rem' }}>
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', gap: '0.45rem' }}>
         <Image
           src="/logo-icon.png"
           alt="Tarvico Inc. — A Private Technology Holding Company"
@@ -152,7 +152,7 @@ export default function Nav() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'rgba(7,7,10,0.98)',
+          background: 'rgba(7,7,10,1)',
           backdropFilter: 'blur(24px)',
           WebkitBackdropFilter: 'blur(24px)',
           borderTop: '1px solid var(--border-w)',
