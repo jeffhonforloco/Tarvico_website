@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -5,7 +7,7 @@ const cols = [
   {
     title: 'Company',
     links: [
-      { href: '/about',    label: 'About' },
+      { href: '/about',    label: 'About Tarvico' },
       { href: '/vision',   label: 'Founder Letter' },
       { href: '/newsroom', label: 'Newsroom' },
     ],
@@ -29,9 +31,9 @@ const cols = [
   {
     title: 'Connect',
     links: [
-      { href: '/careers', label: 'Careers' },
-      { href: '/contact', label: 'Contact' },
-      { href: 'mailto:investors@tarvico.com', label: 'investors@tarvico.com' },
+      { href: '/careers',                       label: 'Careers' },
+      { href: '/contact',                       label: 'Contact' },
+      { href: 'mailto:investors@tarvico.com',   label: 'investors@tarvico.com' },
     ],
   },
 ]
@@ -39,105 +41,119 @@ const cols = [
 export default function Footer() {
   return (
     <footer style={{
-      borderTop: '1px solid var(--border-w)',
       background: 'var(--bg-raised)',
-      padding: '4rem 3rem 2.5rem',
+      borderTop: '1px solid var(--border-w)',
     }}>
-      {/* Top */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-        gap: '3rem',
-        marginBottom: '4rem',
-      }}>
-        {/* Brand */}
-        <div style={{ gridColumn: 'span 2' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <Image
-              src="/logo-name.png"
-              alt="Tarvico"
-              width={160}
-              height={46}
-              style={{ objectFit: 'contain', height: 36, width: 'auto' }}
-            />
-          </div>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            marginBottom: '1rem',
-          }}>
-            <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)' }} />
-            <span style={{
-              fontSize: '0.6rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--gold)',
-              fontFamily: '"DM Sans", sans-serif',
-              fontWeight: 500,
-            }}>Building Intelligence. Powering Tomorrow.</span>
-            <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)' }} />
-          </div>
-          <p style={{
-            fontSize: '0.85rem',
-            color: 'var(--text-2)',
-            lineHeight: 1.7,
-            maxWidth: 260,
-            fontWeight: 400,
-          }}>
-            An AI-native holding company building, launching, and scaling the next generation of intelligent software companies.
-          </p>
-        </div>
-
-        {cols.map(col => (
-          <div key={col.title}>
-            <div style={{
-              fontSize: '0.62rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--text-3)',
-              marginBottom: '1rem',
-              fontWeight: 500,
+      <div style={{ padding: '5rem 3rem 0' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr',
+          gap: '3rem',
+          marginBottom: '4rem',
+        }}>
+          <div>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <Image
+                src="/logo-white.png"
+                alt="Tarvico"
+                width={160}
+                height={48}
+                style={{ objectFit: 'contain', height: 32, width: 'auto' }}
+              />
+            </div>
+            <p style={{
+              fontSize: '0.82rem',
+              color: 'var(--text-2)',
+              lineHeight: 1.75,
+              maxWidth: 260,
+              fontWeight: 300,
+              marginBottom: '1.75rem',
             }}>
-              {col.title}
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {col.links.map(link => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  style={{
-                    fontSize: '0.85rem',
-                    color: 'var(--text-2)',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s',
-                    fontWeight: 400,
-                  }}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              An AI-native holding company that builds, acquires, and scales intelligent software businesses for the future global economy.
+            </p>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '6px 14px',
+              border: '1px solid var(--emerald-border)',
+              background: 'var(--emerald-glow)',
+            }}>
+              <span style={{
+                display: 'inline-block',
+                width: 6,
+                height: 6,
+                borderRadius: '50%',
+                background: 'var(--emerald)',
+                flexShrink: 0,
+              }} className="animate-pulse-dot" />
+              <span style={{
+                fontSize: '0.58rem',
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                color: 'var(--emerald)',
+                fontWeight: 500,
+              }}>
+                All Systems Operational
+              </span>
             </div>
           </div>
-        ))}
+
+          {cols.map(col => (
+            <div key={col.title}>
+              <div style={{
+                fontSize: '0.58rem',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: 'var(--text-3)',
+                marginBottom: '1.25rem',
+                fontWeight: 500,
+              }}>
+                {col.title}
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                {col.links.map(link => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    style={{
+                      fontSize: '0.82rem',
+                      color: 'var(--text-2)',
+                      textDecoration: 'none',
+                      fontWeight: 300,
+                      transition: 'color 0.2s',
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.color = 'var(--text)' }}
+                    onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-2)' }}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Bottom bar */}
       <div style={{
         borderTop: '1px solid var(--border-w)',
-        paddingTop: '1.75rem',
+        padding: '1.5rem 3rem',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         flexWrap: 'wrap',
         gap: '1rem',
       }}>
-        <span style={{ fontSize: '0.75rem', color: 'var(--text-3)', fontWeight: 400 }}>
-          © {new Date().getFullYear()} Tarvico Inc. All rights reserved.
+        <span style={{ fontSize: '0.7rem', color: 'var(--text-3)', fontWeight: 300 }}>
+          © {new Date().getFullYear()} Tarvico Inc. — Delaware, United States. All rights reserved.
         </span>
-        <span style={{ fontSize: '0.75rem', color: 'var(--text-3)', letterSpacing: '0.1em', fontWeight: 400 }}>
-          Building the infrastructure layer for the AI era.
-        </span>
+        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          {['Privacy', 'Terms', 'Legal'].map(item => (
+            <span key={item} style={{ fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.1em', cursor: 'default' }}>
+              {item}
+            </span>
+          ))}
+        </div>
       </div>
     </footer>
   )

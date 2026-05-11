@@ -11,7 +11,7 @@ const paragraphs = [
   { bold: true, text: 'Tarvico was created from a simple belief: The next generation of great companies will not just build software. They will build systems that improve how people operate, create, communicate, and solve problems in everyday life.' },
   { text: 'We are entering a new technological era where AI is becoming an operational layer across business, creativity, productivity, infrastructure, and daily human interaction. I believe this shift will redefine how companies are built and how individuals access opportunity.' },
   { text: 'Our goal at Tarvico is to participate meaningfully in that transformation.' },
-  { text: 'Today, we are building AI-native products focused on intelligent workflows, automation, digital operations, and scalable systems for businesses and individuals. Our flagship initiative — an AI Workforce Operating System — represents the beginning of a much larger vision: creating technologies that help organizations operate more intelligently while giving people more leverage over their time, creativity, and potential.' },
+  { text: 'Today, we are building AI-native products focused on intelligent workflows, automation, digital operations, and scalable systems for businesses and individuals. Our flagship initiative — Vytre AWOS, an AI Workforce Operating System — represents the beginning of a much larger vision: creating technologies that help organizations operate more intelligently while giving people more leverage over their time, creativity, and potential.' },
   { text: 'But our ambitions extend beyond software alone.' },
   { text: 'Over the long term, I envision Tarvico becoming a diversified technology company that develops products, platforms, and everyday tools that people genuinely rely on — across digital experiences, infrastructure, AI systems, and eventually consumer products that integrate naturally into daily life.' },
   { text: 'The companies that inspire me most are not defined by a single product. They are defined by their ability to evolve, experiment, and continuously build for the future. What began as search engines, social networks, or software platforms eventually became ecosystems that shaped industries and human behavior at global scale.' },
@@ -29,40 +29,49 @@ const paragraphs = [
 
 export default function VisionPage() {
   return (
-    <article style={{ maxWidth: 720, margin: '0 auto', padding: '8rem 3rem' }}>
-
-      {/* Header */}
-      <header style={{ marginBottom: '5rem' }}>
-        <div style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1rem' }}>
-          Tarvico Inc. · Founder Letter · 2025
+    <div style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: '68px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem 3rem', borderBottom: '1px solid var(--border-w)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.5rem' }}>
+          <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)' }} />
+          <span style={{ fontSize: '0.58rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500 }}>Founder Letter · 2026</span>
         </div>
-        <h1 style={{
-          fontFamily: '"Cormorant Garamond", serif',
-          fontSize: 'clamp(2.8rem, 6vw, 5rem)',
-          fontWeight: 300,
-          lineHeight: 1.0,
-          color: 'var(--text)',
-          marginBottom: '1.5rem',
-        }}>
-          Building for<br />the Next Era
-        </h1>
-        <div style={{ fontSize: '0.82rem', color: 'var(--text-2)', fontWeight: 300 }}>
-          By Jeff Yèmalín Bienvenu Honforloco, Founder & CEO
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'end' }}>
+          <h1 style={{
+            fontFamily: '"Cormorant Garamond", serif',
+            fontSize: 'clamp(3rem, 6vw, 6rem)',
+            fontWeight: 400,
+            lineHeight: 0.96,
+            color: 'var(--text)',
+            letterSpacing: '-0.02em',
+          }}>
+            Building for<br />
+            <em style={{ fontStyle: 'italic', color: 'var(--gold)', fontWeight: 300 }}>the Next Era</em>
+          </h1>
+          <div style={{ paddingBottom: '0.5rem' }}>
+            <div style={{ fontSize: '0.72rem', color: 'var(--text-2)', fontWeight: 300, marginBottom: '0.25rem' }}>
+              Jeff Yèmalín Bienvenu Honforloco
+            </div>
+            <div style={{ fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 500 }}>
+              Founder & Chief Executive Officer
+            </div>
+          </div>
         </div>
-      </header>
+      </div>
 
-      {/* Body */}
-      <div>
+      <article style={{ maxWidth: 680, margin: '0 auto', padding: '6rem 3rem 10rem' }}>
         {paragraphs.map((p, i) => {
           if (p.lead) return (
             <p key={i} style={{
               fontFamily: '"Cormorant Garamond", serif',
-              fontSize: '1.5rem',
+              fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)',
               fontWeight: 300,
               fontStyle: 'italic',
               color: 'var(--text)',
-              lineHeight: 1.45,
-              marginBottom: '2.5rem',
+              lineHeight: 1.5,
+              marginBottom: '3rem',
+              paddingLeft: '2rem',
+              borderLeft: '2px solid var(--gold)',
+              letterSpacing: '-0.01em',
             }}>
               "{p.text}"
             </p>
@@ -71,9 +80,10 @@ export default function VisionPage() {
             <p key={i} style={{
               fontSize: '1.05rem',
               color: 'var(--text)',
-              lineHeight: 1.85,
+              lineHeight: 1.9,
               fontWeight: 400,
-              marginBottom: '1.75rem',
+              marginBottom: '2rem',
+              marginTop: i > 0 ? '1rem' : 0,
             }}>
               {p.text}
             </p>
@@ -82,7 +92,7 @@ export default function VisionPage() {
             <p key={i} style={{
               fontSize: '1.05rem',
               color: 'var(--text-2)',
-              lineHeight: 1.85,
+              lineHeight: 1.9,
               fontWeight: 300,
               marginBottom: '1.75rem',
             }}>
@@ -90,18 +100,19 @@ export default function VisionPage() {
             </p>
           )
         })}
-      </div>
 
-      {/* Signature */}
-      <div style={{ marginTop: '4rem', paddingTop: '3rem', borderTop: '1px solid var(--border-w)' }}>
-        <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '1.6rem', fontWeight: 300, color: 'var(--text)', marginBottom: '0.4rem' }}>
-          Jeff Yèmalín Bienvenu Honforloco
+        <div style={{ marginTop: '5rem', paddingTop: '3rem', borderTop: '1px solid var(--border-w)' }}>
+          <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '1.8rem', fontWeight: 300, color: 'var(--text)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+            Jeff Yèmalín Bienvenu Honforloco
+          </div>
+          <div style={{ fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500, marginBottom: '0.3rem' }}>
+            Founder & Chief Executive Officer
+          </div>
+          <div style={{ fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 400 }}>
+            Tarvico Inc. · 2026
+          </div>
         </div>
-        <div style={{ fontSize: '0.72rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-2)' }}>
-          Founder & Chief Executive Officer, Tarvico Inc.
-        </div>
-      </div>
-
-    </article>
+      </article>
+    </div>
   )
 }

@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
 const links = [
-  { href: '/',           label: 'Home' },
   { href: '/portfolio',  label: 'Portfolio' },
   { href: '/about',      label: 'About' },
   { href: '/investors',  label: 'Investors' },
@@ -21,124 +20,154 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handler)
+    const handler = () => setScrolled(window.scrollY > 32)
+    window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
   return (
-    <nav
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        height: 64,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '0 3rem',
-        background: scrolled
-          ? 'rgba(250,250,248,0.98)'
-          : 'rgba(250,250,248,0.92)',
-        backdropFilter: 'blur(16px)',
-        borderBottom: scrolled ? '1px solid var(--border-w)' : '1px solid transparent',
-        transition: 'background 0.3s, border-color 0.3s',
-        boxShadow: scrolled ? '0 1px 24px rgba(0,0,0,0.06)' : 'none',
-      }}
-    >
-      {/* Logo */}
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+    <nav style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 100,
+      height: 68,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '0 3rem',
+      background: scrolled
+        ? 'rgba(7,7,10,0.94)'
+        : 'rgba(7,7,10,0.72)',
+      backdropFilter: 'blur(20px)',
+      WebkitBackdropFilter: 'blur(20px)',
+      borderBottom: scrolled
+        ? '1px solid rgba(255,255,255,0.07)'
+        : '1px solid transparent',
+      transition: 'background 0.4s ease, border-color 0.4s ease',
+    }}>
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', gap: '0.75rem' }}>
         <Image
-          src="/logo-name.png"
+          src="/logo-white.png"
           alt="Tarvico"
-          width={220}
-          height={60}
-          style={{ objectFit: 'contain', height: 46, width: 'auto' }}
+          width={200}
+          height={48}
+          style={{ objectFit: 'contain', height: 36, width: 'auto' }}
           priority
         />
       </Link>
 
-      {/* Desktop links */}
-      <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}
-           className="hidden md:flex">
-        {links.map(({ href, label }) => (
-          <Link
-            key={href}
-            href={href}
-            style={{
-              fontSize: '0.72rem',
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              color: pathname === href ? 'var(--text)' : 'var(--text-2)',
-              textDecoration: 'none',
-              transition: 'color 0.2s',
-              fontWeight: pathname === href ? 500 : 400,
-            }}
-          >
-            {label}
-          </Link>
-        ))}
+      <div className="hidden md:flex" style={{ display: 'flex', gap: '2.75rem', alignItems: 'center' }}>
+        {links.map(({ href, label }) => {
+          const active = pathname === href
+          return (
+            <Link
+              key={href}
+              href={href}
+              style={{
+                fontSize: '0.68rem',
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                color: active ? 'var(--text)' : 'var(--text-2)',
+                textDecoration: 'none',
+                fontWeight: active ? 500 : 400,
+                transition: 'color 0.2s',
+                position: 'relative',
+                paddingBottom: '2px',
+              }}
+            >
+              {label}
+              {active && (
+                <span style={{
+                  position: 'absolute',
+                  bottom: -2,
+                  left: 0,
+                  right: 0,
+                  height: '1px',
+                  background: 'var(--gold)',
+                }} />
+              )}
+            </Link>
+          )
+        })}
       </div>
 
-      {/* CTA */}
       <Link
         href="/contact"
+        className="hidden md:inline-flex"
         style={{
-          fontSize: '0.68rem',
-          letterSpacing: '0.15em',
+          fontSize: '0.65rem',
+          letterSpacing: '0.18em',
           textTransform: 'uppercase',
           border: '1px solid var(--gold-border)',
           color: 'var(--gold)',
-          padding: '7px 18px',
+          padding: '8px 20px',
           textDecoration: 'none',
-          transition: 'all 0.2s',
           fontWeight: 500,
+          transition: 'background 0.2s, border-color 0.2s',
         }}
-        className="hidden md:inline-flex"
+        onMouseEnter={e => {
+          e.currentTarget.style.background = 'var(--gold-glow)'
+          e.currentTarget.style.borderColor = 'var(--gold)'
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.background = 'transparent'
+          e.currentTarget.style.borderColor = 'var(--gold-border)'
+        }}
       >
         Contact
       </Link>
 
-      {/* Mobile hamburger */}
       <button
         onClick={() => setOpen(!open)}
         className="md:hidden"
-        style={{ background: 'none', border: 'none', color: 'var(--text-2)', cursor: 'pointer', fontSize: '1.4rem' }}
+        style={{
+          background: 'none',
+          border: 'none',
+          color: 'var(--text-2)',
+          cursor: 'pointer',
+          fontSize: '1.2rem',
+          padding: '4px',
+          lineHeight: 1,
+        }}
         aria-label="Toggle menu"
       >
         {open ? '✕' : '☰'}
       </button>
 
-      {/* Mobile menu */}
       {open && (
         <div style={{
           position: 'fixed',
-          top: 64,
+          top: 68,
           left: 0,
           right: 0,
-          background: 'rgba(250,250,248,0.99)',
-          backdropFilter: 'blur(16px)',
-          borderBottom: '1px solid var(--border-w)',
-          padding: '1.5rem 2rem 2rem',
+          bottom: 0,
+          background: 'rgba(7,7,10,0.98)',
+          backdropFilter: 'blur(24px)',
+          WebkitBackdropFilter: 'blur(24px)',
+          borderTop: '1px solid var(--border-w)',
+          padding: '3rem 3rem',
           display: 'flex',
           flexDirection: 'column',
-          gap: '1.25rem',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+          gap: '0',
+          zIndex: 99,
         }}>
-          {links.map(({ href, label }) => (
+          {links.map(({ href, label }, i) => (
             <Link
               key={href}
               href={href}
               onClick={() => setOpen(false)}
               style={{
-                fontSize: '0.88rem',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
+                fontSize: 'clamp(1.8rem, 6vw, 2.8rem)',
+                fontFamily: '"Cormorant Garamond", serif',
+                fontWeight: 300,
                 color: pathname === href ? 'var(--text)' : 'var(--text-2)',
                 textDecoration: 'none',
-                fontWeight: pathname === href ? 500 : 400,
+                padding: '0.9rem 0',
+                borderBottom: '1px solid var(--border-w)',
+                transition: 'color 0.2s',
+                animationDelay: `${i * 60}ms`,
               }}
             >
               {label}
@@ -148,16 +177,20 @@ export default function Nav() {
             href="/contact"
             onClick={() => setOpen(false)}
             style={{
-              fontSize: '0.75rem',
-              letterSpacing: '0.15em',
+              marginTop: '2.5rem',
+              fontSize: '0.68rem',
+              letterSpacing: '0.2em',
               textTransform: 'uppercase',
               color: 'var(--gold)',
-              marginTop: '0.5rem',
               textDecoration: 'none',
               fontWeight: 500,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
             }}
           >
-            Contact →
+            <span style={{ display: 'block', width: 24, height: 1, background: 'var(--gold)' }} />
+            Contact Tarvico
           </Link>
         </div>
       )}

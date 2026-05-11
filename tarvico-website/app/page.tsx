@@ -3,72 +3,94 @@
 import Link from 'next/link'
 import { Button, SectionLabel, Divider } from '@/components/ui'
 
-// ── Inline style helpers ──────────────────────────────────────────────────────
-
 const S = {
   section: {
-    padding: '7rem 3rem',
+    padding: '8rem 3rem',
     maxWidth: 1200,
     margin: '0 auto',
   } as React.CSSProperties,
   h2: {
     fontFamily: '"Cormorant Garamond", serif',
-    fontSize: 'clamp(2.4rem, 4vw, 3.8rem)',
+    fontSize: 'clamp(2.6rem, 4.5vw, 4.2rem)',
     fontWeight: 400,
-    lineHeight: 1.1,
+    lineHeight: 1.05,
     color: 'var(--text)',
+    letterSpacing: '-0.01em',
     marginBottom: '1.5rem',
   } as React.CSSProperties,
   sub: {
-    fontSize: '1.05rem',
+    fontSize: '1rem',
     color: 'var(--text-2)',
-    lineHeight: 1.8,
-    fontWeight: 400,
+    lineHeight: 1.85,
+    fontWeight: 300,
   } as React.CSSProperties,
 }
-
-// ── PORTFOLIO DATA ─────────────────────────────────────────────────────────────
 
 const portfolio = [
   {
     name: 'Vytre AWOS',
     status: 'Flagship',
     statusColor: 'var(--gold)',
+    statusBg: 'var(--gold-glow)',
+    statusBorder: 'var(--gold-border)',
     category: 'AI Workforce Infrastructure',
     desc: 'The AI operating layer for enterprise. Deploy, orchestrate, and scale AI workers across every business function with intelligence at the core.',
     market: 'Enterprise · SaaS',
+    year: '2026',
+    hasDot: true,
+    dotColor: 'var(--gold)',
   },
   {
     name: 'SireIQ',
     status: 'Incubation',
-    statusColor: 'var(--gold-light)',
+    statusColor: 'var(--gold-dim)',
+    statusBg: 'transparent',
+    statusBorder: 'rgba(201,164,71,0.15)',
     category: 'AI Assistant · Productivity',
     desc: 'An intelligent AI assistant for chat, content creation, and workflow automation. Designed to elevate individual and team productivity at scale.',
     market: 'SMB · Consumer',
+    year: '2025',
+    hasDot: false,
+    dotColor: '',
   },
   {
     name: 'SEOAgentPro',
     status: 'Incubation',
-    statusColor: 'var(--gold-light)',
+    statusColor: 'var(--gold-dim)',
+    statusBg: 'transparent',
+    statusBorder: 'rgba(201,164,71,0.15)',
     category: 'AI Search · Digital Marketing',
     desc: 'Autonomous AI-driven SEO intelligence. Content strategy, optimization, and execution powered by real-time data and machine learning.',
     market: 'Agencies · Growth',
+    year: '2025',
+    hasDot: false,
+    dotColor: '',
   },
   {
     name: 'Fycra',
     status: 'Stealth',
     statusColor: 'var(--text-3)',
+    statusBg: 'transparent',
+    statusBorder: 'var(--border-w)',
     category: 'Developer Tools · Code Platform',
     desc: 'A next-generation AI-native code platform for modern development teams. Intelligent assistance, automated review, and accelerated delivery.',
     market: 'Developers · Teams',
+    year: '2025',
+    hasDot: false,
+    dotColor: '',
   },
   {
     name: 'Fycera',
     status: 'Stealth',
     statusColor: 'var(--text-3)',
+    statusBg: 'transparent',
+    statusBorder: 'var(--border-w)',
     category: 'AI Creative · Content Creation',
     desc: 'Intelligent content creation infrastructure. AI-native tools for creators, brands, and media operations at scale.',
     market: 'Creators · Media',
+    year: '2025',
+    hasDot: false,
+    dotColor: '',
   },
 ]
 
@@ -80,8 +102,6 @@ const philosophy = [
   { n: '05', title: 'Sustainable Capital Discipline', desc: 'Growth should be earned, not bought. We allocate capital toward compounding returns and sustainable unit economics from the earliest stage.' },
   { n: '06', title: 'Focused Execution', desc: 'Strategy without execution is fiction. We operate with relentless focus — every initiative is evaluated by its ability to compound portfolio value.' },
 ]
-
-// ── PAGE ───────────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
   return (
@@ -95,101 +115,143 @@ export default function HomePage() {
         overflow: 'hidden',
         background: 'var(--bg)',
       }}>
-        {/* Animated grid */}
         <div className="hero-grid" style={{ position: 'absolute', inset: 0 }} />
-
-        {/* Radial vignette — fades grid to bg color at edges */}
+        <div className="hero-grid-fine" style={{ position: 'absolute', inset: 0, opacity: 0.5 }} />
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, var(--bg) 100%)',
+          background: 'radial-gradient(ellipse 90% 80% at 50% 50%, transparent 30%, var(--bg) 80%)',
         }} />
-
-        {/* Gold glow */}
         <div className="animate-pulse-slow" style={{
           position: 'absolute',
-          top: '20%',
+          top: '15%',
           left: '50%',
           transform: 'translateX(-50%)',
-          width: 700,
-          height: 700,
-          background: 'radial-gradient(circle, rgba(184,144,42,0.08) 0%, transparent 65%)',
+          width: 900,
+          height: 900,
+          background: 'radial-gradient(circle, rgba(201,164,71,0.055) 0%, transparent 60%)',
+          pointerEvents: 'none',
+        }} />
+        <div style={{
+          position: 'absolute',
+          top: '40%',
+          right: '8%',
+          width: 360,
+          height: 360,
+          background: 'radial-gradient(circle, rgba(91,155,213,0.04) 0%, transparent 60%)',
           pointerEvents: 'none',
         }} />
 
-        {/* Hero content */}
         <div style={{ position: 'relative', zIndex: 2, maxWidth: 1200, margin: '0 auto', padding: '0 3rem', width: '100%' }}>
-          <div className="animate-fade-up delay-100" style={{
-            fontSize: '0.65rem',
-            letterSpacing: '0.3em',
-            textTransform: 'uppercase',
-            color: 'var(--gold)',
-            marginBottom: '2rem',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 12,
-            fontWeight: 500,
-          }}>
-            <span style={{ display: 'block', width: 32, height: 1.5, background: 'var(--gold)' }} />
-            An Operating Company for the AI Era
-          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'center' }}>
+            <div>
+              <div className="animate-fade-up delay-100" style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                fontSize: '0.6rem',
+                letterSpacing: '0.3em',
+                textTransform: 'uppercase',
+                color: 'var(--gold)',
+                marginBottom: '2.5rem',
+                fontWeight: 500,
+              }}>
+                <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold)' }} />
+                Tarvico Inc. · Est. 2026
+                <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold-border)' }} />
+              </div>
 
-          <h1 className="animate-fade-up delay-250" style={{
-            fontFamily: '"Cormorant Garamond", serif',
-            fontSize: 'clamp(3.2rem, 6.5vw, 6.5rem)',
-            fontWeight: 400,
-            color: 'var(--text)',
-            maxWidth: 820,
-            marginBottom: '2rem',
-            lineHeight: 1.0,
-          }}>
-            Building <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>enduring</em><br />
-            AI-native companies.
-          </h1>
+              <h1 className="animate-fade-up delay-250" style={{
+                fontFamily: '"Cormorant Garamond", serif',
+                fontSize: 'clamp(3.8rem, 7.5vw, 8rem)',
+                fontWeight: 400,
+                color: 'var(--text)',
+                maxWidth: 860,
+                lineHeight: 0.96,
+                letterSpacing: '-0.02em',
+                marginBottom: '2.5rem',
+              }}>
+                Building the<br />
+                intelligence<br />
+                <em style={{ fontStyle: 'italic', color: 'var(--gold)', fontWeight: 300 }}>infrastructure</em><br />
+                for tomorrow.
+              </h1>
 
-          <p className="animate-fade-up delay-400" style={{
-            fontSize: '1.15rem',
-            color: 'var(--text-2)',
-            maxWidth: 580,
-            lineHeight: 1.8,
-            marginBottom: '3.5rem',
-            fontWeight: 400,
-          }}>
-            Tarvico Inc. builds, launches, and scales AI-native software companies focused on automation, intelligence, productivity, and digital infrastructure.
-          </p>
+              <p className="animate-fade-up delay-400" style={{
+                fontSize: '1.1rem',
+                color: 'var(--text-2)',
+                maxWidth: 520,
+                lineHeight: 1.85,
+                marginBottom: '3.5rem',
+                fontWeight: 300,
+              }}>
+                Tarvico Inc. is a technology holding company that builds, launches, and scales AI-native software businesses across automation, intelligence, and digital infrastructure.
+              </p>
 
-          <div className="animate-fade-up delay-550" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Button href="/portfolio" variant="primary">Explore Portfolio →</Button>
-            <Button href="/investors" variant="secondary">Investor Relations</Button>
+              <div className="animate-fade-up delay-550" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <Button href="/portfolio" variant="primary">Explore Portfolio →</Button>
+                <Button href="/investors" variant="secondary">Investor Relations</Button>
+              </div>
+            </div>
+
+            <div className="animate-fade-up delay-700" style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '2.25rem',
+              borderLeft: '1px solid var(--border-w)',
+              paddingLeft: '3rem',
+              minWidth: 180,
+            }}>
+              {[
+                { n: '6', l: 'Ventures in Portfolio' },
+                { n: '2026', l: 'Founded' },
+                { n: '∞', l: 'Long-Term Horizon' },
+              ].map(s => (
+                <div key={s.n}>
+                  <div style={{
+                    fontFamily: '"Cormorant Garamond", serif',
+                    fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+                    fontWeight: 300,
+                    color: 'var(--text)',
+                    lineHeight: 1,
+                    letterSpacing: '-0.02em',
+                  }}>{s.n}</div>
+                  <div style={{
+                    fontSize: '0.58rem',
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    color: 'var(--text-3)',
+                    marginTop: 6,
+                    fontWeight: 500,
+                  }}>{s.l}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Right stats */}
         <div style={{
           position: 'absolute',
-          bottom: '3rem',
-          right: '3rem',
+          bottom: '2.5rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
           display: 'flex',
           flexDirection: 'column',
-          gap: '1.5rem',
+          alignItems: 'center',
+          gap: 10,
           zIndex: 2,
         }}>
-          {[
-            { n: '5', l: 'Companies in Development' },
-            { n: '2025', l: 'Year Founded' },
-            { n: 'AI', l: 'Native from Day One' },
-          ].map(s => (
-            <div key={s.n} style={{ textAlign: 'right' }}>
-              <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '2.2rem', fontWeight: 400, color: 'var(--text)', lineHeight: 1 }}>{s.n}</div>
-              <div style={{ fontSize: '0.62rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', marginTop: 3, fontWeight: 500 }}>{s.l}</div>
-            </div>
-          ))}
+          <div style={{ width: 1, height: 48, background: 'linear-gradient(to bottom, var(--gold), transparent)' }} className="animate-scroll-line" />
+          <span style={{ fontSize: '0.55rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 500 }}>Scroll</span>
         </div>
 
-        {/* Scroll indicator */}
-        <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
-          <div style={{ width: 1, height: 48, background: 'linear-gradient(to bottom, var(--gold), transparent)', animation: 'scrollLine 2s ease-in-out infinite' }} />
-          <span style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 500 }}>Scroll</span>
+        <div style={{ position: 'absolute', bottom: '2rem', right: '3rem', display: 'flex', alignItems: 'center', gap: 8, zIndex: 2 }}>
+          <span style={{
+            display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: 'var(--emerald)',
+          }} className="animate-pulse-dot" />
+          <span style={{ fontSize: '0.58rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 500 }}>
+            Systems Operational
+          </span>
         </div>
       </section>
 
@@ -197,39 +259,43 @@ export default function HomePage() {
 
       {/* ── COMPANY OVERVIEW ─────────────────────────────────────────────────── */}
       <div style={S.section}>
-        <SectionLabel>What We Are</SectionLabel>
-        <h2 style={S.h2}>
-          Not a startup.<br />
-          An operating system<br />
-          for <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>new ventures.</em>
-        </h2>
-
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', marginTop: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '5fr 4fr', gap: '6rem', alignItems: 'start' }}>
           <div>
+            <SectionLabel>What We Are</SectionLabel>
+            <h2 style={{ ...S.h2, maxWidth: 600 }}>
+              Not a startup.<br />An operating system<br />
+              for <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>the intelligence era.</em>
+            </h2>
             <p style={{ ...S.sub, marginBottom: '1.5rem' }}>
-              Tarvico Inc. is an <strong style={{ color: 'var(--text)', fontWeight: 600 }}>AI-native holding company</strong> that designs, builds, and operates a portfolio of software and AI ventures. We are not a single-product startup — we are institutional infrastructure for the next generation of intelligent systems.
+              Tarvico Inc. is an <strong style={{ color: 'var(--text)', fontWeight: 400 }}>AI-native holding company</strong> that designs, builds, and operates a portfolio of software and AI ventures. We are not a single-product startup — we are institutional infrastructure for the next generation of intelligent systems.
             </p>
             <p style={{ ...S.sub, marginBottom: '1.5rem' }}>
-              Our model combines the <strong style={{ color: 'var(--text)', fontWeight: 600 }}>capital discipline of a holding company</strong> with the velocity of a product studio. We incubate ideas internally, build with lean elite teams, and scale through operational leverage rather than headcount.
+              Our model combines the <strong style={{ color: 'var(--text)', fontWeight: 400 }}>capital discipline of a holding company</strong> with the velocity of a product studio. We incubate ideas internally, build with lean elite teams, and scale through operational leverage rather than headcount.
             </p>
-            <p style={S.sub}>
-              Every company in our portfolio is designed for <strong style={{ color: 'var(--text)', fontWeight: 600 }}>long-term compounding</strong> — products that grow more defensible, more intelligent, and more valuable with every passing year.
+            <p style={{ ...S.sub, marginBottom: '3rem' }}>
+              Every company in our portfolio is designed for <strong style={{ color: 'var(--text)', fontWeight: 400 }}>long-term compounding</strong> — products that grow more defensible, more intelligent, and more valuable with every passing year.
             </p>
-            <div style={{ marginTop: '2.5rem' }}>
-              <Button href="/about" variant="secondary">Our Philosophy →</Button>
-            </div>
+            <Button href="/about" variant="secondary">Our Philosophy →</Button>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border-w)' }}>
             {[
               { t: 'Incubation First', d: 'Ideas are developed internally before any external launch. We validate with rigor and build with conviction.' },
               { t: 'AI-Native Architecture', d: 'Every product is designed around intelligence from day one — not retrofitted. AI is the operating layer, not a feature.' },
-              { t: 'Long-Term Capital Strategy', d: 'We build for decades, not quarters. Patient ownership, focused reinvestment, and compounding moats.' },
-              { t: 'Operational Leverage', d: 'Small, elite teams with asymmetric output. AI multiplies human capability across the entire portfolio.' },
+              { t: 'Long-Term Capital Strategy', d: 'We build for decades, not quarters. Patient ownership, focused reinvestment, and compounding moats define our capital approach.' },
+              { t: 'Operational Leverage', d: 'Small, elite teams with asymmetric output. AI multiplies human capability across the entire portfolio simultaneously.' },
             ].map(p => (
-              <div key={p.t} style={{ borderLeft: '2px solid var(--gold-border)', padding: '1rem 1.5rem', background: 'var(--bg-card)', borderRadius: 0 }}>
-                <div style={{ fontSize: '0.9rem', color: 'var(--text)', marginBottom: '0.4rem', letterSpacing: '0.02em', fontWeight: 500 }}>{p.t}</div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 400 }}>{p.d}</div>
+              <div key={p.t} style={{
+                borderLeft: '2px solid var(--gold-border)',
+                padding: '1.5rem 1.75rem',
+                background: 'var(--bg-card)',
+                transition: 'border-color 0.2s',
+              }}
+                onMouseEnter={e => { e.currentTarget.style.borderLeftColor = 'var(--gold)' }}
+                onMouseLeave={e => { e.currentTarget.style.borderLeftColor = 'var(--gold-border)' }}
+              >
+                <div style={{ fontSize: '0.88rem', color: 'var(--text)', marginBottom: '0.4rem', fontWeight: 400 }}>{p.t}</div>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 300 }}>{p.d}</div>
               </div>
             ))}
           </div>
@@ -238,112 +304,115 @@ export default function HomePage() {
 
       <Divider />
 
-      {/* ── FLAGSHIP ─────────────────────────────────────────────────────────── */}
+      {/* ── FLAGSHIP: VYTRE AWOS ─────────────────────────────────────────────── */}
       <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)', borderBottom: '1px solid var(--border-w)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>
-          <span style={{
-            display: 'inline-block',
-            border: '1px solid var(--gold)',
-            color: 'var(--gold)',
-            fontSize: '0.6rem',
-            letterSpacing: '0.25em',
-            textTransform: 'uppercase',
-            padding: '6px 16px',
-            marginBottom: '2rem',
-            fontWeight: 500,
-          }}>
-            Flagship Product · Launching 2025
-          </span>
-
-          <h2 style={{ ...S.h2, maxWidth: 600 }}>
-            AI Workforce<br />Operating System
-          </h2>
-          <p style={{ ...S.sub, maxWidth: 560, marginBottom: '3rem' }}>
-            A next-generation AI operating layer that enables businesses to deploy, manage, coordinate, and scale AI workers across operations, workflows, departments, and enterprise systems.
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
-            {/* Features */}
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '8rem 3rem' }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '3.5rem', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.5rem' }}>
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 6,
+                  border: '1px solid var(--gold-border)', color: 'var(--gold)',
+                  fontSize: '0.56rem', letterSpacing: '0.22em', textTransform: 'uppercase',
+                  padding: '5px 12px', fontWeight: 500, background: 'var(--gold-glow)',
+                }}>
+                  <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block' }} className="animate-pulse-gold" />
+                  Flagship · Launching 2026
+                </span>
+              </div>
+              <h2 style={{ ...S.h2, maxWidth: 540, marginBottom: '1rem' }}>
+                AI Workforce<br />Operating System
+              </h2>
+              <p style={{ ...S.sub, maxWidth: 480 }}>
+                The enterprise control plane for autonomous AI workforce deployment, coordination, and operational intelligence at scale.
+              </p>
+            </div>
+            <Button href="/contact" variant="primary">Request Early Access →</Button>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--border-w)', marginBottom: '2rem' }}>
                 {[
                   { icon: '◈', t: 'Agent Orchestration', d: 'Deploy and coordinate AI agents across complex multi-step workflows with intelligent routing.' },
                   { icon: '⬡', t: 'Workflow Automation', d: 'Model, automate, and optimize operational processes with adaptive AI-driven execution.' },
                   { icon: '◎', t: 'Enterprise Intelligence', d: 'Deep integration with enterprise systems. Contextual awareness across your entire data layer.' },
-                  { icon: '◻', t: 'Digital Labor Scale', d: 'Operate at digital-workforce scale. Unlimited AI worker capacity with human oversight controls.' },
+                  { icon: '◻', t: 'Digital Labor Scale', d: 'Operate at digital-workforce scale with unlimited AI worker capacity and human oversight.' },
                 ].map(f => (
-                  <div key={f.t} style={{
-                    padding: '1.5rem',
-                    border: '1px solid var(--border-w)',
-                    background: 'var(--bg)',
-                    transition: 'border-color 0.2s, box-shadow 0.2s',
-                  }}>
-                    <div style={{ fontSize: '1.3rem', color: 'var(--gold)', marginBottom: '0.75rem' }}>{f.icon}</div>
-                    <div style={{ fontSize: '0.85rem', color: 'var(--text)', marginBottom: '0.4rem', letterSpacing: '0.02em', fontWeight: 500 }}>{f.t}</div>
-                    <div style={{ fontSize: '0.8rem', color: 'var(--text-2)', lineHeight: 1.6, fontWeight: 400 }}>{f.d}</div>
+                  <div key={f.t} style={{ padding: '1.75rem', background: 'var(--bg)', transition: 'background 0.2s' }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)' }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg)' }}
+                  >
+                    <div style={{ fontSize: '1.1rem', color: 'var(--gold)', marginBottom: '0.75rem', opacity: 0.8 }}>{f.icon}</div>
+                    <div style={{ fontSize: '0.82rem', color: 'var(--text)', marginBottom: '0.4rem', fontWeight: 400 }}>{f.t}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-2)', lineHeight: 1.6, fontWeight: 300 }}>{f.d}</div>
                   </div>
                 ))}
               </div>
-              <div style={{ marginTop: '2rem' }}>
-                <Button href="/portfolio" variant="primary">Learn More →</Button>
-              </div>
+              <Button href="/portfolio" variant="ghost">View Full Platform →</Button>
             </div>
 
-            {/* Live dashboard mockup */}
             <div style={{
               background: 'var(--bg)',
               border: '1px solid var(--border-w)',
-              padding: '1.75rem',
+              padding: '2rem',
               display: 'flex',
               flexDirection: 'column',
-              gap: '1.25rem',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+              gap: '1.5rem',
             }}>
-              <div style={{ height: 3, background: 'linear-gradient(to right, var(--gold), transparent)' }} />
-              <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 500 }}>
-                AWOS Dashboard · Live View
+              <div style={{ height: 2, background: 'linear-gradient(to right, var(--gold), var(--blue), transparent)' }} />
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 500 }}>AWOS · Orchestration View</span>
+                <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--emerald)', display: 'inline-block' }} className="animate-pulse-dot" />
+                  <span style={{ fontSize: '0.56rem', color: 'var(--emerald)', letterSpacing: '0.1em', fontWeight: 500 }}>Live</span>
+                </span>
               </div>
+
               <div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-2)', marginBottom: '0.75rem', fontWeight: 400 }}>Active Agent Workloads</div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--text-2)', marginBottom: '0.85rem', fontWeight: 300 }}>Active Agent Workloads</div>
                 {[
-                  { label: 'Sales Ops', pct: 82 },
-                  { label: 'Finance', pct: 67 },
-                  { label: 'HR Ops', pct: 45 },
-                  { label: 'Customer', pct: 91 },
+                  { label: 'Sales Ops', pct: 82, color: 'var(--gold)' },
+                  { label: 'Finance', pct: 67, color: 'var(--blue)' },
+                  { label: 'HR Ops', pct: 45, color: 'var(--gold-dim)' },
+                  { label: 'Customer', pct: 91, color: 'var(--emerald)' },
                 ].map(row => (
-                  <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginTop: '0.5rem' }}>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--text-3)', width: 70, letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 500 }}>{row.label}</div>
-                    <div style={{ flex: 1, height: 4, background: 'var(--bg-deep)', position: 'relative', overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: `${row.pct}%`, background: 'var(--gold)', opacity: 0.8 }} />
+                  <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '0.6rem' }}>
+                    <div style={{ fontSize: '0.6rem', color: 'var(--text-3)', width: 68, letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500 }}>{row.label}</div>
+                    <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
+                      <div style={{ height: '100%', width: `${row.pct}%`, background: row.color, opacity: 0.75 }} />
                     </div>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--text-2)', minWidth: 30, textAlign: 'right', fontWeight: 500 }}>{row.pct}%</div>
+                    <div style={{ fontSize: '0.6rem', color: 'var(--text-2)', minWidth: 28, textAlign: 'right', fontWeight: 400 }}>{row.pct}%</div>
                   </div>
                 ))}
               </div>
+
               <div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-2)', marginBottom: '0.6rem', fontWeight: 400 }}>Deployed Agents</div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  {['Analyst·12', 'Writer·7', 'Researcher·4', 'CRM·9', 'Compliance·3', 'Finance·6'].map((a, i) => (
-                    <span key={a} style={{
-                      fontSize: '0.62rem',
-                      border: `1px solid ${i % 2 === 0 ? 'var(--gold)' : 'var(--border-w)'}`,
-                      color: i % 2 === 0 ? 'var(--gold)' : 'var(--text-2)',
-                      padding: '3px 10px',
-                      letterSpacing: '0.06em',
-                      fontWeight: 500,
+                <div style={{ fontSize: '0.72rem', color: 'var(--text-2)', marginBottom: '0.65rem', fontWeight: 300 }}>Deployed Agents</div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
+                  {[
+                    { label: 'Analyst·12', active: true },
+                    { label: 'Writer·7', active: false },
+                    { label: 'Research·4', active: true },
+                    { label: 'CRM·9', active: false },
+                    { label: 'Compliance·3', active: true },
+                    { label: 'Finance·6', active: false },
+                  ].map(a => (
+                    <span key={a.label} style={{
+                      fontSize: '0.6rem',
+                      border: `1px solid ${a.active ? 'var(--gold-border)' : 'var(--border-w)'}`,
+                      color: a.active ? 'var(--gold)' : 'var(--text-3)',
+                      padding: '3px 9px', letterSpacing: '0.06em', fontWeight: 500,
                     }}>
-                      {i % 2 === 0 && <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: 'var(--gold)', marginRight: 5, boxShadow: '0 0 6px rgba(184,144,42,.4)', verticalAlign: 'middle' }} />}
-                      {a}
+                      {a.label}
                     </span>
                   ))}
                 </div>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-w)', paddingTop: '1rem', marginTop: 'auto' }}>
-                <span style={{ fontSize: '0.65rem', color: 'var(--text-3)', fontWeight: 400 }}>41 agents · 127 tasks/hr</span>
-                <span style={{ fontSize: '0.65rem', color: 'var(--gold)', fontWeight: 500 }}>
-                  <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: 'var(--gold)', marginRight: 5, boxShadow: '0 0 6px rgba(184,144,42,.4)', verticalAlign: 'middle' }} />
-                  System operational
-                </span>
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem' }}>
+                <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', fontWeight: 300 }}>41 agents · 127 tasks/hr · 99.7% uptime</span>
+                <span style={{ fontSize: '0.6rem', color: 'var(--emerald)', fontWeight: 500 }}>◆ Operational</span>
               </div>
             </div>
           </div>
@@ -355,39 +424,49 @@ export default function HomePage() {
       {/* ── PORTFOLIO PREVIEW ─────────────────────────────────────────────────── */}
       <div style={S.section}>
         <SectionLabel>Portfolio</SectionLabel>
-        <h2 style={S.h2}>Five ventures.<br />One ecosystem.</h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
+          <h2 style={{ ...S.h2, marginBottom: 0 }}>Six ventures.<br />One ecosystem.</h2>
+          <Button href="/portfolio" variant="ghost">View All →</Button>
+        </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5px', background: 'var(--border-w)', marginTop: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', background: 'var(--border-w)' }}>
           {portfolio.map(p => (
-            <div key={p.name} style={{ background: 'var(--bg)', padding: '2.5rem', transition: 'background 0.2s' }}
-                 onMouseEnter={e => (e.currentTarget.style.background = 'var(--bg-raised)')}
-                 onMouseLeave={e => (e.currentTarget.style.background = 'var(--bg)')}>
+            <div key={p.name}
+              style={{ background: 'var(--bg)', padding: '2.5rem', transition: 'background 0.25s', cursor: 'default' }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg)' }}
+            >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
-                <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '1.7rem', fontWeight: 400, color: 'var(--text)' }}>{p.name}</div>
-                <span style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', border: `1px solid ${p.statusColor}`, color: p.statusColor, padding: '3px 10px', whiteSpace: 'nowrap', fontWeight: 500 }}>{p.status}</span>
+                <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '1.75rem', fontWeight: 400, color: 'var(--text)', letterSpacing: '-0.01em' }}>{p.name}</div>
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 5,
+                  fontSize: '0.54rem', letterSpacing: '0.2em', textTransform: 'uppercase',
+                  border: `1px solid ${p.statusBorder}`, color: p.statusColor,
+                  background: p.statusBg, padding: '3px 9px', whiteSpace: 'nowrap', fontWeight: 500,
+                }}>
+                  {p.hasDot && <span style={{ width: 4, height: 4, borderRadius: '50%', background: p.dotColor, display: 'inline-block' }} />}
+                  {p.status}
+                </span>
               </div>
-              <div style={{ fontSize: '0.62rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.75rem', fontWeight: 500 }}>{p.category}</div>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', lineHeight: 1.7, marginBottom: '1.5rem', fontWeight: 400 }}>{p.desc}</p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.2rem' }}>
-                <span style={{ fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.08em', fontWeight: 500 }}>{p.market}</span>
-                <span style={{ fontSize: '0.8rem', color: 'var(--text-3)' }}>→</span>
+              <div style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.85rem', fontWeight: 500 }}>{p.category}</div>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-2)', lineHeight: 1.75, marginBottom: '1.75rem', fontWeight: 300 }}>{p.desc}</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem' }}>
+                <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', letterSpacing: '0.1em', fontWeight: 400 }}>{p.market}</span>
+                <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', letterSpacing: '0.08em', fontWeight: 400 }}>{p.year}</span>
               </div>
             </div>
           ))}
           <Link href="/portfolio" style={{
-            background: 'var(--bg-raised)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            textAlign: 'center',
-            padding: '3rem 2rem',
-            textDecoration: 'none',
-            transition: 'background 0.2s',
-          }}>
-            <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '2.2rem', color: 'var(--text-3)', marginBottom: '1rem', fontWeight: 300 }}>+</div>
-            <div style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1.5rem', fontWeight: 500 }}>More in development</div>
-            <div style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500 }}>View Full Portfolio →</div>
+            background: 'var(--bg-raised)', display: 'flex', alignItems: 'center',
+            justifyContent: 'center', flexDirection: 'column', textAlign: 'center',
+            padding: '3rem 2rem', textDecoration: 'none', transition: 'background 0.2s', minHeight: 240,
+          }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-raised)' }}
+          >
+            <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '2.5rem', color: 'var(--text-3)', marginBottom: '0.75rem', fontWeight: 300, lineHeight: 1 }}>+</div>
+            <div style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1.25rem', fontWeight: 500 }}>More in development</div>
+            <div style={{ fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500 }}>View Full Portfolio →</div>
           </Link>
         </div>
       </div>
@@ -395,16 +474,22 @@ export default function HomePage() {
       <Divider />
 
       {/* ── PHILOSOPHY ───────────────────────────────────────────────────────── */}
-      <section style={{ background: 'var(--bg-raised)' }}>
+      <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)', borderBottom: '1px solid var(--border-w)' }}>
         <div style={S.section}>
           <SectionLabel>Operating Philosophy</SectionLabel>
-          <h2 style={{ ...S.h2, maxWidth: 580 }}>Principles that compound<br />over decades.</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0, marginTop: '3rem' }}>
+          <h2 style={{ ...S.h2, maxWidth: 560 }}>Principles that compound<br />over decades.</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginTop: '3.5rem' }}>
             {philosophy.map(p => (
-              <div key={p.n} style={{ padding: '2.5rem', border: '1px solid var(--border-w)' }}>
-                <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '3rem', fontWeight: 300, color: 'var(--text-3)', lineHeight: 1, marginBottom: '1.5rem' }}>{p.n}</div>
-                <div style={{ fontSize: '1rem', color: 'var(--text)', marginBottom: '0.75rem', fontWeight: 500 }}>{p.title}</div>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 400 }}>{p.desc}</p>
+              <div key={p.n} style={{
+                padding: '2.75rem', background: 'var(--bg-raised)',
+                borderTop: '2px solid transparent', transition: 'border-color 0.25s, background 0.25s',
+              }}
+                onMouseEnter={e => { e.currentTarget.style.borderTopColor = 'var(--gold)'; e.currentTarget.style.background = 'var(--bg-card)' }}
+                onMouseLeave={e => { e.currentTarget.style.borderTopColor = 'transparent'; e.currentTarget.style.background = 'var(--bg-raised)' }}
+              >
+                <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '3.5rem', fontWeight: 300, color: 'var(--text-3)', lineHeight: 1, marginBottom: '1.75rem' }}>{p.n}</div>
+                <div style={{ fontSize: '0.95rem', color: 'var(--text)', marginBottom: '0.85rem', fontWeight: 400 }}>{p.title}</div>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 300 }}>{p.desc}</p>
               </div>
             ))}
           </div>
@@ -415,45 +500,54 @@ export default function HomePage() {
 
       {/* ── FOUNDER LETTER PREVIEW ───────────────────────────────────────────── */}
       <div style={{ borderBottom: '1px solid var(--border-w)' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center', padding: '7rem 3rem' }}>
+        <div style={{ maxWidth: 680, margin: '0 auto', textAlign: 'center', padding: '9rem 3rem' }}>
           <SectionLabel center>Founder Letter</SectionLabel>
           <blockquote style={{
             fontFamily: '"Cormorant Garamond", serif',
-            fontSize: 'clamp(1.5rem, 3vw, 2.3rem)',
-            fontWeight: 400,
+            fontSize: 'clamp(1.6rem, 3.2vw, 2.6rem)',
+            fontWeight: 300,
             fontStyle: 'italic',
             color: 'var(--text)',
-            lineHeight: 1.55,
-            marginBottom: '2.5rem',
+            lineHeight: 1.45,
+            marginBottom: '3rem',
+            letterSpacing: '-0.01em',
           }}>
             "The next generation of great companies will not just build software. They will build systems that improve how people operate, create, communicate, and solve problems in everyday life."
           </blockquote>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
-            <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold-border)' }} />
-            <span style={{ fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-2)', fontWeight: 500 }}>Jeff Yèmalín Bienvenu Honforloco, Founder & CEO</span>
-            <span style={{ display: 'block', width: 32, height: 1, background: 'var(--gold-border)' }} />
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.25rem', marginBottom: '3rem' }}>
+            <span style={{ display: 'block', flex: 1, maxWidth: 48, height: 1, background: 'var(--border-w)' }} />
+            <span style={{ fontSize: '0.7rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-2)', fontWeight: 400 }}>Jeff Yèmalín Bienvenu Honforloco — Founder & CEO</span>
+            <span style={{ display: 'block', flex: 1, maxWidth: 48, height: 1, background: 'var(--border-w)' }} />
           </div>
           <Button href="/vision" variant="secondary">Read Founder Letter →</Button>
         </div>
       </div>
 
       {/* ── FINAL CTA ────────────────────────────────────────────────────────── */}
-      <div style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)', textAlign: 'center', padding: '6rem 3rem' }}>
-        <div style={{ fontSize: '0.62rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '2rem', fontWeight: 500 }}>Tarvico Inc.</div>
-        <h2 style={{
-          fontFamily: '"Cormorant Garamond", serif',
-          fontSize: 'clamp(2.2rem, 4vw, 3.8rem)',
-          fontWeight: 400,
-          color: 'var(--text)',
-          maxWidth: 700,
-          margin: '0 auto 2.5rem',
-          lineHeight: 1.1,
-        }}>
-          Building the infrastructure layer<br />for the AI era.
-        </h2>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Button href="/contact" variant="primary">Get in Touch →</Button>
-          <Button href="/investors" variant="secondary">Investor Relations</Button>
+      <div style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)', textAlign: 'center', padding: '8rem 3rem', position: 'relative', overflow: 'hidden' }}>
+        <div className="hero-grid" style={{ position: 'absolute', inset: 0, opacity: 0.4 }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 60% at 50% 50%, transparent 30%, var(--bg-raised) 80%)' }} />
+        <div style={{ position: 'relative', zIndex: 2 }}>
+          <div style={{ fontSize: '0.58rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '2.5rem', fontWeight: 500 }}>Tarvico Inc. · 2026</div>
+          <h2 style={{
+            fontFamily: '"Cormorant Garamond", serif',
+            fontSize: 'clamp(2.4rem, 4.5vw, 4.2rem)',
+            fontWeight: 400,
+            color: 'var(--text)',
+            maxWidth: 680,
+            margin: '0 auto 1rem',
+            lineHeight: 1.08,
+            letterSpacing: '-0.01em',
+          }}>
+            Building the infrastructure layer<br />for the intelligence economy.
+          </h2>
+          <p style={{ fontSize: '1rem', color: 'var(--text-2)', maxWidth: 440, margin: '0 auto 3.5rem', lineHeight: 1.8, fontWeight: 300 }}>
+            We are at the beginning of a long journey. The work ahead will take decades. We are building with that conviction.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Button href="/contact" variant="primary">Get in Touch →</Button>
+            <Button href="/investors" variant="secondary">Investor Relations</Button>
+          </div>
         </div>
       </div>
     </>

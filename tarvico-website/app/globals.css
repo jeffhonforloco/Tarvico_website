@@ -1,22 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg:          #FAFAF8;
-  --bg-raised:   #F4F1EB;
-  --bg-card:     #EFECE5;
-  --bg-deep:     #E8E4DC;
-  --gold:        #B8902A;
-  --gold-light:  #C9A447;
-  --gold-dim:    rgba(184, 144, 42, 0.6);
-  --gold-glow:   rgba(184, 144, 42, 0.10);
-  --gold-border: rgba(184, 144, 42, 0.30);
-  --text:        #0C0B09;
-  --text-2:      #4A4840;
-  --text-3:      #8A8578;
-  --border-w:    rgba(0, 0, 0, 0.07);
+  /* Backgrounds — dark institutional */
+  --bg:        #07070A;
+  --bg-raised: #0C0C10;
+  --bg-card:   #111116;
+  --bg-deep:   #050508;
+
+  /* Gold — primary accent */
+  --gold:        #C9A447;
+  --gold-light:  #D4B55A;
+  --gold-dim:    rgba(201, 164, 71, 0.55);
+  --gold-glow:   rgba(201, 164, 71, 0.07);
+  --gold-border: rgba(201, 164, 71, 0.20);
+
+  /* Intelligence blue — data / AI system indicators */
+  --blue:        #5B9BD5;
+  --blue-dim:    rgba(91, 155, 213, 0.5);
+  --blue-glow:   rgba(91, 155, 213, 0.07);
+  --blue-border: rgba(91, 155, 213, 0.18);
+
+  /* Operational emerald — system active / live status */
+  --emerald:        #2ECC8A;
+  --emerald-dim:    rgba(46, 204, 138, 0.5);
+  --emerald-glow:   rgba(46, 204, 138, 0.07);
+  --emerald-border: rgba(46, 204, 138, 0.18);
+
+  /* Text hierarchy */
+  --text:     #F0EDE6;
+  --text-2:   #7C7A76;
+  --text-3:   #3C3A36;
+
+  /* Borders */
+  --border-w: rgba(255, 255, 255, 0.06);
+  --border-m: rgba(255, 255, 255, 0.10);
 }
 
 * {
@@ -32,8 +52,8 @@ html {
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: "DM Sans", -apple-system, sans-serif;
-  font-weight: 400;
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -41,74 +61,125 @@ body {
 }
 
 ::selection {
-  background: rgba(184, 144, 42, 0.15);
-  color: var(--gold);
+  background: rgba(201, 164, 71, 0.18);
+  color: var(--gold-light);
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--text-3); }
+::-webkit-scrollbar-thumb { background: var(--text-3); border-radius: 2px; }
 
-/* Hero grid background */
+/* ── Hero grid ────────────────────────────────────────────────────────────── */
 .hero-grid {
   background-image:
-    linear-gradient(rgba(0,0,0,0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.045) 1px, transparent 1px);
-  background-size: 80px 80px;
-  animation: gridDrift 20s linear infinite;
-  opacity: 1;
+    linear-gradient(rgba(255,255,255,0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.026) 1px, transparent 1px);
+  background-size: 72px 72px;
+  animation: gridDrift 30s linear infinite;
+}
+
+.hero-grid-fine {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 @keyframes gridDrift {
   from { background-position: 0 0; }
-  to   { background-position: 80px 80px; }
+  to   { background-position: 72px 72px; }
 }
 
-/* Fade-up animation utilities */
+/* ── Fade animations ──────────────────────────────────────────────────────── */
 .animate-fade-up {
-  animation: fadeUp 0.7s ease forwards;
+  opacity: 0;
+  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.7s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .delay-100 { animation-delay: 100ms; }
 .delay-250 { animation-delay: 250ms; }
 .delay-400 { animation-delay: 400ms; }
 .delay-550 { animation-delay: 550ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-900 { animation-delay: 900ms; }
 
-/* Pulse glow */
+/* ── Pulse animations ─────────────────────────────────────────────────────── */
 .animate-pulse-slow {
-  animation: pulseSlow 3s ease-in-out infinite;
+  animation: pulseSlow 5s ease-in-out infinite;
 }
 @keyframes pulseSlow {
-  0%,100% { opacity: 0.5; }
-  50%      { opacity: 1; }
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 0.8; }
 }
 
-/* Section label rule */
+.animate-pulse-dot {
+  animation: pulseDot 2.4s ease-in-out infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(46,204,138,0.6); }
+  60%       { box-shadow: 0 0 0 5px rgba(46,204,138,0); }
+}
+
+.animate-pulse-gold {
+  animation: pulseGold 2.4s ease-in-out infinite;
+}
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,164,71,0.6); }
+  60%       { box-shadow: 0 0 0 5px rgba(201,164,71,0); }
+}
+
+/* ── Scroll indicator ─────────────────────────────────────────────────────── */
+.animate-scroll-line {
+  animation: scrollLine 2.4s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%   { opacity: 0; height: 0; }
+  30%  { opacity: 1; height: 48px; }
+  70%  { opacity: 1; height: 48px; }
+  100% { opacity: 0; height: 0; }
+}
+
+/* ── Section label ────────────────────────────────────────────────────────── */
 .section-label-line::before {
   content: '';
   display: inline-block;
-  width: 24px;
+  width: 20px;
   height: 1px;
   background: var(--gold);
   vertical-align: middle;
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
-/* Org chart */
+/* ── Grid separator ───────────────────────────────────────────────────────── */
+.grid-sep {
+  gap: 1px;
+  background: var(--border-w);
+}
+.grid-sep > * { background: var(--bg); }
+.grid-sep-raised > * { background: var(--bg-raised); }
+
+/* ── Org chart ────────────────────────────────────────────────────────────── */
 .org-item::before {
   content: '├─ ';
   color: var(--text-3);
 }
 
-/* Thin grid separator */
+/* ── Thin grid separator (legacy) ────────────────────────────────────────── */
 .grid-separator {
-  gap: 1.5px;
+  gap: 1px;
   background: var(--border-w);
 }
-.grid-separator > * {
-  background: var(--bg);
-}
+.grid-separator > * { background: var(--bg); }
