@@ -29,12 +29,13 @@ const S = {
 const portfolio = [
   {
     name: 'Vytre AWOS',
+    url: 'https://www.vytre.io',
     status: 'Flagship',
     statusColor: 'var(--gold)',
     statusBg: 'var(--gold-glow)',
     statusBorder: 'var(--gold-border)',
-    category: 'AI Workforce Infrastructure',
-    desc: 'The AI operating layer for enterprise. Deploy, orchestrate, and scale AI workers across every business function with intelligence at the core.',
+    category: 'Workforce Infrastructure · Enterprise',
+    desc: 'The intelligent operating layer for enterprise workforce management. Deploy, orchestrate, and scale AI-powered workers across every business function at institutional scale.',
     market: 'Enterprise · SaaS',
     year: '2026',
     hasDot: true,
@@ -42,12 +43,13 @@ const portfolio = [
   },
   {
     name: 'SireIQ',
+    url: 'https://www.sireiq.com',
     status: 'Incubation',
     statusColor: 'var(--gold-dim)',
     statusBg: 'transparent',
     statusBorder: 'rgba(201,164,71,0.15)',
-    category: 'AI Assistant · Productivity',
-    desc: 'An intelligent AI assistant for chat, content creation, and workflow automation. Designed to elevate individual and team productivity at scale.',
+    category: 'Intelligence Assistant · Productivity',
+    desc: 'An intelligent assistant for chat, content creation, and workflow automation. Designed to elevate individual and team productivity at scale.',
     market: 'SMB · Consumer',
     year: '2025',
     hasDot: false,
@@ -55,12 +57,13 @@ const portfolio = [
   },
   {
     name: 'SEOAgentPro',
+    url: 'https://www.seoagentpro.com',
     status: 'Incubation',
     statusColor: 'var(--gold-dim)',
     statusBg: 'transparent',
     statusBorder: 'rgba(201,164,71,0.15)',
-    category: 'AI Search · Digital Marketing',
-    desc: 'Autonomous AI-driven SEO intelligence. Content strategy, optimization, and execution powered by real-time data and machine learning.',
+    category: 'Search Intelligence · Digital Growth',
+    desc: 'Autonomous SEO intelligence platform. Content strategy, optimization, and execution powered by real-time data and machine-driven analysis.',
     market: 'Agencies · Growth',
     year: '2025',
     hasDot: false,
@@ -68,12 +71,13 @@ const portfolio = [
   },
   {
     name: 'Fycra',
+    url: 'https://www.fycra.com',
     status: 'Stealth',
     statusColor: 'var(--text-3)',
     statusBg: 'transparent',
     statusBorder: 'var(--border-w)',
     category: 'Developer Tools · Code Platform',
-    desc: 'A next-generation AI-native code platform for modern development teams. Intelligent assistance, automated review, and accelerated delivery.',
+    desc: 'A next-generation code platform for modern development teams. Intelligent assistance, automated review, and accelerated delivery at scale.',
     market: 'Developers · Teams',
     year: '2025',
     hasDot: false,
@@ -81,12 +85,13 @@ const portfolio = [
   },
   {
     name: 'Fycera',
+    url: 'https://www.fycera.com',
     status: 'Stealth',
     statusColor: 'var(--text-3)',
     statusBg: 'transparent',
     statusBorder: 'var(--border-w)',
-    category: 'AI Creative · Content Creation',
-    desc: 'Intelligent content creation infrastructure. AI-native tools for creators, brands, and media operations at scale.',
+    category: 'Creative Infrastructure · Content',
+    desc: 'Intelligent content creation infrastructure for creators, brands, and media operations. Professional-grade tools built for scale.',
     market: 'Creators · Media',
     year: '2025',
     hasDot: false,
@@ -95,12 +100,12 @@ const portfolio = [
 ]
 
 const philosophy = [
-  { n: '01', title: 'Long-Term Over Short-Term', desc: 'We measure success in decades, not quarters. Every strategic decision is evaluated on its long-term impact on portfolio value and compounding moats.' },
+  { n: '01', title: 'Long-Term Over Short-Term', desc: 'We measure success in decades, not quarters. Every strategic decision is evaluated on its long-term impact on portfolio value and compounding competitive moats.' },
   { n: '02', title: 'Infrastructure Before Features', desc: 'We build foundations first. Deep infrastructure creates lasting defensibility. Features are temporary; architecture is permanent.' },
-  { n: '03', title: 'AI as Operating Layer', desc: 'Artificial intelligence is not a product feature at Tarvico. It is the fundamental operating system of every company, team, and workflow we build.' },
-  { n: '04', title: 'Elite, Lean Teams', desc: 'Small groups of exceptional people with AI leverage outperform large organizations. We maximize output per person and protect operational agility.' },
+  { n: '03', title: 'Intelligence as Leverage', desc: 'Technology is not a feature at Tarvico — it is the fundamental operating layer of every company, team, and workflow we build and invest in.' },
+  { n: '04', title: 'Elite, Lean Teams', desc: 'Small groups of exceptional people with technological leverage outperform large organizations. We maximize output per person and protect operational agility.' },
   { n: '05', title: 'Sustainable Capital Discipline', desc: 'Growth should be earned, not bought. We allocate capital toward compounding returns and sustainable unit economics from the earliest stage.' },
-  { n: '06', title: 'Focused Execution', desc: 'Strategy without execution is fiction. We operate with relentless focus — every initiative is evaluated by its ability to compound portfolio value.' },
+  { n: '06', title: 'Focused Execution', desc: 'Strategy without execution is fiction. We operate with relentless focus — every initiative is evaluated by its ability to compound long-term portfolio value.' },
 ]
 
 export default function HomePage() {
@@ -185,7 +190,7 @@ export default function HomePage() {
                 marginBottom: '3.5rem',
                 fontWeight: 300,
               }}>
-                Tarvico Inc. is a technology holding company that builds, launches, and scales AI-native software businesses across automation, intelligence, and digital infrastructure.
+                Tarvico Inc. is a private technology holding company that builds, acquires, and operates a portfolio of software and technology ventures — engineered for long-term value, global scale, and institutional permanence.
               </p>
 
               <div className="animate-fade-up delay-550" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -263,11 +268,11 @@ export default function HomePage() {
           <div>
             <SectionLabel>What We Are</SectionLabel>
             <h2 style={{ ...S.h2, maxWidth: 600 }}>
-              Not a startup.<br />An operating system<br />
-              for <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>the intelligence era.</em>
+              Not a startup.<br />An institution<br />
+              for <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>the next economy.</em>
             </h2>
             <p style={{ ...S.sub, marginBottom: '1.5rem' }}>
-              Tarvico Inc. is an <strong style={{ color: 'var(--text)', fontWeight: 400 }}>AI-native holding company</strong> that designs, builds, and operates a portfolio of software and AI ventures. We are not a single-product startup — we are institutional infrastructure for the next generation of intelligent systems.
+              Tarvico Inc. is a <strong style={{ color: 'var(--text)', fontWeight: 400 }}>private technology holding company</strong> that designs, builds, and operates a diversified portfolio of software and technology ventures. We are not a single-product startup — we are institutional infrastructure for the next era of human and technological progress.
             </p>
             <p style={{ ...S.sub, marginBottom: '1.5rem' }}>
               Our model combines the <strong style={{ color: 'var(--text)', fontWeight: 400 }}>capital discipline of a holding company</strong> with the velocity of a product studio. We incubate ideas internally, build with lean elite teams, and scale through operational leverage rather than headcount.
@@ -281,9 +286,9 @@ export default function HomePage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border-w)' }}>
             {[
               { t: 'Incubation First', d: 'Ideas are developed internally before any external launch. We validate with rigor and build with conviction.' },
-              { t: 'AI-Native Architecture', d: 'Every product is designed around intelligence from day one — not retrofitted. AI is the operating layer, not a feature.' },
+              { t: 'Intelligence-First Architecture', d: 'Every product is designed around intelligence from day one — not retrofitted. Technology is the operating layer, not a feature.' },
               { t: 'Long-Term Capital Strategy', d: 'We build for decades, not quarters. Patient ownership, focused reinvestment, and compounding moats define our capital approach.' },
-              { t: 'Operational Leverage', d: 'Small, elite teams with asymmetric output. AI multiplies human capability across the entire portfolio simultaneously.' },
+              { t: 'Operational Leverage', d: 'Small, elite teams with asymmetric output. Technology multiplies human capability across the entire portfolio simultaneously.' },
             ].map(p => (
               <div key={p.t} style={{
                 borderLeft: '2px solid var(--gold-border)',
@@ -432,7 +437,7 @@ export default function HomePage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', background: 'var(--border-w)' }}>
           {portfolio.map(p => (
             <div key={p.name}
-              style={{ background: 'var(--bg)', padding: '2.5rem', transition: 'background 0.25s', cursor: 'default' }}
+              style={{ background: 'var(--bg)', padding: '2.5rem', transition: 'background 0.25s', display: 'flex', flexDirection: 'column' }}
               onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)' }}
               onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg)' }}
             >
@@ -449,10 +454,16 @@ export default function HomePage() {
                 </span>
               </div>
               <div style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.85rem', fontWeight: 500 }}>{p.category}</div>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-2)', lineHeight: 1.75, marginBottom: '1.75rem', fontWeight: 300 }}>{p.desc}</p>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-2)', lineHeight: 1.75, marginBottom: '1.75rem', fontWeight: 300, flex: 1 }}>{p.desc}</p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem' }}>
                 <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', letterSpacing: '0.1em', fontWeight: 400 }}>{p.market}</span>
-                <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', letterSpacing: '0.08em', fontWeight: 400 }}>{p.year}</span>
+                <a href={p.url} target="_blank" rel="noopener noreferrer" style={{
+                  fontSize: '0.6rem', color: 'var(--gold)', letterSpacing: '0.08em',
+                  fontWeight: 500, textDecoration: 'none', transition: 'opacity 0.2s',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.opacity = '0.7' }}
+                  onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
+                >Visit →</a>
               </div>
             </div>
           ))}
@@ -539,7 +550,7 @@ export default function HomePage() {
             lineHeight: 1.08,
             letterSpacing: '-0.01em',
           }}>
-            Building the infrastructure layer<br />for the intelligence economy.
+            Building enduring technology companies<br />for the next global economy.
           </h2>
           <p style={{ fontSize: '1rem', color: 'var(--text-2)', maxWidth: 440, margin: '0 auto 3.5rem', lineHeight: 1.8, fontWeight: 300 }}>
             We are at the beginning of a long journey. The work ahead will take decades. We are building with that conviction.

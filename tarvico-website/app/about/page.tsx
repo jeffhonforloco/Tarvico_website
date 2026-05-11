@@ -3,7 +3,7 @@
 import { PageHero, SectionLabel, Divider } from '@/components/ui'
 
 const timeline = [
-  { year: '2026', title: 'Tarvico Inc. Founded', desc: 'Tarvico Inc. is established as an AI-native technology holding company. The initial portfolio of six ventures is defined, and development of the flagship product begins in earnest.', accent: true },
+  { year: '2026', title: 'Tarvico Inc. Founded', desc: 'Tarvico Inc. is established as a private technology holding company. The initial portfolio of six ventures is defined, and development of the flagship product begins in earnest.', accent: true },
   { year: '2026', title: 'Vytre AWOS Development Begins', desc: 'The flagship AI Workforce Operating System enters active development. Architecture design, core agent orchestration engine, and enterprise integration framework initiated.', accent: true },
   { year: '2025', title: 'Portfolio Incubation Phase', desc: 'SireIQ, SEOAgentPro, Fycra, and Fycera enter incubation phase. Product research, market validation, and initial prototyping across all four ventures.', accent: false },
   { year: '2026+', title: 'Flagship Launch · Growth Phase', desc: 'Vytre AWOS targets public launch and enterprise customer acquisition. Portfolio companies advance from incubation toward independent product development and market entry.', accent: false },
@@ -42,7 +42,7 @@ export default function AboutPage() {
           paddingLeft: '2.5rem',
           letterSpacing: '-0.01em',
         }}>
-          "We exist to build AI-native companies that give people and organizations more leverage over their work, creativity, and potential."
+          "We exist to build companies and systems that give people and organizations more leverage over their work, creativity, and potential — at any scale, in any domain."
         </blockquote>
 
         <SectionLabel>Mission & Philosophy</SectionLabel>
@@ -50,9 +50,9 @@ export default function AboutPage() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', marginTop: '2.5rem', marginBottom: '6rem' }}>
           <div>
             {[
-              'Tarvico was founded on a simple thesis: the next wave of transformative companies will be built by small, focused teams who combine creativity with AI leverage to accomplish what once required enormous organizations.',
-              'We build AI-native products — not software with AI features bolted on, but systems where intelligence is the fundamental operating layer. Every workflow, every product decision, every company we launch is designed around this principle.',
-              'Our ambition is to become a diversified technology company that develops products, platforms, and tools that people and businesses genuinely rely on — built for the long term, designed with care, operated with discipline.',
+              'Tarvico was founded on a simple thesis: the next wave of transformative companies will be built by small, focused teams who combine creativity with technological leverage to accomplish what once required enormous organizations.',
+              'We build products and platforms where intelligence is the fundamental operating layer — not a feature bolted on, but the architecture underneath. Every workflow, every product decision, every company we launch is designed around this principle.',
+              'Our ambition is to become a diversified, enduring technology company that develops products, platforms, and tools that people and businesses genuinely rely on — built for the long term, designed with care, operated with discipline.',
             ].map((p, i) => (
               <p key={i} style={{ fontSize: '1rem', color: 'var(--text-2)', lineHeight: 1.85, fontWeight: 300, marginBottom: '1.5rem' }}>{p}</p>
             ))}
