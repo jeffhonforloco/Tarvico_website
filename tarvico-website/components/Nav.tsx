@@ -84,7 +84,7 @@ export default function Nav() {
           alt="Tarvico Inc. — A Private Technology Holding Company"
           width={240}
           height={100}
-          style={{ objectFit: 'contain', height: 66, width: 'auto', filter: theme === 'light' ? 'invert(1)' : 'none', transition: 'filter 0.4s ease' }}
+          style={{ objectFit: 'contain', height: 66, width: 'auto', filter: theme === 'light' ? 'brightness(0)' : 'none', transition: 'filter 0.4s ease' }}
           priority
         />
       </Link>
@@ -133,13 +133,10 @@ export default function Nav() {
             border: '1px solid var(--border-m)',
             color: 'var(--text-2)',
             cursor: 'pointer',
-            padding: '6px 14px',
-            fontSize: '0.62rem',
-            letterSpacing: '0.18em',
-            textTransform: 'uppercase',
-            fontWeight: 500,
+            padding: '6px 10px',
+            fontSize: '1rem',
+            lineHeight: 1,
             transition: 'border-color 0.2s, color 0.2s',
-            fontFamily: '"DM Sans", sans-serif',
           }}
           onMouseEnter={e => {
             e.currentTarget.style.borderColor = 'var(--gold-border)'
@@ -150,7 +147,7 @@ export default function Nav() {
             e.currentTarget.style.color = 'var(--text-2)'
           }}
         >
-          {theme === 'dark' ? 'Light' : 'Dark'}
+          {theme === 'dark' ? '☀' : '☾'}
         </button>
 
         <Link
@@ -179,22 +176,39 @@ export default function Nav() {
         </Link>
       </div>
 
-      <button
-        onClick={() => setOpen(!open)}
-        className="md:hidden"
-        style={{
-          background: 'none',
-          border: 'none',
-          color: 'var(--text-2)',
-          cursor: 'pointer',
-          fontSize: '1.2rem',
-          padding: '4px',
-          lineHeight: 1,
-        }}
-        aria-label="Toggle menu"
-      >
-        {open ? '✕' : '☰'}
-      </button>
+      <div className="md:hidden" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <button
+          onClick={toggleTheme}
+          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: 'var(--text-2)',
+            cursor: 'pointer',
+            fontSize: '1rem',
+            padding: '4px',
+            lineHeight: 1,
+          }}
+        >
+          {theme === 'dark' ? '☀' : '☾'}
+        </button>
+
+        <button
+          onClick={() => setOpen(!open)}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: 'var(--text-2)',
+            cursor: 'pointer',
+            fontSize: '1.2rem',
+            padding: '4px',
+            lineHeight: 1,
+          }}
+          aria-label="Toggle menu"
+        >
+          {open ? '✕' : '☰'}
+        </button>
+      </div>
 
     </nav>
 
@@ -254,27 +268,6 @@ export default function Nav() {
           <span style={{ display: 'block', width: 24, height: 1, background: 'var(--gold)' }} />
           Contact Tarvico
         </Link>
-
-        <button
-          onClick={toggleTheme}
-          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-          style={{
-            marginTop: '2rem',
-            background: 'none',
-            border: '1px solid var(--border-m)',
-            color: 'var(--text-2)',
-            cursor: 'pointer',
-            padding: '10px 20px',
-            fontSize: '0.65rem',
-            letterSpacing: '0.2em',
-            textTransform: 'uppercase',
-            fontWeight: 500,
-            alignSelf: 'flex-start',
-            fontFamily: '"DM Sans", sans-serif',
-          }}
-        >
-          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-        </button>
       </div>,
       document.body
     )}
