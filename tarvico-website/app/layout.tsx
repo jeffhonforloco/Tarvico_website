@@ -37,6 +37,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'Jeff Honforloco', url: 'https://www.tarvico.com' }],
   creator: 'Tarvico Inc.',
   publisher: 'Tarvico Inc.',
+  icons: {
+    icon: '/logo-icon.png',
+    shortcut: '/logo-icon.png',
+    apple: '/logo-icon.png',
+  },
   robots: {
     index: true,
     follow: true,

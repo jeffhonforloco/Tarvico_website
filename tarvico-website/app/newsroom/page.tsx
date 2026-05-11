@@ -6,8 +6,8 @@ const news = [
   {
     featured: true,
     category: 'Company · Announcement',
-    title: 'Tarvico Inc. Launches — A New AI-Native Technology Holding Company',
-    excerpt: 'Tarvico Inc. announces its formation as an AI-native technology holding company, with a portfolio of six ventures in development and a flagship product — Vytre AWOS, the AI Workforce Operating System — targeting enterprise launch in 2026.',
+    title: 'Tarvico Inc. Launches — A Private Technology Holding Company',
+    excerpt: 'Tarvico Inc. announces its formation as a private technology holding company, with a portfolio of six ventures in development and a flagship product — Vytre AWOS, the AI Workforce Operating System — targeting enterprise launch in 2026.',
     date: 'Q1 2026',
     readTime: '4 min read',
   },
