@@ -71,24 +71,15 @@ export default function Nav() {
         : '1px solid transparent',
       transition: 'background 0.4s ease, border-color 0.4s ease',
     }}>
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', gap: '0.45rem' }}>
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <Image
-          src="/logo-icon.png"
+          src="/logo-transparent.png"
           alt="Tarvico Inc. — A Private Technology Holding Company"
-          width={80}
-          height={80}
-          style={{ objectFit: 'contain', height: 64, width: 64 }}
+          width={140}
+          height={58}
+          style={{ objectFit: 'contain', height: 42, width: 'auto' }}
           priority
         />
-        <span style={{
-          fontFamily: '"Cormorant Garamond", serif',
-          fontSize: '1.05rem',
-          fontWeight: 400,
-          letterSpacing: '0.22em',
-          color: 'var(--text)',
-          textTransform: 'uppercase',
-          lineHeight: 1,
-        }}>Tarvico</span>
       </Link>
 
       <div className="hidden md:flex" style={{ gap: '2.75rem', alignItems: 'center' }}>
