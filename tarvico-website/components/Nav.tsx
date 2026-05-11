@@ -32,7 +32,7 @@ export default function Nav() {
       left: 0,
       right: 0,
       zIndex: 100,
-      height: 72,
+      height: 80,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -51,9 +51,9 @@ export default function Nav() {
         <Image
           src="/logo-icon.png"
           alt="Tarvico Inc. — A Private Technology Holding Company"
-          width={52}
-          height={52}
-          style={{ objectFit: 'contain', height: 48, width: 48 }}
+          width={80}
+          height={80}
+          style={{ objectFit: 'contain', height: 64, width: 64 }}
           priority
         />
         <span style={{
@@ -67,7 +67,7 @@ export default function Nav() {
         }}>Tarvico</span>
       </Link>
 
-      <div className="hidden md:flex" style={{ display: 'flex', gap: '2.75rem', alignItems: 'center' }}>
+      <div className="hidden md:flex" style={{ gap: '2.75rem', alignItems: 'center' }}>
         {links.map(({ href, label }) => {
           const active = pathname === href
           return (
@@ -148,7 +148,7 @@ export default function Nav() {
       {open && (
         <div style={{
           position: 'fixed',
-          top: 72,
+          top: 80,
           left: 0,
           right: 0,
           bottom: 0,
