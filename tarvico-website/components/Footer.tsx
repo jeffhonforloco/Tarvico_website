@@ -54,11 +54,11 @@ export default function Footer() {
           <div>
             <div style={{ marginBottom: '1.5rem' }}>
               <Image
-                src="/logo-name.png"
+                src="/logo-transparent.png"
                 alt="Tarvico"
                 width={160}
                 height={67}
-                style={{ objectFit: 'contain', mixBlendMode: 'screen', display: 'block' }}
+                style={{ objectFit: 'contain', display: 'block' }}
               />
             </div>
             <p style={{
@@ -147,11 +147,11 @@ export default function Footer() {
         <span style={{ fontSize: '0.7rem', color: 'var(--text-3)', fontWeight: 300, display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
           © {new Date().getFullYear()}
           <Image
-            src="/logo-name.png"
+            src="/logo-transparent.png"
             alt="Tarvico"
             width={60}
             height={25}
-            style={{ objectFit: 'contain', mixBlendMode: 'screen', display: 'inline-block', verticalAlign: 'middle' }}
+            style={{ objectFit: 'contain', display: 'inline-block', verticalAlign: 'middle' }}
           />
           Inc. — Delaware, United States. All rights reserved.
         </span>
