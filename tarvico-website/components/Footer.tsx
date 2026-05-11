@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 
 const cols = [
   {
@@ -39,6 +40,17 @@ const cols = [
 ]
 
 export default function Footer() {
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
+
+  useEffect(() => {
+    const el = document.documentElement
+    const sync = () => setTheme((el.getAttribute('data-theme') as 'dark' | 'light') || 'dark')
+    sync()
+    const observer = new MutationObserver(sync)
+    observer.observe(el, { attributes: true, attributeFilter: ['data-theme'] })
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <footer style={{
       background: 'var(--bg-raised)',
@@ -54,9 +66,9 @@ export default function Footer() {
           <div>
             <div style={{ marginBottom: '0.75rem' }}>
               <Image
-                src="/logo-transparent.png"
+                src={theme === 'light' ? '/logo-dark.png' : '/logo-transparent.png'}
                 alt="Tarvico"
-                width={130}
+                width={theme === 'light' ? 88 : 130}
                 height={54}
                 style={{ objectFit: 'contain', display: 'block' }}
               />
