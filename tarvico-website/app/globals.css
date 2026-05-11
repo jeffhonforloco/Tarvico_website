@@ -96,8 +96,8 @@ body {
   animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .animate-fade-in {
@@ -239,6 +239,54 @@ body {
 @keyframes slideLeft {
   from { opacity: 0; transform: translateX(-24px); }
   to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Text shimmer — gold light sweep on italic accents ───────────────────── */
+@keyframes textShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.animate-text-shimmer {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 38%, #f5e4a8 50%, var(--gold-light) 62%, var(--gold) 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 6s linear infinite;
+  display: inline;
+  font-style: italic;
+}
+
+/* ── Counter reveal — number count-up fade ───────────────────────────────── */
+@keyframes counterReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-counter-reveal {
+  animation: counterReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Card lift — hover elevation ─────────────────────────────────────────── */
+.card-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, border-color 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ── Progress bar — animated width reveal ────────────────────────────────── */
+.bar-reveal {
+  transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Prefers reduced motion — disable all animations ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ── Mobile Responsive ────────────────────────────────────────────────────── */

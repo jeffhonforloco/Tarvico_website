@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Button, SectionLabel, Divider, FadeUp } from '@/components/ui'
+import { Button, SectionLabel, Divider, FadeUp, AnimatedBar, AnimatedNumber } from '@/components/ui'
 
 const S = {
   section: {
@@ -178,7 +178,7 @@ export default function HomePage() {
               }}>
                 Building the<br />
                 intelligence<br />
-                <em style={{ fontStyle: 'italic', color: 'var(--gold)', fontWeight: 300 }}>infrastructure</em><br />
+                <em className="animate-text-shimmer" style={{ fontWeight: 300 }}>infrastructure</em><br />
                 for tomorrow.
               </h1>
 
@@ -208,11 +208,11 @@ export default function HomePage() {
               minWidth: 180,
             }}>
               {[
-                { n: '6', l: 'Ventures in Portfolio' },
-                { n: '2026', l: 'Founded' },
-                { n: '∞', l: 'Long-Term Horizon' },
+                { n: 6,    sym: false, l: 'Ventures in Portfolio' },
+                { n: 2026, sym: false, l: 'Founded' },
+                { n: '∞',  sym: true,  l: 'Long-Term Horizon' },
               ].map(s => (
-                <div key={s.n}>
+                <div key={String(s.n)}>
                   <div style={{
                     fontFamily: '"Cormorant Garamond", serif',
                     fontSize: 'clamp(2rem, 3.5vw, 3rem)',
@@ -220,7 +220,9 @@ export default function HomePage() {
                     color: 'var(--text)',
                     lineHeight: 1,
                     letterSpacing: '-0.02em',
-                  }}>{s.n}</div>
+                  }}>
+                    <AnimatedNumber value={s.n} />
+                  </div>
                   <div style={{
                     fontSize: '0.58rem',
                     letterSpacing: '0.18em',
@@ -269,7 +271,7 @@ export default function HomePage() {
             <SectionLabel>What We Are</SectionLabel>
             <h2 style={{ ...S.h2, maxWidth: 600 }}>
               Not a startup.<br />An institution<br />
-              for <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>the next economy.</em>
+              for <em className="animate-text-shimmer">the next economy.</em>
             </h2>
             <p style={{ ...S.sub, marginBottom: '1.5rem' }}>
               Tarvico Inc. is a <strong style={{ color: 'var(--text)', fontWeight: 400 }}>private technology holding company</strong> that designs, builds, and operates a diversified portfolio of software and technology ventures. We are not a single-product startup — we are institutional infrastructure for the next era of human and technological progress.
@@ -384,9 +386,7 @@ export default function HomePage() {
                 ].map(row => (
                   <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '0.6rem' }}>
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-3)', width: 68, letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 500 }}>{row.label}</div>
-                    <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: `${row.pct}%`, background: row.color, opacity: 0.75 }} />
-                    </div>
+                    <AnimatedBar pct={row.pct} color={row.color} />
                     <div style={{ fontSize: '0.6rem', color: 'var(--text-2)', minWidth: 28, textAlign: 'right', fontWeight: 400 }}>{row.pct}%</div>
                   </div>
                 ))}
@@ -440,7 +440,8 @@ export default function HomePage() {
           {portfolio.map((p, i) => (
             <FadeUp key={p.name} delay={i * 80}>
             <div key={p.name}
-              style={{ background: 'var(--bg)', padding: '2.5rem', transition: 'background 0.25s', display: 'flex', flexDirection: 'column' }}
+              className="card-lift"
+              style={{ background: 'var(--bg)', padding: '2.5rem', display: 'flex', flexDirection: 'column' }}
               onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)' }}
               onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg)' }}
             >
@@ -498,10 +499,12 @@ export default function HomePage() {
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginTop: '3.5rem' }}>
             {philosophy.map((p, i) => (
               <FadeUp key={p.n} delay={i * 70}>
-              <div key={p.n} style={{
-                padding: '2.75rem', background: 'var(--bg-raised)',
-                borderTop: '2px solid transparent', transition: 'border-color 0.25s, background 0.25s',
-              }}
+              <div key={p.n}
+                className="card-lift"
+                style={{
+                  padding: '2.75rem', background: 'var(--bg-raised)',
+                  borderTop: '2px solid transparent', transition: 'border-color 0.25s, background 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1)',
+                }}
                 onMouseEnter={e => { e.currentTarget.style.borderTopColor = 'var(--gold)'; e.currentTarget.style.background = 'var(--bg-card)' }}
                 onMouseLeave={e => { e.currentTarget.style.borderTopColor = 'transparent'; e.currentTarget.style.background = 'var(--bg-raised)' }}
               >
