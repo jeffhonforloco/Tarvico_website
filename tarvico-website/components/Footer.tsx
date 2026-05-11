@@ -52,12 +52,12 @@ export default function Footer() {
           marginBottom: '4rem',
         }}>
           <div>
-            <div style={{ marginBottom: '1.5rem' }}>
+            <div style={{ marginBottom: '0.75rem' }}>
               <Image
                 src="/logo-transparent.png"
                 alt="Tarvico"
-                width={220}
-                height={92}
+                width={130}
+                height={54}
                 style={{ objectFit: 'contain', display: 'block' }}
               />
             </div>
