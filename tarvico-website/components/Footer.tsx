@@ -52,23 +52,14 @@ export default function Footer() {
           marginBottom: '4rem',
         }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '1.5rem' }}>
+            <div style={{ marginBottom: '1.5rem' }}>
               <Image
-                src="/logo-icon.png"
+                src="/logo-name.png"
                 alt="Tarvico"
-                width={32}
-                height={32}
-                style={{ objectFit: 'contain', height: 30, width: 30 }}
+                width={160}
+                height={67}
+                style={{ objectFit: 'contain', mixBlendMode: 'screen', display: 'block' }}
               />
-              <span style={{
-                fontFamily: '"Cormorant Garamond", serif',
-                fontSize: '0.95rem',
-                fontWeight: 400,
-                letterSpacing: '0.22em',
-                color: 'var(--text)',
-                textTransform: 'uppercase',
-                lineHeight: 1,
-              }}>Tarvico</span>
             </div>
             <p style={{
               fontSize: '0.82rem',
@@ -153,8 +144,16 @@ export default function Footer() {
         flexWrap: 'wrap',
         gap: '1rem',
       }}>
-        <span style={{ fontSize: '0.7rem', color: 'var(--text-3)', fontWeight: 300 }}>
-          © {new Date().getFullYear()} Tarvico Inc. — Delaware, United States. All rights reserved.
+        <span style={{ fontSize: '0.7rem', color: 'var(--text-3)', fontWeight: 300, display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
+          © {new Date().getFullYear()}
+          <Image
+            src="/logo-name.png"
+            alt="Tarvico"
+            width={60}
+            height={25}
+            style={{ objectFit: 'contain', mixBlendMode: 'screen', display: 'inline-block', verticalAlign: 'middle' }}
+          />
+          Inc. — Delaware, United States. All rights reserved.
         </span>
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           {['Privacy', 'Terms', 'Legal'].map(item => (
