@@ -5,11 +5,12 @@ import { PageHero, Button, SectionLabel, Divider } from '@/components/ui'
 const companies = [
   {
     name: 'SireIQ',
+    url: 'https://www.sireiq.com',
     status: 'Incubation',
     statusColor: 'var(--gold-dim)',
     statusBorder: 'rgba(201,164,71,0.15)',
-    category: 'AI Assistant · Chat & Content Workflow',
-    desc: 'An intelligent AI assistant engineered for chat, content creation, and workflow automation. SireIQ elevates how individuals and teams interact with information, generate output, and manage daily operations with adaptive intelligence.',
+    category: 'Intelligence Assistant · Chat & Workflow',
+    desc: 'An intelligent assistant engineered for chat, content creation, and workflow automation. SireIQ elevates how individuals and teams interact with information, generate output, and manage daily operations with adaptive intelligence.',
     roadmap: 'Browser extension → Web app → Enterprise API',
     market: 'SMB · Consumer · Teams',
     phase: 'Incubation Phase II',
@@ -17,11 +18,12 @@ const companies = [
   },
   {
     name: 'SEOAgentPro',
+    url: 'https://www.seoagentpro.com',
     status: 'Incubation',
     statusColor: 'var(--gold-dim)',
     statusBorder: 'rgba(201,164,71,0.15)',
-    category: 'AI Search Intelligence · Growth',
-    desc: 'Autonomous AI-driven SEO intelligence platform. Real-time analysis, content strategy generation, competitive monitoring, and autonomous optimization — all managed by AI agents without manual intervention.',
+    category: 'Search Intelligence · Digital Growth',
+    desc: 'Autonomous SEO intelligence platform. Real-time analysis, content strategy generation, competitive monitoring, and autonomous optimization — managed without manual intervention.',
     roadmap: 'Core analytics → Agent automation → Agency platform',
     market: 'Agencies · E-Commerce · B2B',
     phase: 'Incubation Phase I',
@@ -29,11 +31,12 @@ const companies = [
   },
   {
     name: 'Fycra',
+    url: 'https://www.fycra.com',
     status: 'Stealth',
     statusColor: 'var(--text-3)',
     statusBorder: 'var(--border-w)',
-    category: 'Developer Platform · AI Code Infrastructure',
-    desc: 'A next-generation AI-native code platform designed for modern development teams. Intelligent code assistance, automated review, workflow acceleration, and team collaboration — rebuilt from the ground up for the AI era.',
+    category: 'Developer Platform · Code Infrastructure',
+    desc: 'A next-generation code platform designed for modern development teams. Intelligent code assistance, automated review, workflow acceleration, and team collaboration — rebuilt from the ground up for the modern era.',
     roadmap: 'Internal development · Stealth mode',
     market: 'Developers · Engineering Teams',
     phase: 'Stealth',
@@ -41,11 +44,12 @@ const companies = [
   },
   {
     name: 'Fycera',
+    url: 'https://www.fycera.com',
     status: 'Stealth',
     statusColor: 'var(--text-3)',
     statusBorder: 'var(--border-w)',
-    category: 'AI Creative Infrastructure · Content',
-    desc: 'AI-native content creation infrastructure for creators, brands, and media operations. Intelligent generation, brand consistency, workflow automation, and creative scaling tools designed for professional content operations at speed.',
+    category: 'Creative Infrastructure · Content',
+    desc: 'Content creation infrastructure for creators, brands, and media operations. Intelligent generation, brand consistency, workflow automation, and creative scaling tools designed for professional content operations at speed.',
     roadmap: 'Concept validation · Design phase',
     market: 'Creators · Brands · Media',
     phase: 'Stealth',
@@ -67,7 +71,7 @@ export default function PortfolioPage() {
       <PageHero
         label="Portfolio"
         title={<>Six ventures.<br />One strategic<br /><em style={{ fontStyle: 'italic', color: 'var(--gold-light)' }}>ecosystem.</em></>}
-        subtitle="Each company in the Tarvico portfolio is designed from first principles — AI-native architecture, sustainable unit economics, and long-term defensibility."
+        subtitle="Each company in the Tarvico portfolio is designed from first principles — intelligence-first architecture, sustainable unit economics, and long-term defensibility."
       />
 
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
@@ -106,7 +110,17 @@ export default function PortfolioPage() {
                 }}>Vytre AWOS</h2>
                 <div style={{ fontSize: '0.6rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500 }}>AI Workforce Infrastructure · Enterprise SaaS</div>
               </div>
-              <Button href="/contact" variant="primary">Request Early Access →</Button>
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                <Button href="/contact" variant="primary">Request Early Access →</Button>
+                <a href="https://www.vytre.io" target="_blank" rel="noopener noreferrer" style={{
+                  fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase',
+                  color: 'var(--text-2)', textDecoration: 'none', fontWeight: 400,
+                  transition: 'color 0.2s',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.color = 'var(--gold)' }}
+                  onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-2)' }}
+                >vytre.io ↗</a>
+              </div>
             </div>
 
             <p style={{ fontSize: '1rem', color: 'var(--text-2)', lineHeight: 1.85, maxWidth: 720, fontWeight: 300, marginBottom: '2.5rem' }}>
@@ -147,7 +161,7 @@ export default function PortfolioPage() {
         {/* ── INCUBATION LABS ─────────────────────────────────────────────────── */}
         <SectionLabel>Incubation Labs</SectionLabel>
         <p style={{ fontSize: '0.88rem', color: 'var(--text-2)', lineHeight: 1.75, maxWidth: 560, fontWeight: 300, marginBottom: '2rem', marginTop: '0.5rem' }}>
-          Four ventures currently in active incubation — each designed from first principles with AI-native architecture, independent brand identity, and long-term market positioning.
+          Four ventures currently in active incubation — each designed from first principles with independent brand identity, intelligence-first architecture, and long-term market positioning.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1px', background: 'var(--border-w)', marginBottom: '5rem' }}>
@@ -172,8 +186,14 @@ export default function PortfolioPage() {
                 <span style={{ color: 'var(--text-2)' }}>{c.roadmap}</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem' }}>
-                <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', fontWeight: 400 }}>{c.market}</span>
-                <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', letterSpacing: '0.08em', fontWeight: 400 }}>{c.year} · {c.phase}</span>
+                <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', fontWeight: 400 }}>{c.market} · {c.year}</span>
+                <a href={c.url} target="_blank" rel="noopener noreferrer" style={{
+                  fontSize: '0.6rem', color: 'var(--gold)', letterSpacing: '0.08em',
+                  fontWeight: 500, textDecoration: 'none', transition: 'opacity 0.2s',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.opacity = '0.7' }}
+                  onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
+                >Visit →</a>
               </div>
             </div>
           ))}
@@ -194,11 +214,21 @@ export default function PortfolioPage() {
                   A multimedia company operating at the intersection of music, creative publishing, and digital entertainment. Record label, music publishing, and content distribution — designed for the streaming-native creative economy.
                 </p>
               </div>
-              <span style={{
-                fontSize: '0.54rem', letterSpacing: '0.2em', textTransform: 'uppercase',
-                border: '1px solid var(--blue-border)', color: 'var(--blue)',
-                background: 'var(--blue-glow)', padding: '4px 12px', whiteSpace: 'nowrap', alignSelf: 'flex-start', fontWeight: 500,
-              }}>Affiliated Venture</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'flex-end' }}>
+                <span style={{
+                  fontSize: '0.54rem', letterSpacing: '0.2em', textTransform: 'uppercase',
+                  border: '1px solid var(--blue-border)', color: 'var(--blue)',
+                  background: 'var(--blue-glow)', padding: '4px 12px', whiteSpace: 'nowrap', fontWeight: 500,
+                }}>Affiliated Venture</span>
+                <a href="https://www.urs79.com" target="_blank" rel="noopener noreferrer" style={{
+                  fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase',
+                  color: 'var(--text-2)', textDecoration: 'none', fontWeight: 400,
+                  transition: 'color 0.2s',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.color = 'var(--blue)' }}
+                  onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-2)' }}
+                >urs79.com ↗</a>
+              </div>
             </div>
           </div>
         </div>

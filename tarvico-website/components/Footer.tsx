@@ -52,14 +52,23 @@ export default function Footer() {
           marginBottom: '4rem',
         }}>
           <div>
-            <div style={{ marginBottom: '1.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '1.5rem' }}>
               <Image
-                src="/logo-white.png"
+                src="/logo-icon.png"
                 alt="Tarvico"
-                width={160}
-                height={48}
-                style={{ objectFit: 'contain', height: 32, width: 'auto' }}
+                width={32}
+                height={32}
+                style={{ objectFit: 'contain', height: 30, width: 30 }}
               />
+              <span style={{
+                fontFamily: '"Cormorant Garamond", serif',
+                fontSize: '0.95rem',
+                fontWeight: 400,
+                letterSpacing: '0.22em',
+                color: 'var(--text)',
+                textTransform: 'uppercase',
+                lineHeight: 1,
+              }}>Tarvico</span>
             </div>
             <p style={{
               fontSize: '0.82rem',
@@ -69,7 +78,7 @@ export default function Footer() {
               fontWeight: 300,
               marginBottom: '1.75rem',
             }}>
-              An AI-native holding company that builds, acquires, and scales intelligent software businesses for the future global economy.
+              A private technology holding company that builds, acquires, and operates transformative businesses for the next global economy.
             </p>
             <div style={{
               display: 'inline-flex',

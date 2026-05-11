@@ -4,22 +4,23 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Tarvico Inc. — Intelligence Infrastructure for the Next Economy',
+  title: 'Tarvico Inc. — Technology Holding Company',
   description:
-    'Tarvico Inc. is an AI-native technology holding company that builds, acquires, and scales intelligent software businesses across automation, infrastructure, and digital systems.',
+    'Tarvico Inc. is a private technology holding company that builds, acquires, and operates a portfolio of software and technology ventures designed for long-term value creation.',
   keywords: [
     'Tarvico',
-    'AI holding company',
-    'AI workforce operating system',
+    'technology holding company',
+    'private holding company',
     'Vytre AWOS',
-    'AI infrastructure',
-    'enterprise AI',
-    'intelligent systems',
+    'SireIQ',
+    'SEOAgentPro',
+    'software ventures',
     'digital infrastructure',
+    'technology portfolio',
   ],
   openGraph: {
-    title: 'Tarvico Inc. — Intelligence Infrastructure for the Next Economy',
-    description: 'Building enduring AI-native companies and intelligent infrastructure for the future global economy.',
+    title: 'Tarvico Inc. — Technology Holding Company',
+    description: 'Building enduring technology companies and intelligent infrastructure for the next global economy.',
     siteName: 'Tarvico Inc.',
     type: 'website',
   },
