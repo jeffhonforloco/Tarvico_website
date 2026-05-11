@@ -14,11 +14,31 @@ const types = ['Investor Inquiry', 'Enterprise Partnership', 'Press & Media', 'C
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({ name: '', email: '', type: '', message: '' })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setSubmitting(true)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setError(data.error || 'Something went wrong. Please try again.')
+      } else {
+        setSent(true)
+      }
+    } catch {
+      setError('Network error. Please check your connection and try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const inputStyle = {
@@ -156,11 +176,18 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {error && (
+                  <div style={{ padding: '0.85rem 1rem', border: '1px solid rgba(220,80,80,0.25)', background: 'rgba(220,80,80,0.06)', fontSize: '0.8rem', color: '#e06060', lineHeight: 1.6 }}>
+                    {error}
+                  </div>
+                )}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '0.5rem' }}>
                   <span style={{ fontSize: '0.68rem', color: 'var(--text-3)', fontWeight: 300 }}>
                     Typically replied within 2–3 business days.
                   </span>
-                  <Button type="submit" variant="primary">Send Message →</Button>
+                  <Button type="submit" variant="primary" disabled={submitting}>
+                    {submitting ? 'Sending…' : 'Send Message →'}
+                  </Button>
                 </div>
               </form>
             )}

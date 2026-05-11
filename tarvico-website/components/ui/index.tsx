@@ -14,9 +14,10 @@ type ButtonProps = {
   variant?: ButtonVariant
   style?: CSSProperties
   type?: 'button' | 'submit'
+  disabled?: boolean
 }
 
-export function Button({ children, href, onClick, variant = 'secondary', style, type = 'button' }: ButtonProps) {
+export function Button({ children, href, onClick, variant = 'secondary', style, type = 'button', disabled }: ButtonProps) {
   const [hovered, setHovered] = useState(false)
 
   const base: CSSProperties = {
@@ -28,12 +29,13 @@ export function Button({ children, href, onClick, variant = 'secondary', style, 
     textTransform: 'uppercase' as const,
     padding: '13px 28px',
     textDecoration: 'none',
-    cursor: 'pointer',
+    cursor: disabled ? 'not-allowed' : 'pointer',
     transition: 'all 0.22s ease',
     fontFamily: '"DM Sans", sans-serif',
     fontWeight: 500,
     border: 'none',
     lineHeight: 1,
+    opacity: disabled ? 0.5 : 1,
     ...style,
   }
 
@@ -75,8 +77,9 @@ export function Button({ children, href, onClick, variant = 'secondary', style, 
     <button
       type={type}
       onClick={onClick}
+      disabled={disabled}
       style={combined}
-      onMouseEnter={() => setHovered(true)}
+      onMouseEnter={() => { if (!disabled) setHovered(true) }}
       onMouseLeave={() => setHovered(false)}
     >
       {children}
