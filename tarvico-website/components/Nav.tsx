@@ -80,11 +80,11 @@ export default function Nav() {
     }}>
       <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <Image
-          src="/logo-transparent.png"
+          src={theme === 'light' ? '/logo-dark.png' : '/logo-transparent.png'}
           alt="Tarvico Inc. — A Private Technology Holding Company"
           width={240}
           height={100}
-          style={{ objectFit: 'contain', height: 66, width: 'auto', filter: theme === 'light' ? 'brightness(0)' : 'none', transition: 'filter 0.4s ease' }}
+          style={{ objectFit: 'contain', height: 66, width: theme === 'light' ? 158 : 'auto', transition: 'opacity 0.4s ease' }}
           priority
         />
       </Link>
@@ -176,7 +176,7 @@ export default function Nav() {
         </Link>
       </div>
 
-      <div className="md:hidden" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      <div className="flex md:hidden" style={{ alignItems: 'center', gap: '0.75rem' }}>
         <button
           onClick={toggleTheme}
           aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
