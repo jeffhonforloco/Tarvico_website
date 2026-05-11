@@ -20,10 +20,17 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark'
+    setTheme(next)
+    document.documentElement.setAttribute('data-theme', next)
+  }
 
   const close = useCallback(() => setOpen(false), [])
 
@@ -62,12 +69,12 @@ export default function Nav() {
       justifyContent: 'space-between',
       padding: '0 3rem 0 1.5rem',
       background: scrolled
-        ? 'rgba(7,7,10,0.94)'
-        : 'rgba(7,7,10,0.72)',
+        ? theme === 'light' ? 'rgba(247,245,241,0.95)' : 'rgba(7,7,10,0.94)'
+        : theme === 'light' ? 'rgba(247,245,241,0.80)' : 'rgba(7,7,10,0.72)',
       backdropFilter: 'blur(20px)',
       WebkitBackdropFilter: 'blur(20px)',
       borderBottom: scrolled
-        ? '1px solid rgba(255,255,255,0.07)'
+        ? `1px solid ${theme === 'light' ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.07)'}`
         : '1px solid transparent',
       transition: 'background 0.4s ease, border-color 0.4s ease',
     }}>
@@ -117,31 +124,60 @@ export default function Nav() {
         })}
       </div>
 
-      <Link
-        href="/contact"
-        className="hidden md:inline-flex"
-        style={{
-          fontSize: '0.65rem',
-          letterSpacing: '0.18em',
-          textTransform: 'uppercase',
-          border: '1px solid var(--gold-border)',
-          color: 'var(--gold)',
-          padding: '8px 20px',
-          textDecoration: 'none',
-          fontWeight: 500,
-          transition: 'background 0.2s, border-color 0.2s',
-        }}
-        onMouseEnter={e => {
-          e.currentTarget.style.background = 'var(--gold-glow)'
-          e.currentTarget.style.borderColor = 'var(--gold)'
-        }}
-        onMouseLeave={e => {
-          e.currentTarget.style.background = 'transparent'
-          e.currentTarget.style.borderColor = 'var(--gold-border)'
-        }}
-      >
-        Contact
-      </Link>
+      <div className="hidden md:flex" style={{ alignItems: 'center', gap: '1rem' }}>
+        <button
+          onClick={toggleTheme}
+          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          style={{
+            background: 'none',
+            border: '1px solid var(--border-m)',
+            color: 'var(--text-2)',
+            cursor: 'pointer',
+            padding: '6px 14px',
+            fontSize: '0.62rem',
+            letterSpacing: '0.18em',
+            textTransform: 'uppercase',
+            fontWeight: 500,
+            transition: 'border-color 0.2s, color 0.2s',
+            fontFamily: '"DM Sans", sans-serif',
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.borderColor = 'var(--gold-border)'
+            e.currentTarget.style.color = 'var(--text)'
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.borderColor = 'var(--border-m)'
+            e.currentTarget.style.color = 'var(--text-2)'
+          }}
+        >
+          {theme === 'dark' ? 'Light' : 'Dark'}
+        </button>
+
+        <Link
+          href="/contact"
+          style={{
+            fontSize: '0.65rem',
+            letterSpacing: '0.18em',
+            textTransform: 'uppercase',
+            border: '1px solid var(--gold-border)',
+            color: 'var(--gold)',
+            padding: '8px 20px',
+            textDecoration: 'none',
+            fontWeight: 500,
+            transition: 'background 0.2s, border-color 0.2s',
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.background = 'var(--gold-glow)'
+            e.currentTarget.style.borderColor = 'var(--gold)'
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.background = 'transparent'
+            e.currentTarget.style.borderColor = 'var(--gold-border)'
+          }}
+        >
+          Contact
+        </Link>
+      </div>
 
       <button
         onClick={() => setOpen(!open)}
@@ -169,7 +205,7 @@ export default function Nav() {
         left: 0,
         right: 0,
         bottom: 0,
-        background: 'rgba(7,7,10,0.98)',
+        background: theme === 'light' ? 'rgba(247,245,241,0.98)' : 'rgba(7,7,10,0.98)',
         backdropFilter: 'blur(24px)',
         WebkitBackdropFilter: 'blur(24px)',
         borderTop: '1px solid var(--border-w)',
@@ -218,6 +254,27 @@ export default function Nav() {
           <span style={{ display: 'block', width: 24, height: 1, background: 'var(--gold)' }} />
           Contact Tarvico
         </Link>
+
+        <button
+          onClick={toggleTheme}
+          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          style={{
+            marginTop: '2rem',
+            background: 'none',
+            border: '1px solid var(--border-m)',
+            color: 'var(--text-2)',
+            cursor: 'pointer',
+            padding: '10px 20px',
+            fontSize: '0.65rem',
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase',
+            fontWeight: 500,
+            alignSelf: 'flex-start',
+            fontFamily: '"DM Sans", sans-serif',
+          }}
+        >
+          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        </button>
       </div>,
       document.body
     )}
