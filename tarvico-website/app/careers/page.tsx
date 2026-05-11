@@ -30,7 +30,7 @@ export default function CareersPage() {
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginBottom: '2rem' }}>
+        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginBottom: '2rem' }}>
           {[
             { n: '100%', l: 'Remote First' },
             { n: 'AI-Native', l: 'Operating Model' },
@@ -74,7 +74,7 @@ export default function CareersPage() {
 
           <div style={{ border: '1px solid var(--border-w)', overflow: 'hidden' }}>
             {roles.map((r, i) => (
-              <div key={r.title} style={{
+              <div key={r.title} className="mob-role-row" style={{
                 padding: '1.75rem 2rem',
                 display: 'flex',
                 justifyContent: 'space-between',
