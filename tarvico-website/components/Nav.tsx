@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 
 const links = [
   { href: '/portfolio',  label: 'Portfolio' },
@@ -18,6 +19,28 @@ export default function Nav() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const close = useCallback(() => setOpen(false), [])
+
+  useEffect(() => {
+    if (!open) return
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') close() }
+    window.addEventListener('keydown', handler)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', handler)
+      document.body.style.overflow = ''
+    }
+  }, [open, close])
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 32)
@@ -26,6 +49,7 @@ export default function Nav() {
   }, [])
 
   return (
+    <>
     <nav className="mob-px" style={{
       position: 'fixed',
       top: 0,
@@ -145,64 +169,67 @@ export default function Nav() {
         {open ? '✕' : '☰'}
       </button>
 
-      {open && (
-        <div style={{
-          position: 'fixed',
-          top: 80,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(7,7,10,1)',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
-          borderTop: '1px solid var(--border-w)',
-          padding: '3rem 3rem',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0',
-          zIndex: 99,
-        }}>
-          {links.map(({ href, label }, i) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setOpen(false)}
-              style={{
-                fontSize: 'clamp(1.8rem, 6vw, 2.8rem)',
-                fontFamily: '"Cormorant Garamond", serif',
-                fontWeight: 300,
-                color: pathname === href ? 'var(--text)' : 'var(--text-2)',
-                textDecoration: 'none',
-                padding: '0.9rem 0',
-                borderBottom: '1px solid var(--border-w)',
-                transition: 'color 0.2s',
-                animationDelay: `${i * 60}ms`,
-              }}
-            >
-              {label}
-            </Link>
-          ))}
+    </nav>
+
+    {mounted && open && createPortal(
+      <div style={{
+        position: 'fixed',
+        top: 80,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'rgba(7,7,10,0.98)',
+        backdropFilter: 'blur(24px)',
+        WebkitBackdropFilter: 'blur(24px)',
+        borderTop: '1px solid var(--border-w)',
+        padding: '3rem 3rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0',
+        zIndex: 999,
+      }}>
+        {links.map(({ href, label }, i) => (
           <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
+            key={href}
+            href={href}
+            onClick={close}
             style={{
-              marginTop: '2.5rem',
-              fontSize: '0.68rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--gold)',
+              fontSize: 'clamp(1.8rem, 6vw, 2.8rem)',
+              fontFamily: '"Cormorant Garamond", serif',
+              fontWeight: 300,
+              color: pathname === href ? 'var(--text)' : 'var(--text-2)',
               textDecoration: 'none',
-              fontWeight: 500,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
+              padding: '0.9rem 0',
+              borderBottom: '1px solid var(--border-w)',
+              transition: 'color 0.2s',
+              animationDelay: `${i * 60}ms`,
             }}
           >
-            <span style={{ display: 'block', width: 24, height: 1, background: 'var(--gold)' }} />
-            Contact Tarvico
+            {label}
           </Link>
-        </div>
-      )}
-    </nav>
+        ))}
+        <Link
+          href="/contact"
+          onClick={close}
+          style={{
+            marginTop: '2.5rem',
+            fontSize: '0.68rem',
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase',
+            color: 'var(--gold)',
+            textDecoration: 'none',
+            fontWeight: 500,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
+          <span style={{ display: 'block', width: 24, height: 1, background: 'var(--gold)' }} />
+          Contact Tarvico
+        </Link>
+      </div>,
+      document.body
+    )}
+    </>
   )
 }
