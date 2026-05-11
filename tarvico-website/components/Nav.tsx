@@ -84,7 +84,7 @@ export default function Nav() {
           alt="Tarvico Inc. — A Private Technology Holding Company"
           width={240}
           height={100}
-          style={{ objectFit: 'contain', height: 66, width: theme === 'light' ? 158 : 'auto', transition: 'opacity 0.4s ease' }}
+          style={{ objectFit: 'contain', height: theme === 'light' ? 78 : 66, width: 'auto', transition: 'opacity 0.4s ease' }}
           priority
         />
       </Link>
