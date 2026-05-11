@@ -56,8 +56,8 @@ export default function Footer() {
               <Image
                 src="/logo-transparent.png"
                 alt="Tarvico"
-                width={160}
-                height={67}
+                width={220}
+                height={92}
                 style={{ objectFit: 'contain', display: 'block' }}
               />
             </div>

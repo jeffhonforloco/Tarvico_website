@@ -75,9 +75,9 @@ export default function Nav() {
         <Image
           src="/logo-transparent.png"
           alt="Tarvico Inc. — A Private Technology Holding Company"
-          width={140}
-          height={58}
-          style={{ objectFit: 'contain', height: 42, width: 'auto' }}
+          width={200}
+          height={83}
+          style={{ objectFit: 'contain', height: 56, width: 'auto' }}
           priority
         />
       </Link>
