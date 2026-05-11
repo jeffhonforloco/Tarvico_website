@@ -147,8 +147,8 @@ export default function HomePage() {
           pointerEvents: 'none',
         }} />
 
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: 1200, margin: '0 auto', padding: '0 3rem', width: '100%' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'center' }}>
+        <div className="mob-px" style={{ position: 'relative', zIndex: 2, maxWidth: 1200, margin: '0 auto', padding: '0 3rem', width: '100%' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'center' }}>
             <div>
               <div className="animate-fade-up delay-100" style={{
                 display: 'flex',
@@ -199,7 +199,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="animate-fade-up delay-700" style={{
+            <div className="animate-fade-up delay-700 mob-hide" style={{
               display: 'flex',
               flexDirection: 'column',
               gap: '2.25rem',
@@ -263,8 +263,8 @@ export default function HomePage() {
       <Divider />
 
       {/* ── COMPANY OVERVIEW ─────────────────────────────────────────────────── */}
-      <div style={S.section}>
-        <div style={{ display: 'grid', gridTemplateColumns: '5fr 4fr', gap: '6rem', alignItems: 'start' }}>
+      <div className="mob-p" style={S.section}>
+        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '5fr 4fr', gap: '6rem', alignItems: 'start' }}>
           <div>
             <SectionLabel>What We Are</SectionLabel>
             <h2 style={{ ...S.h2, maxWidth: 600 }}>
@@ -311,7 +311,7 @@ export default function HomePage() {
 
       {/* ── FLAGSHIP: VYTRE AWOS ─────────────────────────────────────────────── */}
       <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)', borderBottom: '1px solid var(--border-w)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '8rem 3rem' }}>
+        <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '8rem 3rem' }}>
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '3.5rem', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.5rem' }}>
@@ -335,9 +335,9 @@ export default function HomePage() {
             <Button href="/contact" variant="primary">Request Early Access →</Button>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--border-w)', marginBottom: '2rem' }}>
+              <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--border-w)', marginBottom: '2rem' }}>
                 {[
                   { icon: '◈', t: 'Agent Orchestration', d: 'Deploy and coordinate AI agents across complex multi-step workflows with intelligent routing.' },
                   { icon: '⬡', t: 'Workflow Automation', d: 'Model, automate, and optimize operational processes with adaptive AI-driven execution.' },
@@ -427,7 +427,7 @@ export default function HomePage() {
       <Divider />
 
       {/* ── PORTFOLIO PREVIEW ─────────────────────────────────────────────────── */}
-      <div style={S.section}>
+      <div className="mob-p" style={S.section}>
         <SectionLabel>Portfolio</SectionLabel>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
           <h2 style={{ ...S.h2, marginBottom: 0 }}>Six ventures.<br />One ecosystem.</h2>
@@ -486,10 +486,10 @@ export default function HomePage() {
 
       {/* ── PHILOSOPHY ───────────────────────────────────────────────────────── */}
       <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)', borderBottom: '1px solid var(--border-w)' }}>
-        <div style={S.section}>
+        <div className="mob-p" style={S.section}>
           <SectionLabel>Operating Philosophy</SectionLabel>
           <h2 style={{ ...S.h2, maxWidth: 560 }}>Principles that compound<br />over decades.</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginTop: '3.5rem' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginTop: '3.5rem' }}>
             {philosophy.map(p => (
               <div key={p.n} style={{
                 padding: '2.75rem', background: 'var(--bg-raised)',

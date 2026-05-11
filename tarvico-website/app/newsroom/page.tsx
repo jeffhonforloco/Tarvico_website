@@ -52,11 +52,11 @@ export default function NewsroomPage() {
         subtitle="Announcements, product updates, research, and strategic communications from Tarvico Inc. and portfolio companies."
       />
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
 
         <SectionLabel>Featured</SectionLabel>
 
-        <div style={{
+        <div className="mob-stack" style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gap: '0',

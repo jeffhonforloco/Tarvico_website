@@ -29,13 +29,13 @@ const paragraphs = [
 
 export default function VisionPage() {
   return (
-    <div style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: '68px' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem 3rem', borderBottom: '1px solid var(--border-w)' }}>
+    <div style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: '72px' }}>
+      <div className="mob-px" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem 3rem', borderBottom: '1px solid var(--border-w)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.5rem' }}>
           <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)' }} />
           <span style={{ fontSize: '0.58rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500 }}>Founder Letter · 2026</span>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'end' }}>
+        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'end' }}>
           <h1 style={{
             fontFamily: '"Cormorant Garamond", serif',
             fontSize: 'clamp(3rem, 6vw, 6rem)',
@@ -58,7 +58,7 @@ export default function VisionPage() {
         </div>
       </div>
 
-      <article style={{ maxWidth: 680, margin: '0 auto', padding: '6rem 3rem 10rem' }}>
+      <article className="mob-px" style={{ maxWidth: 680, margin: '0 auto', padding: '6rem 3rem 10rem' }}>
         {paragraphs.map((p, i) => {
           if (p.lead) return (
             <p key={i} style={{

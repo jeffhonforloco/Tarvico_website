@@ -20,7 +20,7 @@ export default function InvestorsPage() {
         subtitle="Tarvico is designed from first principles to compound value over decades — a portfolio approach to AI-native company building with institutional discipline and founder conviction."
       />
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
 
         <blockquote style={{
           fontFamily: '"Cormorant Garamond", serif',
@@ -41,7 +41,7 @@ export default function InvestorsPage() {
         </blockquote>
 
         <SectionLabel>The Opportunity</SectionLabel>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginTop: '1.5rem', marginBottom: '6rem' }}>
+        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginTop: '1.5rem', marginBottom: '6rem' }}>
           <MetricCard value="$4.4T" label="Global AI Market by 2030" sub="Projected total addressable market across all AI sectors" />
           <MetricCard value="$621B" label="AI Workflow Automation TAM" sub="Enterprise automation and intelligent operations market" />
           <MetricCard value="42%" label="Annual AI Adoption Growth" sub="Year-over-year enterprise AI adoption rate globally" />
@@ -85,7 +85,7 @@ export default function InvestorsPage() {
 
         <div style={{ padding: '6rem 0' }}>
           <SectionLabel>Capital Allocation Framework</SectionLabel>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', marginTop: '2rem' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', marginTop: '2rem' }}>
             <div>
               <h3 style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '2rem', fontWeight: 400, color: 'var(--text)', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>How We Deploy Capital</h3>
               {[
@@ -131,7 +131,7 @@ export default function InvestorsPage() {
 
         <div style={{ padding: '6rem 0' }}>
           <SectionLabel>Governance & Transparency</SectionLabel>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start', marginTop: '2rem' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start', marginTop: '2rem' }}>
             <div>
               <h3 style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '2rem', fontWeight: 400, color: 'var(--text)', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>Our Commitment</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', lineHeight: 1.85, fontWeight: 300, marginBottom: '1.25rem' }}>

@@ -74,7 +74,7 @@ export default function PortfolioPage() {
         subtitle="Each company in the Tarvico portfolio is designed from first principles — intelligence-first architecture, sustainable unit economics, and long-term defensibility."
       />
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
 
         {/* ── FLAGSHIP ───────────────────────────────────────────────────────── */}
         <SectionLabel>Flagship Venture</SectionLabel>
@@ -127,8 +127,8 @@ export default function PortfolioPage() {
               An AI Workforce Operating System that enables enterprises to deploy, manage, coordinate, and scale AI workers across operations, workflows, departments, and systems. Vytre AWOS is the control plane for the intelligent organization — providing the infrastructure layer for AI-driven work at scale.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'start' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'var(--border-w)' }}>
+            <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'start' }}>
+              <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'var(--border-w)' }}>
                 {[
                   { label: 'Market', value: 'Enterprise / SMB' },
                   { label: 'Category', value: 'AI Infrastructure' },
@@ -238,7 +238,7 @@ export default function PortfolioPage() {
         {/* ── ECOSYSTEM OVERVIEW ──────────────────────────────────────────────── */}
         <div style={{ padding: '5rem 0' }}>
           <SectionLabel>Ecosystem Architecture</SectionLabel>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginTop: '2rem' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginTop: '2rem' }}>
             {[
               { label: 'Infrastructure', desc: 'AI operating systems, agent orchestration, and enterprise workflow platforms.', companies: 'Vytre AWOS', color: 'var(--gold)' },
               { label: 'Productivity', desc: 'AI assistants, search intelligence, and individual leverage tools for knowledge workers.', companies: 'SireIQ · SEOAgentPro', color: 'var(--gold-dim)' },
