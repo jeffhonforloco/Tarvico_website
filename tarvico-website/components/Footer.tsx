@@ -68,7 +68,7 @@ export default function Footer() {
               <Image
                 src={theme === 'light' ? '/logo-dark.png' : '/logo-transparent.png'}
                 alt="Tarvico"
-                width={theme === 'light' ? 88 : 130}
+                width={130}
                 height={54}
                 style={{ objectFit: 'contain', display: 'block' }}
               />
