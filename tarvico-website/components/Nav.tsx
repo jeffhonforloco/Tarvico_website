@@ -97,12 +97,12 @@ export default function Nav() {
               key={href}
               href={href}
               style={{
-                fontSize: '0.68rem',
+                fontSize: '0.75rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
                 color: active ? 'var(--text)' : 'var(--text-2)',
                 textDecoration: 'none',
-                fontWeight: active ? 500 : 400,
+                fontWeight: active ? 600 : 500,
                 transition: 'color 0.2s',
                 position: 'relative',
                 paddingBottom: '2px',
