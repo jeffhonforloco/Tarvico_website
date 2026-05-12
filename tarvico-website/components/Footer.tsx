@@ -64,12 +64,12 @@ export default function Footer() {
           marginBottom: '4rem',
         }}>
           <div>
-            <div style={{ marginBottom: '0.75rem' }}>
+            <div style={{ marginBottom: '0.25rem' }}>
               <Image
                 src={theme === 'light' ? '/logo-dark.png' : '/logo-transparent.png'}
                 alt="Tarvico"
-                width={130}
-                height={54}
+                width={160}
+                height={66}
                 style={{ objectFit: 'contain', display: 'block' }}
               />
             </div>
