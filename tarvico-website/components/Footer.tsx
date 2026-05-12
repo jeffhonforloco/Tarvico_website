@@ -66,11 +66,11 @@ export default function Footer() {
           <div>
             <div style={{ marginBottom: '0.25rem' }}>
               <Image
-                src={theme === 'light' ? '/logo-dark.png' : '/logo-transparent.png'}
+                src={theme === 'light' ? '/logo-name.png' : '/logo-transparent.png'}
                 alt="Tarvico"
                 width={160}
                 height={66}
-                style={{ objectFit: 'contain', display: 'block' }}
+                style={{ objectFit: 'contain', display: 'block', mixBlendMode: theme === 'light' ? 'multiply' : 'normal' }}
               />
             </div>
             <p style={{
