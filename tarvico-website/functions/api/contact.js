@@ -110,7 +110,7 @@ export async function onRequestPost(context) {
     )
   }
 
-  const toEmail = env?.TO_EMAIL || 'hello@tarvico.com'
+  const toEmail = env?.TO_EMAIL || 'info@tarvico.com'
 
   const resendPayload = {
     from: FROM_EMAIL,
