@@ -70,7 +70,7 @@ export default function Footer() {
                 alt="Tarvico"
                 width={160}
                 height={66}
-                style={{ objectFit: 'contain', display: 'block', height: theme === 'light' ? 130 : 66 }}
+                style={{ objectFit: 'contain', display: 'block', height: theme === 'light' ? 108 : 66 }}
               />
             </div>
             <p style={{
