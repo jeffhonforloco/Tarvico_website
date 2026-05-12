@@ -80,11 +80,11 @@ export default function Nav() {
     }}>
       <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <Image
-          src={theme === 'light' ? '/logo-name.png' : '/logo-transparent.png'}
+          src="/logo-transparent.png"
           alt="Tarvico Inc. — A Private Technology Holding Company"
           width={240}
           height={100}
-          style={{ objectFit: 'contain', height: 66, width: 'auto', transition: 'opacity 0.4s ease', mixBlendMode: theme === 'light' ? 'multiply' : 'normal' }}
+          style={{ objectFit: 'contain', height: 66, width: 'auto', transition: 'opacity 0.4s ease', filter: theme === 'light' ? 'invert(1)' : 'none' }}
           priority
         />
       </Link>
