@@ -112,6 +112,9 @@ export const metadata: Metadata = {
       'en-US': 'https://www.tarvico.com',
     },
   },
+  verification: {
+    google: 'jQeeSN9bYApYMV3WoeseoMXsY4ZLszdTgaHo7mHaQ5M',
+  },
   other: {
     'msapplication-TileColor': '#070707',
     'msapplication-TileImage': '/logo-icon.png',
