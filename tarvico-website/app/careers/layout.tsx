@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.tarvico.com/careers',
     images: [
       {
-        url: 'https://www.tarvico.com/opengraph-image',
+        url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Careers at Tarvico Inc.',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: 'Careers at Tarvico Inc.',
     description:
       'Build AI-native companies that endure. Open roles at Tarvico — engineering, product, growth, operations.',
-    images: ['https://www.tarvico.com/opengraph-image'],
+    images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.tarvico.com/careers',

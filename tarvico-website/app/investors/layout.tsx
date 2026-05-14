@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.tarvico.com/investors',
     images: [
       {
-        url: 'https://www.tarvico.com/opengraph-image',
+        url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Tarvico Inc. — Investor Relations',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: 'Tarvico Inc. — Investor Relations',
     description:
       'Investment thesis, AI market opportunity, and governance for a private AI technology holding company. Contact investors@tarvico.com.',
-    images: ['https://www.tarvico.com/opengraph-image'],
+    images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.tarvico.com/investors',

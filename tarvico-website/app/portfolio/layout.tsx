@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     url: 'https://www.tarvico.com/portfolio',
     images: [
       {
-        url: 'https://www.tarvico.com/opengraph-image',
+        url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Tarvico Inc. Portfolio — AI-Native Ventures',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: 'Tarvico Inc. Portfolio — Six AI-Native Ventures',
     description:
       'Vytre AWOS, SireIQ, SEOAgentPro, Fycra, Fycera — six AI-native ventures under one institutional holding company.',
-    images: ['https://www.tarvico.com/opengraph-image'],
+    images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.tarvico.com/portfolio',

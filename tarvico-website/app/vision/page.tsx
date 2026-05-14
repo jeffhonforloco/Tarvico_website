@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.tarvico.com/vision',
     images: [
       {
-        url: 'https://www.tarvico.com/opengraph-image',
+        url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Tarvico Inc. Founder Letter — Jeff Hon',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: 'Founder Letter — Tarvico Inc. | Jeff Hon',
     description:
       'On the origins of Tarvico Inc. and the long-term vision for enduring AI-native technology companies — from Founder & CEO Jeff Yèmalín Bienvenu Honforloco.',
-    images: ['https://www.tarvico.com/opengraph-image'],
+    images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.tarvico.com/vision',

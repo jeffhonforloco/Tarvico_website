@@ -69,8 +69,8 @@ export default function Footer() {
                 src={theme === 'light' ? '/logo-black-wordmark.png' : '/logo-white-wordmark.png'}
                 alt="Tarvico"
                 width={160}
-                height={54}
-                style={{ objectFit: 'contain', display: 'block', height: 44 }}
+                height={66}
+                style={{ objectFit: 'contain', display: 'block', height: theme === 'light' ? 127 : 66 }}
               />
             </div>
             <p style={{
