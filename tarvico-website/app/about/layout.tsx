@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.tarvico.com/about',
     images: [
       {
-        url: 'https://www.tarvico.com/opengraph-image',
+        url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'About Tarvico Inc. — Private AI Technology Holding Company',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: 'About Tarvico Inc. — Founding Story & Leadership',
     description:
       'The founding story, corporate structure, and operating philosophy behind Tarvico Inc. — a private AI technology holding company.',
-    images: ['https://www.tarvico.com/opengraph-image'],
+    images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.tarvico.com/about',

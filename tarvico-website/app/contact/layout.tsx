@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: 'https://www.tarvico.com/contact',
     images: [
       {
-        url: 'https://www.tarvico.com/opengraph-image',
+        url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Contact Tarvico Inc.',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Contact Tarvico Inc.',
     description:
       'Investor inquiries, partnership discussions, and press contacts for Tarvico Inc. — investors@tarvico.com | press@tarvico.com.',
-    images: ['https://www.tarvico.com/opengraph-image'],
+    images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {
     canonical: 'https://www.tarvico.com/contact',

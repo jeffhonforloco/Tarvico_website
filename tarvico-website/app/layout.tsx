@@ -84,8 +84,8 @@ export const metadata: Metadata = {
       'Tarvico Inc. builds, acquires, and operates a portfolio of AI-native software and technology ventures — engineered for long-term value creation and global scale. Based in Delaware, USA.',
     images: [
       {
-        url: '/opengraph-image',
-        secureUrl: 'https://www.tarvico.com/opengraph-image',
+        url: '/og-image.png',
+        secureUrl: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Tarvico Inc. — Private AI Technology Holding Company',
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
       'Building enduring AI-native technology companies for the next global economy. Tarvico is a private holding company that builds, acquires, and operates AI software ventures.',
     images: [
       {
-        url: 'https://www.tarvico.com/opengraph-image',
+        url: 'https://www.tarvico.com/og-image.png',
         alt: 'Tarvico Inc. — Private AI Technology Holding Company',
       },
     ],
@@ -152,7 +152,7 @@ const organizationSchema = {
     },
     {
       '@type': 'ImageObject',
-      url: 'https://www.tarvico.com/opengraph-image',
+      url: 'https://www.tarvico.com/og-image.png',
       width: 1200,
       height: 630,
     },
