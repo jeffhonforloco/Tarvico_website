@@ -95,8 +95,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@tarvico',
-    creator: '@tarvico',
+    site: '@tarvicoinc',
+    creator: '@tarvicoinc',
     title: 'Tarvico Inc. — Private AI Technology Holding Company',
     description:
       'Building enduring AI-native technology companies for the next global economy. Tarvico is a private holding company that builds, acquires, and operates AI software ventures.',
@@ -240,8 +240,11 @@ const organizationSchema = {
   ],
   sameAs: [
     'https://www.tarvico.com',
-    'https://twitter.com/tarvico',
-    'https://x.com/tarvico',
+    'https://twitter.com/tarvicoinc',
+    'https://x.com/tarvicoinc',
+    'https://www.facebook.com/tarvicoinc',
+    'https://www.instagram.com/tarvicoinc',
+    'https://www.tiktok.com/@tarvicoinc',
     'https://www.linkedin.com/company/tarvico',
     'https://www.crunchbase.com/organization/tarvico',
   ],
