@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Contact Tarvico Inc. — Investor, Partnership & Press Inquiries',
   description:
-    'Contact Tarvico Inc.: investor inquiries at investors@tarvico.com, press at press@tarvico.com, partnerships at partners@tarvico.com, and general inquiries at hello@tarvico.com. A private AI technology holding company.',
+    'Contact Tarvico Inc.: investor inquiries at investors@tarvico.com, press at press@tarvico.com, partnerships at partners@tarvico.com, and general inquiries at hello@tarvico.com. A private technology holding company.',
   keywords: [
     'Tarvico contact',
     'contact Tarvico',

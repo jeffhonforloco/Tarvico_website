@@ -13,17 +13,16 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.tarvico.com'),
   title: {
-    default: 'Tarvico Inc. — Private AI Technology Holding Company',
+    default: 'Tarvico Inc. — A Private Technology Holding Company',
     template: '%s | Tarvico Inc.',
   },
   description:
-    'Tarvico Inc. is a private AI technology holding company that builds, acquires, and operates a portfolio of AI-native software ventures — engineered for long-term value creation, global scale, and institutional permanence. Founded by Jeff Hon.',
+    'Tarvico Inc. is a private technology holding company that builds, acquires, and operates a portfolio of AI-native software ventures — engineered for long-term value creation, global scale, and institutional permanence. Founded by Jeff Hon.',
   keywords: [
     'Tarvico',
     'Tarvico Inc.',
     'private technology holding company',
-    'AI holding company',
-    'AI technology holding company',
+    'technology holding company',
     'AI-native companies',
     'Vytre AWOS',
     'AI Workforce Operating System',
@@ -46,7 +45,7 @@ export const metadata: Metadata = {
   creator: 'Tarvico Inc.',
   publisher: 'Tarvico Inc.',
   category: 'Technology',
-  classification: 'AI Technology Holding Company',
+  classification: 'Technology Holding Company',
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -79,7 +78,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.tarvico.com',
     siteName: 'Tarvico Inc.',
-    title: 'Tarvico Inc. — Private AI Technology Holding Company',
+    title: 'Tarvico Inc. — A Private Technology Holding Company',
     description:
       'Tarvico Inc. builds, acquires, and operates a portfolio of AI-native software and technology ventures — engineered for long-term value creation and global scale. Based in Delaware, USA.',
     images: [
@@ -88,7 +87,7 @@ export const metadata: Metadata = {
         secureUrl: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Tarvico Inc. — Private AI Technology Holding Company',
+        alt: 'Tarvico Inc. — A Private Technology Holding Company',
         type: 'image/png',
       },
     ],
@@ -97,13 +96,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@tarvicoinc',
     creator: '@tarvicoinc',
-    title: 'Tarvico Inc. — Private AI Technology Holding Company',
+    title: 'Tarvico Inc. — A Private Technology Holding Company',
     description:
       'Building enduring AI-native technology companies for the next global economy. Tarvico is a private holding company that builds, acquires, and operates AI software ventures.',
     images: [
       {
         url: 'https://www.tarvico.com/og-image.png',
-        alt: 'Tarvico Inc. — Private AI Technology Holding Company',
+        alt: 'Tarvico Inc. — A Private Technology Holding Company',
       },
     ],
   },
@@ -132,7 +131,7 @@ const organizationSchema = {
   alternateName: ['Tarvico', 'Tarvico Inc'],
   legalName: 'Tarvico Inc.',
   description:
-    'A private AI technology holding company that builds, acquires, and operates a portfolio of AI-native software and technology ventures engineered for long-term value creation and global scale.',
+    'A private technology holding company that builds, acquires, and operates a portfolio of AI-native software and technology ventures engineered for long-term value creation and global scale.',
   url: 'https://www.tarvico.com',
   logo: {
     '@type': 'ImageObject',
@@ -141,7 +140,7 @@ const organizationSchema = {
     contentUrl: 'https://www.tarvico.com/logo-icon.png',
     width: 512,
     height: 512,
-    caption: 'Tarvico Inc. — Private AI Technology Holding Company',
+    caption: 'Tarvico Inc. — A Private Technology Holding Company',
   },
   image: [
     {
@@ -257,7 +256,7 @@ const websiteSchema = {
   url: 'https://www.tarvico.com',
   name: 'Tarvico Inc.',
   alternateName: 'Tarvico',
-  description: 'Private AI Technology Holding Company — building enduring AI-native ventures for the next global economy.',
+  description: 'A Private Technology Holding Company — building enduring AI-native ventures for the next global economy.',
   publisher: {
     '@id': 'https://www.tarvico.com/#organization',
   },
@@ -281,7 +280,7 @@ const faqSchema = {
       name: 'What is Tarvico Inc.?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tarvico Inc. is a private AI technology holding company that builds, acquires, and operates a portfolio of AI-native software and technology ventures. Founded by Jeff Hon, Tarvico is engineered for long-term value creation, global scale, and institutional permanence.',
+        text: 'Tarvico Inc. is a private technology holding company that builds, acquires, and operates a portfolio of AI-native software and technology ventures. Founded by Jeff Hon, Tarvico is engineered for long-term value creation, global scale, and institutional permanence.',
       },
     },
     {

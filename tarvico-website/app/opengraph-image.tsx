@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Tarvico Inc. — Private AI Technology Holding Company'
+export const alt = 'Tarvico Inc. — A Private Technology Holding Company'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -139,7 +139,7 @@ export default async function OGImage() {
                   textTransform: 'uppercase',
                 }}
               >
-                Private AI Technology Holding Company
+                A Private Technology Holding Company
               </div>
             </div>
 
