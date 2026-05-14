@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Founder Letter — Building for the Next Era | Tarvico Inc.',
   description:
-    'A letter from Jeff Yèmalín Bienvenu Honforloco, Founder & CEO of Tarvico Inc. On the origins of Tarvico, the conviction behind building a private AI holding company, and the long-term vision for enduring AI-native technology ventures.',
+    'A letter from Jeff Yèmalín Bienvenu Honforloco, Founder & CEO of Tarvico Inc. On the origins of Tarvico, the conviction behind building a private technology holding company, and the long-term vision for enduring AI-native technology ventures.',
   keywords: [
     'Tarvico founder letter',
     'Jeff Honforloco letter',
