@@ -78,13 +78,13 @@ export default function Nav() {
         : '1px solid transparent',
       transition: 'background 0.4s ease, border-color 0.4s ease',
     }}>
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: theme === 'light' ? '-18px' : '0' }}>
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <Image
-          src={theme === 'light' ? '/logo-blacklogo.png' : '/logo-transparent.png'}
+          src={theme === 'light' ? '/logo-black-wordmark.png' : '/logo-white-wordmark.png'}
           alt="Tarvico Inc. — A Private Technology Holding Company"
           width={240}
           height={100}
-          style={{ objectFit: 'contain', height: theme === 'light' ? 127 : 66, width: 'auto', transition: 'opacity 0.4s ease' }}
+          style={{ objectFit: 'contain', height: 52, width: 'auto', transition: 'opacity 0.4s ease' }}
           priority
         />
       </Link>

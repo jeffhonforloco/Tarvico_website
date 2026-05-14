@@ -1,27 +1,40 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Founder Letter',
+  title: 'Founder Letter — Building for the Next Era | Tarvico Inc.',
   description:
-    'Building for the Next Era — A letter from Jeff Yèmalín Bienvenu Honforloco, Founder & CEO of Tarvico Inc. On the origins of Tarvico, the conviction behind it, and the vision for what comes next.',
+    'A letter from Jeff Yèmalín Bienvenu Honforloco, Founder & CEO of Tarvico Inc. On the origins of Tarvico, the conviction behind building a private AI holding company, and the long-term vision for enduring AI-native technology ventures.',
   keywords: [
     'Tarvico founder letter',
-    'Jeff Honforloco',
+    'Jeff Honforloco letter',
+    'Jeff Hon CEO Tarvico',
     'Jeff Yèmalín Bienvenu Honforloco',
-    'Tarvico vision',
+    'Tarvico vision statement',
     'AI company founder story',
     'technology holding company vision',
+    'building AI companies long term',
+    'Tarvico Inc origins',
   ],
   openGraph: {
-    title: 'Founder Letter — Tarvico Inc.',
+    title: 'Founder Letter — Building for the Next Era | Tarvico Inc.',
     description:
-      'A letter from Jeff Yèmalín Bienvenu Honforloco, Founder & CEO. On the origins of Tarvico and the vision for enduring AI-native technology companies.',
+      'A letter from Jeff Yèmalín Bienvenu Honforloco (Jeff Hon), Founder & CEO of Tarvico Inc. On the origins, conviction, and long-term vision behind building enduring AI-native technology companies.',
     url: 'https://www.tarvico.com/vision',
+    images: [
+      {
+        url: 'https://www.tarvico.com/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Tarvico Inc. Founder Letter — Jeff Hon',
+      },
+    ],
   },
   twitter: {
-    title: 'Founder Letter — Tarvico Inc.',
+    card: 'summary_large_image',
+    title: 'Founder Letter — Tarvico Inc. | Jeff Hon',
     description:
-      'On the origins of Tarvico and the long-term vision from Founder & CEO Jeff Honforloco.',
+      'On the origins of Tarvico Inc. and the long-term vision for enduring AI-native technology companies — from Founder & CEO Jeff Yèmalín Bienvenu Honforloco.',
+    images: ['https://www.tarvico.com/opengraph-image'],
   },
   alternates: {
     canonical: 'https://www.tarvico.com/vision',

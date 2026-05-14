@@ -1,34 +1,77 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Investor Relations',
+  title: 'Investor Relations — Tarvico Inc. | Investment Thesis & Governance',
   description:
-    'Tarvico Inc. investor relations — market opportunity, investment thesis, portfolio performance, and governance structure. A private technology holding company engineered for long-term compounding value.',
+    'Tarvico Inc. investor relations: $4.7T AI market opportunity, investment thesis, portfolio strategy, and governance structure. A private AI technology holding company engineered for long-term compounding value. Contact: investors@tarvico.com.',
   keywords: [
     'Tarvico investor relations',
     'AI holding company investment',
     'technology portfolio investment',
     'private technology company investors',
-    'AI venture capital',
+    'AI venture investment thesis',
     'Tarvico investment thesis',
-    'long-term technology investment',
+    'long-term AI technology investment',
+    'institutional AI investment',
+    'invest in Tarvico',
   ],
   openGraph: {
-    title: 'Investor Relations — Tarvico Inc.',
+    title: 'Investor Relations — Tarvico Inc. | AI Technology Holding Company',
     description:
-      'Market opportunity, investment thesis, and governance structure for Tarvico Inc. — a private technology holding company building AI-native ventures for long-term institutional value.',
+      'Market opportunity, investment thesis, and governance for Tarvico Inc. — a private AI technology holding company building compounding portfolio value through AI-native ventures. Contact investors@tarvico.com.',
     url: 'https://www.tarvico.com/investors',
+    images: [
+      {
+        url: 'https://www.tarvico.com/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Tarvico Inc. — Investor Relations',
+      },
+    ],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Tarvico Inc. — Investor Relations',
     description:
-      'Investment thesis, market opportunity, and governance for a private AI-native technology holding company.',
+      'Investment thesis, AI market opportunity, and governance for a private AI technology holding company. Contact investors@tarvico.com.',
+    images: ['https://www.tarvico.com/opengraph-image'],
   },
   alternates: {
     canonical: 'https://www.tarvico.com/investors',
   },
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.tarvico.com' },
+    { '@type': 'ListItem', position: 2, name: 'Investor Relations', item: 'https://www.tarvico.com/investors' },
+  ],
+}
+
+const investorPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://www.tarvico.com/investors#webpage',
+  url: 'https://www.tarvico.com/investors',
+  name: 'Tarvico Inc. — Investor Relations',
+  description: 'Investment thesis, market opportunity, and governance structure for Tarvico Inc., a private AI technology holding company.',
+  isPartOf: { '@id': 'https://www.tarvico.com/#website' },
+  about: { '@id': 'https://www.tarvico.com/#organization' },
+  inLanguage: 'en-US',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', 'h2', '[data-speakable]'],
+  },
+}
+
 export default function InvestorsLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(investorPageSchema) }} />
+      {children}
+    </>
+  )
 }
