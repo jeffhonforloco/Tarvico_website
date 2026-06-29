@@ -24,21 +24,21 @@ export default function CareersPage() {
     <>
       <PageHero
         label="Careers"
-        title={<>Build systems that<br />shape the future<br /><em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>of intelligent work.</em></>}
+        title={<>Build systems that shape the future <span className="text-gradient-gold">of intelligent work.</span></>}
         subtitle="We hire exceptional people who think in systems, move with speed, and take genuine ownership of their work. Small teams. Massive ambitions. AI-powered leverage."
       />
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
 
-        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-w)', marginBottom: '2rem' }}>
+        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem', marginBottom: '2rem' }}>
           {[
             { n: '100%', l: 'Remote First' },
             { n: 'AI-Native', l: 'Operating Model' },
             { n: 'Elite', l: 'Team Density' },
           ].map(s => (
-            <div key={s.n} style={{ background: 'var(--bg-card)', padding: '2.5rem', textAlign: 'center' }}>
-              <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '2.4rem', fontWeight: 300, color: 'var(--text)', lineHeight: 1, marginBottom: '0.5rem' }}>{s.n}</div>
-              <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 500 }}>{s.l}</div>
+            <div key={s.n} style={{ background: 'var(--bg-card)', padding: '2.5rem', textAlign: 'center', border: '1px solid var(--border-w)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--text)', lineHeight: 1, marginBottom: '0.5rem', letterSpacing: '-0.04em' }}>{s.n}</div>
+              <div style={{ fontSize: '0.6rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 600 }}>{s.l}</div>
             </div>
           ))}
         </div>
@@ -47,18 +47,19 @@ export default function CareersPage() {
 
         <div style={{ padding: '5rem 0' }}>
           <SectionLabel>Culture & Values</SectionLabel>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1px', background: 'var(--border-w)', marginTop: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem', marginTop: '1.5rem' }}>
             {values.map(v => (
               <div key={v.n} style={{
-                background: 'var(--bg)', padding: '2.75rem',
-                borderTop: '2px solid transparent', transition: 'background 0.25s, border-top-color 0.25s',
+                background: 'var(--bg-card)', padding: '2.5rem',
+                border: '1px solid var(--border-w)', borderTop: '2px solid var(--border-w)', borderRadius: 'var(--radius-lg)',
+                transition: 'background 0.25s, border-top-color 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1)',
               }}
-                onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)'; e.currentTarget.style.borderTopColor = 'var(--gold)' }}
-                onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg)'; e.currentTarget.style.borderTopColor = 'transparent' }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-raised)'; e.currentTarget.style.borderTopColor = 'var(--gold)' }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-card)'; e.currentTarget.style.borderTopColor = 'var(--border-w)' }}
               >
-                <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '3rem', fontWeight: 300, color: 'var(--text-3)', marginBottom: '1.5rem', lineHeight: 1 }}>{v.n}</div>
-                <div style={{ fontSize: '0.92rem', color: 'var(--text)', marginBottom: '0.65rem', fontWeight: 400 }}>{v.title}</div>
-                <p style={{ fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 300 }}>{v.desc}</p>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', fontWeight: 800, color: 'var(--gold)', opacity: 0.35, marginBottom: '1.25rem', lineHeight: 1, letterSpacing: '-0.04em' }}>{v.n}</div>
+                <div style={{ fontSize: '0.98rem', color: 'var(--text)', marginBottom: '0.65rem', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{v.title}</div>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 400 }}>{v.desc}</p>
               </div>
             ))}
           </div>
@@ -72,7 +73,7 @@ export default function CareersPage() {
             We are a small team growing thoughtfully. Every hire shapes our culture and capabilities. We evaluate all applicants regardless of traditional background or location.
           </p>
 
-          <div style={{ border: '1px solid var(--border-w)', overflow: 'hidden' }}>
+          <div style={{ border: '1px solid var(--border-w)', overflow: 'hidden', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', background: 'var(--bg-card)' }}>
             {roles.map((r, i) => (
               <div key={r.title} className="mob-role-row" style={{
                 padding: '1.75rem 2rem',
@@ -85,24 +86,24 @@ export default function CareersPage() {
                 transition: 'background 0.2s',
                 cursor: 'pointer',
               }}
-                onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)' }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-raised)' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                   {r.priority && (
                     <span style={{
                       display: 'inline-flex', alignItems: 'center', gap: 5,
-                      fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase',
+                      fontSize: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase',
                       border: '1px solid var(--gold-border)', color: 'var(--gold)',
-                      background: 'var(--gold-glow)', padding: '3px 8px', fontWeight: 500, whiteSpace: 'nowrap',
+                      background: 'var(--gold-glow)', padding: '4px 10px', fontWeight: 600, whiteSpace: 'nowrap', borderRadius: 999,
                     }}>
                       <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block' }} />
                       Priority
                     </span>
                   )}
                   <div>
-                    <div style={{ fontSize: '0.95rem', color: 'var(--text)', marginBottom: '0.25rem', fontWeight: 400 }}>{r.title}</div>
-                    <div style={{ display: 'flex', gap: '0.75rem', fontSize: '0.72rem', color: 'var(--text-2)', fontWeight: 300 }}>
+                    <div style={{ fontSize: '1rem', color: 'var(--text)', marginBottom: '0.25rem', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{r.title}</div>
+                    <div style={{ display: 'flex', gap: '0.75rem', fontSize: '0.74rem', color: 'var(--text-2)', fontWeight: 400 }}>
                       <span>{r.team}</span>
                       <span style={{ color: 'var(--text-3)' }}>·</span>
                       <span>{r.location}</span>
@@ -110,7 +111,7 @@ export default function CareersPage() {
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <span style={{ fontSize: '0.58rem', letterSpacing: '0.15em', textTransform: 'uppercase', border: '1px solid var(--border-w)', color: 'var(--text-3)', padding: '4px 10px', whiteSpace: 'nowrap', fontWeight: 500 }}>
+                  <span style={{ fontSize: '0.58rem', letterSpacing: '0.12em', textTransform: 'uppercase', border: '1px solid var(--border-w)', color: 'var(--text-3)', padding: '4px 11px', whiteSpace: 'nowrap', fontWeight: 600, borderRadius: 999 }}>
                     {r.type}
                   </span>
                   <span style={{ fontSize: '0.8rem', color: 'var(--text-3)' }}>→</span>
@@ -119,11 +120,11 @@ export default function CareersPage() {
             ))}
           </div>
 
-          <div style={{ marginTop: '1.5rem', padding: '2rem', border: '1px solid var(--border-w)', background: 'var(--bg-card)' }}>
-            <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.75rem', fontWeight: 500 }}>General Applications</div>
-            <p style={{ fontSize: '0.82rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 300 }}>
+          <div style={{ marginTop: '1.5rem', padding: '2rem', border: '1px solid var(--border-w)', background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
+            <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.75rem', fontWeight: 600 }}>General Applications</div>
+            <p style={{ fontSize: '0.86rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 400 }}>
               Don't see the right role? We're always interested in exceptional people. Send your background and what you'd like to build to{' '}
-              <a href="mailto:careers@tarvico.com" style={{ color: 'var(--gold)', textDecoration: 'none', fontWeight: 400 }}>careers@tarvico.com</a>
+              <a href="mailto:careers@tarvico.com" style={{ color: 'var(--gold)', textDecoration: 'none', fontWeight: 600 }}>careers@tarvico.com</a>
             </p>
           </div>
         </div>
@@ -132,19 +133,19 @@ export default function CareersPage() {
 
         <div style={{ padding: '5rem 0' }}>
           <SectionLabel>Why Tarvico</SectionLabel>
-          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--border-w)', marginTop: '1.5rem' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginTop: '1.5rem' }}>
             {[
               { t: 'Work on problems that matter', d: 'We build infrastructure for the intelligence economy — systems that will power how organizations work for the next decade. The problems are real, the stakes are high, the work is meaningful.' },
               { t: 'Operate with genuine autonomy', d: 'No bureaucracy. No process theater. You own your domain, make decisions with context, and move fast. We trust exceptional people to do exceptional things.' },
               { t: 'Build with the best tools', d: 'We are AI-native from day one. Every team member has access to the full stack of AI tools, infrastructure, and capability. Your leverage here is unlike anywhere else.' },
               { t: 'Shape a company from its foundation', d: 'Early employees at enduring companies become its institutional memory, culture carriers, and leadership. This is a rare opportunity to help build something that lasts.' },
             ].map(item => (
-              <div key={item.t} style={{ background: 'var(--bg)', padding: '2.5rem', borderLeft: '2px solid var(--border-w)', transition: 'border-color 0.2s' }}
-                onMouseEnter={e => { e.currentTarget.style.borderLeftColor = 'var(--gold)' }}
-                onMouseLeave={e => { e.currentTarget.style.borderLeftColor = 'var(--border-w)' }}
+              <div key={item.t} style={{ background: 'var(--bg-card)', padding: '2.5rem', border: '1px solid var(--border-w)', borderLeftWidth: 2, borderLeftColor: 'var(--gold-border)', borderRadius: 'var(--radius-lg)', transition: 'border-color 0.2s, transform 0.3s cubic-bezier(0.16,1,0.3,1)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderLeftColor = 'var(--gold)'; e.currentTarget.style.transform = 'translateY(-3px)' }}
+                onMouseLeave={e => { e.currentTarget.style.borderLeftColor = 'var(--gold-border)'; e.currentTarget.style.transform = 'translateY(0)' }}
               >
-                <div style={{ fontSize: '0.9rem', color: 'var(--text)', marginBottom: '0.5rem', fontWeight: 400 }}>{item.t}</div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 300 }}>{item.d}</div>
+                <div style={{ fontSize: '0.98rem', color: 'var(--text)', marginBottom: '0.5rem', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{item.t}</div>
+                <div style={{ fontSize: '0.84rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 400 }}>{item.d}</div>
               </div>
             ))}
           </div>

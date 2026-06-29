@@ -75,15 +75,15 @@ export default function VisionPage() {
         </div>
         <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'end' }}>
           <h1 style={{
-            fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
-            fontSize: 'clamp(3rem, 6vw, 6rem)',
-            fontWeight: 400,
-            lineHeight: 0.96,
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(2.8rem, 5.5vw, 5.2rem)',
+            fontWeight: 700,
+            lineHeight: 1.02,
             color: 'var(--text)',
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.04em',
           }}>
             Building for<br />
-            <em style={{ fontStyle: 'italic', color: 'var(--gold)', fontWeight: 300 }}>the Next Era</em>
+            <span className="text-gradient-gold">the Next Era</span>
           </h1>
           <div style={{ paddingBottom: '0.5rem' }}>
             <div style={{ fontSize: '0.72rem', color: 'var(--text-2)', fontWeight: 300, marginBottom: '0.25rem' }}>
@@ -100,18 +100,17 @@ export default function VisionPage() {
         {paragraphs.map((p, i) => {
           if (p.lead) return (
             <p key={i} style={{
-              fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)',
-              fontWeight: 300,
-              fontStyle: 'italic',
+              fontWeight: 600,
               color: 'var(--text)',
-              lineHeight: 1.5,
+              lineHeight: 1.45,
               marginBottom: '3rem',
               paddingLeft: '2rem',
-              borderLeft: '2px solid var(--gold)',
-              letterSpacing: '-0.01em',
+              borderLeft: '3px solid var(--gold)',
+              letterSpacing: '-0.02em',
             }}>
-              "{p.text}"
+              &ldquo;{p.text}&rdquo;
             </p>
           )
           if (p.bold) return (
@@ -128,10 +127,10 @@ export default function VisionPage() {
           )
           return (
             <p key={i} style={{
-              fontSize: '1.05rem',
+              fontSize: '1.08rem',
               color: 'var(--text-2)',
-              lineHeight: 1.9,
-              fontWeight: 300,
+              lineHeight: 1.8,
+              fontWeight: 400,
               marginBottom: '1.75rem',
             }}>
               {p.text}
@@ -140,7 +139,7 @@ export default function VisionPage() {
         })}
 
         <div style={{ marginTop: '5rem', paddingTop: '3rem', borderTop: '1px solid var(--border-w)' }}>
-          <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '1.8rem', fontWeight: 300, color: 'var(--text)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.5rem', letterSpacing: '-0.03em' }}>
             Jeff Yèmalín Bienvenu Honforloco
           </div>
           <div style={{ fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500, marginBottom: '0.3rem' }}>
