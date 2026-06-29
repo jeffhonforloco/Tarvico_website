@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { PageHero, SectionLabel } from '@/components/ui'
 
 const news = [
@@ -10,6 +11,7 @@ const news = [
     excerpt: 'Tarvico Inc. announces its formation as a private technology holding company, with a portfolio of seven ventures in development and a flagship product — Vytre AWOS, the AI Workforce Operating System — targeting enterprise launch in 2026.',
     date: 'Q1 2026',
     readTime: '4 min read',
+    href: '/about',
   },
   {
     category: 'Product · Development',
@@ -17,6 +19,7 @@ const news = [
     excerpt: 'The AI Workforce Operating System enters active development. Core agent orchestration engine, enterprise API layer, and adaptive workflow execution framework underway.',
     date: 'Q1 2026',
     readTime: '6 min read',
+    href: '/portfolio',
   },
   {
     category: 'Vision · Research',
@@ -24,6 +27,7 @@ const news = [
     excerpt: 'An internal research paper on the trajectory of AI workforce systems, enterprise automation adoption, and the opportunity for AI-native operating platforms in the enterprise market.',
     date: 'Q4 2025',
     readTime: '12 min read',
+    href: '/vision',
   },
   {
     category: 'Portfolio · Update',
@@ -31,6 +35,7 @@ const news = [
     excerpt: 'Two portfolio companies graduate from concept validation into active incubation — SireIQ and SEOAgentPro begin product research, market validation, and initial prototyping.',
     date: 'Q4 2025',
     readTime: '3 min read',
+    href: '/portfolio',
   },
   {
     category: 'Portfolio · Update',
@@ -38,6 +43,7 @@ const news = [
     excerpt: 'Two network-based ventures enter active development: Maeyen, a commerce trust network for Africa starting from Nigeria, and Racym, a verified creative talent network matching brands and agencies to pre-vetted talent by what they have actually delivered.',
     date: 'Q1 2026',
     readTime: '3 min read',
+    href: '/portfolio',
   },
   {
     category: 'Founder · Letter',
@@ -45,6 +51,7 @@ const news = [
     excerpt: 'Tarvico Founder & CEO Jeff Honforloco publishes the inaugural founder letter — outlining the vision, philosophy, and long-term ambitions behind Tarvico Inc.',
     date: 'Q4 2025',
     readTime: '8 min read',
+    href: '/vision',
   },
 ]
 
@@ -63,7 +70,7 @@ export default function NewsroomPage() {
 
         <SectionLabel>Featured</SectionLabel>
 
-        <div className="mob-stack" style={{
+        <Link href={featured.href} className="mob-stack" style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gap: '0',
@@ -74,7 +81,12 @@ export default function NewsroomPage() {
           borderTop: '2px solid var(--gold)',
           borderRadius: 'var(--radius-xl)',
           boxShadow: 'var(--shadow)',
-        }}>
+          textDecoration: 'none',
+          transition: 'box-shadow 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1)',
+        }}
+          onMouseEnter={e => { e.currentTarget.style.boxShadow = 'var(--shadow-lg)'; e.currentTarget.style.transform = 'translateY(-3px)' }}
+          onMouseLeave={e => { e.currentTarget.style.boxShadow = 'var(--shadow)'; e.currentTarget.style.transform = 'translateY(0)' }}
+        >
           <div style={{ padding: '3rem', borderRight: '1px solid var(--border-w)' }}>
             <div style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.5rem', fontWeight: 600 }}>
               {featured.category}
@@ -110,19 +122,20 @@ export default function NewsroomPage() {
               ))}
             </div>
             <div style={{ marginTop: '2rem' }}>
-              <span style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500, cursor: 'default' }}>
+              <span style={{ fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>
                 Read Full Story →
               </span>
             </div>
           </div>
-        </div>
+        </Link>
 
         <SectionLabel>All Stories</SectionLabel>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', marginTop: '1.5rem' }}>
           {rest.map(item => (
-            <div key={item.title} style={{
-              background: 'var(--bg-card)', padding: '2.5rem',
+            <Link key={item.title} href={item.href} style={{
+              display: 'flex', flexDirection: 'column', height: '100%',
+              background: 'var(--bg-card)', padding: '2.5rem', textDecoration: 'none',
               transition: 'border-color 0.25s, box-shadow 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1)', cursor: 'pointer',
               border: '1px solid var(--border-w)', borderTop: '2px solid var(--border-w)', borderRadius: 'var(--radius-lg)',
             }}
@@ -141,21 +154,21 @@ export default function NewsroomPage() {
               }}>
                 {item.title}
               </h3>
-              <p style={{ fontSize: '0.84rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 400, marginBottom: '1.75rem' }}>
+              <p style={{ fontSize: '0.84rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 400, marginBottom: '1.75rem', flex: 1 }}>
                 {item.excerpt}
               </p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1rem' }}>
                 <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', fontWeight: 400 }}>{item.date}</span>
-                <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', fontWeight: 400 }}>{item.readTime}</span>
+                <span style={{ fontSize: '0.6rem', color: 'var(--gold)', fontWeight: 600 }}>Read →</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         <div style={{ marginTop: '4rem', padding: '2.5rem', border: '1px solid var(--border-w)', background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           <div>
             <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 600 }}>Press & Media Inquiries</div>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--gold)' }}>press@tarvico.com</div>
+            <a href="mailto:press@tarvico.com" style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--gold)', textDecoration: 'none' }}>press@tarvico.com</a>
           </div>
           <div style={{ fontSize: '0.8rem', color: 'var(--text-2)', maxWidth: 360, fontWeight: 400, lineHeight: 1.7 }}>
             For media inquiries, interview requests, and press assets, contact our communications team directly.

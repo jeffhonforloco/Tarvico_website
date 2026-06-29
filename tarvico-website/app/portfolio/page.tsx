@@ -13,7 +13,7 @@ const emergingVentures = [
     accent: 'var(--gold)',
     border: 'var(--gold-border)',
     bg: 'var(--gold-glow)',
-    year: '2025',
+    year: '2026',
   },
   {
     name: 'Racym',
@@ -25,7 +25,7 @@ const emergingVentures = [
     accent: 'var(--gold)',
     border: 'var(--gold-border)',
     bg: 'var(--gold-glow)',
-    year: '2025',
+    year: '2026',
   },
 ]
 
