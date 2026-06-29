@@ -11,8 +11,8 @@ const timeline = [
 
 const subsidiaries = [
   { name: 'Vytre AWOS', desc: 'AI Workforce Operating System', status: 'Flagship', color: 'var(--gold)' },
-  { name: 'Maeyen', desc: 'Commerce Trust Network for Africa', status: 'Live', color: 'var(--emerald)' },
-  { name: 'Racym', desc: 'Verified Creative Talent Network', status: 'Live', color: 'var(--emerald)' },
+  { name: 'Maeyen', desc: 'Commerce Trust Network for Africa', status: 'Building', color: 'var(--gold-dim)' },
+  { name: 'Racym', desc: 'Verified Creative Talent Network', status: 'Building', color: 'var(--gold-dim)' },
   { name: 'SireIQ', desc: 'AI Assistant for Chat, Content & Workflow', status: 'Incubation', color: 'var(--gold-dim)' },
   { name: 'SEOAgentPro', desc: 'AI Search Intelligence Platform', status: 'Incubation', color: 'var(--gold-dim)' },
   { name: 'Fycra', desc: 'AI-Native Code Platform', status: 'Stealth', color: 'var(--text-3)' },
