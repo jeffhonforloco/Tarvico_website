@@ -180,6 +180,8 @@ const organizationSchema = {
     postalCode: '19901',
     addressCountry: 'US',
   },
+  telephone: '+1-302-439-6442',
+  email: 'hello@tarvico.com',
   areaServed: 'Worldwide',
   knowsAbout: [
     'Artificial Intelligence',
@@ -250,20 +252,24 @@ const organizationSchema = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
+      contactType: 'customer support',
+      telephone: '+1-302-439-6442',
+      email: 'hello@tarvico.com',
+      areaServed: 'Worldwide',
+      availableLanguage: 'English',
+    },
+    {
+      '@type': 'ContactPoint',
       contactType: 'investor relations',
+      telephone: '+1-302-439-6442',
       email: 'investors@tarvico.com',
       availableLanguage: 'English',
     },
     {
       '@type': 'ContactPoint',
       contactType: 'press',
+      telephone: '+1-302-439-6442',
       email: 'press@tarvico.com',
-      availableLanguage: 'English',
-    },
-    {
-      '@type': 'ContactPoint',
-      contactType: 'customer support',
-      email: 'hello@tarvico.com',
       availableLanguage: 'English',
     },
   ],
@@ -350,7 +356,7 @@ const faqSchema = {
       name: 'Where is Tarvico located?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tarvico Inc. is incorporated in the state of Delaware, United States, and operates globally across its portfolio of AI-native technology ventures.',
+        text: 'Tarvico Inc. is headquartered at 8 The Green, #5275, Dover, DE 19901, United States, and can be reached by phone at +1 (302) 439-6442. The company is incorporated in Delaware and operates globally across its portfolio of AI-native technology ventures.',
       },
     },
     {
