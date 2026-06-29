@@ -45,10 +45,11 @@ export default function ContactPage() {
     width: '100%',
     background: 'var(--bg-card)',
     border: '1px solid var(--border-w)',
+    borderRadius: 'var(--radius-sm)',
     color: 'var(--text)',
-    fontSize: '0.88rem',
-    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
-    fontWeight: 300,
+    fontSize: '0.9rem',
+    fontFamily: 'var(--font-body)',
+    fontWeight: 400,
     padding: '0.9rem 1rem',
     outline: 'none',
     transition: 'border-color 0.2s',
@@ -59,7 +60,7 @@ export default function ContactPage() {
     <>
       <PageHero
         label="Contact"
-        title={<>Let's build something<br /><em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>significant.</em></>}
+        title={<>Let&apos;s build something <span className="text-gradient-gold">significant.</span></>}
         subtitle="Whether you're an investor, potential partner, future team member, or enterprise customer — we'd like to hear from you."
       />
 
@@ -68,20 +69,25 @@ export default function ContactPage() {
 
           <div>
             <SectionLabel>Direct Channels</SectionLabel>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--border-w)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {channels.map(c => (
                 <div key={c.label} style={{
-                  padding: '2rem',
-                  background: c.bg,
+                  padding: '1.75rem 2rem',
+                  background: c.bg === 'transparent' ? 'var(--bg-card)' : c.bg,
                   border: `1px solid ${c.border}`,
-                  borderColor: c.border,
-                  transition: 'background 0.2s',
-                }}>
-                  <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 500 }}>{c.label}</div>
+                  borderRadius: 'var(--radius-lg)',
+                  boxShadow: 'var(--shadow-sm)',
+                  transition: 'transform 0.3s cubic-bezier(0.16,1,0.3,1)',
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)' }}
+                >
+                  <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 600 }}>{c.label}</div>
                   <a href={`mailto:${c.email}`} style={{
-                    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
-                    fontSize: '1.2rem',
-                    fontWeight: 300,
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '1.15rem',
+                    fontWeight: 600,
+                    letterSpacing: '-0.02em',
                     color: c.color,
                     textDecoration: 'none',
                     display: 'block',
@@ -90,14 +96,14 @@ export default function ContactPage() {
                   }}>
                     {c.email}
                   </a>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text-2)', fontWeight: 300 }}>{c.desc}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-2)', fontWeight: 400 }}>{c.desc}</div>
                 </div>
               ))}
             </div>
 
-            <div style={{ marginTop: '3rem', padding: '2rem', border: '1px solid var(--border-w)', background: 'var(--bg-card)' }}>
-              <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1rem', fontWeight: 500 }}>Headquarters</div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 300 }}>
+            <div style={{ marginTop: '3rem', padding: '2rem', border: '1px solid var(--border-w)', background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1rem', fontWeight: 600 }}>Headquarters</div>
+              <div style={{ fontSize: '0.88rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 400 }}>
                 Tarvico Inc.<br />
                 8 The Green, #5275<br />
                 Dover, DE 19901<br />
@@ -111,9 +117,9 @@ export default function ContactPage() {
             <SectionLabel>Send a Message</SectionLabel>
 
             {sent ? (
-              <div style={{ padding: '3rem', border: '1px solid var(--emerald-border)', background: 'var(--emerald-glow)', textAlign: 'center' }}>
-                <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '2rem', fontWeight: 300, color: 'var(--text)', marginBottom: '1rem' }}>Message Received</div>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 300 }}>
+              <div style={{ padding: '3rem', border: '1px solid var(--emerald-border)', background: 'var(--emerald-glow)', textAlign: 'center', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--text)', marginBottom: '1rem' }}>Message Received</div>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 400 }}>
                   Thank you for reaching out. A member of the Tarvico team will review your message and respond within 2–3 business days.
                 </p>
               </div>
@@ -179,7 +185,7 @@ export default function ContactPage() {
                 </div>
 
                 {error && (
-                  <div style={{ padding: '0.85rem 1rem', border: '1px solid rgba(220,80,80,0.25)', background: 'rgba(220,80,80,0.06)', fontSize: '0.8rem', color: '#e06060', lineHeight: 1.6 }}>
+                  <div style={{ padding: '0.85rem 1rem', border: '1px solid rgba(220,80,80,0.25)', background: 'rgba(220,80,80,0.06)', fontSize: '0.8rem', color: '#e06060', lineHeight: 1.6, borderRadius: 'var(--radius-sm)' }}>
                     {error}
                   </div>
                 )}

@@ -128,7 +128,7 @@ export default function PrivacyPage() {
     <>
       <PageHero
         label="Privacy Policy"
-        title={<>Your data.<br /><em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>Our responsibility.</em></>}
+        title={<>Your data. <span className="text-gradient-gold">Our responsibility.</span></>}
         subtitle="Last Updated: May 2026 — This Privacy Policy describes how Tarvico Inc. collects, uses, and protects information about visitors to tarvico.com."
       />
 
@@ -138,12 +138,12 @@ export default function PrivacyPage() {
           <div key={section.title} style={{ marginBottom: '3.5rem' }}>
             <SectionLabel>{String(si + 1).padStart(2, '0')}</SectionLabel>
             <h2 style={{
-              fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: 'clamp(1.4rem, 3vw, 1.9rem)',
-              fontWeight: 400,
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(1.5rem, 3vw, 2.1rem)',
+              fontWeight: 700,
               color: 'var(--text)',
               marginBottom: '2rem',
-              letterSpacing: '0.01em',
+              letterSpacing: '-0.025em',
             }}>
               {section.title}
             </h2>
@@ -161,10 +161,10 @@ export default function PrivacyPage() {
                   {item.subtitle}
                 </h3>
                 <p style={{
-                  fontSize: '0.88rem',
+                  fontSize: '0.92rem',
                   color: 'var(--text-2)',
-                  lineHeight: 1.85,
-                  fontWeight: 300,
+                  lineHeight: 1.8,
+                  fontWeight: 400,
                   whiteSpace: 'pre-line',
                 }}>
                   {item.body}

@@ -7,7 +7,7 @@ const news = [
     featured: true,
     category: 'Company · Announcement',
     title: 'Tarvico Inc. Launches — A Private Technology Holding Company',
-    excerpt: 'Tarvico Inc. announces its formation as a private technology holding company, with a portfolio of six ventures in development and a flagship product — Vytre AWOS, the AI Workforce Operating System — targeting enterprise launch in 2026.',
+    excerpt: 'Tarvico Inc. announces its formation as a private technology holding company, with a portfolio of seven ventures in development and a flagship product — Vytre AWOS, the AI Workforce Operating System — targeting enterprise launch in 2026.',
     date: 'Q1 2026',
     readTime: '4 min read',
   },
@@ -30,6 +30,13 @@ const news = [
     title: 'SireIQ & SEOAgentPro Enter Incubation Phase',
     excerpt: 'Two portfolio companies graduate from concept validation into active incubation — SireIQ and SEOAgentPro begin product research, market validation, and initial prototyping.',
     date: 'Q4 2025',
+    readTime: '3 min read',
+  },
+  {
+    category: 'Portfolio · Launch',
+    title: 'Maeyen & Racym Join the Tarvico Portfolio',
+    excerpt: 'Two network-based ventures go live: Maeyen, a commerce trust network for Africa starting from Nigeria, and Racym, a verified creative talent network matching brands and agencies to pre-vetted talent by what they have actually delivered.',
+    date: 'Q1 2026',
     readTime: '3 min read',
   },
   {
@@ -65,23 +72,25 @@ export default function NewsroomPage() {
           marginBottom: '4rem',
           overflow: 'hidden',
           borderTop: '2px solid var(--gold)',
+          borderRadius: 'var(--radius-xl)',
+          boxShadow: 'var(--shadow)',
         }}>
           <div style={{ padding: '3rem', borderRight: '1px solid var(--border-w)' }}>
-            <div style={{ fontSize: '0.58rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.5rem', fontWeight: 500 }}>
+            <div style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.5rem', fontWeight: 600 }}>
               {featured.category}
             </div>
             <h2 style={{
-              fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: 'clamp(1.6rem, 3vw, 2.5rem)',
-              fontWeight: 400,
+              fontWeight: 700,
               color: 'var(--text)',
-              lineHeight: 1.15,
+              lineHeight: 1.12,
               marginBottom: '1.5rem',
-              letterSpacing: '-0.01em',
+              letterSpacing: '-0.035em',
             }}>
               {featured.title}
             </h2>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', lineHeight: 1.8, fontWeight: 300 }}>
+            <p style={{ fontSize: '0.94rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 400 }}>
               {featured.excerpt}
             </p>
           </div>
@@ -110,29 +119,29 @@ export default function NewsroomPage() {
 
         <SectionLabel>All Stories</SectionLabel>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', background: 'var(--border-w)', marginTop: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', marginTop: '1.5rem' }}>
           {rest.map(item => (
             <div key={item.title} style={{
-              background: 'var(--bg)', padding: '2.5rem',
-              transition: 'background 0.25s', cursor: 'pointer',
-              borderTop: '2px solid transparent',
+              background: 'var(--bg-card)', padding: '2.5rem',
+              transition: 'border-color 0.25s, box-shadow 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1)', cursor: 'pointer',
+              border: '1px solid var(--border-w)', borderTop: '2px solid var(--border-w)', borderRadius: 'var(--radius-lg)',
             }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)'; e.currentTarget.style.borderTopColor = 'var(--gold)' }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg)'; e.currentTarget.style.borderTopColor = 'transparent' }}
+              onMouseEnter={e => { e.currentTarget.style.borderTopColor = 'var(--gold)'; e.currentTarget.style.boxShadow = 'var(--shadow)'; e.currentTarget.style.transform = 'translateY(-3px)' }}
+              onMouseLeave={e => { e.currentTarget.style.borderTopColor = 'var(--border-w)'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)' }}
             >
-              <div style={{ fontSize: '0.56rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem', fontWeight: 500 }}>{item.category}</div>
+              <div style={{ fontSize: '0.56rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem', fontWeight: 600 }}>{item.category}</div>
               <h3 style={{
-                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
-                fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
-                fontWeight: 400,
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(1.1rem, 2vw, 1.45rem)',
+                fontWeight: 700,
                 color: 'var(--text)',
-                lineHeight: 1.25,
+                lineHeight: 1.2,
                 marginBottom: '1rem',
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.03em',
               }}>
                 {item.title}
               </h3>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 300, marginBottom: '1.75rem' }}>
+              <p style={{ fontSize: '0.84rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 400, marginBottom: '1.75rem' }}>
                 {item.excerpt}
               </p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1rem' }}>
@@ -143,12 +152,12 @@ export default function NewsroomPage() {
           ))}
         </div>
 
-        <div style={{ marginTop: '4rem', padding: '2.5rem', border: '1px solid var(--border-w)', background: 'var(--bg-card)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
+        <div style={{ marginTop: '4rem', padding: '2.5rem', border: '1px solid var(--border-w)', background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           <div>
-            <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 500 }}>Press & Media Inquiries</div>
-            <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '1.2rem', fontWeight: 300, color: 'var(--gold)' }}>press@tarvico.com</div>
+            <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 600 }}>Press & Media Inquiries</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--gold)' }}>press@tarvico.com</div>
           </div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-2)', maxWidth: 360, fontWeight: 300, lineHeight: 1.7 }}>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-2)', maxWidth: 360, fontWeight: 400, lineHeight: 1.7 }}>
             For media inquiries, interview requests, and press assets, contact our communications team directly.
           </div>
         </div>
