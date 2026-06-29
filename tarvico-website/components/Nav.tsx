@@ -97,16 +97,17 @@ export default function Nav() {
               key={href}
               href={href}
               style={{
-                fontSize: '0.75rem',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
+                fontSize: '0.9rem',
+                letterSpacing: '-0.005em',
                 color: active ? 'var(--text)' : 'var(--text-2)',
                 textDecoration: 'none',
                 fontWeight: active ? 600 : 500,
                 transition: 'color 0.2s',
                 position: 'relative',
-                paddingBottom: '2px',
+                paddingBottom: '4px',
               }}
+              onMouseEnter={e => { if (!active) e.currentTarget.style.color = 'var(--text)' }}
+              onMouseLeave={e => { if (!active) e.currentTarget.style.color = 'var(--text-2)' }}
             >
               {label}
               {active && (
@@ -115,7 +116,8 @@ export default function Nav() {
                   bottom: -2,
                   left: 0,
                   right: 0,
-                  height: '1px',
+                  height: '2px',
+                  borderRadius: 2,
                   background: 'var(--gold)',
                 }} />
               )}
@@ -133,9 +135,10 @@ export default function Nav() {
             border: '1px solid var(--border-m)',
             color: 'var(--text-2)',
             cursor: 'pointer',
-            padding: '6px 10px',
+            padding: '7px 11px',
             fontSize: '1rem',
             lineHeight: 1,
+            borderRadius: 'var(--radius-sm)',
             transition: 'border-color 0.2s, color 0.2s',
           }}
           onMouseEnter={e => {
@@ -153,23 +156,23 @@ export default function Nav() {
         <Link
           href="/contact"
           style={{
-            fontSize: '0.65rem',
-            letterSpacing: '0.18em',
-            textTransform: 'uppercase',
-            border: '1px solid var(--gold-border)',
-            color: 'var(--gold)',
-            padding: '8px 20px',
+            fontSize: '0.85rem',
+            letterSpacing: '-0.005em',
+            background: 'var(--gold)',
+            color: '#0A0A0C',
+            padding: '9px 20px',
             textDecoration: 'none',
-            fontWeight: 500,
-            transition: 'background 0.2s, border-color 0.2s',
+            fontWeight: 600,
+            borderRadius: 'var(--radius-sm)',
+            transition: 'transform 0.2s, box-shadow 0.2s',
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.background = 'var(--gold-glow)'
-            e.currentTarget.style.borderColor = 'var(--gold)'
+            e.currentTarget.style.transform = 'translateY(-2px)'
+            e.currentTarget.style.boxShadow = 'var(--shadow-gold)'
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.background = 'transparent'
-            e.currentTarget.style.borderColor = 'var(--gold-border)'
+            e.currentTarget.style.transform = 'translateY(0)'
+            e.currentTarget.style.boxShadow = 'none'
           }}
         >
           Contact
@@ -236,7 +239,7 @@ export default function Nav() {
             onClick={close}
             style={{
               fontSize: 'clamp(1.8rem, 6vw, 2.8rem)',
-              fontFamily: '"Cormorant Garamond", serif',
+              fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
               fontWeight: 300,
               color: pathname === href ? 'var(--text)' : 'var(--text-2)',
               textDecoration: 'none',

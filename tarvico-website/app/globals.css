@@ -1,57 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Backgrounds — dark institutional */
-  --bg:        #07070A;
-  --bg-raised: #0C0C10;
-  --bg-card:   #111116;
-  --bg-deep:   #050508;
+  /* Backgrounds — refined dark, slightly cool near-black */
+  --bg:        #0A0A0C;
+  --bg-raised: #101013;
+  --bg-card:   #141418;
+  --bg-deep:   #060608;
 
-  /* Gold — primary accent */
-  --gold:        #C9A447;
-  --gold-light:  #D4B55A;
-  --gold-dim:    rgba(201, 164, 71, 0.55);
-  --gold-glow:   rgba(201, 164, 71, 0.07);
-  --gold-border: rgba(201, 164, 71, 0.20);
+  /* Gold — primary brand accent */
+  --gold:        #CDA94B;
+  --gold-light:  #E0C572;
+  --gold-dim:    rgba(205, 169, 75, 0.55);
+  --gold-glow:   rgba(205, 169, 75, 0.08);
+  --gold-border: rgba(205, 169, 75, 0.22);
 
   /* Intelligence blue — data / AI system indicators */
   --blue:        #5B9BD5;
   --blue-dim:    rgba(91, 155, 213, 0.5);
-  --blue-glow:   rgba(91, 155, 213, 0.07);
+  --blue-glow:   rgba(91, 155, 213, 0.08);
   --blue-border: rgba(91, 155, 213, 0.18);
 
   /* Operational emerald — system active / live status */
   --emerald:        #2ECC8A;
   --emerald-dim:    rgba(46, 204, 138, 0.5);
-  --emerald-glow:   rgba(46, 204, 138, 0.07);
+  --emerald-glow:   rgba(46, 204, 138, 0.08);
   --emerald-border: rgba(46, 204, 138, 0.18);
 
   /* Text hierarchy */
-  --text:     #F0EDE6;
-  --text-2:   #7C7A76;
-  --text-3:   #3C3A36;
+  --text:     #F4F2EC;
+  --text-2:   #9B9892;
+  --text-3:   #56544F;
 
   /* Borders */
-  --border-w: rgba(255, 255, 255, 0.06);
-  --border-m: rgba(255, 255, 255, 0.10);
+  --border-w: rgba(255, 255, 255, 0.07);
+  --border-m: rgba(255, 255, 255, 0.12);
+
+  /* Typography */
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radius — modern rounded surfaces */
+  --radius-sm: 8px;
+  --radius:    14px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+
+  /* Elevation — soft shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.30);
+  --shadow:    0 8px 24px -8px rgba(0,0,0,0.45);
+  --shadow-lg: 0 24px 56px -16px rgba(0,0,0,0.55);
+  --shadow-gold: 0 16px 40px -12px rgba(205,169,75,0.22);
+
+  /* Accent gradient — used for hero washes & key surfaces */
+  --grad-accent: linear-gradient(135deg, #E0C572 0%, #CDA94B 50%, #B8893A 100%);
 }
 
 /* ── Light theme overrides ────────────────────────────────────────────────── */
 [data-theme="light"] {
-  --bg:        #F7F5F1;
-  --bg-raised: #EFECEA;
-  --bg-card:   #E8E5E0;
-  --bg-deep:   #DDD9D2;
+  --bg:        #FBFAF8;
+  --bg-raised: #F4F2EE;
+  --bg-card:   #FFFFFF;
+  --bg-deep:   #EEEBE5;
 
-  --text:   #1C1A17;
-  --text-2: #6A6760;
-  --text-3: #AEABA4;
+  --text:   #16150F;
+  --text-2: #5E5B53;
+  --text-3: #A6A29A;
 
-  --border-w: rgba(0, 0, 0, 0.07);
-  --border-m: rgba(0, 0, 0, 0.11);
+  --border-w: rgba(20, 18, 12, 0.08);
+  --border-m: rgba(20, 18, 12, 0.13);
+
+  --shadow-sm: 0 1px 2px rgba(20,18,12,0.05);
+  --shadow:    0 10px 30px -10px rgba(20,18,12,0.12);
+  --shadow-lg: 0 28px 60px -18px rgba(20,18,12,0.16);
+  --shadow-gold: 0 16px 40px -12px rgba(205,169,75,0.28);
 }
 
 [data-theme="light"] body {
@@ -87,17 +111,41 @@ html {
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 ::selection {
-  background: rgba(201, 164, 71, 0.18);
+  background: rgba(205, 169, 75, 0.20);
   color: var(--gold-light);
+}
+
+/* ── Display heading utility — tight, bold, modern ───────────────────────── */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+/* ── Soft surface card ───────────────────────────────────────────────────── */
+.surface {
+  background: var(--bg-card);
+  border: 1px solid var(--border-w);
+  border-radius: var(--radius);
+}
+
+/* ── Gradient text — gold accent sweep ───────────────────────────────────── */
+.text-gradient-gold {
+  background: linear-gradient(120deg, var(--gold-light) 0%, var(--gold) 55%, #B8893A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 ::-webkit-scrollbar { width: 3px; }

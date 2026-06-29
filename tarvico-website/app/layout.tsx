@@ -7,7 +7,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#070707',
+  themeColor: '#0A0A0C',
 }
 
 export const metadata: Metadata = {
@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     'AI Workforce Operating System',
     'SireIQ',
     'SEOAgentPro',
+    'Maeyen',
+    'Racym',
+    'commerce trust network',
+    'creative talent network',
     'Fycra',
     'Fycera',
     'software ventures',
@@ -116,7 +120,7 @@ export const metadata: Metadata = {
     google: 'jQeeSN9bYApYMV3WoeseoMXsY4ZLszdTgaHo7mHaQ5M',
   },
   other: {
-    'msapplication-TileColor': '#070707',
+    'msapplication-TileColor': '#0A0A0C',
     'msapplication-TileImage': '/logo-icon.png',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
@@ -221,6 +225,26 @@ const organizationSchema = {
           applicationCategory: 'BusinessApplication',
         },
       },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'WebApplication',
+          name: 'Maeyen',
+          description: 'A commerce trust network for Africa, starting from Nigeria — built to solve the biggest problem in African online commerce: trust between buyers and sellers.',
+          url: 'https://www.maeyen.com',
+          applicationCategory: 'BusinessApplication',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'WebApplication',
+          name: 'Racym',
+          description: 'A verified creative talent network that matches brands and agencies to pre-vetted talent based on what they have actually delivered, not their follower count.',
+          url: 'https://www.racym.com',
+          applicationCategory: 'BusinessApplication',
+        },
+      },
     ],
   },
   contactPoint: [
@@ -302,7 +326,7 @@ const faqSchema = {
       name: 'What companies does Tarvico own?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tarvico\'s portfolio includes Vytre AWOS (flagship AI Workforce Operating System for enterprise), SireIQ (AI productivity assistant), SEOAgentPro (autonomous SEO intelligence platform), Fycra (developer tools platform, stealth), and Fycera (AI creative content platform, stealth).',
+        text: 'Tarvico\'s portfolio includes Vytre AWOS (flagship AI Workforce Operating System for enterprise), Maeyen (commerce trust network for Africa), Racym (verified creative talent network), SireIQ (AI productivity assistant), SEOAgentPro (autonomous SEO intelligence platform), Fycra (developer tools platform, stealth), and Fycera (AI creative content platform, stealth).',
       },
     },
     {

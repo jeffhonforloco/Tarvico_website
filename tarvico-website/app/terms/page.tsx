@@ -155,7 +155,7 @@ export default function TermsPage() {
           <div key={section.title} style={{ marginBottom: '3.5rem' }}>
             <SectionLabel>{String(si + 1).padStart(2, '0')}</SectionLabel>
             <h2 style={{
-              fontFamily: '"Cormorant Garamond", serif',
+              fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
               fontSize: 'clamp(1.4rem, 3vw, 1.9rem)',
               fontWeight: 400,
               color: 'var(--text)',

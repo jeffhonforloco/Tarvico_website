@@ -37,7 +37,7 @@ export default function CareersPage() {
             { n: 'Elite', l: 'Team Density' },
           ].map(s => (
             <div key={s.n} style={{ background: 'var(--bg-card)', padding: '2.5rem', textAlign: 'center' }}>
-              <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '2.4rem', fontWeight: 300, color: 'var(--text)', lineHeight: 1, marginBottom: '0.5rem' }}>{s.n}</div>
+              <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '2.4rem', fontWeight: 300, color: 'var(--text)', lineHeight: 1, marginBottom: '0.5rem' }}>{s.n}</div>
               <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 500 }}>{s.l}</div>
             </div>
           ))}
@@ -56,7 +56,7 @@ export default function CareersPage() {
                 onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-card)'; e.currentTarget.style.borderTopColor = 'var(--gold)' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg)'; e.currentTarget.style.borderTopColor = 'transparent' }}
               >
-                <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '3rem', fontWeight: 300, color: 'var(--text-3)', marginBottom: '1.5rem', lineHeight: 1 }}>{v.n}</div>
+                <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '3rem', fontWeight: 300, color: 'var(--text-3)', marginBottom: '1.5rem', lineHeight: 1 }}>{v.n}</div>
                 <div style={{ fontSize: '0.92rem', color: 'var(--text)', marginBottom: '0.65rem', fontWeight: 400 }}>{v.title}</div>
                 <p style={{ fontSize: '0.78rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 300 }}>{v.desc}</p>
               </div>

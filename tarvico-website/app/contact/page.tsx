@@ -47,7 +47,7 @@ export default function ContactPage() {
     border: '1px solid var(--border-w)',
     color: 'var(--text)',
     fontSize: '0.88rem',
-    fontFamily: '"DM Sans", sans-serif',
+    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
     fontWeight: 300,
     padding: '0.9rem 1rem',
     outline: 'none',
@@ -79,7 +79,7 @@ export default function ContactPage() {
                 }}>
                   <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 500 }}>{c.label}</div>
                   <a href={`mailto:${c.email}`} style={{
-                    fontFamily: '"Cormorant Garamond", serif',
+                    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
                     fontSize: '1.2rem',
                     fontWeight: 300,
                     color: c.color,
@@ -112,7 +112,7 @@ export default function ContactPage() {
 
             {sent ? (
               <div style={{ padding: '3rem', border: '1px solid var(--emerald-border)', background: 'var(--emerald-glow)', textAlign: 'center' }}>
-                <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '2rem', fontWeight: 300, color: 'var(--text)', marginBottom: '1rem' }}>Message Received</div>
+                <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '2rem', fontWeight: 300, color: 'var(--text)', marginBottom: '1rem' }}>Message Received</div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 300 }}>
                   Thank you for reaching out. A member of the Tarvico team will review your message and respond within 2–3 business days.
                 </p>

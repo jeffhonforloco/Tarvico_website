@@ -71,7 +71,7 @@ export default function NewsroomPage() {
               {featured.category}
             </div>
             <h2 style={{
-              fontFamily: '"Cormorant Garamond", serif',
+              fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
               fontSize: 'clamp(1.6rem, 3vw, 2.5rem)',
               fontWeight: 400,
               color: 'var(--text)',
@@ -122,7 +122,7 @@ export default function NewsroomPage() {
             >
               <div style={{ fontSize: '0.56rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem', fontWeight: 500 }}>{item.category}</div>
               <h3 style={{
-                fontFamily: '"Cormorant Garamond", serif',
+                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
                 fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
                 fontWeight: 400,
                 color: 'var(--text)',
@@ -146,7 +146,7 @@ export default function NewsroomPage() {
         <div style={{ marginTop: '4rem', padding: '2.5rem', border: '1px solid var(--border-w)', background: 'var(--bg-card)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           <div>
             <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 500 }}>Press & Media Inquiries</div>
-            <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '1.2rem', fontWeight: 300, color: 'var(--gold)' }}>press@tarvico.com</div>
+            <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '1.2rem', fontWeight: 300, color: 'var(--gold)' }}>press@tarvico.com</div>
           </div>
           <div style={{ fontSize: '0.75rem', color: 'var(--text-2)', maxWidth: 360, fontWeight: 300, lineHeight: 1.7 }}>
             For media inquiries, interview requests, and press assets, contact our communications team directly.

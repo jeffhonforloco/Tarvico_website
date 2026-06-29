@@ -30,7 +30,7 @@ export default function AboutPage() {
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>
 
         <blockquote style={{
-          fontFamily: '"Cormorant Garamond", serif',
+          fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
           fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)',
           fontWeight: 300,
           fontStyle: 'italic',
@@ -99,14 +99,14 @@ export default function AboutPage() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontFamily: '"Cormorant Garamond", serif',
+                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
                 fontSize: '1.5rem',
                 fontWeight: 400,
                 color: 'var(--gold)',
                 marginBottom: '1.5rem',
                 letterSpacing: '0.05em',
               }}>JH</div>
-              <div style={{ fontSize: '1.1rem', color: 'var(--text)', marginBottom: '0.35rem', fontWeight: 400, fontFamily: '"Cormorant Garamond", serif' }}>Jeff Yèmalín Bienvenu Honforloco</div>
+              <div style={{ fontSize: '1.1rem', color: 'var(--text)', marginBottom: '0.35rem', fontWeight: 400, fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif' }}>Jeff Yèmalín Bienvenu Honforloco</div>
               <div style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem', fontWeight: 500 }}>Founder & Chief Executive Officer</div>
               <p style={{ fontSize: '0.82rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 300 }}>
                 Founder of Tarvico Inc. Began as a professional photographer, developed a passion for software, AI, and systems thinking. Self-taught builder who believes creative thinking and technological persistence can open any door. Leads vision, strategy, and product direction across the entire portfolio.
@@ -124,7 +124,7 @@ export default function AboutPage() {
             {timeline.map((item, i) => (
               <div key={i} style={{ display: 'grid', gridTemplateColumns: '88px 1fr', gap: '2.5rem', padding: '2.25rem 0', borderBottom: i < timeline.length - 1 ? '1px solid var(--border-w)' : 'none' }}>
                 <div style={{
-                  fontFamily: '"Cormorant Garamond", serif',
+                  fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
                   fontSize: '1.5rem',
                   fontWeight: 300,
                   color: item.accent ? 'var(--gold)' : 'var(--text-3)',

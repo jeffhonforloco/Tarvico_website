@@ -23,7 +23,7 @@ export default function InvestorsPage() {
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
 
         <blockquote style={{
-          fontFamily: '"Cormorant Garamond", serif',
+          fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
           fontSize: 'clamp(1.5rem, 3vw, 2.4rem)',
           fontWeight: 300,
           fontStyle: 'italic',
@@ -35,7 +35,7 @@ export default function InvestorsPage() {
           letterSpacing: '-0.01em',
         }}>
           "We are not building for an exit. We are building an enduring technology institution — the kind of company that shapes industries and creates lasting value over decades."
-          <div style={{ fontFamily: '"DM Sans", sans-serif', fontStyle: 'normal', fontSize: '0.78rem', color: 'var(--text-2)', marginTop: '1.25rem', fontWeight: 300, letterSpacing: '0.05em' }}>
+          <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontStyle: 'normal', fontSize: '0.78rem', color: 'var(--text-2)', marginTop: '1.25rem', fontWeight: 300, letterSpacing: '0.05em' }}>
             — Jeff Honforloco, Founder & CEO · 2026
           </div>
         </blockquote>
@@ -52,7 +52,7 @@ export default function InvestorsPage() {
         <div style={{ padding: '6rem 0' }}>
           <SectionLabel>Strategic Thesis</SectionLabel>
           <h2 style={{
-            fontFamily: '"Cormorant Garamond", serif',
+            fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
             fontSize: 'clamp(2rem, 3.5vw, 3.2rem)',
             fontWeight: 400,
             color: 'var(--text)',
@@ -87,7 +87,7 @@ export default function InvestorsPage() {
           <SectionLabel>Capital Allocation Framework</SectionLabel>
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', marginTop: '2rem' }}>
             <div>
-              <h3 style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '2rem', fontWeight: 400, color: 'var(--text)', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>How We Deploy Capital</h3>
+              <h3 style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '2rem', fontWeight: 400, color: 'var(--text)', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>How We Deploy Capital</h3>
               {[
                 { pct: '60%', label: 'Product Development', desc: 'Engineering, AI infrastructure, and product team investment across active ventures.' },
                 { pct: '20%', label: 'Market Development', desc: 'GTM execution, distribution, enterprise sales, and growth infrastructure.' },
@@ -95,7 +95,7 @@ export default function InvestorsPage() {
                 { pct: '5%', label: 'Research & Incubation', desc: 'Early-stage concept validation and next portfolio venture development.' },
               ].map(item => (
                 <div key={item.label} style={{ display: 'flex', gap: '1.5rem', padding: '1.25rem 0', borderBottom: '1px solid var(--border-w)' }}>
-                  <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '1.5rem', fontWeight: 300, color: 'var(--gold)', minWidth: 52, lineHeight: 1 }}>{item.pct}</div>
+                  <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '1.5rem', fontWeight: 300, color: 'var(--gold)', minWidth: 52, lineHeight: 1 }}>{item.pct}</div>
                   <div>
                     <div style={{ fontSize: '0.85rem', color: 'var(--text)', fontWeight: 400, marginBottom: '0.25rem' }}>{item.label}</div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-2)', fontWeight: 300, lineHeight: 1.6 }}>{item.desc}</div>
@@ -119,7 +119,7 @@ export default function InvestorsPage() {
               <div style={{ border: '1px solid var(--gold-border)', padding: '2rem', background: 'var(--gold-glow)' }}>
                 <div style={{ fontSize: '0.6rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.75rem', fontWeight: 500 }}>Investor Inquiries</div>
                 <a href="mailto:investors@tarvico.com" style={{
-                  fontFamily: '"Cormorant Garamond", serif', fontSize: '1.3rem', fontWeight: 300,
+                  fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '1.3rem', fontWeight: 300,
                   color: 'var(--gold)', textDecoration: 'none', display: 'block',
                 }}>investors@tarvico.com</a>
               </div>
@@ -133,7 +133,7 @@ export default function InvestorsPage() {
           <SectionLabel>Governance & Transparency</SectionLabel>
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start', marginTop: '2rem' }}>
             <div>
-              <h3 style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '2rem', fontWeight: 400, color: 'var(--text)', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>Our Commitment</h3>
+              <h3 style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '2rem', fontWeight: 400, color: 'var(--text)', marginBottom: '1.5rem', letterSpacing: '-0.01em' }}>Our Commitment</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', lineHeight: 1.85, fontWeight: 300, marginBottom: '1.25rem' }}>
                 We are committed to building trust with our investors through transparency, consistency, and long-term alignment. Our governance philosophy is inspired by the most enduring technology companies — strong founder vision combined with institutional accountability.
               </p>
