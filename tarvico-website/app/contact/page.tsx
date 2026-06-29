@@ -108,6 +108,7 @@ export default function ContactPage() {
                 8 The Green, #5275<br />
                 Dover, DE 19901<br />
                 United States<br />
+                <a href="tel:+13024396442" style={{ color: 'var(--gold)', textDecoration: 'none', fontWeight: 500 }}>+1 (302) 439-6442</a><br />
                 <span style={{ color: 'var(--text-3)', fontSize: '0.75rem' }}>Distributed team · Global operations</span>
               </div>
             </div>
