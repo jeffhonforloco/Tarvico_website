@@ -99,7 +99,9 @@ export default function ContactPage() {
               <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1rem', fontWeight: 500 }}>Headquarters</div>
               <div style={{ fontSize: '0.85rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 300 }}>
                 Tarvico Inc.<br />
-                Delaware, United States<br />
+                8 The Green, #5275<br />
+                Dover, DE 19901<br />
+                United States<br />
                 <span style={{ color: 'var(--text-3)', fontSize: '0.75rem' }}>Distributed team · Global operations</span>
               </div>
             </div>

@@ -170,8 +170,11 @@ const organizationSchema = {
   },
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '8 The Green, #5275',
+    addressLocality: 'Dover',
+    addressRegion: 'DE',
+    postalCode: '19901',
     addressCountry: 'US',
-    addressRegion: 'Delaware',
   },
   areaServed: 'Worldwide',
   knowsAbout: [
