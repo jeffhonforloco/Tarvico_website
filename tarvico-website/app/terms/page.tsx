@@ -133,7 +133,7 @@ const sections = [
     content: [
       {
         subtitle: 'Legal Inquiries',
-        body: 'For questions regarding these Terms of Use, please contact:\n\nTarvico Inc.\nLegal Department\nlegal@tarvico.com\nDelaware, United States',
+        body: 'For questions regarding these Terms of Use, please contact:\n\nTarvico Inc.\nLegal Department\n8 The Green, #5275\nDover, DE 19901\nUnited States\nlegal@tarvico.com',
       },
     ],
   },

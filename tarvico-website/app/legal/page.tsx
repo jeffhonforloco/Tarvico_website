@@ -16,7 +16,7 @@ const sections = [
       },
       {
         subtitle: 'Principal Office',
-        body: 'Delaware, United States. Correspondence and legal notices should be addressed to Tarvico Inc. via email at legal@tarvico.com.',
+        body: '8 The Green, #5275, Dover, DE 19901, United States. Correspondence and legal notices should be addressed to Tarvico Inc. at this address or via email at legal@tarvico.com.',
       },
     ],
   },
@@ -132,7 +132,7 @@ const sections = [
     content: [
       {
         subtitle: 'Legal Notices',
-        body: 'All formal legal notices to Tarvico Inc. should be submitted in writing to:\n\nTarvico Inc.\nLegal Department\nlegal@tarvico.com\nDelaware, United States\n\nFor investor relations inquiries: investors@tarvico.com\nFor general inquiries: info@tarvico.com',
+        body: 'All formal legal notices to Tarvico Inc. should be submitted in writing to:\n\nTarvico Inc.\nLegal Department\n8 The Green, #5275\nDover, DE 19901\nUnited States\nlegal@tarvico.com\n\nFor investor relations inquiries: investors@tarvico.com\nFor general inquiries: info@tarvico.com',
       },
     ],
   },
