@@ -75,7 +75,7 @@ export default function VisionPage() {
         </div>
         <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'end' }}>
           <h1 style={{
-            fontFamily: '"Cormorant Garamond", serif',
+            fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
             fontSize: 'clamp(3rem, 6vw, 6rem)',
             fontWeight: 400,
             lineHeight: 0.96,
@@ -100,7 +100,7 @@ export default function VisionPage() {
         {paragraphs.map((p, i) => {
           if (p.lead) return (
             <p key={i} style={{
-              fontFamily: '"Cormorant Garamond", serif',
+              fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
               fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)',
               fontWeight: 300,
               fontStyle: 'italic',
@@ -140,7 +140,7 @@ export default function VisionPage() {
         })}
 
         <div style={{ marginTop: '5rem', paddingTop: '3rem', borderTop: '1px solid var(--border-w)' }}>
-          <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '1.8rem', fontWeight: 300, color: 'var(--text)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
+          <div style={{ fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '1.8rem', fontWeight: 300, color: 'var(--text)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
             Jeff Yèmalín Bienvenu Honforloco
           </div>
           <div style={{ fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500, marginBottom: '0.3rem' }}>

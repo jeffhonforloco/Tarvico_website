@@ -67,30 +67,32 @@ export function Button({ children, href, onClick, variant = 'secondary', style, 
   const base: CSSProperties = {
     display: 'inline-flex',
     alignItems: 'center',
-    gap: 10,
-    fontSize: '0.68rem',
-    letterSpacing: '0.18em',
-    textTransform: 'uppercase' as const,
-    padding: '13px 28px',
+    gap: 8,
+    fontSize: '0.85rem',
+    letterSpacing: '-0.005em',
+    padding: '13px 24px',
+    borderRadius: 'var(--radius-sm)',
     textDecoration: 'none',
     cursor: disabled ? 'not-allowed' : 'pointer',
-    transition: 'all 0.22s ease',
-    fontFamily: '"DM Sans", sans-serif',
-    fontWeight: 500,
+    transition: 'transform 0.2s cubic-bezier(0.16,1,0.3,1), background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease',
+    fontFamily: 'var(--font-display)',
+    fontWeight: 600,
     border: 'none',
-    lineHeight: 1,
+    lineHeight: 1.1,
     opacity: disabled ? 0.5 : 1,
+    transform: hovered && !disabled ? 'translateY(-2px)' : 'translateY(0)',
     ...style,
   }
 
   const variants: Record<ButtonVariant, CSSProperties> = {
     primary: {
-      background: hovered ? 'var(--gold-light)' : 'var(--gold)',
-      color: '#07070A',
+      background: 'var(--gold)',
+      color: '#0A0A0C',
       fontWeight: 600,
+      boxShadow: hovered ? 'var(--shadow-gold)' : 'none',
     },
     secondary: {
-      background: hovered ? 'rgba(255,255,255,0.04)' : 'transparent',
+      background: hovered ? 'var(--bg-card)' : 'transparent',
       color: hovered ? 'var(--text)' : 'var(--text-2)',
       border: '1px solid var(--border-m)',
     },
@@ -98,7 +100,8 @@ export function Button({ children, href, onClick, variant = 'secondary', style, 
       background: 'transparent',
       color: hovered ? 'var(--gold)' : 'var(--text-2)',
       border: '1px solid transparent',
-      padding: '13px 0',
+      padding: '13px 4px',
+      transform: 'none',
     },
   }
 
@@ -199,23 +202,23 @@ export function PageHero({
           {label}
         </div>
         <h1 style={{
-          fontFamily: '"Cormorant Garamond", serif',
-          fontSize: 'clamp(3.2rem, 6vw, 6rem)',
-          fontWeight: 400,
-          lineHeight: 1.0,
-          marginBottom: '2rem',
+          fontFamily: 'var(--font-display)',
+          fontSize: 'clamp(2.8rem, 5.5vw, 5.2rem)',
+          fontWeight: 700,
+          lineHeight: 1.04,
+          marginBottom: '1.75rem',
           color: 'var(--text)',
-          letterSpacing: '-0.01em',
+          letterSpacing: '-0.035em',
         }}>
           {title}
         </h1>
         {subtitle && (
           <p style={{
-            fontSize: '1.05rem',
+            fontSize: '1.125rem',
             color: 'var(--text-2)',
-            maxWidth: 520,
-            lineHeight: 1.85,
-            fontWeight: 300,
+            maxWidth: 560,
+            lineHeight: 1.7,
+            fontWeight: 400,
           }}>
             {subtitle}
           </p>
@@ -274,9 +277,10 @@ export function StatusBadge({ status, custom }: { status: StatusType; custom?: s
       border: `1px solid ${cfg.border}`,
       color: cfg.color,
       background: cfg.bg,
-      padding: '4px 10px',
+      padding: '4px 11px',
+      borderRadius: 999,
       whiteSpace: 'nowrap',
-      fontWeight: 500,
+      fontWeight: 600,
     }}>
       {cfg.dot && (
         <span style={{
@@ -311,8 +315,8 @@ export function AnimatedBar({ pct, color }: { pct: number; color: string }) {
   }, [pct])
 
   return (
-    <div ref={ref} style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
-      <div className="bar-reveal" style={{ height: '100%', width: `${width}%`, background: color, opacity: 0.75 }} />
+    <div ref={ref} style={{ flex: 1, height: 4, background: 'var(--bg-raised)', border: '1px solid var(--border-w)', borderRadius: 4, position: 'relative', overflow: 'hidden' }}>
+      <div className="bar-reveal" style={{ height: '100%', width: `${width}%`, background: color, opacity: 0.85, borderRadius: 4 }} />
     </div>
   )
 }
@@ -355,20 +359,22 @@ export function AnimatedNumber({ value, suffix = '' }: { value: number | string;
 export function MetricCard({ value, label, sub }: { value: string; label: string; sub?: string }) {
   return (
     <div style={{
-      padding: '2.5rem',
+      padding: '2.25rem',
       border: '1px solid var(--border-w)',
       background: 'var(--bg-card)',
+      borderRadius: 'var(--radius)',
+      boxShadow: 'var(--shadow-sm)',
       display: 'flex',
       flexDirection: 'column',
       gap: '0.5rem',
     }}>
       <div style={{
-        fontFamily: '"Cormorant Garamond", serif',
+        fontFamily: 'var(--font-display)',
         fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
-        fontWeight: 400,
+        fontWeight: 700,
         color: 'var(--text)',
         lineHeight: 1,
-        letterSpacing: '-0.02em',
+        letterSpacing: '-0.04em',
       }}>
         {value}
       </div>

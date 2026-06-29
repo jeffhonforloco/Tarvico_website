@@ -90,6 +90,7 @@ export default function Footer() {
               padding: '6px 14px',
               border: '1px solid var(--emerald-border)',
               background: 'var(--emerald-glow)',
+              borderRadius: 999,
             }}>
               <span style={{
                 display: 'inline-block',
@@ -127,10 +128,11 @@ export default function Footer() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    width: 32,
-                    height: 32,
+                    width: 36,
+                    height: 36,
                     border: '1px solid var(--border-m)',
                     color: 'var(--text-3)',
+                    borderRadius: 'var(--radius-sm)',
                     transition: 'border-color 0.2s, color 0.2s',
                   }}
                   onMouseEnter={e => {
