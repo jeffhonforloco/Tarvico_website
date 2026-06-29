@@ -83,6 +83,20 @@ export default function Footer() {
             }}>
               A Private Technology Holding Company. Tarvico builds, acquires, and operates enduring AI-native technology ventures for the next global economy.
             </p>
+            <address style={{
+              fontStyle: 'normal',
+              fontSize: '0.78rem',
+              color: 'var(--text-2)',
+              lineHeight: 1.7,
+              fontWeight: 400,
+              marginBottom: '1.75rem',
+            }}>
+              <div style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.6rem', fontWeight: 600 }}>Headquarters</div>
+              Tarvico Inc.<br />
+              8 The Green, #5275<br />
+              Dover, DE 19901, United States<br />
+              <a href="tel:+13024396442" style={{ color: 'var(--gold)', textDecoration: 'none', fontWeight: 500 }}>+1 (302) 439-6442</a>
+            </address>
             <div style={{
               display: 'inline-flex',
               alignItems: 'center',

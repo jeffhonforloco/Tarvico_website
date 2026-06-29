@@ -116,7 +116,7 @@ const sections = [
     content: [
       {
         subtitle: 'Privacy Inquiries',
-        body: 'For any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact:\n\nTarvico Inc.\nPrivacy Office\n8 The Green, #5275\nDover, DE 19901\nUnited States\nprivacy@tarvico.com',
+        body: 'For any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact:\n\nTarvico Inc.\nPrivacy Office\n8 The Green, #5275\nDover, DE 19901\nUnited States\nTel: +1 (302) 439-6442\nprivacy@tarvico.com',
       },
     ],
   },

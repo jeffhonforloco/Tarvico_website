@@ -2,17 +2,17 @@
 
 import { PageHero, Button, SectionLabel, Divider } from '@/components/ui'
 
-const liveVentures = [
+const emergingVentures = [
   {
     name: 'Maeyen',
     url: 'https://www.maeyen.com',
     domain: 'maeyen.com',
     category: 'Commerce Trust Network · Africa',
-    desc: 'A commerce trust network for Africa, starting from Nigeria. Maeyen is not just another marketplace — it is built to solve the biggest problem in African online commerce: trust. By verifying participants and protecting transactions, Maeyen lets buyers and sellers transact with confidence.',
+    desc: 'A commerce trust network for Africa, starting from Nigeria. Maeyen is not just another marketplace — it is built to solve the biggest problem in African online commerce: trust. By verifying participants and protecting transactions, Maeyen will let buyers and sellers transact with confidence.',
     market: 'Africa · Commerce · Consumer',
-    accent: 'var(--emerald)',
-    border: 'var(--emerald-border)',
-    bg: 'var(--emerald-glow)',
+    accent: 'var(--gold)',
+    border: 'var(--gold-border)',
+    bg: 'var(--gold-glow)',
     year: '2025',
   },
   {
@@ -22,9 +22,9 @@ const liveVentures = [
     category: 'Talent Network · Creative',
     desc: 'Talent that delivers — verified. Racym matches brands and agencies to pre-vetted creative talent based on what they have actually delivered, not their follower count. A results-first network that turns proven work into the signal for hiring decisions.',
     market: 'Brands · Agencies · Creators',
-    accent: 'var(--emerald)',
-    border: 'var(--emerald-border)',
-    bg: 'var(--emerald-glow)',
+    accent: 'var(--gold)',
+    border: 'var(--gold-border)',
+    bg: 'var(--gold-glow)',
     year: '2025',
   },
 ]
@@ -187,14 +187,14 @@ export default function PortfolioPage() {
           </div>
         </div>
 
-        {/* ── LIVE VENTURES ───────────────────────────────────────────────────── */}
-        <SectionLabel>Live Ventures</SectionLabel>
+        {/* ── EMERGING VENTURES ───────────────────────────────────────────────── */}
+        <SectionLabel>Emerging Ventures</SectionLabel>
         <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.65, maxWidth: 560, fontWeight: 400, marginBottom: '2rem', marginTop: '0.5rem' }}>
-          Network-based ventures live in market — building trust and verified reputation as the core infrastructure for commerce and creative work.
+          Network-based ventures in active development — building trust and verified reputation as the core infrastructure for commerce and creative work.
         </p>
 
         <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '5rem' }}>
-          {liveVentures.map(v => (
+          {emergingVentures.map(v => (
             <div key={v.name}
               className="card-lift"
               style={{
@@ -214,8 +214,8 @@ export default function PortfolioPage() {
                   border: `1px solid ${v.border}`, color: v.accent, background: v.bg,
                   padding: '4px 11px', whiteSpace: 'nowrap', fontWeight: 600, borderRadius: 999,
                 }}>
-                  <span style={{ width: 5, height: 5, borderRadius: '50%', background: v.accent, display: 'inline-block' }} className="animate-pulse-dot" />
-                  Live
+                  <span style={{ width: 5, height: 5, borderRadius: '50%', background: v.accent, display: 'inline-block' }} className="animate-pulse-gold" />
+                  Building
                 </span>
               </div>
               <div style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: v.accent, marginBottom: '0.85rem', fontWeight: 600 }}>{v.category}</div>
@@ -321,7 +321,7 @@ export default function PortfolioPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', marginTop: '2rem' }}>
             {[
               { label: 'Infrastructure', desc: 'AI operating systems, agent orchestration, and enterprise workflow platforms.', companies: 'Vytre AWOS', color: 'var(--gold)' },
-              { label: 'Trust & Talent Networks', desc: 'Verified, reputation-driven networks for commerce and creative work — trust as infrastructure.', companies: 'Maeyen · Racym', color: 'var(--emerald)' },
+              { label: 'Trust & Talent Networks', desc: 'Verified, reputation-driven networks for commerce and creative work — trust as infrastructure.', companies: 'Maeyen · Racym', color: 'var(--gold-dim)' },
               { label: 'Productivity', desc: 'AI assistants, search intelligence, and individual leverage tools for knowledge workers.', companies: 'SireIQ · SEOAgentPro', color: 'var(--gold-dim)' },
               { label: 'Developer + Creative', desc: 'Code platforms, creative infrastructure, and AI-native tools for builders and creators.', companies: 'Fycra · Fycera', color: 'var(--blue)' },
             ].map(tier => (
