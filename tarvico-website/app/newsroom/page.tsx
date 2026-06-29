@@ -33,9 +33,9 @@ const news = [
     readTime: '3 min read',
   },
   {
-    category: 'Portfolio · Launch',
+    category: 'Portfolio · Update',
     title: 'Maeyen & Racym Join the Tarvico Portfolio',
-    excerpt: 'Two network-based ventures go live: Maeyen, a commerce trust network for Africa starting from Nigeria, and Racym, a verified creative talent network matching brands and agencies to pre-vetted talent by what they have actually delivered.',
+    excerpt: 'Two network-based ventures enter active development: Maeyen, a commerce trust network for Africa starting from Nigeria, and Racym, a verified creative talent network matching brands and agencies to pre-vetted talent by what they have actually delivered.',
     date: 'Q1 2026',
     readTime: '3 min read',
   },
