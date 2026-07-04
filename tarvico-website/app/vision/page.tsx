@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Founder Letter — Building for the Next Era | Tarvico Inc.',
@@ -148,6 +149,9 @@ export default function VisionPage() {
           <div style={{ fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 400 }}>
             Tarvico Inc. · 2026
           </div>
+          <Link href="/founder" style={{ display: 'inline-block', marginTop: '2rem', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>
+            View founder profile →
+          </Link>
         </div>
       </article>
     </div>
