@@ -183,6 +183,17 @@ body {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* Transform-only entrance for above-the-fold LCP text: paints at full opacity
+   from the first frame, so Largest Contentful Paint is not delayed by an
+   opacity fade. Keeps a subtle upward motion. */
+.animate-rise {
+  animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes rise {
+  from { transform: translateY(22px); }
+  to   { transform: translateY(0); }
+}
+
 .animate-fade-in {
   opacity: 0;
   animation: fadeIn 0.7s ease forwards;

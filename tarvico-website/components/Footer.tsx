@@ -9,6 +9,7 @@ const cols = [
     title: 'Company',
     links: [
       { href: '/about',    label: 'About Tarvico' },
+      { href: '/founder',  label: 'Founder' },
       { href: '/vision',   label: 'Founder Letter' },
       { href: '/newsroom', label: 'Newsroom' },
     ],

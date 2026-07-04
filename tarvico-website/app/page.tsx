@@ -196,7 +196,7 @@ export default function HomePage() {
                 Tarvico Inc. — Private Technology Holding Company
               </div>
 
-              <h1 className="animate-fade-up delay-250" style={{
+              <h1 className="animate-rise delay-250" style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(3.2rem, 6.4vw, 6.4rem)',
                 fontWeight: 700,

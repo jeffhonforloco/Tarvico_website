@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { PageHero, SectionLabel, Divider } from '@/components/ui'
 
 const timeline = [
@@ -118,6 +119,9 @@ export default function AboutPage() {
               <p style={{ fontSize: '0.86rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 400 }}>
                 Founder of Tarvico Inc. Began as a professional photographer, developed a passion for software, AI, and systems thinking. Self-taught builder who believes creative thinking and technological persistence can open any door. Leads vision, strategy, and product direction across the entire portfolio.
               </p>
+              <Link href="/founder" style={{ display: 'inline-block', marginTop: '1.5rem', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>
+                Full founder profile →
+              </Link>
             </div>
           </div>
         </div>
