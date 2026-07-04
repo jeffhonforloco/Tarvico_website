@@ -11,6 +11,9 @@ type Route = {
 // Single source of truth for indexable routes. Add new pages here — one line each.
 const routes: Route[] = [
   { path: '',          changeFrequency: 'weekly',  priority: 1.0 },
+  { path: '/products', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/vytre',    changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/maeyen',   changeFrequency: 'monthly', priority: 0.9 },
   { path: '/about',    changeFrequency: 'monthly', priority: 0.9 },
   { path: '/portfolio', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/investors', changeFrequency: 'monthly', priority: 0.85 },
