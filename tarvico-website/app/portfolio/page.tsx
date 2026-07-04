@@ -1,12 +1,20 @@
 'use client'
 
+import Link from 'next/link'
 import { PageHero, Button, SectionLabel, Divider } from '@/components/ui'
 
-const emergingVentures = [
+type Venture = {
+  name: string; url: string; domain: string; internal?: string
+  category: string; desc: string; market: string
+  accent: string; border: string; bg: string; year: string
+}
+
+const emergingVentures: Venture[] = [
   {
     name: 'Maeyen',
     url: 'https://www.maeyen.com',
     domain: 'maeyen.com',
+    internal: '/maeyen',
     category: 'Commerce Trust Network · Africa',
     desc: 'A commerce trust network for Africa, starting from Nigeria. Maeyen is not just another marketplace — it is built to solve the biggest problem in African online commerce: trust. By verifying participants and protecting transactions, Maeyen will let buyers and sellers transact with confidence.',
     market: 'Africa · Commerce · Consumer',
@@ -140,7 +148,7 @@ export default function PortfolioPage() {
                 <div style={{ fontSize: '0.64rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>AI Workforce Infrastructure · Enterprise SaaS</div>
               </div>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                <Button href="/contact" variant="primary">Request Early Access →</Button>
+                <Button href="/vytre" variant="primary">Product Overview →</Button>
                 <a href="https://www.vytre.io" target="_blank" rel="noopener noreferrer" style={{
                   fontSize: '0.8rem', letterSpacing: '-0.005em',
                   color: 'var(--text-2)', textDecoration: 'none', fontWeight: 500,
@@ -220,15 +228,22 @@ export default function PortfolioPage() {
               </div>
               <div style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: v.accent, marginBottom: '0.85rem', fontWeight: 600 }}>{v.category}</div>
               <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 400, marginBottom: '1.75rem', flex: 1 }}>{v.desc}</p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem', gap: '1rem' }}>
                 <span style={{ fontSize: '0.66rem', color: 'var(--text-3)', fontWeight: 500 }}>{v.market} · {v.year}</span>
-                <a href={v.url} target="_blank" rel="noopener noreferrer" style={{
-                  fontSize: '0.68rem', color: v.accent, letterSpacing: '0.02em',
-                  fontWeight: 600, textDecoration: 'none', transition: 'opacity 0.2s',
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.opacity = '0.7' }}
-                  onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
-                >{v.domain} ↗</a>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  {v.internal && (
+                    <Link href={v.internal} style={{ fontSize: '0.68rem', color: v.accent, letterSpacing: '0.02em', fontWeight: 600, textDecoration: 'none' }}>
+                      Overview →
+                    </Link>
+                  )}
+                  <a href={v.url} target="_blank" rel="noopener noreferrer" style={{
+                    fontSize: '0.68rem', color: v.accent, letterSpacing: '0.02em',
+                    fontWeight: 600, textDecoration: 'none', transition: 'opacity 0.2s',
+                  }}
+                    onMouseEnter={e => { e.currentTarget.style.opacity = '0.7' }}
+                    onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
+                  >{v.domain} ↗</a>
+                </div>
               </div>
             </div>
           ))}

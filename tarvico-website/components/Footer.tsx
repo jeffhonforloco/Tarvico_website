@@ -15,11 +15,11 @@ const cols = [
     ],
   },
   {
-    title: 'Portfolio',
+    title: 'Products',
     links: [
-      { href: '/portfolio', label: 'All Companies' },
-      { href: '/portfolio', label: 'Vytre AWOS' },
-      { href: '/portfolio', label: 'SireIQ' },
+      { href: '/vytre',     label: 'Vytre AWOS' },
+      { href: '/maeyen',    label: 'Maeyen' },
+      { href: '/portfolio', label: 'All Ventures' },
     ],
   },
   {
