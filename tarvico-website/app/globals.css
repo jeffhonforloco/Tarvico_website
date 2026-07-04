@@ -32,7 +32,7 @@
   /* Text hierarchy */
   --text:     #F4F2EC;
   --text-2:   #9B9892;
-  --text-3:   #56544F;
+  --text-3:   #7C7972; /* WCAG AA: 4.55:1 on --bg (was #56544F, 2.62:1) */
 
   /* Borders */
   --border-w: rgba(255, 255, 255, 0.07);
@@ -67,7 +67,7 @@
 
   --text:   #16150F;
   --text-2: #5E5B53;
-  --text-3: #A6A29A;
+  --text-3: #767368; /* WCAG AA: 4.55:1 on --bg (was #A6A29A, 2.44:1) */
 
   --border-w: rgba(20, 18, 12, 0.08);
   --border-m: rgba(20, 18, 12, 0.13);
