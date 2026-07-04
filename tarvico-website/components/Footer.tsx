@@ -66,7 +66,7 @@ export default function Footer() {
           <div>
             <div style={{ marginBottom: '0.25rem' }}>
               <Image
-                src={theme === 'light' ? '/logo-black-wordmark.png' : '/logo-white-wordmark.png'}
+                src={theme === 'light' ? '/logo-black-wordmark.webp' : '/logo-white-wordmark.webp'}
                 alt="Tarvico"
                 width={160}
                 height={66}

@@ -80,7 +80,7 @@ export default function Nav() {
     }}>
       <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <Image
-          src={theme === 'light' ? '/logo-black-wordmark.png' : '/logo-white-wordmark.png'}
+          src={theme === 'light' ? '/logo-black-wordmark.webp' : '/logo-white-wordmark.webp'}
           alt="Tarvico Inc. — A Private Technology Holding Company"
           width={240}
           height={100}
