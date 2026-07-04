@@ -1,0 +1,4 @@
+# Target modern browsers to drop legacy JavaScript polyfills / transforms
+# (Lighthouse "Legacy JavaScript" finding). Covers ~99% of real traffic.
+last 2 years
+not dead
