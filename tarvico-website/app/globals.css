@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
+/* Inter is self-hosted via next/font (see app/layout.tsx) and exposed as --font-inter. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,8 +39,8 @@
   --border-m: rgba(255, 255, 255, 0.12);
 
   /* Typography */
-  --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Radius — modern rounded surfaces */
   --radius-sm: 8px;

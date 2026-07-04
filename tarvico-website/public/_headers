@@ -6,8 +6,8 @@
 #   static export ('output: export'): hydration bootstrap scripts and JSON-LD
 #   are emitted inline, and the design system uses inline style objects with
 #   CSS custom properties throughout. Nonces are not available in static export.
-#   Google Fonts is loaded via @import in globals.css, so fonts.googleapis.com
-#   (styles) and fonts.gstatic.com (font files) are allowed.
+#   Fonts (Inter) are self-hosted via next/font, served same-origin from
+#   /_next/static/media, so no external font hosts are needed in the CSP.
 #   connect-src is 'self' — add an analytics host here when GA/Bing is wired.
 
 /*
@@ -16,4 +16,4 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=(), interest-cohort=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests

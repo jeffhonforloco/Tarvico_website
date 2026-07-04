@@ -239,7 +239,7 @@ export default function Nav() {
             onClick={close}
             style={{
               fontSize: 'clamp(1.8rem, 6vw, 2.8rem)',
-              fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
+              fontFamily: 'var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif',
               fontWeight: 300,
               color: pathname === href ? 'var(--text)' : 'var(--text-2)',
               textDecoration: 'none',
