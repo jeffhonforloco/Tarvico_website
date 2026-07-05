@@ -23,6 +23,14 @@ const cols = [
     ],
   },
   {
+    title: 'Resources',
+    links: [
+      { href: '/engineering', label: 'Engineering' },
+      { href: '/research',     label: 'Research' },
+      { href: '/newsroom',     label: 'Newsroom' },
+    ],
+  },
+  {
     title: 'Investors',
     links: [
       { href: '/investors', label: 'Investor Relations' },
@@ -60,7 +68,7 @@ export default function Footer() {
       <div className="mob-px" style={{ padding: '5rem 3rem 0' }}>
         <div className="mob-stack" style={{
           display: 'grid',
-          gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr',
+          gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr 1fr',
           gap: '3rem',
           marginBottom: '4rem',
         }}>
