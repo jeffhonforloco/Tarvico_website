@@ -355,6 +355,22 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'What is Maeyen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Maeyen is a Tarvico company building commerce trust infrastructure for Africa, starting from Nigeria. By verifying participants and protecting transactions, Maeyen lets buyers and sellers transact online with confidence — solving the biggest problem in African online commerce: trust.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What industries does Tarvico serve?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Tarvico builds across AI workforce infrastructure and enterprise software, commerce and trust networks, and productivity, developer, and creative software. Its portfolio companies serve enterprises, businesses, and consumers globally.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'How can I invest in Tarvico?',
       acceptedAnswer: {
         '@type': 'Answer',
