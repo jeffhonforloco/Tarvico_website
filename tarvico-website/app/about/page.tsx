@@ -10,9 +10,9 @@ const timeline = [
   { year: '2026+', title: 'Flagship Launch · Growth Phase', desc: 'Vytre AWOS targets public launch and enterprise customer acquisition. Portfolio companies advance from incubation toward independent product development and market entry.', accent: false },
 ]
 
-const subsidiaries = [
-  { name: 'Vytre AWOS', desc: 'AI Workforce Operating System', status: 'Flagship', color: 'var(--gold)' },
-  { name: 'Maeyen', desc: 'Commerce Trust Network for Africa', status: 'Building', color: 'var(--gold-dim)' },
+const subsidiaries: { name: string; desc: string; status: string; color: string; href?: string }[] = [
+  { name: 'Vytre AWOS', desc: 'AI Workforce Operating System', status: 'Flagship', color: 'var(--gold)', href: '/vytre' },
+  { name: 'Maeyen', desc: 'Commerce Trust Network for Africa', status: 'Building', color: 'var(--gold-dim)', href: '/maeyen' },
   { name: 'Racym', desc: 'Verified Creative Talent Network', status: 'Building', color: 'var(--gold-dim)' },
   { name: 'SireIQ', desc: 'AI Assistant for Chat, Content & Workflow', status: 'Incubation', color: 'var(--gold-dim)' },
   { name: 'SEOAgentPro', desc: 'AI Search Intelligence Platform', status: 'Incubation', color: 'var(--gold-dim)' },
@@ -193,7 +193,9 @@ export default function AboutPage() {
                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}
               >
                 <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', marginRight: 4, fontFamily: 'monospace' }}>├─</span>
-                <span style={{ fontSize: '0.85rem', color: 'var(--text-2)', fontWeight: 300 }}>{s.name}</span>
+                {s.href
+                  ? <Link href={s.href} style={{ fontSize: '0.85rem', color: 'var(--text)', fontWeight: 400, textDecoration: 'none' }}>{s.name}</Link>
+                  : <span style={{ fontSize: '0.85rem', color: 'var(--text-2)', fontWeight: 300 }}>{s.name}</span>}
                 <span style={{ fontSize: '0.72rem', color: 'var(--text-3)', fontWeight: 300 }}>— {s.desc}</span>
                 <span style={{ marginLeft: 'auto', fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: s.color, fontWeight: 500 }}>{s.status}</span>
               </div>

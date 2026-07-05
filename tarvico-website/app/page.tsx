@@ -136,6 +136,35 @@ const philosophy = [
   { n: '06', title: 'Focused Execution', desc: 'Strategy without execution is fiction. We operate with relentless focus — every initiative is evaluated by its ability to compound long-term portfolio value.' },
 ]
 
+const faqLink: React.CSSProperties = { color: 'var(--gold)', textDecoration: 'none', fontWeight: 600 }
+
+const faqs: { q: string; a: React.ReactNode }[] = [
+  {
+    q: 'What is Tarvico Inc.?',
+    a: <>Tarvico Inc. is a private technology holding company that builds, operates, and incubates a portfolio of enduring, AI-native technology companies. Rather than a single-product startup, it is structured to build long-term software companies that solve foundational problems. <Link href="/about" style={faqLink}>About Tarvico →</Link></>,
+  },
+  {
+    q: 'Who founded Tarvico?',
+    a: <>Tarvico was founded by Jeff Yèmalín Bienvenu Honforloco (Jeff Hon), who serves as Founder & CEO. A self-taught builder and former professional photographer, he leads vision, strategy, and product across the portfolio. <Link href="/founder" style={faqLink}>Founder profile →</Link></>,
+  },
+  {
+    q: 'What products does Tarvico build?',
+    a: <>Tarvico’s current flagship products are <Link href="/vytre" style={faqLink}>Vytre AWOS</Link>, an AI Workforce Operating System, and <Link href="/maeyen" style={faqLink}>Maeyen</Link>, commerce trust infrastructure for Africa. These sit within a wider portfolio of AI-native ventures. <Link href="/products" style={faqLink}>Products →</Link></>,
+  },
+  {
+    q: 'What is Vytre AWOS?',
+    a: <>Vytre AWOS is Tarvico’s flagship product — an AI Workforce Operating System that gives enterprises a single control plane to deploy, coordinate, observe, and govern AI workers across operations, workflows, and systems. <Link href="/vytre" style={faqLink}>Learn about Vytre →</Link></>,
+  },
+  {
+    q: 'What is Maeyen?',
+    a: <>Maeyen is a commerce trust network for Africa, starting from Nigeria. By verifying participants and protecting transactions, it lets buyers and sellers transact online with confidence. <Link href="/maeyen" style={faqLink}>Learn about Maeyen →</Link></>,
+  },
+  {
+    q: 'What industries does Tarvico serve?',
+    a: <>Tarvico builds across AI workforce infrastructure and enterprise software, commerce and trust networks, and productivity, developer, and creative software. Its companies serve enterprises, businesses, and consumers globally. <Link href="/portfolio" style={faqLink}>View the portfolio →</Link></>,
+  },
+]
+
 export default function HomePage() {
   return (
     <>
@@ -588,6 +617,26 @@ export default function HomePage() {
           </div>
           <Button href="/vision" variant="secondary">Read Founder Letter →</Button>
         </FadeUp>
+      </div>
+
+      {/* ── FAQ ──────────────────────────────────────────────────────────────── */}
+      <div style={{ borderTop: '1px solid var(--border-w)' }}>
+        <div className="mob-p" style={S.section}>
+          <FadeUp style={{ maxWidth: 860, margin: '0 auto' }}>
+            <SectionLabel center>Common Questions</SectionLabel>
+            <h2 style={{ ...S.h2, textAlign: 'center', marginBottom: '3.5rem' }}>
+              What is <span className="text-gradient-gold">Tarvico?</span>
+            </h2>
+            <div>
+              {faqs.map((f, i) => (
+                <div key={f.q} style={{ padding: '1.9rem 0', borderTop: i === 0 ? 'none' : '1px solid var(--border-w)' }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 600, color: 'var(--text)', letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>{f.q}</h3>
+                  <p style={{ fontSize: '1rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 400 }}>{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </FadeUp>
+        </div>
       </div>
 
       {/* ── FINAL CTA ────────────────────────────────────────────────────────── */}
