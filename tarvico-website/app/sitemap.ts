@@ -21,6 +21,8 @@ const routes: Route[] = [
   { path: '/vision',   changeFrequency: 'yearly',  priority: 0.8 },
   { path: '/careers',  changeFrequency: 'weekly',  priority: 0.75 },
   { path: '/newsroom', changeFrequency: 'weekly',  priority: 0.75 },
+  { path: '/engineering', changeFrequency: 'weekly', priority: 0.7 },
+  { path: '/research',    changeFrequency: 'monthly', priority: 0.7 },
   { path: '/contact',  changeFrequency: 'yearly',  priority: 0.7 },
   { path: '/privacy',  changeFrequency: 'yearly',  priority: 0.3 },
   { path: '/terms',    changeFrequency: 'yearly',  priority: 0.3 },

@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects.
+# /news is the brief's canonical "news" URL; the existing /newsroom page
+# already serves announcements, launches, and press — so consolidate SEO
+# authority on /newsroom rather than duplicating content.
+/news /newsroom 301
+/news/* /newsroom 301
