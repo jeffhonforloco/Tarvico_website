@@ -68,9 +68,9 @@ export default function CareersPage() {
         <Divider />
 
         <div style={{ padding: '5rem 0' }}>
-          <SectionLabel>Open Positions</SectionLabel>
-          <p style={{ fontSize: '0.88rem', color: 'var(--text-2)', lineHeight: 1.75, maxWidth: 500, fontWeight: 300, marginBottom: '2rem', marginTop: '0.5rem' }}>
-            We are a small team growing thoughtfully. Every hire shapes our culture and capabilities. We evaluate all applicants regardless of traditional background or location.
+          <SectionLabel>Roles We Hire For</SectionLabel>
+          <p style={{ fontSize: '0.88rem', color: 'var(--text-2)', lineHeight: 1.75, maxWidth: 540, fontWeight: 300, marginBottom: '2rem', marginTop: '0.5rem' }}>
+            We are a small team growing thoughtfully, and we may not always have a live opening. These are the areas we build teams around as we grow — we welcome applications year-round and evaluate everyone on what they have built, regardless of background or location.
           </p>
 
           <div style={{ border: '1px solid var(--border-w)', overflow: 'hidden', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', background: 'var(--bg-card)' }}>
@@ -84,23 +84,11 @@ export default function CareersPage() {
                 borderBottom: i < roles.length - 1 ? '1px solid var(--border-w)' : 'none',
                 background: 'transparent',
                 transition: 'background 0.2s',
-                cursor: 'pointer',
               }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-raised)' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                  {r.priority && (
-                    <span style={{
-                      display: 'inline-flex', alignItems: 'center', gap: 5,
-                      fontSize: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase',
-                      border: '1px solid var(--gold-border)', color: 'var(--gold)',
-                      background: 'var(--gold-glow)', padding: '4px 10px', fontWeight: 600, whiteSpace: 'nowrap', borderRadius: 999,
-                    }}>
-                      <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block' }} />
-                      Priority
-                    </span>
-                  )}
                   <div>
                     <div style={{ fontSize: '1rem', color: 'var(--text)', marginBottom: '0.25rem', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{r.title}</div>
                     <div style={{ display: 'flex', gap: '0.75rem', fontSize: '0.74rem', color: 'var(--text-2)', fontWeight: 400 }}>
@@ -114,7 +102,6 @@ export default function CareersPage() {
                   <span style={{ fontSize: '0.58rem', letterSpacing: '0.12em', textTransform: 'uppercase', border: '1px solid var(--border-w)', color: 'var(--text-3)', padding: '4px 11px', whiteSpace: 'nowrap', fontWeight: 600, borderRadius: 999 }}>
                     {r.type}
                   </span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-3)' }}>→</span>
                 </div>
               </div>
             ))}

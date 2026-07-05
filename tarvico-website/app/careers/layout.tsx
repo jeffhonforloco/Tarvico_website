@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Careers at Tarvico Inc. — Join the Technology Holding Company Building the Future',
   description:
-    'Join Tarvico Inc. — a private technology holding company hiring exceptional engineers, product builders, and operators. Open roles across AI product engineering, growth, and operations. Build AI-native companies that endure.',
+    'Careers at Tarvico Inc. — a private technology holding company building enduring AI-native companies. Learn about our culture, mission, and the roles we hire for across AI product engineering, growth, and operations. Applications welcome year-round.',
   keywords: [
     'Tarvico careers',
     'Tarvico jobs',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Careers at Tarvico Inc. — Build AI Companies That Endure',
     description:
-      'We hire exceptional people who want to build AI-native companies that matter. Open roles at Tarvico Inc. in engineering, product, growth, and operations.',
+      'We hire exceptional people who want to build AI-native companies that matter — across engineering, product, growth, and operations. Applications welcome year-round.',
     url: 'https://www.tarvico.com/careers',
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Careers at Tarvico Inc.',
     description:
-      'Build AI-native companies that endure. Open roles at Tarvico — engineering, product, growth, operations.',
+      'Build AI-native companies that endure. Culture, mission, and the roles Tarvico hires for — engineering, product, growth, operations.',
     images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {
@@ -50,21 +50,13 @@ const breadcrumbSchema = {
   ],
 }
 
-const employerSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'EmployerAggregateRating',
-  itemReviewed: { '@id': 'https://www.tarvico.com/#organization' },
-  name: 'Tarvico Inc. — Careers',
-  description: 'Careers page for Tarvico Inc., a private technology holding company. Join our team to build enduring AI-native technology ventures.',
-}
-
-const jobPostingListSchema = {
+const careersPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   '@id': 'https://www.tarvico.com/careers#webpage',
   url: 'https://www.tarvico.com/careers',
   name: 'Careers at Tarvico Inc.',
-  description: 'Open positions at Tarvico Inc. — a private technology holding company building AI-native ventures.',
+  description: 'Culture, mission, and the roles Tarvico Inc. hires for — a private technology holding company building AI-native ventures.',
   isPartOf: { '@id': 'https://www.tarvico.com/#website' },
   about: { '@id': 'https://www.tarvico.com/#organization' },
   inLanguage: 'en-US',
@@ -74,7 +66,7 @@ export default function CareersLayout({ children }: { children: React.ReactNode 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingListSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(careersPageSchema) }} />
       {children}
     </>
   )
