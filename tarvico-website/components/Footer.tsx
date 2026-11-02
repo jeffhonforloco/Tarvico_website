@@ -90,7 +90,7 @@ export default function Footer() {
               fontWeight: 300,
               marginBottom: '1.75rem',
             }}>
-              A Private Technology Holding Company. Tarvico builds, acquires, and operates enduring AI-native technology ventures for the next global economy.
+              A privately held U.S. technology company building artificial intelligence, digital platforms, and emerging technology businesses for global markets.
             </p>
             <address style={{
               fontStyle: 'normal',

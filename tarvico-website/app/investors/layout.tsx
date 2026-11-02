@@ -3,10 +3,10 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Investor Relations — Tarvico Inc. | Investment Thesis & Governance',
   description:
-    'Tarvico Inc. investor relations: $4.7T AI market opportunity, investment thesis, portfolio strategy, and governance structure. A private technology holding company engineered for long-term compounding value. Contact: investors@tarvico.com.',
+    'Tarvico Inc. investor relations: $4.7T AI market opportunity, investment thesis, portfolio strategy, and governance structure. A privately held U.S. technology company engineered for long-term compounding value. Contact: investors@tarvico.com.',
   keywords: [
     'Tarvico investor relations',
-    'AI holding company investment',
+    'AI company investment',
     'technology portfolio investment',
     'private technology company investors',
     'AI venture investment thesis',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'invest in Tarvico',
   ],
   openGraph: {
-    title: 'Investor Relations — Tarvico Inc. | Technology Holding Company',
+    title: 'Investor Relations — Tarvico Inc. | U.S. Technology Company',
     description:
-      'Market opportunity, investment thesis, and governance for Tarvico Inc. — a private technology holding company building compounding portfolio value through AI-native ventures. Contact investors@tarvico.com.',
+      'Market opportunity, investment thesis, and governance for Tarvico Inc. — a privately held U.S. technology company building compounding portfolio value through AI-native ventures. Contact investors@tarvico.com.',
     url: 'https://www.tarvico.com/investors',
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tarvico Inc. — Investor Relations',
     description:
-      'Investment thesis, AI market opportunity, and governance for a private technology holding company. Contact investors@tarvico.com.',
+      'Investment thesis, AI market opportunity, and governance for a privately held U.S. technology company. Contact investors@tarvico.com.',
     images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {
@@ -56,7 +56,7 @@ const investorPageSchema = {
   '@id': 'https://www.tarvico.com/investors#webpage',
   url: 'https://www.tarvico.com/investors',
   name: 'Tarvico Inc. — Investor Relations',
-  description: 'Investment thesis, market opportunity, and governance structure for Tarvico Inc., a private technology holding company.',
+  description: 'Investment thesis, market opportunity, and governance structure for Tarvico Inc., a privately held U.S. technology company.',
   isPartOf: { '@id': 'https://www.tarvico.com/#website' },
   about: { '@id': 'https://www.tarvico.com/#organization' },
   inLanguage: 'en-US',

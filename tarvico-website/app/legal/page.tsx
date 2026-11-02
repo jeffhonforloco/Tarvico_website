@@ -8,7 +8,7 @@ const sections = [
     content: [
       {
         subtitle: 'Legal Entity',
-        body: 'Tarvico Inc. is a private technology holding company incorporated under the General Corporation Law of the State of Delaware, United States. Tarvico Inc. is not a publicly traded company and its securities are not registered with the U.S. Securities and Exchange Commission (SEC) pursuant to a public offering.',
+        body: 'Tarvico Inc. is a privately held U.S. technology company incorporated under the General Corporation Law of the State of Delaware, United States. Tarvico Inc. is not a publicly traded company and its securities are not registered with the U.S. Securities and Exchange Commission (SEC) pursuant to a public offering.',
       },
       {
         subtitle: 'Registered Agent',

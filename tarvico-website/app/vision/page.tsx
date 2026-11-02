@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Founder Letter — Building for the Next Era | Tarvico Inc.',
   description:
-    'A letter from Jeff Yèmalín Bienvenu Honforloco, Founder & CEO of Tarvico Inc. On the origins of Tarvico, the conviction behind building a private technology holding company, and the long-term vision for enduring AI-native technology ventures.',
+    'A letter from Jeff Yèmalín Bienvenu Honforloco, Founder & CEO of Tarvico Inc. On the origins of Tarvico, the conviction behind building a privately held U.S. technology company, and the long-term vision for enduring AI-native technology ventures.',
   keywords: [
     'Tarvico founder letter',
     'Jeff Honforloco letter',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Jeff Yèmalín Bienvenu Honforloco',
     'Tarvico vision statement',
     'AI company founder story',
-    'technology holding company vision',
+    'U.S. technology company vision',
     'building AI companies long term',
     'Tarvico Inc origins',
   ],

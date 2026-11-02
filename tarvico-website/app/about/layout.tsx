@@ -3,29 +3,29 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'About Tarvico Inc. — Founding Story, Leadership & Corporate Structure',
   description:
-    'Tarvico Inc. is a private technology holding company founded by Jeff Hon in 2026. Learn about the founding story, leadership, corporate structure, and the philosophy behind building enduring AI-native technology ventures.',
+    'Tarvico Inc. is a privately held U.S. technology company founded by Jeff Hon in 2026. Learn about the founding story, leadership, corporate structure, and the philosophy behind building enduring AI-native technology ventures.',
   keywords: [
     'Tarvico about',
     'Tarvico Inc. history',
     'Jeff Hon founder',
     'Jeff Honforloco founder',
-    'technology holding company leadership',
+    'U.S. technology company leadership',
     'AI company founding story',
     'Tarvico corporate structure',
     'Tarvico Inc. 2026',
-    'a private technology holding company',
+    'a privately held U.S. technology company',
   ],
   openGraph: {
     title: 'About Tarvico Inc. — Founding Story, Leadership & Corporate Structure',
     description:
-      'The founding story, corporate structure, and operating philosophy behind Tarvico Inc. — a private technology holding company building enduring AI-native ventures for long-term institutional value.',
+      'The founding story, corporate structure, and operating philosophy behind Tarvico Inc. — a privately held U.S. technology company building enduring AI-native ventures for long-term institutional value.',
     url: 'https://www.tarvico.com/about',
     images: [
       {
         url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'About Tarvico Inc. — A Private Technology Holding Company',
+        alt: 'About Tarvico Inc. — Building Technology for a Connected World',
       },
     ],
   },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Tarvico Inc. — Founding Story & Leadership',
     description:
-      'The founding story, corporate structure, and operating philosophy behind Tarvico Inc. — a private technology holding company.',
+      'The founding story, corporate structure, and operating philosophy behind Tarvico Inc. — a privately held U.S. technology company.',
     images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {
@@ -56,7 +56,7 @@ const aboutPageSchema = {
   '@id': 'https://www.tarvico.com/about#webpage',
   url: 'https://www.tarvico.com/about',
   name: 'About Tarvico Inc.',
-  description: 'The founding story, corporate structure, leadership, and operating philosophy of Tarvico Inc. — a private technology holding company.',
+  description: 'The founding story, corporate structure, leadership, and operating philosophy of Tarvico Inc. — a privately held U.S. technology company.',
   isPartOf: { '@id': 'https://www.tarvico.com/#website' },
   about: { '@id': 'https://www.tarvico.com/#organization' },
   inLanguage: 'en-US',

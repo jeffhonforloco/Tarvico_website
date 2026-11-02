@@ -3,14 +3,14 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Newsroom — Tarvico Inc. | Latest News & Announcements',
   description:
-    'Latest news, announcements, and press coverage from Tarvico Inc. — portfolio milestones, product launches, company updates, and press releases from a private technology holding company. Press contact: press@tarvico.com.',
+    'Latest news, announcements, and press coverage from Tarvico Inc. — portfolio milestones, product launches, company updates, and press releases from a privately held U.S. technology company. Press contact: press@tarvico.com.',
   keywords: [
     'Tarvico news',
     'Tarvico newsroom',
     'Tarvico press releases',
     'AI company news 2026',
     'Vytre AWOS announcement',
-    'technology holding company updates',
+    'U.S. technology company updates',
     'Tarvico announcements',
     'AI startup news',
     'press@tarvico.com',
@@ -56,7 +56,7 @@ const newsroomPageSchema = {
   '@id': 'https://www.tarvico.com/newsroom#webpage',
   url: 'https://www.tarvico.com/newsroom',
   name: 'Tarvico Inc. Newsroom',
-  description: 'News, announcements, and press releases from Tarvico Inc. — a private technology holding company.',
+  description: 'News, announcements, and press releases from Tarvico Inc. — a privately held U.S. technology company.',
   publisher: { '@id': 'https://www.tarvico.com/#organization' },
   isPartOf: { '@id': 'https://www.tarvico.com/#website' },
   inLanguage: 'en-US',

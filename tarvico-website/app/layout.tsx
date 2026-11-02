@@ -23,16 +23,16 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.tarvico.com'),
   title: {
-    default: 'Tarvico Inc. — A Private Technology Holding Company',
+    default: 'Tarvico Inc. — Building Technology for a Connected World',
     template: '%s | Tarvico Inc.',
   },
   description:
-    'Tarvico Inc. is a private technology holding company that builds, acquires, and operates a portfolio of AI-native software ventures — engineered for long-term value creation, global scale, and institutional permanence. Founded by Jeff Hon.',
+    'Tarvico Inc. is a privately held U.S. technology company, incorporated in Delaware, building artificial intelligence, digital platforms, and emerging technology businesses — with a long-term vision spanning global technology, intelligent mobility, computing infrastructure, and sustainable energy. Founded by Jeff Honforloco.',
   keywords: [
     'Tarvico',
     'Tarvico Inc.',
-    'private technology holding company',
-    'technology holding company',
+    'privately held U.S. technology company',
+    'U.S. technology company',
     'AI-native companies',
     'Vytre AWOS',
     'AI Workforce Operating System',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   creator: 'Tarvico Inc.',
   publisher: 'Tarvico Inc.',
   category: 'Technology',
-  classification: 'Technology Holding Company',
+  classification: 'Technology Company',
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -92,16 +92,16 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.tarvico.com',
     siteName: 'Tarvico Inc.',
-    title: 'Tarvico Inc. — A Private Technology Holding Company',
+    title: 'Tarvico Inc. — Building Technology for a Connected World',
     description:
-      'Tarvico Inc. builds, acquires, and operates a portfolio of AI-native software and technology ventures — engineered for long-term value creation and global scale. Based in Delaware, USA.',
+      'Tarvico Inc. is a privately held U.S. technology company building artificial intelligence, digital platforms, and emerging technology businesses for global markets. Incorporated in Delaware; operating from the United States.',
     images: [
       {
         url: '/og-image.png',
         secureUrl: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Tarvico Inc. — A Private Technology Holding Company',
+        alt: 'Tarvico Inc. — Building Technology for a Connected World',
         type: 'image/png',
       },
     ],
@@ -110,13 +110,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@tarvicoinc',
     creator: '@tarvicoinc',
-    title: 'Tarvico Inc. — A Private Technology Holding Company',
+    title: 'Tarvico Inc. — Building Technology for a Connected World',
     description:
-      'Building enduring AI-native technology companies for the next global economy. Tarvico is a private holding company that builds, acquires, and operates AI software ventures.',
+      'A privately held U.S. technology company building AI, digital platforms, and emerging technology businesses — with a long-term vision spanning global technology, mobility, infrastructure, and energy.',
     images: [
       {
         url: 'https://www.tarvico.com/og-image.png',
-        alt: 'Tarvico Inc. — A Private Technology Holding Company',
+        alt: 'Tarvico Inc. — Building Technology for a Connected World',
       },
     ],
   },
@@ -148,7 +148,7 @@ const organizationSchema = {
   alternateName: ['Tarvico', 'Tarvico Inc'],
   legalName: 'Tarvico Inc.',
   description:
-    'A private technology holding company that builds, acquires, and operates a portfolio of AI-native software and technology ventures engineered for long-term value creation and global scale.',
+    'A privately held U.S. technology company, incorporated in Delaware, that builds and operates artificial intelligence, digital platforms, and emerging technology businesses — with a long-term vision spanning global technology, intelligent mobility, computing infrastructure, and sustainable energy.',
   url: 'https://www.tarvico.com',
   logo: {
     '@type': 'ImageObject',
@@ -157,7 +157,7 @@ const organizationSchema = {
     contentUrl: 'https://www.tarvico.com/logo-icon.png',
     width: 512,
     height: 512,
-    caption: 'Tarvico Inc. — A Private Technology Holding Company',
+    caption: 'Tarvico Inc. — Building Technology for a Connected World',
   },
   image: [
     {
@@ -302,7 +302,7 @@ const websiteSchema = {
   url: 'https://www.tarvico.com',
   name: 'Tarvico Inc.',
   alternateName: 'Tarvico',
-  description: 'A Private Technology Holding Company — building enduring AI-native ventures for the next global economy.',
+  description: 'A privately held U.S. technology company building artificial intelligence, digital platforms, and emerging technology businesses for global markets.',
   publisher: {
     '@id': 'https://www.tarvico.com/#organization',
   },
@@ -326,7 +326,7 @@ const faqSchema = {
       name: 'What is Tarvico Inc.?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tarvico Inc. is a private technology holding company that builds, acquires, and operates a portfolio of AI-native software and technology ventures. Founded by Jeff Hon, Tarvico is engineered for long-term value creation, global scale, and institutional permanence.',
+        text: 'Tarvico Inc. is a privately held U.S. technology company, incorporated in Delaware, that builds and operates artificial intelligence, digital platforms, and emerging technology businesses. Founded by Jeff Honforloco, it has a long-term vision spanning global technology, intelligent mobility, computing infrastructure, and sustainable energy.',
       },
     },
     {
@@ -339,10 +339,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'What companies does Tarvico own?',
+      name: 'What products does Tarvico build?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tarvico\'s portfolio includes Vytre AWOS (flagship AI Workforce Operating System for enterprise), Maeyen (commerce trust network for Africa), Racym (verified creative talent network), SireIQ (AI productivity assistant), SEOAgentPro (autonomous SEO intelligence platform), Fycra (developer tools platform, stealth), and Fycera (AI creative content platform, stealth).',
+        text: 'Tarvico builds and operates a portfolio of technology products. Featured products include Vytre AWOS (an AI Workforce Operating System for enterprise, in public beta), SireIQ (a publicly available AI assistant for chat, content, and workflow), and Maeyen (commerce trust infrastructure for Africa, in development), alongside additional products such as SEOAgentPro and Racym. Tarvico Inc. is the U.S. parent company that builds and operates these products.',
       },
     },
     {
@@ -350,7 +350,7 @@ const faqSchema = {
       name: 'What is Vytre AWOS?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Vytre AWOS is Tarvico\'s flagship product — an AI Workforce Operating System that serves as the enterprise control plane for autonomous AI workforce deployment and coordination. It enables businesses to deploy, orchestrate, and scale AI-powered workers across every business function.',
+        text: 'Vytre AWOS is Tarvico\'s flagship product — an AI Workforce Operating System: an enterprise control plane to deploy, coordinate, observe, and govern AI workers across operations and workflows. It is currently in public beta.',
       },
     },
     {
@@ -382,7 +382,7 @@ const faqSchema = {
       name: 'Where is Tarvico located?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tarvico Inc. is headquartered at 8 The Green, #5275, Dover, DE 19901, United States, and can be reached by phone at +1 (302) 439-6442. The company is incorporated in Delaware and operates globally across its portfolio of AI-native technology ventures.',
+        text: 'Tarvico Inc. is incorporated in Delaware, United States, with a registered office at 8 The Green, #5275, Dover, DE 19901, and currently operates from the United States. Its future international expansion strategy includes African markets such as Nigeria. The company can be reached at +1 (302) 439-6442.',
       },
     },
     {
@@ -390,7 +390,7 @@ const faqSchema = {
       name: 'What does Tarvico do?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tarvico builds, acquires, and operates AI-native technology companies. The holding company provides capital, strategic guidance, and operational infrastructure to its portfolio companies across workforce infrastructure, developer tools, AI assistants, and creative software markets.',
+        text: 'Tarvico is a privately held U.S. technology company that builds and operates artificial intelligence, digital platforms, and emerging technology products. Its long-term vision spans global technology, intelligent mobility, computing infrastructure, and sustainable energy, with international expansion — including African markets — as a future strategy.',
       },
     },
   ],

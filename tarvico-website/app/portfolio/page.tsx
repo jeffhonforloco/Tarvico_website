@@ -97,7 +97,7 @@ export default function PortfolioPage() {
     <>
       <PageHero
         label="Portfolio"
-        title={<>Seven ventures. One strategic <span className="text-gradient-gold">ecosystem.</span></>}
+        title={<>Our businesses, one <span className="text-gradient-gold">strategy.</span></>}
         subtitle="Each company in the Tarvico portfolio is designed from first principles — intelligence-first architecture, sustainable unit economics, and long-term defensibility."
       />
 

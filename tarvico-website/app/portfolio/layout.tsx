@@ -1,40 +1,39 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Portfolio — Tarvico Inc. AI Ventures | Vytre AWOS, SireIQ, SEOAgentPro',
+  title: 'Our Businesses — Tarvico Inc. | Vytre AWOS, SireIQ, Maeyen',
   description:
-    "Tarvico Inc.'s portfolio of AI-native ventures: Vytre AWOS (enterprise AI workforce OS), SireIQ (AI assistant), SEOAgentPro (autonomous SEO platform), Fycra (developer tools), and Fycera (AI creative software). Six companies, one institutional holding company.",
+    "Tarvico Inc.'s portfolio of AI-native products: Vytre AWOS (enterprise AI Workforce Operating System), SireIQ (AI assistant), Maeyen (commerce trust infrastructure), SEOAgentPro (autonomous SEO), and Racym (verified creative talent network). Products built and operated by a privately held U.S. technology company.",
   keywords: [
     'Tarvico portfolio',
     'Vytre AWOS',
     'AI Workforce Operating System enterprise',
     'SireIQ AI assistant',
+    'Maeyen commerce trust',
     'SEOAgentPro',
-    'Fycra developer tools',
-    'Fycera AI creative',
-    'AI venture portfolio',
-    'technology incubation',
-    'Tarvico companies',
+    'Racym talent network',
+    'AI product portfolio',
+    'Tarvico products',
   ],
   openGraph: {
-    title: 'Portfolio — Tarvico Inc. | Vytre AWOS, SireIQ, SEOAgentPro & More',
+    title: 'Our Businesses — Tarvico Inc. | Vytre AWOS, SireIQ, Maeyen & More',
     description:
-      'Six AI-native ventures, one institutional holding company. Explore the Tarvico portfolio — flagship enterprise infrastructure, AI assistants, autonomous SEO tools, developer platforms, and creative software.',
+      'The products a privately held U.S. technology company builds and operates — enterprise AI workforce infrastructure, an AI assistant, commerce trust infrastructure, and more.',
     url: 'https://www.tarvico.com/portfolio',
     images: [
       {
         url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Tarvico Inc. Portfolio — AI-Native Ventures',
+        alt: 'Tarvico Inc. — Our Businesses',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tarvico Inc. Portfolio — Six AI-Native Ventures',
+    title: 'Tarvico Inc. — Our Businesses',
     description:
-      'Vytre AWOS, SireIQ, SEOAgentPro, Fycra, Fycera — six AI-native ventures under one institutional holding company.',
+      'Vytre AWOS, SireIQ, Maeyen, SEOAgentPro, Racym — products built and operated by Tarvico Inc., a privately held U.S. technology company.',
     images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {

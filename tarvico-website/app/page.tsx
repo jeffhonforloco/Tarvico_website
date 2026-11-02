@@ -141,7 +141,7 @@ const faqLink: React.CSSProperties = { color: 'var(--gold)', textDecoration: 'no
 const faqs: { q: string; a: React.ReactNode }[] = [
   {
     q: 'What is Tarvico Inc.?',
-    a: <>Tarvico Inc. is a private technology holding company that builds, operates, and incubates a portfolio of enduring, AI-native technology companies. Rather than a single-product startup, it is structured to build long-term software companies that solve foundational problems. <Link href="/about" style={faqLink}>About Tarvico →</Link></>,
+    a: <>Tarvico Inc. is a privately held U.S. technology company, incorporated in Delaware, that builds and operates AI, digital platforms, and emerging technology products. Rather than a single-product startup, it builds long-term businesses that solve foundational problems, with a long-term vision spanning global technology, mobility, infrastructure, and energy. <Link href="/about" style={faqLink}>About Tarvico →</Link></>,
   },
   {
     q: 'Who founded Tarvico?',
@@ -222,7 +222,7 @@ export default function HomePage() {
                 background: 'var(--bg-card)',
               }}>
                 <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block' }} className="animate-pulse-gold" />
-                Tarvico Inc. — Private Technology Holding Company
+                Tarvico Inc. — U.S. Private Technology Company
               </div>
 
               <h1 className="animate-rise delay-250" style={{
@@ -335,10 +335,10 @@ export default function HomePage() {
               Not a startup. An institution for <span className="text-gradient-gold">the next economy.</span>
             </h2>
             <p style={{ ...S.sub, marginBottom: '1.5rem' }}>
-              Tarvico Inc. is a <strong style={{ color: 'var(--text)', fontWeight: 600 }}>private technology holding company</strong> that designs, builds, and operates a diversified portfolio of software and technology ventures. We are not a single-product startup — we are institutional infrastructure for the next era of human and technological progress.
+              Tarvico Inc. is a <strong style={{ color: 'var(--text)', fontWeight: 600 }}>privately held U.S. technology company</strong>, incorporated in Delaware, that builds and operates artificial intelligence, digital platforms, and emerging technology businesses. We are not a single-product startup — we build for the long term.
             </p>
             <p style={{ ...S.sub, marginBottom: '1.5rem' }}>
-              Our model combines the <strong style={{ color: 'var(--text)', fontWeight: 600 }}>capital discipline of a holding company</strong> with the velocity of a product studio. We incubate ideas internally, build with lean elite teams, and scale through operational leverage rather than headcount.
+              Our model combines the <strong style={{ color: 'var(--text)', fontWeight: 600 }}>capital discipline of a long-term holding-company strategy</strong> with the velocity of a product studio. We incubate ideas internally, build with lean elite teams, and scale through operational leverage rather than headcount.
             </p>
             <p style={{ ...S.sub, marginBottom: '2.5rem' }}>
               Every company in our portfolio is designed for <strong style={{ color: 'var(--text)', fontWeight: 600 }}>long-term compounding</strong> — products that grow more defensible, more intelligent, and more valuable with every passing year.
@@ -489,7 +489,7 @@ export default function HomePage() {
         <FadeUp>
           <SectionLabel>Portfolio</SectionLabel>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', flexWrap: 'wrap', gap: '1.5rem' }}>
-            <h2 style={{ ...S.h2, marginBottom: 0 }}>Seven ventures. One ecosystem.</h2>
+            <h2 style={{ ...S.h2, marginBottom: 0 }}>A focused technology portfolio.</h2>
             <Button href="/portfolio" variant="ghost">View All →</Button>
           </div>
         </FadeUp>

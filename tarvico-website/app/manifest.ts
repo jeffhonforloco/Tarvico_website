@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Tarvico Inc.',
     short_name: 'Tarvico',
     description:
-      'Private AI technology holding company building enduring AI-native ventures for the next global economy.',
+      'A privately held U.S. technology company building enduring AI-native ventures for the next global economy.',
     start_url: '/',
     display: 'standalone',
     background_color: '#070707',
