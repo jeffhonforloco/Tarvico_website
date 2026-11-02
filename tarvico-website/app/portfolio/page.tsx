@@ -92,14 +92,6 @@ const companies = [
   },
 ]
 
-const awosCapabilities = [
-  { label: 'Agent Orchestration', pct: 92, color: 'var(--gold)' },
-  { label: 'Workflow Intelligence', pct: 87, color: 'var(--blue)' },
-  { label: 'Enterprise Integration', pct: 78, color: 'var(--gold-dim)' },
-  { label: 'Observability', pct: 95, color: 'var(--emerald)' },
-  { label: 'Governance Controls', pct: 83, color: 'var(--blue-dim)' },
-]
-
 export default function PortfolioPage() {
   return (
     <>
@@ -134,7 +126,7 @@ export default function PortfolioPage() {
                     padding: '5px 13px', fontWeight: 600, background: 'var(--gold-glow)', borderRadius: 999,
                   }}>
                     <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block' }} />
-                    Flagship · Launching 2026
+                    Flagship · In active development
                   </span>
                 </div>
                 <h2 style={{
@@ -180,14 +172,11 @@ export default function PortfolioPage() {
               </div>
 
               <div>
-                <div style={{ fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1rem', fontWeight: 600 }}>Platform Capability Index</div>
-                {awosCapabilities.map(cap => (
-                  <div key={cap.label} style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '0.6rem' }}>
-                    <div style={{ fontSize: '0.64rem', color: 'var(--text-2)', width: 140, fontWeight: 400 }}>{cap.label}</div>
-                    <div style={{ flex: 1, height: 4, background: 'var(--bg-raised)', overflow: 'hidden', borderRadius: 4 }}>
-                      <div style={{ height: '100%', width: `${cap.pct}%`, background: cap.color, opacity: 0.85, borderRadius: 4 }} />
-                    </div>
-                    <div style={{ fontSize: '0.62rem', color: 'var(--text-3)', minWidth: 30, textAlign: 'right', fontWeight: 500 }}>{cap.pct}%</div>
+                <div style={{ fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1rem', fontWeight: 600 }}>Platform Capabilities</div>
+                {['Agent orchestration', 'Workflow intelligence', 'Enterprise integration', 'Observability', 'Governance controls'].map(label => (
+                  <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '0.7rem' }}>
+                    <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--gold)', flexShrink: 0, opacity: 0.8 }} />
+                    <span style={{ fontSize: '0.8rem', color: 'var(--text-2)', fontWeight: 400 }}>{label}</span>
                   </div>
                 ))}
               </div>

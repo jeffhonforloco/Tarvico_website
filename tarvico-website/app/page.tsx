@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Button, SectionLabel, Divider, FadeUp, AnimatedBar, AnimatedNumber } from '@/components/ui'
+import { Button, SectionLabel, Divider, FadeUp, AnimatedNumber } from '@/components/ui'
 
 const S = {
   section: {
@@ -388,7 +388,7 @@ export default function HomePage() {
                   padding: '5px 13px', fontWeight: 600, background: 'var(--gold-glow)', borderRadius: 999,
                 }}>
                   <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block' }} className="animate-pulse-gold" />
-                  Flagship · Launching 2026
+                  Flagship · In active development
                 </span>
               </div>
               <h2 style={{ ...S.h2, maxWidth: 540, marginBottom: '1rem' }}>
@@ -438,55 +438,44 @@ export default function HomePage() {
             }}>
               <div style={{ height: 3, borderRadius: 3, background: 'linear-gradient(to right, var(--gold), var(--blue), transparent)' }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 600 }}>AWOS · Orchestration View</span>
-                <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--emerald)', display: 'inline-block' }} className="animate-pulse-dot" />
-                  <span style={{ fontSize: '0.58rem', color: 'var(--emerald)', letterSpacing: '0.08em', fontWeight: 600 }}>Live</span>
-                </span>
+                <span style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 600 }}>AWOS · Concept Preview</span>
+                <span style={{ fontSize: '0.56rem', color: 'var(--text-3)', letterSpacing: '0.08em', fontWeight: 600, border: '1px solid var(--border-w)', borderRadius: 999, padding: '2px 9px' }}>Illustrative</span>
               </div>
 
               <div>
-                <div style={{ fontSize: '0.74rem', color: 'var(--text-2)', marginBottom: '0.85rem', fontWeight: 400 }}>Active Agent Workloads</div>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-2)', marginBottom: '0.85rem', fontWeight: 400 }}>What the control plane coordinates</div>
                 {[
-                  { label: 'Sales Ops', pct: 82, color: 'var(--gold)' },
-                  { label: 'Finance', pct: 67, color: 'var(--blue)' },
-                  { label: 'HR Ops', pct: 45, color: 'var(--gold-dim)' },
-                  { label: 'Customer', pct: 91, color: 'var(--emerald)' },
-                ].map(row => (
-                  <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginBottom: '0.6rem' }}>
-                    <div style={{ fontSize: '0.62rem', color: 'var(--text-3)', width: 68, letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600 }}>{row.label}</div>
-                    <AnimatedBar pct={row.pct} color={row.color} />
-                    <div style={{ fontSize: '0.62rem', color: 'var(--text-2)', minWidth: 28, textAlign: 'right', fontWeight: 500 }}>{row.pct}%</div>
+                  'Agent orchestration across workflows',
+                  'Workflow automation & execution',
+                  'Enterprise system integration',
+                  'Observability & governance',
+                ].map(item => (
+                  <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.65rem' }}>
+                    <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--gold)', flexShrink: 0, opacity: 0.8 }} />
+                    <span style={{ fontSize: '0.78rem', color: 'var(--text-2)', fontWeight: 400 }}>{item}</span>
                   </div>
                 ))}
               </div>
 
               <div>
-                <div style={{ fontSize: '0.74rem', color: 'var(--text-2)', marginBottom: '0.65rem', fontWeight: 400 }}>Deployed Agents</div>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-2)', marginBottom: '0.65rem', fontWeight: 400 }}>Example agent roles</div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
-                  {[
-                    { label: 'Analyst·12', active: true },
-                    { label: 'Writer·7', active: false },
-                    { label: 'Research·4', active: true },
-                    { label: 'CRM·9', active: false },
-                    { label: 'Compliance·3', active: true },
-                    { label: 'Finance·6', active: false },
-                  ].map(a => (
-                    <span key={a.label} style={{
+                  {['Analyst', 'Research', 'Writer', 'CRM', 'Compliance', 'Finance'].map(label => (
+                    <span key={label} style={{
                       fontSize: '0.62rem',
-                      border: `1px solid ${a.active ? 'var(--gold-border)' : 'var(--border-w)'}`,
-                      color: a.active ? 'var(--gold)' : 'var(--text-3)',
+                      border: '1px solid var(--border-w)',
+                      color: 'var(--text-3)',
                       padding: '3px 10px', letterSpacing: '0.04em', fontWeight: 500, borderRadius: 999,
                     }}>
-                      {a.label}
+                      {label}
                     </span>
                   ))}
                 </div>
               </div>
 
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem' }}>
-                <span style={{ fontSize: '0.62rem', color: 'var(--text-3)', fontWeight: 400 }}>41 agents · 127 tasks/hr · 99.7% uptime</span>
-                <span style={{ fontSize: '0.62rem', color: 'var(--emerald)', fontWeight: 600 }}>◆ Operational</span>
+                <span style={{ fontSize: '0.62rem', color: 'var(--text-3)', fontWeight: 400 }}>Enterprise control plane for AI work</span>
+                <span style={{ fontSize: '0.62rem', color: 'var(--text-2)', fontWeight: 600 }}>In active development</span>
               </div>
             </div>
           </div>
