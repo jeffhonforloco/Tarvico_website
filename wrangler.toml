@@ -1,0 +1,8 @@
+# Cloudflare Pages configuration (read from the repository root, where the
+# build runs). Next.js static export writes to tarvico-website/out, so point
+# the Pages build output directory there. This overrides the dashboard
+# "Build output directory" setting (which was previously set to "dist" and
+# caused "Output directory 'dist' not found" deploy failures).
+name = "tarvico-website"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "tarvico-website/out"

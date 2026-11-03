@@ -1,0 +1,3 @@
+# Build artifacts (generated at build time; never committed)
+dist/
+node_modules/
