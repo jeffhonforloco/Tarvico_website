@@ -11,6 +11,10 @@ const sections = [
         body: 'Tarvico Inc. is a privately held U.S. technology company incorporated under the General Corporation Law of the State of Delaware, United States. Tarvico Inc. is not a publicly traded company and its securities are not registered with the U.S. Securities and Exchange Commission (SEC) pursuant to a public offering.',
       },
       {
+        subtitle: 'Corporate Structure',
+        body: 'Tarvico Inc. builds and operates its products and brands — including Vytre AWOS, SireIQ, SEOAgentPro, Maeyen, and Racym — directly, as products and initiatives of the company. These products are not separately incorporated companies or independent subsidiaries unless and until Tarvico Inc. expressly states otherwise in writing. Where any product is or becomes operated through a separate legal entity, Tarvico Inc. will identify that entity in the applicable product terms.',
+      },
+      {
         subtitle: 'Registered Agent',
         body: 'Tarvico Inc. maintains a registered agent in the State of Delaware in accordance with Delaware corporate law. Inquiries regarding corporate structure or registered agent information may be directed to legal@tarvico.com.',
       },
@@ -29,7 +33,7 @@ const sections = [
       },
       {
         subtitle: 'Private Placement',
-        body: 'Any securities of Tarvico Inc. are offered and sold in reliance upon exemptions from the registration requirements of the Securities Act of 1933, as amended, and applicable state securities laws. Prospective investors must satisfy applicable suitability standards and complete required documentation before participating in any offering.',
+        body: 'Tarvico Inc. is not conducting a public securities offering through this Site. To the extent Tarvico Inc. offers any securities, such securities would be offered and sold only in reliance upon exemptions from the registration requirements of the Securities Act of 1933, as amended, and applicable state securities laws. Any prospective investor would be required to satisfy applicable suitability standards and complete required documentation before participating in any such offering.',
       },
       {
         subtitle: 'No Investment Advice',
@@ -98,6 +102,10 @@ const sections = [
       {
         subtitle: 'Product-Specific Terms',
         body: 'Where a Tarvico product is made available through its own website or service, that product may be governed by its own terms of service and privacy policy. Those terms apply to your use of that product in addition to, or in place of, the terms on this Site.',
+      },
+      {
+        subtitle: 'No Agency or Endorsement',
+        body: 'References on this Site to Tarvico products, brands, programs, or third parties — including membership in the NVIDIA Developer Program — do not create any partnership, joint venture, agency, or employment relationship, and do not constitute an investment in, endorsement by, or official partnership with any third party, except where expressly stated in a separate written agreement.',
       },
     ],
   },
