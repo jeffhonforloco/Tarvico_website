@@ -54,7 +54,7 @@ export const BUSINESSES: Business[] = [
     url: 'https://www.vytre.com',
     internal: '/vytre',
     provenance: 'management-confirmed',
-    note: 'Public beta announced at vytre.com (management-confirmed). Site previously linked vytre.io — confirm canonical URL. tarvico/vytre-core exists on Hugging Face (repo-verified).',
+    note: 'Public beta announced at vytre.com (management-confirmed). Hugging Face model at tarvico/vytre_core (management-confirmed canonical slug).',
   },
   {
     name: 'SireIQ',

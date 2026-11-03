@@ -5,10 +5,10 @@ import { PageHero, SectionLabel, Divider, MaturityTag } from '@/components/ui'
 import { publicBusinesses } from '@/lib/businesses'
 
 const timeline = [
+  { year: '2025', title: 'Early Product Work', desc: 'Initial product development begins. SireIQ is built and becomes publicly available as an AI assistant, and SEOAgentPro enters active development.', accent: false },
   { year: '2026', title: 'Tarvico Inc. Founded', desc: 'Tarvico Inc. is established as a privately held U.S. technology company, incorporated in Delaware. Its initial products are defined, and development of the flagship product begins in earnest.', accent: true },
-  { year: '2026', title: 'Vytre AWOS Development Begins', desc: 'The flagship AI Workforce Operating System enters active development. Architecture design, core agent orchestration engine, and enterprise integration framework initiated.', accent: true },
-  { year: '2025', title: 'Early Incubation Phase', desc: 'SireIQ and SEOAgentPro enter early incubation, alongside additional early-stage products. Product research, market validation, and initial prototyping.', accent: false },
-  { year: '2026+', title: 'Flagship Launch · Growth Phase', desc: 'Vytre AWOS targets public launch and enterprise customer acquisition. Portfolio companies advance from incubation toward independent product development and market entry.', accent: false },
+  { year: '2026', title: 'Vytre AWOS Enters Public Beta', desc: 'The flagship AI Workforce Operating System reaches public beta. Architecture design, core agent orchestration engine, and enterprise integration framework are underway.', accent: true },
+  { year: '2026+', title: 'Launch · Growth Phase', desc: 'Vytre AWOS targets broader enterprise availability. Products across the portfolio advance from early development toward market entry and scale.', accent: false },
 ]
 
 export default function AboutPage() {

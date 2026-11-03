@@ -38,8 +38,8 @@
   --border-w: rgba(255, 255, 255, 0.07);
   --border-m: rgba(255, 255, 255, 0.12);
 
-  /* Typography */
-  --font-display: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography — Project AUREL: Archivo display, Inter body */
+  --font-display: var(--font-archivo), 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body:    var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Radius — modern rounded surfaces */

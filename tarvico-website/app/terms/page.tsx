@@ -51,7 +51,7 @@ const sections = [
       },
       {
         subtitle: 'Trademarks',
-        body: '"Tarvico," the Tarvico logo, and the names and logos of Tarvico\'s portfolio companies (including Vytre AWOS, SireIQ, SEOAgentPro, Fycra, and Fycera) are trademarks or service marks of Tarvico Inc. Unauthorized use of any Tarvico trademark is strictly prohibited.',
+        body: '"Tarvico," the Tarvico logo, and the names and logos of Tarvico\'s products and brands (including Vytre AWOS, SireIQ, SEOAgentPro, Maeyen, Racym, Fycra, and Fycera) are trademarks or service marks of Tarvico Inc. Unauthorized use of any Tarvico trademark is strictly prohibited.',
       },
       {
         subtitle: 'Limited License',
@@ -68,7 +68,7 @@ const sections = [
       },
       {
         subtitle: 'Forward-Looking Statements',
-        body: 'The Site may contain forward-looking statements about Tarvico Inc. and its portfolio companies. These statements involve known and unknown risks and uncertainties that may cause actual results to differ materially. Tarvico Inc. undertakes no obligation to update any forward-looking statement.',
+        body: 'The Site may contain forward-looking statements about Tarvico Inc. and its products and business lines. These statements involve known and unknown risks and uncertainties that may cause actual results to differ materially. Tarvico Inc. undertakes no obligation to update any forward-looking statement.',
       },
       {
         subtitle: 'Accuracy of Information',
@@ -94,7 +94,7 @@ const sections = [
     content: [
       {
         subtitle: 'External Resources',
-        body: 'The Site may contain links to third-party websites, including portfolio company sites and partner resources. These links are provided for convenience only. Tarvico Inc. does not control, endorse, or assume responsibility for the content, privacy practices, or terms of any third-party site. Your use of third-party sites is at your own risk.',
+        body: 'The Site may contain links to third-party websites, including Tarvico product sites and external resources. These links are provided for convenience only. Tarvico Inc. does not control, endorse, or assume responsibility for the content, privacy practices, or terms of any third-party site. Your use of third-party sites is at your own risk.',
       },
     ],
   },

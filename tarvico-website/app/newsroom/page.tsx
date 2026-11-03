@@ -30,17 +30,17 @@ const news = [
     href: '/vision',
   },
   {
-    category: 'Portfolio · Update',
-    title: 'SireIQ & SEOAgentPro Enter Incubation Phase',
-    excerpt: 'Two portfolio companies graduate from concept validation into active incubation — SireIQ and SEOAgentPro begin product research, market validation, and initial prototyping.',
+    category: 'Product · Update',
+    title: 'SireIQ & SEOAgentPro — Early Development',
+    excerpt: 'Announced in late 2025 as early-stage products in the Tarvico portfolio. Update (2026): SireIQ is now publicly available as an AI assistant for chat, content creation, and workflow automation; SEOAgentPro, an autonomous SEO intelligence platform, remains in active development.',
     date: 'Q4 2025',
     readTime: '3 min read',
     href: '/portfolio',
   },
   {
-    category: 'Portfolio · Update',
+    category: 'Product · Update',
     title: 'Maeyen & Racym Join the Tarvico Portfolio',
-    excerpt: 'Two network-based ventures enter active development: Maeyen, a commerce trust network for Africa starting from Nigeria, and Racym, a verified creative talent network matching brands and agencies to pre-vetted talent by what they have actually delivered.',
+    excerpt: 'Two network-based products enter active development: Maeyen, commerce trust infrastructure for Africa starting from Nigeria, and Racym, a verified creative talent network matching brands and agencies to pre-vetted talent by what they have actually delivered.',
     date: 'Q1 2026',
     readTime: '3 min read',
     href: '/portfolio',
@@ -63,7 +63,7 @@ export default function NewsroomPage() {
       <PageHero
         label="Newsroom"
         title="Updates from Tarvico."
-        subtitle="Announcements, product updates, research, and strategic communications from Tarvico Inc. and portfolio companies."
+        subtitle="Announcements, product updates, research, and strategic communications from Tarvico Inc. and its products."
       />
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
