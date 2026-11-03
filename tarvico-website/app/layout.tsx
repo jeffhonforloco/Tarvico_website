@@ -1,16 +1,42 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Archivo, IBM_Plex_Mono, Fraunces } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 // Self-hosted at build time (no render-blocking request to Google Fonts).
-// Exposed as --font-inter, consumed by --font-display / --font-body in globals.css.
+// Inter → body workhorse (--font-inter). Archivo → monumental display
+// (--font-archivo). IBM Plex Mono → technical annotations / folios / data
+// (--font-plex-mono). Part of the Project AUREL "FOUNDRY" design system.
 const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
   display: 'swap',
   variable: '--font-inter',
+})
+
+const archivo = Archivo({
+  subsets: ['latin'],
+  weight: ['500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-archivo',
+})
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-plex-mono',
+})
+
+// Optical serif — carries Direction C's institutional/editorial voice in the
+// mineral-white bands. Variable optical-size + weight for timeless headlines.
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '900'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-fraunces',
 })
 
 export const viewport: Viewport = {
@@ -400,7 +426,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${archivo.variable} ${plexMono.variable} ${fraunces.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

@@ -56,6 +56,34 @@
 
   /* Accent gradient — used for hero washes & key surfaces */
   --grad-accent: linear-gradient(135deg, #E0C572 0%, #CDA94B 50%, #B8893A 100%);
+
+  /* ── Project AUREL · FOUNDRY design system (Architectural Intelligence) ──── */
+  /* Typographic voice: monumental Archivo display + Plex Mono technical. */
+  --font-archivo-stack: var(--font-archivo), 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-fraunces-stack: var(--font-fraunces), 'Fraunces', Georgia, 'Times New Roman', serif;
+  --mono: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* Material palette — graphite + petroleum structural pair, bronze precious accent. */
+  --graphite:     #0E0F13;
+  --graphite-2:   #15171D;
+  --graphite-3:   #1B1E25;
+  --ink:          #07080B;
+  --mineral:      #F3F1E9;   /* mineral-white editorial band (institutional elegance) */
+  --mineral-2:    #E8E4D9;
+  --mineral-ink:  #171922;   /* text on mineral */
+  --mineral-ink-2:#565A62;
+  --mineral-line: rgba(23,25,34,0.12);
+  --titanium:     #C8C2B6;
+  --bronze:       #C9A24A;   /* evolves the gold — warmer, deeper */
+  --bronze-deep:  #8A6A2E;
+  --bronze-soft:  rgba(201,162,74,0.11);
+  --bronze-line:  rgba(201,162,74,0.30);
+  --petroleum:    #103E3C;   /* structural secondary (infrastructure / energy) */
+  --petroleum-2:  #15534D;
+  --petroleum-ink:#7FB7AD;   /* petroleum used as text/accent on dark */
+  --petroleum-soft:rgba(21,83,77,0.16);
+  --hairline:     rgba(244,242,236,0.11);
+  --hairline-2:   rgba(244,242,236,0.055);
 }
 
 /* ── Light theme overrides ────────────────────────────────────────────────── */
@@ -371,6 +399,64 @@ body {
 /* ── Progress bar — animated width reveal ────────────────────────────────── */
 .bar-reveal {
   transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ══ Project AUREL · FOUNDRY primitives ═══════════════════════════════════ */
+.aurel-mono { font-family: var(--mono); letter-spacing: 0.14em; text-transform: uppercase; }
+.aurel-display {
+  font-family: var(--font-archivo-stack);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+/* Blueprint grid — architectural hairline field */
+.aurel-blueprint {
+  background-image:
+    linear-gradient(var(--hairline-2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hairline-2) 1px, transparent 1px);
+  background-size: 96px 96px;
+}
+.aurel-blueprint-fine {
+  background-image:
+    linear-gradient(var(--hairline-2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hairline-2) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Clip-reveal — headline wipes up from its baseline instead of fading */
+@keyframes aurelClip {
+  from { clip-path: inset(0 0 102% 0); }
+  to   { clip-path: inset(0 0 -2% 0); }
+}
+.animate-aurel-clip { animation: aurelClip 1s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* Draw-down — a vertical dimension line draws in from the top */
+@keyframes aurelDrawY { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+.animate-aurel-drawy { transform-origin: top; animation: aurelDrawY 1.1s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* 3D sculpture — slow ambient orbit + gentle float */
+@keyframes aurelOrbit {
+  from { transform: rotateX(var(--rx,14deg)) rotateY(0deg); }
+  to   { transform: rotateX(var(--rx,14deg)) rotateY(360deg); }
+}
+.animate-aurel-orbit { animation: aurelOrbit 48s linear infinite; }
+@keyframes aurelFloat3d { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.animate-aurel-float { animation: aurelFloat3d 10s ease-in-out infinite; }
+
+/* Computational-keystone sculpture (hero signature) */
+.sculpt-wrap { perspective: 1150px; }
+.sculpt-stage { transform-style: preserve-3d; transition: transform .4s cubic-bezier(0.16,1,0.3,1); will-change: transform; }
+.sculpt-spin { transform-style: preserve-3d; animation: aurelSpinY 60s linear infinite; }
+.sculpt-layer { position: absolute; inset: 0; display: grid; place-items: center; }
+@keyframes aurelSpinY { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+@media (prefers-reduced-motion: reduce) { .sculpt-spin { animation: none; } }
+
+/* Bronze → petroleum gradient text (distinct from the flat-gold sweep) */
+.text-foundry {
+  background: linear-gradient(104deg, #E0C572 0%, #C9A24A 42%, #7FB7AD 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 
 /* ── Prefers reduced motion — disable all animations ─────────────────────── */
