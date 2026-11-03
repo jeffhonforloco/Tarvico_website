@@ -1,40 +1,50 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Archivo, IBM_Plex_Mono, Fraunces } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-// Self-hosted at build time (no render-blocking request to Google Fonts).
-// Inter → body workhorse (--font-inter). Archivo → monumental display
-// (--font-archivo). IBM Plex Mono → technical annotations / folios / data
-// (--font-plex-mono). Part of the Project AUREL "FOUNDRY" design system.
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+// Fonts are vendored into app/fonts/ and self-hosted with next/font/local.
+// There is NO build-time or runtime request to Google Fonts — this is what
+// keeps the Cloudflare Pages build deterministic and offline-safe. Variable
+// woff2 (latin subset) carry the full weight axis in a single file each, so
+// the whole AUREL type system is ~194 KB across six files.
+//
+// Project AUREL "FOUNDRY" type roles:
+//   Inter       → body workhorse            (--font-inter)
+//   Archivo     → monumental display        (--font-archivo)
+//   IBM Plex Mono → technical annotations    (--font-plex-mono)
+//   Fraunces    → editorial serif (Dir. C)  (--font-fraunces)
+const inter = localFont({
+  src: './fonts/inter-latin-wght-normal.woff2',
+  weight: '100 900',
+  style: 'normal',
   display: 'swap',
   variable: '--font-inter',
 })
 
-const archivo = Archivo({
-  subsets: ['latin'],
-  weight: ['500', '600', '700', '800', '900'],
+const archivo = localFont({
+  src: './fonts/archivo-latin-wght-normal.woff2',
+  weight: '100 900',
+  style: 'normal',
   display: 'swap',
   variable: '--font-archivo',
 })
 
-const plexMono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
+const plexMono = localFont({
+  src: [
+    { path: './fonts/ibm-plex-mono-latin-400-normal.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/ibm-plex-mono-latin-500-normal.woff2', weight: '500', style: 'normal' },
+  ],
   display: 'swap',
   variable: '--font-plex-mono',
 })
 
-// Optical serif — carries Direction C's institutional/editorial voice in the
-// mineral-white bands. Variable optical-size + weight for timeless headlines.
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '900'],
-  style: ['normal', 'italic'],
+const fraunces = localFont({
+  src: [
+    { path: './fonts/fraunces-latin-wght-normal.woff2', weight: '100 900', style: 'normal' },
+    { path: './fonts/fraunces-latin-wght-italic.woff2', weight: '100 900', style: 'italic' },
+  ],
   display: 'swap',
   variable: '--font-fraunces',
 })
