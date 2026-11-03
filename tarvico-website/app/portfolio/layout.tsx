@@ -65,7 +65,7 @@ const portfolioPageSchema = {
       '@type': 'SoftwareApplication',
       name: 'Vytre AWOS',
       description: 'AI Workforce Operating System for enterprise — autonomous AI workforce deployment and coordination.',
-      url: 'https://www.vytre.io',
+      url: 'https://www.vytre.com',
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Cloud',
     },

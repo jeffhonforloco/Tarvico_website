@@ -141,14 +141,14 @@ export default function PortfolioPage() {
               </div>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
                 <Button href="/vytre" variant="primary">Product Overview →</Button>
-                <a href="https://www.vytre.io" target="_blank" rel="noopener noreferrer" style={{
+                <a href="https://www.vytre.com" target="_blank" rel="noopener noreferrer" style={{
                   fontSize: '0.8rem', letterSpacing: '-0.005em',
                   color: 'var(--text-2)', textDecoration: 'none', fontWeight: 500,
                   transition: 'color 0.2s',
                 }}
                   onMouseEnter={e => { e.currentTarget.style.color = 'var(--gold)' }}
                   onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-2)' }}
-                >vytre.io ↗</a>
+                >vytre.com ↗</a>
               </div>
             </div>
 

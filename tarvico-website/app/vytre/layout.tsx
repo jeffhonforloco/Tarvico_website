@@ -48,7 +48,7 @@ const productSchema = {
   alternateName: 'Vytre AI Workforce Operating System',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
-  url: 'https://www.vytre.io',
+  url: 'https://www.vytre.com',
   description:
     'An AI Workforce Operating System — the enterprise control plane to deploy, manage, coordinate, observe, and govern AI workers across operations, workflows, and systems.',
   publisher: { '@id': 'https://www.tarvico.com/#organization' },

@@ -27,7 +27,7 @@ export default function VytrePage() {
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '5rem' }}>
           <Button href="/contact" variant="primary">Request Early Access →</Button>
-          <Button href="https://www.vytre.io" variant="secondary">Visit vytre.io ↗</Button>
+          <Button href="https://www.vytre.com" variant="secondary">Visit vytre.com ↗</Button>
         </div>
 
         {/* Problem */}
