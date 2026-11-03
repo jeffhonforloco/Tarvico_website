@@ -440,3 +440,38 @@ export function MaturityTag({ tier, label }: { tier: MaturityTier; label?: strin
     </span>
   )
 }
+
+// ─── FOUNDRY layout helpers (Project AUREL) ───────────────────────────────────
+
+export const FONT = {
+  display: 'var(--font-archivo-stack)',
+  serif: 'var(--font-fraunces-stack)',
+  mono: 'var(--mono)',
+  body: 'var(--font-body)',
+}
+
+/** Engineering dimension line: ─┬───────┬─ with end ticks. */
+export function DimLine({ color = 'var(--bronze-line)', flex = true }: { color?: string; flex?: boolean }) {
+  return (
+    <span aria-hidden style={{ display: flex ? 'flex' : 'inline-flex', alignItems: 'center', flex: flex ? 1 : undefined, minWidth: 28 }}>
+      <span style={{ width: 1, height: 7, background: color }} />
+      <span style={{ flex: 1, height: 1, background: color }} />
+      <span style={{ width: 1, height: 7, background: color }} />
+    </span>
+  )
+}
+
+/** Section eyebrow: folio number + mono label + dimension line. */
+export function Eyebrow({ folio, label, onMineral = false, center = false }: { folio?: string; label: string; onMineral?: boolean; center?: boolean }) {
+  const acc = onMineral ? 'var(--bronze-deep)' : 'var(--bronze)'
+  const faint = onMineral ? 'var(--mineral-ink-2)' : 'var(--text-3)'
+  const line = onMineral ? 'var(--mineral-line)' : 'var(--hairline)'
+  const m = (c: string): CSSProperties => ({ fontFamily: 'var(--mono)', fontSize: '0.64rem', letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 500, color: c })
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.75rem', justifyContent: center ? 'center' : 'flex-start' }}>
+      {folio && <span style={m(faint)}>{folio}</span>}
+      <span style={m(acc)}>{label}</span>
+      <DimLine color={line} />
+    </div>
+  )
+}
