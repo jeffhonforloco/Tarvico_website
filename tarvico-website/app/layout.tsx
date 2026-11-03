@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     'Jeff Hon',
     'Jeff Honforloco',
     'Jeff Yèmalín Bienvenu Honforloco',
-    'venture incubation',
+    'AI product portfolio',
     'AI infrastructure',
     'enterprise AI software',
     'AI company portfolio',
@@ -195,15 +195,15 @@ const organizationSchema = {
     'Artificial Intelligence',
     'Enterprise Software',
     'AI Workforce Infrastructure',
-    'Technology Holding Companies',
-    'Venture Incubation',
+    'Technology Portfolio Strategy',
+    'AI Product Development',
     'Developer Tools',
     'AI Content Creation',
     'AI-native SaaS',
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Tarvico Portfolio Companies',
+    name: 'Tarvico Products',
     itemListElement: [
       {
         '@type': 'Offer',
@@ -356,7 +356,7 @@ const faqSchema = {
       name: 'What is Maeyen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Maeyen is a Tarvico company building commerce trust infrastructure for Africa, starting from Nigeria. By verifying participants and protecting transactions, Maeyen lets buyers and sellers transact online with confidence — solving the biggest problem in African online commerce: trust.',
+        text: 'Maeyen is a Tarvico product, currently in development, building commerce trust infrastructure for Africa, starting from Nigeria. By verifying participants and protecting transactions, Maeyen is designed to let buyers and sellers transact online with confidence — addressing one of the biggest problems in African online commerce: trust.',
       },
     },
     {
@@ -364,7 +364,7 @@ const faqSchema = {
       name: 'What industries does Tarvico serve?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tarvico builds across AI workforce infrastructure and enterprise software, commerce and trust networks, and productivity, developer, and creative software. Its portfolio companies serve enterprises, businesses, and consumers globally.',
+        text: 'Tarvico builds across AI workforce infrastructure and enterprise software, commerce and trust networks, and productivity, developer, and creative software. Its products are built for enterprises, businesses, and consumers globally.',
       },
     },
     {

@@ -58,14 +58,14 @@ const founderSchema = {
   alternateName: ['Jeff Hon', 'Jeff Honforloco'],
   jobTitle: 'Founder & Chief Executive Officer',
   description:
-    'Founder and CEO of Tarvico Inc. A self-taught builder and former professional photographer, he leads vision, strategy, and product direction across Tarvico’s portfolio of AI-native technology companies.',
+    'Founder and CEO of Tarvico Inc. A self-taught builder and former professional photographer, he leads vision, strategy, and product direction across Tarvico’s portfolio of AI-native products.',
   worksFor: { '@id': 'https://www.tarvico.com/#organization' },
   url: 'https://www.tarvico.com/founder',
   knowsAbout: [
     'Artificial Intelligence',
     'Enterprise Software',
     'AI Workforce Infrastructure',
-    'Technology Holding Companies',
+    'Technology Portfolio Strategy',
     'Product Strategy',
     'Long-Term Company Building',
   ],

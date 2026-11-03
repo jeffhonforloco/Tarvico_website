@@ -33,7 +33,7 @@ const featured = featuredBusinesses()
 const evidence = [
   { t: 'SireIQ is publicly available', d: 'A live, usable AI assistant for chat, content, and workflow.', href: 'https://sireiq.com', cta: 'sireiq.com ↗' },
   { t: 'Vytre AWOS — public beta', d: 'The AI Workforce Operating System is in public beta.', href: 'https://www.vytre.com', cta: 'vytre.com ↗' },
-  { t: 'Vytre Core — open model', d: 'A workforce-operations model published openly on Hugging Face.', href: 'https://huggingface.co/tarvico/vytre-core', cta: 'View on Hugging Face ↗' },
+  { t: 'Vytre Core — open model', d: 'A workforce-operations model published openly on Hugging Face.', href: 'https://huggingface.co/tarvico/vytre_core', cta: 'View on Hugging Face ↗' },
   { t: 'Member, NVIDIA Developer Program', d: 'Participation in NVIDIA’s developer program. Not an investment, endorsement, or partnership.', href: undefined, cta: undefined },
 ]
 
