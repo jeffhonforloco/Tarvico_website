@@ -118,7 +118,7 @@ export default function Nav() {
                   right: 0,
                   height: '2px',
                   borderRadius: 2,
-                  background: 'var(--gold)',
+                  background: 'var(--bronze)',
                 }} />
               )}
             </Link>
@@ -142,7 +142,7 @@ export default function Nav() {
             transition: 'border-color 0.2s, color 0.2s',
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.borderColor = 'var(--gold-border)'
+            e.currentTarget.style.borderColor = 'var(--bronze-line)'
             e.currentTarget.style.color = 'var(--text)'
           }}
           onMouseLeave={e => {
@@ -158,7 +158,7 @@ export default function Nav() {
           style={{
             fontSize: '0.85rem',
             letterSpacing: '-0.005em',
-            background: 'var(--gold)',
+            background: 'var(--bronze)',
             color: '#0A0A0C',
             padding: '9px 20px',
             textDecoration: 'none',
@@ -260,7 +260,7 @@ export default function Nav() {
             fontSize: '0.68rem',
             letterSpacing: '0.2em',
             textTransform: 'uppercase',
-            color: 'var(--gold)',
+            color: 'var(--bronze)',
             textDecoration: 'none',
             fontWeight: 500,
             display: 'flex',
@@ -268,7 +268,7 @@ export default function Nav() {
             gap: '0.5rem',
           }}
         >
-          <span style={{ display: 'block', width: 24, height: 1, background: 'var(--gold)' }} />
+          <span style={{ display: 'block', width: 24, height: 1, background: 'var(--bronze)' }} />
           Contact Tarvico
         </Link>
       </div>,

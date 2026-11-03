@@ -70,14 +70,14 @@ export function Button({ children, href, onClick, variant = 'secondary', style, 
     alignItems: 'center',
     gap: 8,
     fontSize: '0.85rem',
-    letterSpacing: '-0.005em',
     padding: '13px 24px',
     borderRadius: 'var(--radius-sm)',
     textDecoration: 'none',
     cursor: disabled ? 'not-allowed' : 'pointer',
     transition: 'transform 0.2s cubic-bezier(0.16,1,0.3,1), background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease',
-    fontFamily: 'var(--font-display)',
+    fontFamily: 'var(--font-archivo-stack)',
     fontWeight: 600,
+    letterSpacing: '-0.01em',
     border: 'none',
     lineHeight: 1.1,
     opacity: disabled ? 0.5 : 1,
@@ -87,9 +87,9 @@ export function Button({ children, href, onClick, variant = 'secondary', style, 
 
   const variants: Record<ButtonVariant, CSSProperties> = {
     primary: {
-      background: 'var(--gold)',
-      color: '#0A0A0C',
-      fontWeight: 600,
+      background: 'var(--bronze)',
+      color: '#0E0F13',
+      fontWeight: 700,
       boxShadow: hovered ? 'var(--shadow-gold)' : 'none',
     },
     secondary: {
@@ -99,7 +99,7 @@ export function Button({ children, href, onClick, variant = 'secondary', style, 
     },
     ghost: {
       background: 'transparent',
-      color: hovered ? 'var(--gold)' : 'var(--text-2)',
+      color: hovered ? 'var(--bronze)' : 'var(--text-2)',
       border: '1px solid transparent',
       padding: '13px 4px',
       transform: 'none',
@@ -138,22 +138,28 @@ export function Button({ children, href, onClick, variant = 'secondary', style, 
 // ─── SectionLabel ─────────────────────────────────────────────────────────────
 
 export function SectionLabel({ children, center }: { children: ReactNode; center?: boolean }) {
+  const dim = <span aria-hidden style={{ display: 'inline-flex', alignItems: 'center', flex: center ? 'none' : 1, minWidth: 28, width: center ? 28 : undefined }}>
+    <span style={{ width: 1, height: 6, background: 'var(--bronze-line)' }} />
+    <span style={{ flex: 1, height: 1, background: 'var(--bronze-line)' }} />
+    <span style={{ width: 1, height: 6, background: 'var(--bronze-line)' }} />
+  </span>
   return (
     <div style={{
       display: 'flex',
       alignItems: 'center',
       justifyContent: center ? 'center' : 'flex-start',
-      gap: 10,
-      fontSize: '0.58rem',
-      letterSpacing: '0.3em',
+      gap: '1rem',
+      fontFamily: 'var(--mono)',
+      fontSize: '0.64rem',
+      letterSpacing: '0.22em',
       textTransform: 'uppercase',
-      color: 'var(--gold)',
+      color: 'var(--bronze)',
       marginBottom: '1.75rem',
       fontWeight: 500,
     }}>
-      <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)', flexShrink: 0 }} />
+      {center && dim}
       {children}
-      {center && <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)', flexShrink: 0 }} />}
+      {dim}
     </div>
   )
 }
@@ -173,52 +179,57 @@ export function PageHero({
     <div style={{
       position: 'relative',
       overflow: 'hidden',
-      borderBottom: '1px solid var(--border-w)',
+      background: 'var(--bg)',
+      borderBottom: '1px solid var(--hairline)',
     }}>
-      <div className="hero-grid" style={{ position: 'absolute', inset: 0, opacity: 0.6 }} />
+      <div className="aurel-blueprint" style={{ position: 'absolute', inset: 0, opacity: 0.7 }} />
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'radial-gradient(ellipse 70% 70% at 50% 100%, transparent 50%, var(--bg) 100%)',
+        background: 'radial-gradient(ellipse 80% 75% at 30% 10%, var(--bronze-soft) 0%, transparent 55%)',
       }} />
+      {/* left bronze edge rule */}
+      <div className="mob-hide" style={{ position: 'absolute', top: 0, bottom: 0, left: 'max(1.5rem, 4vw)', width: 1, background: 'linear-gradient(to bottom, transparent, var(--bronze-line) 30%, transparent)' }} />
       <div className="mob-px" style={{
         position: 'relative',
         zIndex: 2,
-        padding: '9rem 3rem 6rem',
-        maxWidth: 1200,
+        padding: '8.5rem max(1.5rem, 4vw) 5.5rem',
+        maxWidth: 1280,
         margin: '0 auto',
       }}>
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 10,
-          fontSize: '0.58rem',
-          letterSpacing: '0.3em',
+          gap: '1rem',
+          fontFamily: 'var(--mono)',
+          fontSize: '0.64rem',
+          letterSpacing: '0.22em',
           textTransform: 'uppercase',
-          color: 'var(--gold)',
-          marginBottom: '2rem',
+          color: 'var(--bronze)',
+          marginBottom: '1.9rem',
           fontWeight: 500,
+          maxWidth: 520,
         }}>
-          <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)' }} />
           {label}
+          <span aria-hidden style={{ display: 'inline-flex', alignItems: 'center', flex: 1, minWidth: 28 }}>
+            <span style={{ width: 1, height: 6, background: 'var(--bronze-line)' }} />
+            <span style={{ flex: 1, height: 1, background: 'var(--bronze-line)' }} />
+            <span style={{ width: 1, height: 6, background: 'var(--bronze-line)' }} />
+          </span>
         </div>
-        <h1 style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(2.8rem, 5.5vw, 5.2rem)',
-          fontWeight: 700,
-          lineHeight: 1.04,
-          marginBottom: '1.75rem',
+        <h1 className="aurel-display" style={{
+          fontSize: 'clamp(2.6rem, 5.6vw, 5rem)',
           color: 'var(--text)',
-          letterSpacing: '-0.035em',
+          marginBottom: subtitle ? '1.9rem' : 0,
         }}>
           {title}
         </h1>
         {subtitle && (
           <p style={{
-            fontSize: '1.125rem',
+            fontSize: '1.14rem',
             color: 'var(--text-2)',
-            maxWidth: 560,
-            lineHeight: 1.7,
+            maxWidth: 580,
+            lineHeight: 1.65,
             fontWeight: 400,
           }}>
             {subtitle}
@@ -369,21 +380,20 @@ export function MetricCard({ value, label, sub }: { value: string; label: string
       flexDirection: 'column',
       gap: '0.5rem',
     }}>
-      <div style={{
-        fontFamily: 'var(--font-display)',
+      <div className="aurel-display" style={{
         fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
-        fontWeight: 700,
+        fontWeight: 800,
         color: 'var(--text)',
         lineHeight: 1,
-        letterSpacing: '-0.04em',
       }}>
         {value}
       </div>
       <div style={{
+        fontFamily: 'var(--mono)',
         fontSize: '0.62rem',
-        letterSpacing: '0.18em',
+        letterSpacing: '0.16em',
         textTransform: 'uppercase',
-        color: 'var(--text-2)',
+        color: 'var(--bronze)',
         fontWeight: 500,
       }}>
         {label}
@@ -398,10 +408,10 @@ export function MetricCard({ value, label, sub }: { value: string; label: string
 // ─── MaturityTag — public disclosure label for product/initiative maturity ────
 
 const maturityConfig: Record<MaturityTier, { label: string; color: string; border: string; bg: string; dot?: string }> = {
-  operational:     { label: 'Operational Today', color: 'var(--emerald)',  border: 'var(--emerald-border)', bg: 'var(--emerald-glow)', dot: 'var(--emerald)' },
-  'public-beta':   { label: 'Public Beta',        color: 'var(--gold)',     border: 'var(--gold-border)',    bg: 'var(--gold-glow)',    dot: 'var(--gold)' },
-  'in-development': { label: 'In Development',      color: 'var(--gold-dim)', border: 'rgba(205,169,75,0.18)', bg: 'transparent' },
-  'long-term':     { label: 'Long-Term Vision',    color: 'var(--blue)',     border: 'var(--blue-border)',    bg: 'var(--blue-glow)' },
+  operational:     { label: 'Operational Today', color: 'var(--emerald)',      border: 'var(--emerald-border)', bg: 'var(--emerald-glow)', dot: 'var(--emerald)' },
+  'public-beta':   { label: 'Public Beta',        color: 'var(--bronze)',       border: 'var(--bronze-line)',    bg: 'var(--bronze-soft)',  dot: 'var(--bronze)' },
+  'in-development': { label: 'In Development',      color: 'var(--petroleum-ink)', border: 'rgba(127,183,173,0.28)', bg: 'var(--petroleum-soft)', dot: 'var(--petroleum-ink)' },
+  'long-term':     { label: 'Long-Term Vision',    color: 'var(--blue)',          border: 'var(--blue-border)',    bg: 'var(--blue-glow)' },
 }
 
 export function MaturityTag({ tier, label }: { tier: MaturityTier; label?: string }) {
@@ -410,9 +420,10 @@ export function MaturityTag({ tier, label }: { tier: MaturityTier; label?: strin
     <span style={{
       display: 'inline-flex',
       alignItems: 'center',
-      gap: 6,
+      gap: 7,
+      fontFamily: 'var(--mono)',
       fontSize: '0.56rem',
-      letterSpacing: '0.16em',
+      letterSpacing: '0.14em',
       textTransform: 'uppercase',
       border: `1px solid ${cfg.border}`,
       color: cfg.color,
@@ -420,7 +431,7 @@ export function MaturityTag({ tier, label }: { tier: MaturityTier; label?: strin
       padding: '4px 11px',
       borderRadius: 999,
       whiteSpace: 'nowrap',
-      fontWeight: 600,
+      fontWeight: 500,
     }}>
       {cfg.dot && (
         <span style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', background: cfg.dot, flexShrink: 0 }} />
