@@ -25,7 +25,7 @@ const sections = [
     content: [
       {
         subtitle: 'No Public Offering',
-        body: 'This website does not constitute an offer to sell or the solicitation of an offer to buy any securities of Tarvico Inc. or any of its portfolio companies. Any information regarding investment opportunities is directed solely to accredited investors and qualified institutional buyers as defined under applicable U.S. securities laws.',
+        body: 'This website does not constitute an offer to sell or the solicitation of an offer to buy any securities of Tarvico Inc. Any information regarding investment opportunities is directed solely to accredited investors and qualified institutional buyers as defined under applicable U.S. securities laws.',
       },
       {
         subtitle: 'Private Placement',
@@ -37,7 +37,7 @@ const sections = [
       },
       {
         subtitle: 'Risk Factors',
-        body: 'Investment in early-stage private technology companies involves substantial risk, including the possible loss of the entire investment. Past performance of any portfolio company is not indicative of future results. Tarvico Inc. makes no representation or warranty regarding the future performance of any venture within its portfolio.',
+        body: 'Investment in an early-stage private technology company involves substantial risk, including the possible loss of the entire investment. Past performance is not indicative of future results. Tarvico Inc. makes no representation or warranty regarding the future performance of any of its products or business lines.',
       },
     ],
   },
@@ -63,7 +63,7 @@ const sections = [
       },
       {
         subtitle: 'Trademark Notice',
-        body: '"TARVICO," the Tarvico logo with the gold triangle motif, and the names of portfolio companies including "Vytre AWOS," "SireIQ," "SEOAgentPro," "Fycra," "Fycera," and "Urs79" are trademarks or service marks of Tarvico Inc. or its affiliated entities. Unauthorized use of any Tarvico trademark, trade name, or logo is prohibited and may constitute trademark infringement.',
+        body: '"TARVICO," the Tarvico logo with the gold triangle motif, and the names of Tarvico products and brands including "Vytre AWOS," "SireIQ," "SEOAgentPro," "Maeyen," "Racym," "Fycra," "Fycera," and "Urs79" are trademarks or service marks of Tarvico Inc. Unauthorized use of any Tarvico trademark, trade name, or logo is prohibited and may constitute trademark infringement.',
       },
       {
         subtitle: 'Copyright Notice',
@@ -89,15 +89,15 @@ const sections = [
     ],
   },
   {
-    title: 'Portfolio Company Liability',
+    title: 'Products and Business Lines',
     content: [
       {
-        subtitle: 'Subsidiary Autonomy',
-        body: 'Each company within the Tarvico Inc. portfolio operates as a legally distinct entity. Tarvico Inc. is not responsible for the products, services, statements, or actions of its portfolio companies, including Vytre AWOS, SireIQ, SEOAgentPro, Fycra, Fycera, or Urs79, except as expressly stated.',
+        subtitle: 'Operated by Tarvico Inc.',
+        body: 'The products and business lines referenced on this Site — including Vytre AWOS, SireIQ, SEOAgentPro, Maeyen, and Racym — are built and operated by Tarvico Inc. They are products and initiatives of the company, not separately incorporated public companies, except where expressly stated in writing.',
       },
       {
-        subtitle: 'No Cross-Liability',
-        body: 'The obligations and liabilities of Tarvico Inc. are separate and distinct from those of any portfolio company. Nothing on this Site should be construed to create joint or several liability between Tarvico Inc. and any portfolio entity.',
+        subtitle: 'Product-Specific Terms',
+        body: 'Where a Tarvico product is made available through its own website or service, that product may be governed by its own terms of service and privacy policy. Those terms apply to your use of that product in addition to, or in place of, the terms on this Site.',
       },
     ],
   },

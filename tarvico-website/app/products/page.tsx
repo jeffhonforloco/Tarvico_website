@@ -71,7 +71,7 @@ export default function ProductsPage() {
           <div style={{ maxWidth: 620 }}>
             <div style={{ fontSize: '1.1rem', color: 'var(--text)', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em', marginBottom: '0.5rem' }}>The full Tarvico ecosystem</div>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.7 }}>
-              Beyond its flagship products, Tarvico incubates and operates a wider portfolio of AI-native ventures across productivity, developer tools, and creative software.
+              Beyond its flagship products, Tarvico builds and operates a wider portfolio of AI-native products across productivity, search, commerce trust, and creative software.
             </p>
           </div>
           <Button href="/portfolio" variant="secondary">View the Portfolio →</Button>
