@@ -1,110 +1,113 @@
 'use client'
 
 import Link from 'next/link'
-import { PageHero, Button, SectionLabel, Divider } from '@/components/ui'
+import { PageHero, Button, SectionLabel, Divider, MaturityTag } from '@/components/ui'
+import type { MaturityTier } from '@/lib/businesses'
 
-type Venture = {
-  name: string; url: string; domain: string; internal?: string
-  category: string; desc: string; market: string
-  accent: string; border: string; bg: string; year: string
+type Product = {
+  name: string
+  url: string
+  domain: string
+  internal?: string
+  maturity: MaturityTier
+  category: string
+  desc: string
+  market: string
 }
 
-const emergingVentures: Venture[] = [
+// Featured businesses (approved shortlist) beyond the flagship.
+const featured: Product[] = [
+  {
+    name: 'SireIQ',
+    url: 'https://sireiq.com',
+    domain: 'sireiq.com',
+    maturity: 'operational',
+    category: 'Intelligence Assistant · Chat & Workflow',
+    desc: 'A publicly available, intelligent assistant for chat, content creation, and workflow automation — helping individuals and teams interact with information, generate output, and manage daily operations.',
+    market: 'SMB · Consumer · Teams',
+  },
   {
     name: 'Maeyen',
     url: 'https://www.maeyen.com',
     domain: 'maeyen.com',
     internal: '/maeyen',
+    maturity: 'in-development',
     category: 'Commerce Trust Network · Africa',
-    desc: 'A commerce trust network for Africa, starting from Nigeria. Maeyen is not just another marketplace — it is built to solve the biggest problem in African online commerce: trust. By verifying participants and protecting transactions, Maeyen will let buyers and sellers transact with confidence.',
+    desc: 'A commerce trust network for Africa, starting from Nigeria. By verifying participants and protecting transactions, Maeyen aims to let buyers and sellers transact online with confidence — trust as the infrastructure beneath commerce.',
     market: 'Africa · Commerce · Consumer',
-    accent: 'var(--gold)',
-    border: 'var(--gold-border)',
-    bg: 'var(--gold-glow)',
-    year: '2026',
+  },
+]
+
+// Additional public products.
+const additional: Product[] = [
+  {
+    name: 'SEOAgentPro',
+    url: 'https://www.seoagentpro.com',
+    domain: 'seoagentpro.com',
+    maturity: 'in-development',
+    category: 'Search Intelligence · Digital Growth',
+    desc: 'An autonomous SEO intelligence platform — real-time analysis, content strategy, competitive monitoring, and optimization.',
+    market: 'Agencies · E-Commerce · B2B',
   },
   {
     name: 'Racym',
     url: 'https://www.racym.com',
     domain: 'racym.com',
+    maturity: 'in-development',
     category: 'Talent Network · Creative',
-    desc: 'Talent that delivers — verified. Racym matches brands and agencies to pre-vetted creative talent based on what they have actually delivered, not their follower count. A results-first network that turns proven work into the signal for hiring decisions.',
+    desc: 'A verified creative talent network that matches brands and agencies to pre-vetted talent based on proven, delivered work rather than follower count.',
     market: 'Brands · Agencies · Creators',
-    accent: 'var(--gold)',
-    border: 'var(--gold-border)',
-    bg: 'var(--gold-glow)',
-    year: '2026',
   },
 ]
 
-const companies = [
-  {
-    name: 'SireIQ',
-    url: 'https://www.sireiq.com',
-    status: 'Incubation',
-    statusColor: 'var(--gold-dim)',
-    statusBorder: 'rgba(205,169,75,0.18)',
-    category: 'Intelligence Assistant · Chat & Workflow',
-    desc: 'An intelligent assistant engineered for chat, content creation, and workflow automation. SireIQ elevates how individuals and teams interact with information, generate output, and manage daily operations with adaptive intelligence.',
-    roadmap: 'Browser extension → Web app → Enterprise API',
-    market: 'SMB · Consumer · Teams',
-    phase: 'Incubation Phase II',
-    year: '2025',
-  },
-  {
-    name: 'SEOAgentPro',
-    url: 'https://www.seoagentpro.com',
-    status: 'Incubation',
-    statusColor: 'var(--gold-dim)',
-    statusBorder: 'rgba(205,169,75,0.18)',
-    category: 'Search Intelligence · Digital Growth',
-    desc: 'Autonomous SEO intelligence platform. Real-time analysis, content strategy generation, competitive monitoring, and autonomous optimization — managed without manual intervention.',
-    roadmap: 'Core analytics → Agent automation → Agency platform',
-    market: 'Agencies · E-Commerce · B2B',
-    phase: 'Incubation Phase I',
-    year: '2025',
-  },
-  {
-    name: 'Fycra',
-    url: 'https://www.fycra.com',
-    status: 'Stealth',
-    statusColor: 'var(--text-3)',
-    statusBorder: 'var(--border-w)',
-    category: 'Developer Platform · Code Infrastructure',
-    desc: 'A next-generation code platform designed for modern development teams. Intelligent code assistance, automated review, workflow acceleration, and team collaboration — rebuilt from the ground up for the modern era.',
-    roadmap: 'Internal development · Stealth mode',
-    market: 'Developers · Engineering Teams',
-    phase: 'Stealth',
-    year: '2025',
-  },
-  {
-    name: 'Fycera',
-    url: 'https://www.fycera.com',
-    status: 'Stealth',
-    statusColor: 'var(--text-3)',
-    statusBorder: 'var(--border-w)',
-    category: 'Creative Infrastructure · Content',
-    desc: 'Content creation infrastructure for creators, brands, and media operations. Intelligent generation, brand consistency, workflow automation, and creative scaling tools designed for professional content operations at speed.',
-    roadmap: 'Concept validation · Design phase',
-    market: 'Creators · Brands · Media',
-    phase: 'Stealth',
-    year: '2025',
-  },
-]
+function ProductCard({ p }: { p: Product }) {
+  return (
+    <div
+      className="card-lift"
+      style={{
+        background: 'var(--bg-card)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%',
+        border: '1px solid var(--border-w)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)',
+      }}
+      onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--gold-border)'; e.currentTarget.style.boxShadow = 'var(--shadow)' }}
+      onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-w)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)' }}
+    >
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem', gap: '0.75rem', flexWrap: 'wrap' }}>
+        <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.035em' }}>{p.name}</div>
+        <MaturityTag tier={p.maturity} />
+      </div>
+      <div style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.85rem', fontWeight: 600 }}>{p.category}</div>
+      <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 400, marginBottom: '1.75rem', flex: 1 }}>{p.desc}</p>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem', gap: '1rem' }}>
+        <span style={{ fontSize: '0.66rem', color: 'var(--text-3)', fontWeight: 500 }}>{p.market}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          {p.internal && (
+            <Link href={p.internal} style={{ fontSize: '0.68rem', color: 'var(--gold)', letterSpacing: '0.02em', fontWeight: 600, textDecoration: 'none' }}>Overview →</Link>
+          )}
+          <a href={p.url} target="_blank" rel="noopener noreferrer" style={{
+            fontSize: '0.68rem', color: 'var(--gold)', letterSpacing: '0.02em', fontWeight: 600, textDecoration: 'none', transition: 'opacity 0.2s',
+          }}
+            onMouseEnter={e => { e.currentTarget.style.opacity = '0.7' }}
+            onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
+          >{p.domain} ↗</a>
+        </div>
+      </div>
+    </div>
+  )
+}
 
-export default function PortfolioPage() {
+export default function BusinessesPage() {
   return (
     <>
       <PageHero
-        label="Portfolio"
+        label="Our Businesses"
         title={<>Our businesses, one <span className="text-gradient-gold">strategy.</span></>}
-        subtitle="Each company in the Tarvico portfolio is designed from first principles — intelligence-first architecture, sustainable unit economics, and long-term defensibility."
+        subtitle="A selective view of the products Tarvico builds and operates — each shown with an honest maturity label. Tarvico is a privately held U.S. technology company; these are products it develops, not separately incorporated companies."
       />
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
 
-        {/* ── FLAGSHIP ───────────────────────────────────────────────────────── */}
-        <SectionLabel>Flagship Venture</SectionLabel>
+        {/* ── FLAGSHIP: VYTRE AWOS ───────────────────────────────────────────── */}
+        <SectionLabel>Flagship Product</SectionLabel>
 
         <div style={{
           border: '1px solid var(--gold-border)',
@@ -118,16 +121,9 @@ export default function PortfolioPage() {
           <div style={{ padding: '3rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2rem', marginBottom: '2.5rem' }}>
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: '1.25rem' }}>
-                  <span style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 6,
-                    border: '1px solid var(--gold-border)', color: 'var(--gold)',
-                    fontSize: '0.6rem', letterSpacing: '0.16em', textTransform: 'uppercase',
-                    padding: '5px 13px', fontWeight: 600, background: 'var(--gold-glow)', borderRadius: 999,
-                  }}>
-                    <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block' }} />
-                    Flagship · In active development
-                  </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.25rem' }}>
+                  <span style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>Flagship</span>
+                  <MaturityTag tier="public-beta" />
                 </div>
                 <h2 style={{
                   fontFamily: 'var(--font-display)',
@@ -137,7 +133,7 @@ export default function PortfolioPage() {
                   marginBottom: '0.5rem',
                   letterSpacing: '-0.035em',
                 }}>Vytre AWOS</h2>
-                <div style={{ fontSize: '0.64rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>AI Workforce Infrastructure · Enterprise SaaS</div>
+                <div style={{ fontSize: '0.64rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>AI Workforce Infrastructure · Enterprise</div>
               </div>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
                 <Button href="/vytre" variant="primary">Product Overview →</Button>
@@ -153,7 +149,7 @@ export default function PortfolioPage() {
             </div>
 
             <p style={{ fontSize: '1.05rem', color: 'var(--text-2)', lineHeight: 1.7, maxWidth: 720, fontWeight: 400, marginBottom: '2.5rem' }}>
-              An AI Workforce Operating System that enables enterprises to deploy, manage, coordinate, and scale AI workers across operations, workflows, departments, and systems. Vytre AWOS is the control plane for the intelligent organization — providing the infrastructure layer for AI-driven work at scale.
+              An AI Workforce Operating System — the enterprise control plane to deploy, manage, coordinate, observe, and govern AI workers across operations, workflows, and systems. Vytre AWOS is in public beta.
             </p>
 
             <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'start' }}>
@@ -161,8 +157,8 @@ export default function PortfolioPage() {
                 {[
                   { label: 'Market', value: 'Enterprise / SMB' },
                   { label: 'Category', value: 'AI Infrastructure' },
-                  { label: 'Model', value: 'SaaS · Usage-Based' },
-                  { label: 'Status', value: 'Active Development', highlight: true },
+                  { label: 'Model', value: 'SaaS' },
+                  { label: 'Stage', value: 'Public Beta', highlight: true },
                 ].map(item => (
                   <div key={item.label} style={{ background: 'var(--bg-raised)', padding: '1.25rem', borderRadius: 'var(--radius)', border: '1px solid var(--border-w)' }}>
                     <div style={{ fontSize: '0.58rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 600 }}>{item.label}</div>
@@ -184,150 +180,37 @@ export default function PortfolioPage() {
           </div>
         </div>
 
-        {/* ── EMERGING VENTURES ───────────────────────────────────────────────── */}
-        <SectionLabel>Emerging Ventures</SectionLabel>
-        <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.65, maxWidth: 560, fontWeight: 400, marginBottom: '2rem', marginTop: '0.5rem' }}>
-          Network-based ventures in active development — building trust and verified reputation as the core infrastructure for commerce and creative work.
+        {/* ── FEATURED BUSINESSES ─────────────────────────────────────────────── */}
+        <SectionLabel>Featured Businesses</SectionLabel>
+        <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.65, maxWidth: 580, fontWeight: 400, marginBottom: '2rem', marginTop: '0.5rem' }}>
+          Products that are strategically important and publicly presentable today — a live assistant and a network in development.
         </p>
-
         <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '5rem' }}>
-          {emergingVentures.map(v => (
-            <div key={v.name}
-              className="card-lift"
-              style={{
-                background: 'var(--bg-card)', padding: '2.5rem', display: 'flex', flexDirection: 'column',
-                border: `1px solid ${v.border}`, borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-sm)',
-                position: 'relative', overflow: 'hidden',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = 'var(--shadow)' }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = 'var(--shadow-sm)' }}
-            >
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: v.accent, opacity: 0.7 }} />
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.9rem', fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.035em' }}>{v.name}</div>
-                <span style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 5,
-                  fontSize: '0.58rem', letterSpacing: '0.12em', textTransform: 'uppercase',
-                  border: `1px solid ${v.border}`, color: v.accent, background: v.bg,
-                  padding: '4px 11px', whiteSpace: 'nowrap', fontWeight: 600, borderRadius: 999,
-                }}>
-                  <span style={{ width: 5, height: 5, borderRadius: '50%', background: v.accent, display: 'inline-block' }} className="animate-pulse-gold" />
-                  Building
-                </span>
-              </div>
-              <div style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: v.accent, marginBottom: '0.85rem', fontWeight: 600 }}>{v.category}</div>
-              <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 400, marginBottom: '1.75rem', flex: 1 }}>{v.desc}</p>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem', gap: '1rem' }}>
-                <span style={{ fontSize: '0.66rem', color: 'var(--text-3)', fontWeight: 500 }}>{v.market} · {v.year}</span>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  {v.internal && (
-                    <Link href={v.internal} style={{ fontSize: '0.68rem', color: v.accent, letterSpacing: '0.02em', fontWeight: 600, textDecoration: 'none' }}>
-                      Overview →
-                    </Link>
-                  )}
-                  <a href={v.url} target="_blank" rel="noopener noreferrer" style={{
-                    fontSize: '0.68rem', color: v.accent, letterSpacing: '0.02em',
-                    fontWeight: 600, textDecoration: 'none', transition: 'opacity 0.2s',
-                  }}
-                    onMouseEnter={e => { e.currentTarget.style.opacity = '0.7' }}
-                    onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
-                  >{v.domain} ↗</a>
-                </div>
-              </div>
-            </div>
-          ))}
+          {featured.map(p => <ProductCard key={p.name} p={p} />)}
         </div>
 
-        {/* ── INCUBATION LABS ─────────────────────────────────────────────────── */}
-        <SectionLabel>Incubation Labs</SectionLabel>
-        <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.65, maxWidth: 560, fontWeight: 400, marginBottom: '2rem', marginTop: '0.5rem' }}>
-          Four ventures currently in active incubation — each designed from first principles with independent brand identity, intelligence-first architecture, and long-term market positioning.
+        {/* ── ADDITIONAL PRODUCTS ─────────────────────────────────────────────── */}
+        <SectionLabel>Additional Products</SectionLabel>
+        <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.65, maxWidth: 580, fontWeight: 400, marginBottom: '2rem', marginTop: '0.5rem' }}>
+          Further products in development across search intelligence and verified creative talent.
         </p>
-
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem', marginBottom: '5rem' }}>
-          {companies.map(c => (
-            <div key={c.name}
-              className="card-lift"
-              style={{
-                background: 'var(--bg-card)', padding: '2.5rem',
-                border: '1px solid var(--border-w)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--gold-border)'; e.currentTarget.style.boxShadow = 'var(--shadow)' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-w)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)' }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.035em' }}>{c.name}</div>
-                <span style={{
-                  fontSize: '0.56rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-                  border: `1px solid ${c.statusBorder}`, color: c.statusColor,
-                  padding: '4px 11px', whiteSpace: 'nowrap', fontWeight: 600, borderRadius: 999,
-                }}>{c.status}</span>
-              </div>
-              <div style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.85rem', fontWeight: 600 }}>{c.category}</div>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 400, marginBottom: '1.5rem' }}>{c.desc}</p>
-              <div style={{ fontSize: '0.74rem', color: 'var(--text-3)', marginBottom: '1.5rem', fontWeight: 400 }}>
-                <span style={{ color: 'var(--text-3)' }}>Roadmap · </span>
-                <span style={{ color: 'var(--text-2)' }}>{c.roadmap}</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem' }}>
-                <span style={{ fontSize: '0.64rem', color: 'var(--text-3)', fontWeight: 500 }}>{c.market} · {c.year}</span>
-                <a href={c.url} target="_blank" rel="noopener noreferrer" style={{
-                  fontSize: '0.66rem', color: 'var(--gold)', letterSpacing: '0.02em',
-                  fontWeight: 600, textDecoration: 'none', transition: 'opacity 0.2s',
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.opacity = '0.7' }}
-                  onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
-                >Visit →</a>
-              </div>
-            </div>
-          ))}
+          {additional.map(p => <ProductCard key={p.name} p={p} />)}
         </div>
 
         <Divider />
 
-        {/* ── AFFILIATED ──────────────────────────────────────────────────────── */}
+        {/* ── STRATEGIC CONTEXT ───────────────────────────────────────────────── */}
         <div style={{ padding: '5rem 0' }}>
-          <SectionLabel>Affiliated Ventures</SectionLabel>
-
-          <div style={{ border: '1px solid var(--border-w)', background: 'var(--bg-card)', marginTop: '1rem', overflow: 'hidden', borderRadius: 'var(--radius-xl)', boxShadow: 'var(--shadow-sm)' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1.5rem', padding: '2.5rem' }}>
-              <div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.5rem', letterSpacing: '-0.035em' }}>Urs79</h3>
-                <div style={{ fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--blue)', marginBottom: '1.25rem', fontWeight: 600 }}>Multimedia · Record Label · Publishing</div>
-                <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.7, maxWidth: 560, fontWeight: 400 }}>
-                  A multimedia company operating at the intersection of music, creative publishing, and digital entertainment. Record label, music publishing, and content distribution — designed for the streaming-native creative economy.
-                </p>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'flex-end' }}>
-                <span style={{
-                  fontSize: '0.56rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-                  border: '1px solid var(--blue-border)', color: 'var(--blue)',
-                  background: 'var(--blue-glow)', padding: '4px 11px', whiteSpace: 'nowrap', fontWeight: 600, borderRadius: 999,
-                }}>Affiliated Venture</span>
-                <a href="https://www.urs79.com" target="_blank" rel="noopener noreferrer" style={{
-                  fontSize: '0.66rem', letterSpacing: '0.04em',
-                  color: 'var(--text-2)', textDecoration: 'none', fontWeight: 500,
-                  transition: 'color 0.2s',
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.color = 'var(--blue)' }}
-                  onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-2)' }}
-                >urs79.com ↗</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <Divider />
-
-        {/* ── ECOSYSTEM OVERVIEW ──────────────────────────────────────────────── */}
-        <div style={{ padding: '5rem 0' }}>
-          <SectionLabel>Ecosystem Architecture</SectionLabel>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', marginTop: '2rem' }}>
+          <SectionLabel>How It Fits Together</SectionLabel>
+          <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.7, maxWidth: 620, fontWeight: 400, marginBottom: '2.5rem', marginTop: '0.5rem' }}>
+            Today’s products sit within Tarvico’s first strategic pillar — Artificial Intelligence &amp; Global Technology. Two further pillars, AI infrastructure and energy, and intelligent mobility, are long-term ambitions.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
             {[
-              { label: 'Infrastructure', desc: 'AI operating systems, agent orchestration, and enterprise workflow platforms.', companies: 'Vytre AWOS', color: 'var(--gold)' },
-              { label: 'Trust & Talent Networks', desc: 'Verified, reputation-driven networks for commerce and creative work — trust as infrastructure.', companies: 'Maeyen · Racym', color: 'var(--gold-dim)' },
-              { label: 'Productivity', desc: 'AI assistants, search intelligence, and individual leverage tools for knowledge workers.', companies: 'SireIQ · SEOAgentPro', color: 'var(--gold-dim)' },
-              { label: 'Developer + Creative', desc: 'Code platforms, creative infrastructure, and AI-native tools for builders and creators.', companies: 'Fycra · Fycera', color: 'var(--blue)' },
+              { label: 'AI Workforce Infrastructure', desc: 'Enterprise AI operating systems and agent orchestration.', companies: 'Vytre AWOS', color: 'var(--gold)' },
+              { label: 'Commerce & Trust', desc: 'Verified, reputation-driven networks for commerce and creative work.', companies: 'Maeyen · Racym', color: 'var(--gold-dim)' },
+              { label: 'Productivity & Search', desc: 'AI assistants and search intelligence that give people leverage.', companies: 'SireIQ · SEOAgentPro', color: 'var(--gold-dim)' },
             ].map(tier => (
               <div key={tier.label} style={{ background: 'var(--bg-card)', padding: '2.25rem', border: '1px solid var(--border-w)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
                 <div style={{ width: 32, height: 3, background: tier.color, marginBottom: '1.25rem', borderRadius: 3 }} />

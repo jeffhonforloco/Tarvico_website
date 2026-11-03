@@ -7,8 +7,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 
 const links = [
-  { href: '/products',   label: 'Products' },
-  { href: '/portfolio',  label: 'Portfolio' },
+  { href: '/portfolio',  label: 'Businesses' },
   { href: '/about',      label: 'About' },
   { href: '/investors',  label: 'Investors' },
   { href: '/vision',     label: 'Vision' },
