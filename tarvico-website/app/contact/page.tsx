@@ -102,7 +102,7 @@ export default function ContactPage() {
             </div>
 
             <div style={{ marginTop: '3rem', padding: '2rem', border: '1px solid var(--border-w)', background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1rem', fontWeight: 600 }}>Headquarters</div>
+              <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1rem', fontWeight: 600 }}>Registered Office</div>
               <div style={{ fontSize: '0.88rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 400 }}>
                 Tarvico Inc.<br />
                 8 The Green, #5275<br />

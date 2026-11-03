@@ -46,7 +46,7 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.tarvico.com' },
-    { '@type': 'ListItem', position: 2, name: 'Portfolio', item: 'https://www.tarvico.com/portfolio' },
+    { '@type': 'ListItem', position: 2, name: 'Our Businesses', item: 'https://www.tarvico.com/portfolio' },
   ],
 }
 
@@ -55,8 +55,8 @@ const portfolioPageSchema = {
   '@type': 'CollectionPage',
   '@id': 'https://www.tarvico.com/portfolio#webpage',
   url: 'https://www.tarvico.com/portfolio',
-  name: 'Tarvico Portfolio — AI-Native Ventures',
-  description: 'Portfolio of AI-native technology companies built and incubated by Tarvico Inc.',
+  name: 'Our Businesses — Tarvico Inc.',
+  description: 'The products Tarvico Inc. builds and operates, each with an honest maturity label.',
   isPartOf: { '@id': 'https://www.tarvico.com/#website' },
   about: { '@id': 'https://www.tarvico.com/#organization' },
   inLanguage: 'en-US',
@@ -81,6 +81,20 @@ const portfolioPageSchema = {
       name: 'SEOAgentPro',
       description: 'Autonomous SEO intelligence platform for content strategy and search optimization.',
       url: 'https://www.seoagentpro.com',
+      applicationCategory: 'BusinessApplication',
+    },
+    {
+      '@type': 'WebApplication',
+      name: 'Maeyen',
+      description: 'Commerce trust infrastructure for Africa, starting from Nigeria — verifying participants and protecting transactions.',
+      url: 'https://www.maeyen.com',
+      applicationCategory: 'BusinessApplication',
+    },
+    {
+      '@type': 'WebApplication',
+      name: 'Racym',
+      description: 'A verified creative talent network matching brands and agencies to pre-vetted talent based on delivered work.',
+      url: 'https://www.racym.com',
       applicationCategory: 'BusinessApplication',
     },
   ],

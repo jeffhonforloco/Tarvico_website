@@ -19,7 +19,7 @@ const cols = [
     links: [
       { href: '/vytre',     label: 'Vytre AWOS' },
       { href: '/maeyen',    label: 'Maeyen' },
-      { href: '/portfolio', label: 'All Ventures' },
+      { href: '/portfolio', label: 'All Businesses' },
     ],
   },
   {
@@ -100,7 +100,7 @@ export default function Footer() {
               fontWeight: 400,
               marginBottom: '1.75rem',
             }}>
-              <div style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.6rem', fontWeight: 600 }}>Headquarters</div>
+              <div style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.6rem', fontWeight: 600 }}>Registered Office</div>
               Tarvico Inc.<br />
               8 The Green, #5275<br />
               Dover, DE 19901, United States<br />
