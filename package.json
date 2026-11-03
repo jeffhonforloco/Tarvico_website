@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd tarvico-website && npm install && npm run build"
+    "build": "cd tarvico-website && npm install && npm run build && cd .. && rm -rf dist && cp -r tarvico-website/out dist"
   }
 }
