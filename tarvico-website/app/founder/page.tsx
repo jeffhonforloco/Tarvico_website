@@ -22,7 +22,7 @@ const principles = [
 
 const facts = [
   { k: 'Role', v: 'Founder & Chief Executive Officer' },
-  { k: 'Company', v: 'Tarvico Inc. — a private technology holding company' },
+  { k: 'Company', v: 'Tarvico Inc. — a privately held U.S. technology company' },
   { k: 'Founded', v: '2026 · Delaware, United States' },
   { k: 'Focus', v: 'AI-native software, workforce infrastructure, and long-term company building' },
 ]
@@ -126,7 +126,7 @@ export default function FounderPage() {
             <div style={{ marginTop: '2.5rem' }}>
               {[
                 'Tarvico was created from a simple belief: the next generation of great companies will not just build software — they will build systems that improve how people operate, create, communicate, and solve problems in everyday life.',
-                'Rather than a single product, Tarvico is structured as a holding company that builds and operates enduring, AI-native companies over the long term. Its flagship product, Vytre AWOS, is an AI Workforce Operating System for the enterprise; Maeyen is building commerce trust infrastructure. Future companies will grow within the same ecosystem.',
+                'Rather than a single product, Tarvico is structured to build and operate enduring, AI-native companies over the long term. Its flagship product, Vytre AWOS, is an AI Workforce Operating System for the enterprise; Maeyen is building commerce trust infrastructure. Future companies will grow within the same ecosystem.',
                 'The work ahead will take years, with challenges, experimentation, and growth along the way. It is being built with the conviction that the technology created today can shape how people and businesses operate for decades to come.',
               ].map((p, i) => (
                 <p key={i} style={{ fontSize: '1.05rem', color: 'var(--text-2)', lineHeight: 1.8, fontWeight: 400, marginBottom: '1.5rem' }}>{p}</p>

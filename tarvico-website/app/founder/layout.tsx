@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Jeff Honforloco — Founder & CEO of Tarvico Inc.',
   description:
-    'Jeff Yèmalín Bienvenu Honforloco (Jeff Hon) is the founder and CEO of Tarvico Inc., a private technology holding company building enduring AI-native companies. A self-taught builder and former professional photographer, he leads vision, strategy, and product across the Tarvico portfolio.',
+    'Jeff Yèmalín Bienvenu Honforloco (Jeff Hon) is the founder and CEO of Tarvico Inc., a privately held U.S. technology company building enduring AI-native companies. A self-taught builder and former professional photographer, he leads vision, strategy, and product across the Tarvico portfolio.',
   keywords: [
     'Jeff Honforloco',
     'Jeff Hon',

@@ -7,8 +7,8 @@ const news = [
   {
     featured: true,
     category: 'Company · Announcement',
-    title: 'Tarvico Inc. Launches — A Private Technology Holding Company',
-    excerpt: 'Tarvico Inc. announces its formation as a private technology holding company, with a portfolio of seven ventures in development and a flagship product — Vytre AWOS, the AI Workforce Operating System — targeting enterprise launch in 2026.',
+    title: 'Tarvico Inc. Launches — Building Technology for a Connected World',
+    excerpt: 'Tarvico Inc. announces its formation as a privately held U.S. technology company, building artificial intelligence and emerging technology products — including its flagship product, Vytre AWOS, the AI Workforce Operating System, now in public beta.',
     date: 'Q1 2026',
     readTime: '4 min read',
     href: '/about',

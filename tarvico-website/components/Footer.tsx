@@ -90,7 +90,7 @@ export default function Footer() {
               fontWeight: 300,
               marginBottom: '1.75rem',
             }}>
-              A Private Technology Holding Company. Tarvico builds, acquires, and operates enduring AI-native technology ventures for the next global economy.
+              A privately held U.S. technology company building artificial intelligence, digital platforms, and emerging technology businesses for global markets.
             </p>
             <address style={{
               fontStyle: 'normal',
@@ -111,8 +111,8 @@ export default function Footer() {
               alignItems: 'center',
               gap: '8px',
               padding: '6px 14px',
-              border: '1px solid var(--emerald-border)',
-              background: 'var(--emerald-glow)',
+              border: '1px solid var(--gold-border)',
+              background: 'var(--gold-glow)',
               borderRadius: 999,
             }}>
               <span style={{
@@ -120,17 +120,17 @@ export default function Footer() {
                 width: 6,
                 height: 6,
                 borderRadius: '50%',
-                background: 'var(--emerald)',
+                background: 'var(--gold)',
                 flexShrink: 0,
-              }} className="animate-pulse-dot" />
+              }} />
               <span style={{
                 fontSize: '0.58rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: 'var(--emerald)',
+                color: 'var(--gold)',
                 fontWeight: 500,
               }}>
-                All Systems Operational
+                Incorporated in Delaware, USA
               </span>
             </div>
 

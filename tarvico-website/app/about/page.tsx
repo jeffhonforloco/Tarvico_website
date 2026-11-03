@@ -1,24 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { PageHero, SectionLabel, Divider } from '@/components/ui'
+import { PageHero, SectionLabel, Divider, MaturityTag } from '@/components/ui'
+import { publicBusinesses } from '@/lib/businesses'
 
 const timeline = [
-  { year: '2026', title: 'Tarvico Inc. Founded', desc: 'Tarvico Inc. is established as a private technology holding company. The initial portfolio of seven ventures is defined, and development of the flagship product begins in earnest.', accent: true },
+  { year: '2026', title: 'Tarvico Inc. Founded', desc: 'Tarvico Inc. is established as a privately held U.S. technology company, incorporated in Delaware. Its initial products are defined, and development of the flagship product begins in earnest.', accent: true },
   { year: '2026', title: 'Vytre AWOS Development Begins', desc: 'The flagship AI Workforce Operating System enters active development. Architecture design, core agent orchestration engine, and enterprise integration framework initiated.', accent: true },
-  { year: '2025', title: 'Portfolio Incubation Phase', desc: 'SireIQ, SEOAgentPro, Fycra, and Fycera enter incubation phase. Product research, market validation, and initial prototyping across all four ventures.', accent: false },
+  { year: '2025', title: 'Early Incubation Phase', desc: 'SireIQ and SEOAgentPro enter early incubation, alongside additional early-stage products. Product research, market validation, and initial prototyping.', accent: false },
   { year: '2026+', title: 'Flagship Launch · Growth Phase', desc: 'Vytre AWOS targets public launch and enterprise customer acquisition. Portfolio companies advance from incubation toward independent product development and market entry.', accent: false },
-]
-
-const subsidiaries: { name: string; desc: string; status: string; color: string; href?: string }[] = [
-  { name: 'Vytre AWOS', desc: 'AI Workforce Operating System', status: 'Flagship', color: 'var(--gold)', href: '/vytre' },
-  { name: 'Maeyen', desc: 'Commerce Trust Network for Africa', status: 'Building', color: 'var(--gold-dim)', href: '/maeyen' },
-  { name: 'Racym', desc: 'Verified Creative Talent Network', status: 'Building', color: 'var(--gold-dim)' },
-  { name: 'SireIQ', desc: 'AI Assistant for Chat, Content & Workflow', status: 'Incubation', color: 'var(--gold-dim)' },
-  { name: 'SEOAgentPro', desc: 'AI Search Intelligence Platform', status: 'Incubation', color: 'var(--gold-dim)' },
-  { name: 'Fycra', desc: 'AI-Native Code Platform', status: 'Stealth', color: 'var(--text-3)' },
-  { name: 'Fycera', desc: 'AI Content Creation Infrastructure', status: 'Stealth', color: 'var(--text-3)' },
-  { name: 'Urs79', desc: 'Multimedia, Record Label & Publishing', status: 'Affiliated', color: 'var(--blue)' },
 ]
 
 export default function AboutPage() {
@@ -27,7 +17,7 @@ export default function AboutPage() {
       <PageHero
         label="About"
         title={<>Built with <span className="text-gradient-gold">conviction.</span></>}
-        subtitle="Tarvico is a technology holding company founded on the belief that the most enduring businesses are built with long-term thinking, operational discipline, and a genuine purpose."
+        subtitle="Tarvico is a privately held U.S. technology company founded on the belief that the most enduring businesses are built with long-term thinking, operational discipline, and a genuine purpose."
       />
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>
@@ -163,9 +153,9 @@ export default function AboutPage() {
         <Divider />
 
         <div style={{ padding: '6rem 0' }}>
-          <SectionLabel>Corporate Structure</SectionLabel>
-          <p style={{ fontSize: '0.88rem', color: 'var(--text-2)', lineHeight: 1.75, maxWidth: 500, fontWeight: 300, marginBottom: '2rem', marginTop: '0.5rem' }}>
-            Tarvico Inc. is the parent holding entity. Each company in the portfolio operates with its own brand identity, product strategy, and eventual independent operating structure.
+          <SectionLabel>Businesses We Build &amp; Operate</SectionLabel>
+          <p style={{ fontSize: '0.88rem', color: 'var(--text-2)', lineHeight: 1.75, maxWidth: 580, fontWeight: 300, marginBottom: '2rem', marginTop: '0.5rem' }}>
+            Tarvico Inc. is the U.S. parent company, incorporated in Delaware. It builds and operates the products and businesses below — these are products and initiatives Tarvico develops, not separately incorporated public companies. Each carries an honest maturity label.
           </p>
           <div style={{ border: '1px solid var(--border-w)', background: 'var(--bg-card)', overflow: 'hidden', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
             <div style={{
@@ -178,26 +168,27 @@ export default function AboutPage() {
             }}>
               <span style={{ display: 'block', width: 8, height: 8, borderRadius: '50%', background: 'var(--gold)' }} />
               <span style={{ fontSize: '0.86rem', color: 'var(--text)', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.01em' }}>Tarvico Inc.</span>
-              <span style={{ fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', marginLeft: 'auto', fontWeight: 600 }}>Parent Holding Company · Delaware</span>
+              <span style={{ fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', marginLeft: 'auto', fontWeight: 600 }}>U.S. Parent Company · Delaware</span>
             </div>
-            {subsidiaries.map((s, i) => (
-              <div key={s.name} style={{
+            {publicBusinesses().map((b, i, arr) => (
+              <div key={b.name} style={{
                 padding: '1.25rem 2rem 1.25rem 3.5rem',
-                borderBottom: i < subsidiaries.length - 1 ? '1px solid var(--border-w)' : 'none',
+                borderBottom: i < arr.length - 1 ? '1px solid var(--border-w)' : 'none',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '1rem',
+                flexWrap: 'wrap',
                 transition: 'background 0.2s',
               }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.02)' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}
               >
                 <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', marginRight: 4, fontFamily: 'monospace' }}>├─</span>
-                {s.href
-                  ? <Link href={s.href} style={{ fontSize: '0.85rem', color: 'var(--text)', fontWeight: 400, textDecoration: 'none' }}>{s.name}</Link>
-                  : <span style={{ fontSize: '0.85rem', color: 'var(--text-2)', fontWeight: 300 }}>{s.name}</span>}
-                <span style={{ fontSize: '0.72rem', color: 'var(--text-3)', fontWeight: 300 }}>— {s.desc}</span>
-                <span style={{ marginLeft: 'auto', fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: s.color, fontWeight: 500 }}>{s.status}</span>
+                {b.internal
+                  ? <Link href={b.internal} style={{ fontSize: '0.85rem', color: 'var(--text)', fontWeight: 500, textDecoration: 'none' }}>{b.name}</Link>
+                  : <span style={{ fontSize: '0.85rem', color: 'var(--text)', fontWeight: 500 }}>{b.name}</span>}
+                <span style={{ fontSize: '0.72rem', color: 'var(--text-3)', fontWeight: 300 }}>— {b.tagline}</span>
+                <span style={{ marginLeft: 'auto' }}><MaturityTag tier={b.maturity} /></span>
               </div>
             ))}
           </div>

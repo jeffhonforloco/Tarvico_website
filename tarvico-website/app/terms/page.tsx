@@ -21,7 +21,7 @@ const sections = [
     content: [
       {
         subtitle: 'Corporate Identity',
-        body: 'Tarvico Inc. is a private technology holding company incorporated under the laws of the State of Delaware, United States. The Site serves as an informational and corporate communications platform for Tarvico Inc. and its portfolio of AI-native technology ventures.',
+        body: 'Tarvico Inc. is a privately held U.S. technology company incorporated under the laws of the State of Delaware, United States. The Site serves as an informational and corporate communications platform for Tarvico Inc. and its portfolio of AI-native technology ventures.',
       },
       {
         subtitle: 'Not an Offer or Solicitation',

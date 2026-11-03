@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { CSSProperties, ReactNode, useState, useEffect, useRef } from 'react'
+import type { MaturityTier } from '@/lib/businesses'
 
 // ─── FadeUp — scroll-triggered reveal ────────────────────────────────────────
 
@@ -391,5 +392,40 @@ export function MetricCard({ value, label, sub }: { value: string; label: string
         <div style={{ fontSize: '0.72rem', color: 'var(--text-3)', fontWeight: 300 }}>{sub}</div>
       )}
     </div>
+  )
+}
+
+// ─── MaturityTag — public disclosure label for product/initiative maturity ────
+
+const maturityConfig: Record<MaturityTier, { label: string; color: string; border: string; bg: string; dot?: string }> = {
+  operational:     { label: 'Operational Today', color: 'var(--emerald)',  border: 'var(--emerald-border)', bg: 'var(--emerald-glow)', dot: 'var(--emerald)' },
+  'public-beta':   { label: 'Public Beta',        color: 'var(--gold)',     border: 'var(--gold-border)',    bg: 'var(--gold-glow)',    dot: 'var(--gold)' },
+  'in-development': { label: 'In Development',      color: 'var(--gold-dim)', border: 'rgba(205,169,75,0.18)', bg: 'transparent' },
+  'long-term':     { label: 'Long-Term Vision',    color: 'var(--blue)',     border: 'var(--blue-border)',    bg: 'var(--blue-glow)' },
+}
+
+export function MaturityTag({ tier, label }: { tier: MaturityTier; label?: string }) {
+  const cfg = maturityConfig[tier]
+  return (
+    <span style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6,
+      fontSize: '0.56rem',
+      letterSpacing: '0.16em',
+      textTransform: 'uppercase',
+      border: `1px solid ${cfg.border}`,
+      color: cfg.color,
+      background: cfg.bg,
+      padding: '4px 11px',
+      borderRadius: 999,
+      whiteSpace: 'nowrap',
+      fontWeight: 600,
+    }}>
+      {cfg.dot && (
+        <span style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', background: cfg.dot, flexShrink: 0 }} />
+      )}
+      {label ?? cfg.label}
+    </span>
   )
 }

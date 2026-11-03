@@ -8,7 +8,7 @@ const thesis = [
   { icon: '⬡', title: 'Long-Term Capital Allocation', desc: 'We allocate capital toward sustainable compounding — not growth-at-all-costs. Disciplined unit economics, lean operations, and patient reinvestment strategy designed for institutional-grade returns.' },
   { icon: '◻', title: 'Incubation Creates Proprietary Advantage', desc: 'Internal incubation model means lower acquisition cost per venture, tighter product-market alignment, and preserved equity structure compared to external acquisition models.' },
   { icon: '△', title: 'Founder-Led with Institutional Discipline', desc: 'Founder-CEO alignment on long-term value creation. Strategic governance designed to balance visionary direction with operational accountability and financial discipline.' },
-  { icon: '○', title: 'Scalable Operating Model', desc: 'AI-native operations mean the holding company can support a growing portfolio without linear cost scaling. Infrastructure investments compound in value across every venture simultaneously.' },
+  { icon: '○', title: 'Scalable Operating Model', desc: 'AI-native operations mean the company can support a growing portfolio without linear cost scaling. Infrastructure investments compound in value across every venture simultaneously.' },
 ]
 
 export default function InvestorsPage() {

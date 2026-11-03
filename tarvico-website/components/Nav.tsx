@@ -82,7 +82,7 @@ export default function Nav() {
       <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <Image
           src={theme === 'light' ? '/logo-black-wordmark.webp' : '/logo-white-wordmark.webp'}
-          alt="Tarvico Inc. — A Private Technology Holding Company"
+          alt="Tarvico Inc. — Building Technology for a Connected World"
           width={240}
           height={100}
           style={{ objectFit: 'contain', height: 127, width: 'auto', transition: 'opacity 0.4s ease' }}

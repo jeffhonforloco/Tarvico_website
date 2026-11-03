@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Careers at Tarvico Inc. — Join the Technology Holding Company Building the Future',
+  title: 'Careers at Tarvico Inc. — Join the U.S. Technology Company Building the Future',
   description:
-    'Careers at Tarvico Inc. — a private technology holding company building enduring AI-native companies. Learn about our culture, mission, and the roles we hire for across AI product engineering, growth, and operations. Applications welcome year-round.',
+    'Careers at Tarvico Inc. — a privately held U.S. technology company building enduring AI-native companies. Learn about our culture, mission, and the roles we hire for across AI product engineering, growth, and operations. Applications welcome year-round.',
   keywords: [
     'Tarvico careers',
     'Tarvico jobs',
     'AI company jobs',
-    'technology holding company careers',
+    'U.S. technology company careers',
     'software engineering jobs AI',
     'AI startup hiring',
     'join Tarvico',
@@ -56,7 +56,7 @@ const careersPageSchema = {
   '@id': 'https://www.tarvico.com/careers#webpage',
   url: 'https://www.tarvico.com/careers',
   name: 'Careers at Tarvico Inc.',
-  description: 'Culture, mission, and the roles Tarvico Inc. hires for — a private technology holding company building AI-native ventures.',
+  description: 'Culture, mission, and the roles Tarvico Inc. hires for — a privately held U.S. technology company building AI-native ventures.',
   isPartOf: { '@id': 'https://www.tarvico.com/#website' },
   about: { '@id': 'https://www.tarvico.com/#organization' },
   inLanguage: 'en-US',

@@ -29,7 +29,7 @@ const sections = [
       },
       {
         subtitle: 'Compliance and Legal Obligations',
-        body: 'We may process your information as required to comply with applicable laws and regulations, including securities laws, anti-money laundering obligations, and other regulatory requirements applicable to a private technology holding company.',
+        body: 'We may process your information as required to comply with applicable laws and regulations, including securities laws, anti-money laundering obligations, and other regulatory requirements applicable to a privately held U.S. technology company.',
       },
       {
         subtitle: 'Legitimate Business Interests',
