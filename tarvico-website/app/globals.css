@@ -445,13 +445,17 @@ body {
 @keyframes aurelFloat3d { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 .animate-aurel-float { animation: aurelFloat3d 10s ease-in-out infinite; }
 
-/* Computational-keystone sculpture (hero signature) */
+/* Computational-keystone sculpture (hero signature) — Lit Keystone (B) + glow */
 .sculpt-wrap { perspective: 1150px; }
 .sculpt-stage { transform-style: preserve-3d; transition: transform .4s cubic-bezier(0.16,1,0.3,1); will-change: transform; }
 .sculpt-spin { transform-style: preserve-3d; animation: aurelSpinY 60s linear infinite; }
+/* Sway keeps a faceted solid's lit faces toward the viewer (vs. a full spin
+   that flattens edge-on). Used by the Lit Keystone. */
+.sculpt-sway { transform-style: preserve-3d; animation: aurelSway 15s ease-in-out infinite; }
 .sculpt-layer { position: absolute; inset: 0; display: grid; place-items: center; }
 @keyframes aurelSpinY { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
-@media (prefers-reduced-motion: reduce) { .sculpt-spin { animation: none; } }
+@keyframes aurelSway { 0%,100% { transform: rotateY(-19deg); } 50% { transform: rotateY(19deg); } }
+@media (prefers-reduced-motion: reduce) { .sculpt-spin, .sculpt-sway { animation: none; } }
 
 /* Bronze → petroleum gradient text (distinct from the flat-gold sweep) */
 .text-foundry {
