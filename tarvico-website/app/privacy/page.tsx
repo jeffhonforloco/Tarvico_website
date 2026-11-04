@@ -128,7 +128,7 @@ export default function PrivacyPage() {
     <>
       <PageHero
         label="Privacy Policy"
-        title={<>Your data. <span className="text-gradient-gold">Our responsibility.</span></>}
+        title={<>Your data. <span className="text-foundry">Our responsibility.</span></>}
         subtitle="Last Updated: May 2026 — This Privacy Policy describes how Tarvico Inc. collects, uses, and protects information about visitors to tarvico.com."
       />
 
@@ -154,7 +154,7 @@ export default function PrivacyPage() {
                   fontSize: '0.72rem',
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
-                  color: 'var(--gold)',
+                  color: 'var(--bronze)',
                   fontWeight: 500,
                   marginBottom: '0.6rem',
                 }}>

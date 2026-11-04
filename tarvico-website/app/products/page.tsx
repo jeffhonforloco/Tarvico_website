@@ -23,7 +23,7 @@ export default function ProductsPage() {
     <>
       <PageHero
         label="Products"
-        title={<>Products built to <span className="text-gradient-gold">last.</span></>}
+        title={<>Products built to <span className="text-foundry">last.</span></>}
         subtitle="Tarvico builds enduring, AI-native products that solve foundational problems. Two are in active development today; more will grow within the same ecosystem over time."
       />
 
@@ -38,21 +38,21 @@ export default function ProductsPage() {
               flexDirection: 'column',
               textDecoration: 'none',
               background: 'var(--bg-card)',
-              border: '1px solid var(--gold-border)',
+              border: '1px solid var(--bronze-line)',
               borderRadius: 'var(--radius-xl)',
               padding: '2.75rem',
               boxShadow: 'var(--shadow-sm)',
               position: 'relative',
               overflow: 'hidden',
             }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'var(--gold)', opacity: 0.7 }} />
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'var(--bronze)', opacity: 0.7 }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem' }}>
                 <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.035em' }}>{p.name}</div>
-                <span style={{ fontSize: '0.56rem', letterSpacing: '0.14em', textTransform: 'uppercase', border: '1px solid var(--gold-border)', color: 'var(--gold)', background: 'var(--gold-glow)', padding: '4px 11px', whiteSpace: 'nowrap', fontWeight: 600, borderRadius: 999 }}>{p.stage}</span>
+                <span style={{ fontSize: '0.56rem', letterSpacing: '0.14em', textTransform: 'uppercase', border: '1px solid var(--bronze-line)', color: 'var(--bronze)', background: 'var(--bronze-soft)', padding: '4px 11px', whiteSpace: 'nowrap', fontWeight: 600, borderRadius: 999 }}>{p.stage}</span>
               </div>
-              <div style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.85rem', fontWeight: 600 }}>{p.tag}</div>
+              <div style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--bronze)', marginBottom: '0.85rem', fontWeight: 600 }}>{p.tag}</div>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-2)', lineHeight: 1.7, marginBottom: '1.75rem', flex: 1 }}>{p.desc}</p>
-              <span style={{ fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>Explore {p.name} →</span>
+              <span style={{ fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 600 }}>Explore {p.name} →</span>
             </Link>
           ))}
         </div>

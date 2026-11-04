@@ -32,7 +32,7 @@ export default function FounderPage() {
     <>
       <PageHero
         label="Founder"
-        title={<>Jeff <span className="text-gradient-gold">Honforloco</span></>}
+        title={<>Jeff <span className="text-foundry">Honforloco</span></>}
         subtitle="Founder & Chief Executive Officer of Tarvico Inc. — building enduring, AI-native technology companies designed to solve foundational problems over the long term."
       />
 
@@ -56,7 +56,7 @@ export default function FounderPage() {
           {/* Quick facts — structured for readers and AI systems */}
           <div style={{
             border: '1px solid var(--border-w)',
-            borderTop: '2px solid var(--gold)',
+            borderTop: '2px solid var(--bronze)',
             borderRadius: 'var(--radius-lg)',
             background: 'var(--bg-card)',
             padding: '2.25rem',
@@ -64,17 +64,17 @@ export default function FounderPage() {
           }}>
             <div style={{
               width: 60, height: 60,
-              background: 'var(--gold-glow)',
-              border: '1px solid var(--gold-border)',
+              background: 'var(--bronze-soft)',
+              border: '1px solid var(--bronze-line)',
               borderRadius: 'var(--radius)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 700,
-              color: 'var(--gold)', marginBottom: '1.75rem', letterSpacing: '-0.02em',
+              color: 'var(--bronze)', marginBottom: '1.75rem', letterSpacing: '-0.02em',
             }}>JH</div>
             <dl style={{ margin: 0 }}>
               {facts.map((f, i) => (
                 <div key={f.k} style={{ paddingBottom: i < facts.length - 1 ? '1.1rem' : 0, marginBottom: i < facts.length - 1 ? '1.1rem' : 0, borderBottom: i < facts.length - 1 ? '1px solid var(--border-w)' : 'none' }}>
-                  <dt style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600, marginBottom: '0.4rem' }}>{f.k}</dt>
+                  <dt style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 600, marginBottom: '0.4rem' }}>{f.k}</dt>
                   <dd style={{ margin: 0, fontSize: '0.92rem', color: 'var(--text)', lineHeight: 1.55, fontWeight: 400 }}>{f.v}</dd>
                 </div>
               ))}
@@ -94,7 +94,7 @@ export default function FounderPage() {
           color: 'var(--text)',
           maxWidth: 820,
           margin: '2.5rem 0 4rem',
-          borderLeft: '3px solid var(--gold)',
+          borderLeft: '3px solid var(--bronze)',
           paddingLeft: '2.5rem',
           letterSpacing: '-0.025em',
         }}>
@@ -106,7 +106,7 @@ export default function FounderPage() {
             <div key={p.t} style={{
               border: '1px solid var(--border-w)',
               borderLeftWidth: 2,
-              borderLeftColor: 'var(--gold-border)',
+              borderLeftColor: 'var(--bronze-line)',
               borderRadius: 'var(--radius)',
               padding: '1.75rem 1.9rem',
               background: 'var(--bg-card)',

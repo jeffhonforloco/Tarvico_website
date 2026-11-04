@@ -14,7 +14,7 @@ export default function EngineeringPage() {
     <>
       <PageHero
         label="Engineering"
-        title={<>Engineering at <span className="text-gradient-gold">Tarvico.</span></>}
+        title={<>Engineering at <span className="text-foundry">Tarvico.</span></>}
         subtitle="Notes from the teams building Tarvico’s products — a long-term knowledge base on AI, infrastructure, architecture, security, and the systems behind AI-native software."
       />
 
@@ -27,7 +27,7 @@ export default function EngineeringPage() {
             <div key={t.t} style={{
               border: '1px solid var(--border-w)',
               borderLeftWidth: 2,
-              borderLeftColor: 'var(--gold-border)',
+              borderLeftColor: 'var(--bronze-line)',
               borderRadius: 'var(--radius)',
               padding: '1.75rem 1.9rem',
               background: 'var(--bg-card)',
@@ -45,7 +45,7 @@ export default function EngineeringPage() {
           padding: '3rem',
           textAlign: 'center',
         }}>
-          <div style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600, marginBottom: '1rem' }}>Coming Soon</div>
+          <div style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 600, marginBottom: '1rem' }}>Coming Soon</div>
           <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, color: 'var(--text)', letterSpacing: '-0.02em', marginBottom: '1rem' }}>The first articles are on the way.</div>
           <p style={{ fontSize: '0.95rem', color: 'var(--text-2)', lineHeight: 1.7, maxWidth: 540, margin: '0 auto 2rem' }}>
             Tarvico’s engineering blog is being built as a durable, technical knowledge base. To be notified when the first pieces are published, or to talk engineering with the team, get in touch.
