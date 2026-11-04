@@ -87,18 +87,18 @@ export default function FounderPage() {
         {/* ── Philosophy ──────────────────────────────────────────────────── */}
         <SectionLabel>Philosophy &amp; Long-Term Thinking</SectionLabel>
         <blockquote style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(1.5rem, 3vw, 2.4rem)',
-          fontWeight: 600,
-          lineHeight: 1.32,
+          fontFamily: 'var(--font-fraunces-stack)',
+          fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+          fontWeight: 500,
+          lineHeight: 1.3,
           color: 'var(--text)',
-          maxWidth: 820,
+          maxWidth: 860,
           margin: '2.5rem 0 4rem',
-          borderLeft: '3px solid var(--bronze)',
+          borderLeft: '2px solid var(--bronze)',
           paddingLeft: '2.5rem',
-          letterSpacing: '-0.025em',
+          letterSpacing: '-0.015em',
         }}>
-          &ldquo;The companies that endure are not defined by a single product. They are defined by their ability to evolve, experiment, and keep building for the future.&rdquo;
+          <span style={{ color: 'var(--bronze)', fontStyle: 'italic' }}>&ldquo;</span>The companies that endure are not defined by a single product. They are defined by their ability to evolve, experiment, and keep building for the future.<span style={{ color: 'var(--bronze)', fontStyle: 'italic' }}>&rdquo;</span>
         </blockquote>
 
         <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>

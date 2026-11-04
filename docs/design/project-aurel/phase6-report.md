@@ -63,16 +63,31 @@ All of #72's content corrections are now on this branch (no accuracy work lost):
   React 19 default) and must be branched, built, and route-tested on its own — **not** bundled
   into a redesign branch, and never via `npm audit fix --force`.
 
-## Status & what remains (honest)
-**Applied and validated across all routes:** FOUNDRY heroes, Archivo headings, mono labels,
-bronze/petroleum accents, corrected content, the keystone, responsive integrity.
+## Status
 
-**Remaining refinement (the MERIDIAN "editorial depth" layer):** the homepage has the full
-tonal treatment — alternating graphite / mineral-white bands, Fraunces editorial headings,
-folios, architectural section layouts. The **other page bodies** currently carry the FOUNDRY
-identity via the shared components + global type, but not yet the per-page mineral-band /
-Fraunces / folio editorial layouts. Extending that depth page-by-page (About, Investors,
-Vision, Portfolio first) is the remaining work, to be done incrementally with review.
+**Applied and validated across all 17 routes:** FOUNDRY heroes, Archivo headings, mono
+labels, bronze/petroleum accents, corrected content, the keystone, responsive integrity.
+
+**Tier-1 — full MERIDIAN editorial depth (done):**
+- **Home** — alternating graphite/mineral bands, Lit Keystone, folios, architectural layouts.
+- **Vision** — reimagined as a mineral editorial *founder letter* (Fraunces serif pull-quotes
+  and statements, Archivo masthead, italic signature).
+- **About** — mineral/graphite tonal bands, Fraunces mission + leadership quotes, numbered
+  principles, architectural timeline with folios.
+- **Portfolio** — FOUNDRY flagship block + mineral "One strategy, three pillars" closing band.
+- **Investors** — deliberately restrained graphite + Fraunces founder quote (brief: keep
+  disclosures clear, not a spectacle).
+
+**Tier-2/3 — unified FOUNDRY identity (done):** Research, Engineering, Newsroom, Founder,
+Products, Vytre, Maeyen, Contact, Careers, Legal, Privacy, Terms all carry the FOUNDRY hero,
+Archivo headings, mono labels, and bronze/petroleum accents through the shared components,
+the global display-font switch, and an accent-token unification. Key blockquotes (Founder)
+use Fraunces for voice consistency. Legal / Privacy / Terms kept intentionally clean and
+highly readable (no decorative effects over legal content), per the brief.
+
+**Optional future polish:** per-page mineral-band editorial layouts could be extended to
+selected Tier-2 pages (e.g. Founder, Vytre) if desired; the current treatment is consistent,
+professional, and brief-aligned.
 
 ## Boundaries honored
 Local only on `feature/aurel-phase6`. No merge to `main`, no deploy, no preview push, no
