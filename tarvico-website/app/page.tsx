@@ -60,62 +60,56 @@ function FoundrySculpture() {
   const node = (cx: number, cy: number, r: number, fill: string) => <circle cx={cx} cy={cy} r={r} fill={fill} />
 
   return (
-    <div className="sculpt-wrap mob-hide" style={{ width: 'min(42vw, 480px)', height: 480, position: 'relative' }} aria-hidden>
-      {/* ambient glow */}
+    <div className="sculpt-wrap" style={{ width: 'min(82vw, 440px)', height: 'min(88vw, 460px)', position: 'relative', margin: '0 auto' }} aria-hidden>
+      {/* ambient glow (from alternative A) */}
       <div className="animate-glow-breathe" style={{
-        position: 'absolute', inset: '12%', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(201,162,74,0.16) 0%, rgba(21,83,77,0.10) 45%, transparent 70%)',
-        filter: 'blur(6px)',
+        position: 'absolute', inset: '10%', borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(201,162,74,0.18) 0%, rgba(21,83,77,0.12) 45%, transparent 70%)',
+        filter: 'blur(8px)',
       }} />
       <div ref={stage} className="sculpt-stage" style={{ position: 'absolute', inset: 0 }}>
-        <div className="sculpt-spin animate-aurel-float" style={{ position: 'absolute', inset: 0 }}>
-          {/* back layer — faint titanium frame, pushed away */}
-          <div className="sculpt-layer" style={{ transform: 'translateZ(-150px)' }}>
-            <svg width="420" height="420" viewBox="0 0 300 300" fill="none">
-              <g stroke="var(--titanium)" strokeWidth="0.8" opacity="0.22">
-                <path d="M150 20 L280 150 L150 280 L20 150 Z" />
-                <path d="M150 20 L150 280 M20 150 L280 150" />
-                <rect x="66" y="66" width="168" height="168" transform="rotate(45 150 150)" />
-              </g>
+        <div className="sculpt-sway animate-aurel-float" style={{ position: 'absolute', inset: 0 }}>
+          {/* back half — darker solid, gives the keystone thickness */}
+          <div className="sculpt-layer" style={{ transform: 'translateZ(-38px)' }}>
+            <svg width="300" height="400" viewBox="0 0 160 220" fill="none">
+              <polygon points="80,12 14,110 80,92" fill="#0C0D11" />
+              <polygon points="80,12 146,110 80,92" fill="#16171C" />
+              <polygon points="80,208 14,110 80,92" fill="#090A0D" />
+              <polygon points="80,208 146,110 80,92" fill="#101217" />
             </svg>
           </div>
-          {/* mid layer — main bronze crystalline truss */}
-          <div className="sculpt-layer" style={{ transform: 'translateZ(0px)' }}>
-            <svg width="340" height="400" viewBox="0 0 300 360" fill="none">
-              <g stroke="var(--bronze)" strokeWidth="1.1" strokeLinejoin="round">
-                <path d="M150 24 L264 180 L150 336 L36 180 Z" />
-                <path d="M150 24 L150 336 M36 180 L264 180" />
-                <path d="M150 24 L96 180 L150 336 M150 24 L204 180 L150 336" opacity="0.85" />
-                <path d="M96 180 L204 180" opacity="0.5" />
-              </g>
-              <g>
-                {node(150, 24, 4, 'var(--bronze)')}
-                {node(264, 180, 3.4, 'var(--bronze)')}
-                {node(36, 180, 3.4, 'var(--bronze)')}
-                {node(150, 336, 4, 'var(--bronze)')}
-                {node(96, 180, 2.6, 'var(--petroleum-ink)')}
-                {node(204, 180, 2.6, 'var(--petroleum-ink)')}
-              </g>
+          {/* lit front faces — materiality + lighting (light from upper-right) */}
+          <div className="sculpt-layer" style={{ transform: 'translateZ(26px)' }}>
+            <svg width="300" height="400" viewBox="0 0 160 220" fill="none">
+              <defs>
+                <linearGradient id="kTL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#2A2B31" /><stop offset="1" stopColor="#111216" /></linearGradient>
+                <linearGradient id="kTR" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#E7CE84" /><stop offset=".5" stopColor="#A9883E" /><stop offset="1" stopColor="#5E4B24" /></linearGradient>
+                <linearGradient id="kBL" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#0A0B0E" /><stop offset="1" stopColor="#191B20" /></linearGradient>
+                <linearGradient id="kBR" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stopColor="#176B62" /><stop offset="1" stopColor="#0C2E2B" /></linearGradient>
+              </defs>
+              <polygon points="80,12 14,110 80,92" fill="url(#kTL)" stroke="var(--bronze)" strokeWidth="1" strokeLinejoin="round" />
+              <polygon points="80,12 146,110 80,92" fill="url(#kTR)" stroke="var(--bronze)" strokeWidth="1" strokeLinejoin="round" />
+              <polygon points="80,208 14,110 80,92" fill="url(#kBL)" stroke="var(--bronze-deep)" strokeWidth="1" strokeLinejoin="round" />
+              <polygon points="80,208 146,110 80,92" fill="url(#kBR)" stroke="var(--bronze-deep)" strokeWidth="1" strokeLinejoin="round" />
+              <line x1="80" y1="12" x2="80" y2="92" stroke="var(--bronze)" strokeWidth="0.8" opacity="0.7" />
+              <line x1="80" y1="92" x2="80" y2="208" stroke="var(--bronze-deep)" strokeWidth="0.8" opacity="0.5" />
+              {node(80, 12, 3.6, '#F4E4B0')}
+              {node(80, 92, 3, 'var(--bronze)')}
+              {node(146, 110, 2.8, 'var(--bronze)')}
+              {node(14, 110, 2.6, 'var(--titanium)')}
+              {node(80, 208, 3, 'var(--bronze-deep)')}
             </svg>
           </div>
-          {/* front layer — petroleum satellites + bright core, pulled forward */}
-          <div className="sculpt-layer" style={{ transform: 'translateZ(140px)' }}>
-            <svg width="240" height="240" viewBox="0 0 220 220" fill="none">
-              <g stroke="var(--petroleum-ink)" strokeWidth="0.9" opacity="0.8">
-                <path d="M110 60 L150 110 L110 160 L70 110 Z" />
-                <path d="M110 60 L110 160 M70 110 L150 110" />
-              </g>
-              {node(110, 110, 5.5, 'var(--bronze)')}
-              <circle cx="110" cy="110" r="12" stroke="var(--bronze)" strokeWidth="0.8" fill="none" opacity="0.6" />
-              {node(110, 60, 2.6, 'var(--petroleum-ink)')}
-              {node(150, 110, 2.6, 'var(--petroleum-ink)')}
-              {node(110, 160, 2.6, 'var(--petroleum-ink)')}
-              {node(70, 110, 2.6, 'var(--petroleum-ink)')}
+          {/* forward accent ring + core */}
+          <div className="sculpt-layer" style={{ transform: 'translateZ(72px)' }}>
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+              <circle cx="60" cy="60" r="7" fill="var(--bronze)" />
+              <circle cx="60" cy="60" r="17" stroke="var(--bronze)" strokeWidth="0.7" fill="none" opacity="0.55" />
             </svg>
           </div>
         </div>
       </div>
-      <div style={{ ...mono({ color: 'var(--text-3)', position: 'absolute', bottom: 8, left: 0, fontSize: '0.54rem' }) }}>
+      <div style={{ ...mono({ color: 'var(--text-3)', position: 'absolute', bottom: 2, left: 0, fontSize: '0.54rem' }) }}>
         Fig. 01 — Computational Keystone · concept
       </div>
     </div>
@@ -172,35 +166,35 @@ export default function HomePage() {
   return (
     <>
       {/* ── 00 · HERO ──────────────────────────────────────────────────────── */}
-      <section style={{ position: 'relative', minHeight: 'calc(100vh - 72px)', display: 'flex', alignItems: 'center', overflow: 'hidden', background: 'var(--bg)' }}>
+      <section className="home-hero" style={{ position: 'relative', display: 'flex', overflow: 'hidden', background: 'var(--bg)' }}>
         <div className="aurel-blueprint" style={{ position: 'absolute', inset: 0, opacity: 0.8 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 70% at 68% 42%, transparent 20%, var(--bg) 78%)' }} />
         {/* left bronze edge rule */}
         <div style={{ position: 'absolute', top: 0, bottom: 0, left: 'max(1.5rem, 4vw)', width: 1, background: 'linear-gradient(to bottom, transparent, var(--bronze-line) 20%, var(--bronze-line) 80%, transparent)' }} className="mob-hide" />
 
         <div className="mob-px" style={{ position: 'relative', zIndex: 2, maxWidth: 1280, margin: '0 auto', padding: '0 max(1.5rem, 4vw)', width: '100%' }}>
-          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1.15fr auto', gap: '3rem', alignItems: 'center' }}>
+          <div className="home-hero-grid">
             <div>
-              <div className="animate-fade-in delay-100" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div className="home-hero-identity" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <span style={mono({ color: 'var(--text-3)' })}>00 — Tarvico Inc.</span>
                 <DimLine color="var(--hairline)" />
                 <span style={mono({ color: 'var(--petroleum-ink)' })}>Est. Delaware · USA</span>
               </div>
 
-              <div className="animate-fade-in delay-100" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, marginBottom: '2rem', padding: '7px 15px 7px 11px', border: '1px solid var(--bronze-line)', borderRadius: 999, background: 'var(--bronze-soft)' }}>
+              <div className="home-hero-identity animate-fade-in delay-100" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, padding: '7px 15px 7px 11px', border: '1px solid var(--bronze-line)', borderRadius: 999, background: 'var(--bronze-soft)' }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--bronze)', display: 'inline-block' }} className="animate-pulse-gold" />
                 <span style={mono({ color: 'var(--text-2)', fontSize: '0.6rem', letterSpacing: '0.16em' })}>U.S. Private Technology Company</span>
               </div>
 
-              <h1 className="aurel-display animate-aurel-clip delay-250" style={{ fontSize: 'clamp(2.9rem, 7vw, 6.4rem)', color: 'var(--text)', marginBottom: '1.9rem' }}>
+              <h1 className="home-hero-title aurel-display animate-aurel-clip delay-250" style={{ color: 'var(--text)' }}>
                 Building<br />Technology<br />for a <span className="text-foundry">Connected World</span>.
               </h1>
 
-              <p className="animate-fade-up delay-400" style={{ fontSize: '1.14rem', color: 'var(--text-2)', maxWidth: 540, lineHeight: 1.62, marginBottom: '2.5rem', fontWeight: 400 }}>
+              <p className="home-hero-summary animate-fade-up delay-400" style={{ color: 'var(--text-2)', maxWidth: 540, lineHeight: 1.62, fontWeight: 400 }}>
                 Tarvico Inc. is a privately held U.S. technology company building artificial intelligence, digital platforms, and emerging technology businesses — with a long-term vision spanning global technology, intelligent mobility, computing infrastructure, and sustainable energy.
               </p>
 
-              <div className="animate-fade-up delay-550" style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+              <div className="home-hero-actions animate-fade-up delay-550" style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
                 <Button href="/portfolio" variant="primary">Our Businesses →</Button>
                 <Button href="/investors" variant="secondary">Investor Relations</Button>
               </div>

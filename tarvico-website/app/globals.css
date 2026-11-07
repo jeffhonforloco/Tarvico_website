@@ -4,6 +4,8 @@
 @tailwind utilities;
 
 :root {
+  --site-header-height: calc(80px + env(safe-area-inset-top, 0px));
+
   /* Backgrounds — refined dark, slightly cool near-black */
   --bg:        #0A0A0C;
   --bg-raised: #101013;
@@ -38,8 +40,8 @@
   --border-w: rgba(255, 255, 255, 0.07);
   --border-m: rgba(255, 255, 255, 0.12);
 
-  /* Typography */
-  --font-display: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography — Project AUREL: Archivo display, Inter body */
+  --font-display: var(--font-archivo), 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body:    var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Radius — modern rounded surfaces */
@@ -445,13 +447,17 @@ body {
 @keyframes aurelFloat3d { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 .animate-aurel-float { animation: aurelFloat3d 10s ease-in-out infinite; }
 
-/* Computational-keystone sculpture (hero signature) */
+/* Computational-keystone sculpture (hero signature) — Lit Keystone (B) + glow */
 .sculpt-wrap { perspective: 1150px; }
 .sculpt-stage { transform-style: preserve-3d; transition: transform .4s cubic-bezier(0.16,1,0.3,1); will-change: transform; }
 .sculpt-spin { transform-style: preserve-3d; animation: aurelSpinY 60s linear infinite; }
+/* Sway keeps a faceted solid's lit faces toward the viewer (vs. a full spin
+   that flattens edge-on). Used by the Lit Keystone. */
+.sculpt-sway { transform-style: preserve-3d; animation: aurelSway 15s ease-in-out infinite; }
 .sculpt-layer { position: absolute; inset: 0; display: grid; place-items: center; }
 @keyframes aurelSpinY { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
-@media (prefers-reduced-motion: reduce) { .sculpt-spin { animation: none; } }
+@keyframes aurelSway { 0%,100% { transform: rotateY(-19deg); } 50% { transform: rotateY(19deg); } }
+@media (prefers-reduced-motion: reduce) { .sculpt-spin, .sculpt-sway { animation: none; } }
 
 /* Bronze → petroleum gradient text (distinct from the flat-gold sweep) */
 .text-foundry {
@@ -469,8 +475,51 @@ body {
   }
 }
 
+.home-hero {
+  min-height: calc(100vh - var(--site-header-height));
+  min-height: calc(100svh - var(--site-header-height));
+  padding-block: 2rem;
+  align-items: center;
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+.home-hero-identity { margin-bottom: 2rem; }
+.home-hero-title { font-size: clamp(2.9rem, 7vw, 6.4rem); margin-bottom: 1.9rem; }
+.home-hero-summary { font-size: 1.14rem; margin-bottom: 2.5rem; }
+.home-hero-actions { margin-bottom: 3rem; }
+
+.site-footer-grid { grid-template-columns: 2fr repeat(5, 1fr); }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .home-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* ── Mobile Responsive ────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
+  .home-hero { padding-block: 1.5rem; }
+  .home-hero-grid { gap: 1.5rem; }
+  .home-hero-identity, .home-hero-title { margin-bottom: 1rem; }
+  .home-hero-title { font-size: clamp(2rem, 9vw, 2.9rem); }
+  .home-hero-summary { font-size: 1rem; margin-bottom: 1.25rem; }
+  .home-hero-actions { margin-bottom: 1.5rem; }
+
   .mob-px  { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
   .mob-p   { padding: 4rem 1.25rem !important; }
   .mob-py  { padding-top: 4rem !important; padding-bottom: 4rem !important; }

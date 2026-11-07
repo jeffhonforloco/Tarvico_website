@@ -66,9 +66,8 @@ export default function Footer() {
       borderTop: '1px solid var(--border-w)',
     }}>
       <div className="mob-px" style={{ padding: '5rem 3rem 0' }}>
-        <div className="mob-stack" style={{
+        <div className="site-footer-grid mob-stack" style={{
           display: 'grid',
-          gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr 1fr',
           gap: '3rem',
           marginBottom: '4rem',
         }}>
@@ -104,15 +103,15 @@ export default function Footer() {
               Tarvico Inc.<br />
               8 The Green, #5275<br />
               Dover, DE 19901, United States<br />
-              <a href="tel:+13024396442" style={{ color: 'var(--gold)', textDecoration: 'none', fontWeight: 500 }}>+1 (302) 439-6442</a>
+              <a href="tel:+13024396442" style={{ color: 'var(--bronze)', textDecoration: 'none', fontWeight: 500 }}>+1 (302) 439-6442</a>
             </address>
             <div style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
               padding: '6px 14px',
-              border: '1px solid var(--gold-border)',
-              background: 'var(--gold-glow)',
+              border: '1px solid var(--bronze-line)',
+              background: 'var(--bronze-soft)',
               borderRadius: 999,
             }}>
               <span style={{
@@ -120,14 +119,14 @@ export default function Footer() {
                 width: 6,
                 height: 6,
                 borderRadius: '50%',
-                background: 'var(--gold)',
+                background: 'var(--bronze)',
                 flexShrink: 0,
               }} />
               <span style={{
                 fontSize: '0.58rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: 'var(--gold)',
+                color: 'var(--bronze)',
                 fontWeight: 500,
               }}>
                 Incorporated in Delaware, USA
@@ -159,8 +158,8 @@ export default function Footer() {
                     transition: 'border-color 0.2s, color 0.2s',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'var(--gold-border)'
-                    e.currentTarget.style.color = 'var(--gold)'
+                    e.currentTarget.style.borderColor = 'var(--bronze-line)'
+                    e.currentTarget.style.color = 'var(--bronze)'
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.borderColor = 'var(--border-m)'

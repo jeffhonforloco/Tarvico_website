@@ -25,7 +25,7 @@ const sections = [
     content: [
       {
         subtitle: 'Operational Purposes',
-        body: 'We use the information we collect to respond to your inquiries, deliver requested information about Tarvico Inc. and its portfolio companies, process investor communications, and maintain the security and integrity of our website.',
+        body: 'We use the information we collect to respond to your inquiries, deliver requested information about Tarvico Inc. and its products, process investor communications, and maintain the security and integrity of our website.',
       },
       {
         subtitle: 'Compliance and Legal Obligations',
@@ -98,7 +98,7 @@ const sections = [
     content: [
       {
         subtitle: 'External Websites',
-        body: 'Our website may contain links to third-party websites, portfolio company sites, and partner resources. This Privacy Policy applies solely to tarvico.com. We are not responsible for the privacy practices of external websites and encourage you to review their privacy policies independently.',
+        body: 'Our website may contain links to third-party websites, Tarvico product sites, and external resources. This Privacy Policy applies solely to tarvico.com. We are not responsible for the privacy practices of external websites and encourage you to review their privacy policies independently.',
       },
     ],
   },
@@ -128,7 +128,7 @@ export default function PrivacyPage() {
     <>
       <PageHero
         label="Privacy Policy"
-        title={<>Your data. <span className="text-gradient-gold">Our responsibility.</span></>}
+        title={<>Your data. <span className="text-foundry">Our responsibility.</span></>}
         subtitle="Last Updated: May 2026 — This Privacy Policy describes how Tarvico Inc. collects, uses, and protects information about visitors to tarvico.com."
       />
 
@@ -154,7 +154,7 @@ export default function PrivacyPage() {
                   fontSize: '0.72rem',
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
-                  color: 'var(--gold)',
+                  color: 'var(--bronze)',
                   fontWeight: 500,
                   marginBottom: '0.6rem',
                 }}>

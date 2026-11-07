@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { PageHero, Button, SectionLabel, Divider, MaturityTag } from '@/components/ui'
+import { PageHero, Button, SectionLabel, MaturityTag, Eyebrow, FONT } from '@/components/ui'
 import type { MaturityTier } from '@/lib/businesses'
 
 type Product = {
@@ -68,23 +68,23 @@ function ProductCard({ p }: { p: Product }) {
         background: 'var(--bg-card)', padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%',
         border: '1px solid var(--border-w)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)',
       }}
-      onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--gold-border)'; e.currentTarget.style.boxShadow = 'var(--shadow)' }}
+      onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--bronze-line)'; e.currentTarget.style.boxShadow = 'var(--shadow)' }}
       onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-w)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)' }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem', gap: '0.75rem', flexWrap: 'wrap' }}>
         <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.035em' }}>{p.name}</div>
         <MaturityTag tier={p.maturity} />
       </div>
-      <div style={{ fontSize: '0.62rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.85rem', fontWeight: 600 }}>{p.category}</div>
+      <div style={{ fontFamily: 'var(--mono)', fontSize: '0.6rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--bronze)', marginBottom: '0.85rem', fontWeight: 500 }}>{p.category}</div>
       <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 400, marginBottom: '1.75rem', flex: 1 }}>{p.desc}</p>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1.25rem', gap: '1rem' }}>
         <span style={{ fontSize: '0.66rem', color: 'var(--text-3)', fontWeight: 500 }}>{p.market}</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           {p.internal && (
-            <Link href={p.internal} style={{ fontSize: '0.68rem', color: 'var(--gold)', letterSpacing: '0.02em', fontWeight: 600, textDecoration: 'none' }}>Overview →</Link>
+            <Link href={p.internal} style={{ fontSize: '0.68rem', color: 'var(--bronze)', letterSpacing: '0.02em', fontWeight: 600, textDecoration: 'none' }}>Overview →</Link>
           )}
           <a href={p.url} target="_blank" rel="noopener noreferrer" style={{
-            fontSize: '0.68rem', color: 'var(--gold)', letterSpacing: '0.02em', fontWeight: 600, textDecoration: 'none', transition: 'opacity 0.2s',
+            fontSize: '0.68rem', color: 'var(--bronze)', letterSpacing: '0.02em', fontWeight: 600, textDecoration: 'none', transition: 'opacity 0.2s',
           }}
             onMouseEnter={e => { e.currentTarget.style.opacity = '0.7' }}
             onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
@@ -100,7 +100,7 @@ export default function BusinessesPage() {
     <>
       <PageHero
         label="Our Businesses"
-        title={<>Our businesses, one <span className="text-gradient-gold">strategy.</span></>}
+        title={<>Our businesses, one <span className="text-foundry">strategy.</span></>}
         subtitle="A selective view of the products Tarvico builds and operates — each shown with an honest maturity label. Tarvico is a privately held U.S. technology company; these are products it develops, not separately incorporated companies."
       />
 
@@ -110,19 +110,19 @@ export default function BusinessesPage() {
         <SectionLabel>Flagship Product</SectionLabel>
 
         <div style={{
-          border: '1px solid var(--gold-border)',
+          border: '1px solid var(--bronze-line)',
           background: 'var(--bg-card)',
           marginBottom: '5rem',
           overflow: 'hidden',
           borderRadius: 'var(--radius-xl)',
           boxShadow: 'var(--shadow)',
         }}>
-          <div style={{ height: 3, background: 'linear-gradient(to right, var(--gold), var(--blue), transparent)' }} />
+          <div style={{ height: 3, background: 'linear-gradient(to right, var(--bronze), var(--blue), transparent)' }} />
           <div style={{ padding: '3rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2rem', marginBottom: '2.5rem' }}>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.25rem' }}>
-                  <span style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>Flagship</span>
+                  <span style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 600 }}>Flagship</span>
                   <MaturityTag tier="public-beta" />
                 </div>
                 <h2 style={{
@@ -133,7 +133,7 @@ export default function BusinessesPage() {
                   marginBottom: '0.5rem',
                   letterSpacing: '-0.035em',
                 }}>Vytre AWOS</h2>
-                <div style={{ fontSize: '0.64rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>AI Workforce Infrastructure · Enterprise</div>
+                <div style={{ fontSize: '0.64rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 600 }}>AI Workforce Infrastructure · Enterprise</div>
               </div>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
                 <Button href="/vytre" variant="primary">Product Overview →</Button>
@@ -142,7 +142,7 @@ export default function BusinessesPage() {
                   color: 'var(--text-2)', textDecoration: 'none', fontWeight: 500,
                   transition: 'color 0.2s',
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.color = 'var(--gold)' }}
+                  onMouseEnter={e => { e.currentTarget.style.color = 'var(--bronze)' }}
                   onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-2)' }}
                 >vytre.com ↗</a>
               </div>
@@ -162,7 +162,7 @@ export default function BusinessesPage() {
                 ].map(item => (
                   <div key={item.label} style={{ background: 'var(--bg-raised)', padding: '1.25rem', borderRadius: 'var(--radius)', border: '1px solid var(--border-w)' }}>
                     <div style={{ fontSize: '0.58rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 600 }}>{item.label}</div>
-                    <div style={{ fontSize: '0.86rem', color: item.highlight ? 'var(--gold)' : 'var(--text)', fontWeight: item.highlight ? 600 : 500 }}>{item.value}</div>
+                    <div style={{ fontSize: '0.86rem', color: item.highlight ? 'var(--bronze)' : 'var(--text)', fontWeight: item.highlight ? 600 : 500 }}>{item.value}</div>
                   </div>
                 ))}
               </div>
@@ -171,7 +171,7 @@ export default function BusinessesPage() {
                 <div style={{ fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '1rem', fontWeight: 600 }}>Platform Capabilities</div>
                 {['Agent orchestration', 'Workflow intelligence', 'Enterprise integration', 'Observability', 'Governance controls'].map(label => (
                   <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '0.7rem' }}>
-                    <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--gold)', flexShrink: 0, opacity: 0.8 }} />
+                    <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--bronze)', flexShrink: 0, opacity: 0.8 }} />
                     <span style={{ fontSize: '0.8rem', color: 'var(--text-2)', fontWeight: 400 }}>{label}</span>
                   </div>
                 ))}
@@ -198,31 +198,34 @@ export default function BusinessesPage() {
           {additional.map(p => <ProductCard key={p.name} p={p} />)}
         </div>
 
-        <Divider />
+      </div>
 
-        {/* ── STRATEGIC CONTEXT ───────────────────────────────────────────────── */}
-        <div style={{ padding: '5rem 0' }}>
-          <SectionLabel>How It Fits Together</SectionLabel>
-          <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.7, maxWidth: 620, fontWeight: 400, marginBottom: '2.5rem', marginTop: '0.5rem' }}>
+      {/* ── STRATEGIC CONTEXT — mineral editorial band ──────────────────────── */}
+      <section style={{ background: 'var(--mineral)', color: 'var(--mineral-ink)', borderTop: '1px solid var(--hairline)' }}>
+        <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
+          <Eyebrow folio="04" label="How It Fits Together" onMineral />
+          <h2 style={{ fontFamily: FONT.serif, fontWeight: 900, fontSize: 'clamp(1.9rem, 3.6vw, 3rem)', lineHeight: 1.08, letterSpacing: '-0.02em', color: 'var(--mineral-ink)', maxWidth: 640, marginBottom: '1.25rem', textWrap: 'balance' }}>
+            One strategy, three pillars.
+          </h2>
+          <p style={{ fontSize: '1rem', color: 'var(--mineral-ink-2)', lineHeight: 1.7, maxWidth: 640, marginBottom: '3.5rem' }}>
             Today’s products sit within Tarvico’s first strategic pillar — Artificial Intelligence &amp; Global Technology. Two further pillars, AI infrastructure and energy, and intelligent mobility, are long-term ambitions.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0, borderTop: '1px solid var(--mineral-line)' }}>
             {[
-              { label: 'AI Workforce Infrastructure', desc: 'Enterprise AI operating systems and agent orchestration.', companies: 'Vytre AWOS', color: 'var(--gold)' },
-              { label: 'Commerce & Trust', desc: 'Verified, reputation-driven networks for commerce and creative work.', companies: 'Maeyen · Racym', color: 'var(--gold-dim)' },
-              { label: 'Productivity & Search', desc: 'AI assistants and search intelligence that give people leverage.', companies: 'SireIQ · SEOAgentPro', color: 'var(--gold-dim)' },
-            ].map(tier => (
-              <div key={tier.label} style={{ background: 'var(--bg-card)', padding: '2.25rem', border: '1px solid var(--border-w)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
-                <div style={{ width: 32, height: 3, background: tier.color, marginBottom: '1.25rem', borderRadius: 3 }} />
-                <div style={{ fontSize: '1rem', color: 'var(--text)', marginBottom: '0.75rem', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{tier.label}</div>
-                <p style={{ fontSize: '0.84rem', color: 'var(--text-2)', lineHeight: 1.6, fontWeight: 400, marginBottom: '1.25rem' }}>{tier.desc}</p>
-                <div style={{ fontSize: '0.64rem', color: tier.color, letterSpacing: '0.06em', fontWeight: 600 }}>{tier.companies}</div>
+              { label: 'AI Workforce Infrastructure', desc: 'Enterprise AI operating systems and agent orchestration.', companies: 'Vytre AWOS', color: 'var(--bronze-deep)' },
+              { label: 'Commerce & Trust', desc: 'Verified, reputation-driven networks for commerce and creative work.', companies: 'Maeyen · Racym', color: 'var(--petroleum)' },
+              { label: 'Productivity & Search', desc: 'AI assistants and search intelligence that give people leverage.', companies: 'SireIQ · SEOAgentPro', color: 'var(--petroleum)' },
+            ].map((tier, i) => (
+              <div key={tier.label} style={{ padding: '2rem 1.75rem 2rem 0', borderTop: i === 0 ? 'none' : undefined, borderLeft: i > 0 ? '1px solid var(--mineral-line)' : 'none', paddingLeft: i > 0 ? '1.75rem' : 0 }}>
+                <div style={{ width: 28, height: 3, background: tier.color, marginBottom: '1.25rem', borderRadius: 3 }} />
+                <div style={{ fontFamily: FONT.display, fontSize: '1.02rem', color: 'var(--mineral-ink)', marginBottom: '0.6rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{tier.label}</div>
+                <p style={{ fontSize: '0.84rem', color: 'var(--mineral-ink-2)', lineHeight: 1.6, marginBottom: '1.25rem' }}>{tier.desc}</p>
+                <div style={{ fontFamily: FONT.mono, fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: tier.color, fontWeight: 500 }}>{tier.companies}</div>
               </div>
             ))}
           </div>
         </div>
-
-      </div>
+      </section>
     </>
   )
 }

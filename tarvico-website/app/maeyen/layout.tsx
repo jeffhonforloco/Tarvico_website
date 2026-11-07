@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Maeyen — Commerce Trust Infrastructure for Africa',
   description:
-    'Maeyen is a Tarvico company building commerce trust infrastructure for Africa, starting from Nigeria. By verifying participants and protecting transactions, Maeyen lets buyers and sellers transact online with confidence.',
+    'Maeyen is a Tarvico product, currently in development, building commerce trust infrastructure for Africa, starting from Nigeria. By verifying participants and protecting transactions, Maeyen is designed to let buyers and sellers transact online with confidence.',
   keywords: [
     'Maeyen',
     'commerce trust network',

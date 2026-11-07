@@ -1,4 +1,6 @@
-import { PageHero, SectionLabel, Divider, Button } from '@/components/ui'
+import { PageHero, Button, Eyebrow, MaturityTag } from '@/components/ui'
+
+const FONT = { display: 'var(--font-archivo-stack)', serif: 'var(--font-fraunces-stack)', mono: 'var(--mono)', body: 'var(--font-body)' }
 
 const capabilities = [
   { t: 'Agent orchestration', d: 'Deploy and coordinate AI workers across tasks, teams, and systems from a single control plane.' },
@@ -9,9 +11,9 @@ const capabilities = [
 ]
 
 const roadmap = [
-  { phase: 'Now', title: 'Core platform', desc: 'Architecture, the agent orchestration engine, and the enterprise integration framework are in active development.' },
+  { phase: 'Now', title: 'Public beta', desc: 'Vytre AWOS is in public beta — the agent orchestration engine and enterprise integration framework are live and being hardened with early users.' },
   { phase: 'Next', title: 'Enterprise pilots', desc: 'Observability and governance mature toward controlled deployments with early enterprise partners.' },
-  { phase: 'Then', title: 'Public launch', desc: 'General availability and enterprise onboarding as the control plane for AI-driven work at scale.' },
+  { phase: 'Then', title: 'General availability', desc: 'GA and enterprise onboarding as the control plane for AI-driven work at scale.' },
 ]
 
 export default function VytrePage() {
@@ -19,98 +21,83 @@ export default function VytrePage() {
     <>
       <PageHero
         label="Product · Flagship"
-        title={<>Vytre <span className="text-gradient-gold">AWOS</span></>}
+        title={<>Vytre <span className="text-foundry">AWOS</span></>}
         subtitle="An AI Workforce Operating System — the control plane enterprises use to deploy, manage, coordinate, and scale AI workers across operations, workflows, and systems."
       />
 
-      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>
-
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '5rem' }}>
-          <Button href="/contact" variant="primary">Request Early Access →</Button>
-          <Button href="https://www.vytre.com" variant="secondary">Visit vytre.com ↗</Button>
-        </div>
-
-        {/* Problem */}
-        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: '3rem', marginBottom: '5rem' }}>
-          <SectionLabel>The Problem</SectionLabel>
-          <div style={{ maxWidth: 720 }}>
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-2)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-              AI can now perform real work across nearly every business function. But most organizations have no reliable way to deploy that capability at scale — no shared place to run, coordinate, observe, and govern AI workers the way they manage human teams and software systems.
-            </p>
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-2)', lineHeight: 1.8 }}>
-              The result is fragmented experiments: isolated tools, no oversight, and no operating layer that treats AI work as core infrastructure rather than a collection of point solutions.
-            </p>
+      {/* 01 · PROBLEM — graphite */}
+      <section style={{ background: 'var(--bg)' }}>
+        <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem max(1.5rem, 4vw) 0' }}>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '4.5rem', alignItems: 'center' }}>
+            <Button href="/contact" variant="primary">Request Early Access →</Button>
+            <Button href="https://www.vytre.com" variant="secondary">Visit vytre.com ↗</Button>
+            <span style={{ marginLeft: '0.25rem' }}><MaturityTag tier="public-beta" /></span>
           </div>
-        </div>
-
-        <Divider />
-
-        {/* Solution */}
-        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: '3rem', margin: '5rem 0' }}>
-          <SectionLabel>The Solution</SectionLabel>
-          <div style={{ maxWidth: 720 }}>
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-2)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
-              Vytre AWOS is the operating system for AI work. It gives enterprises one control plane to deploy AI workers, connect them to existing systems, coordinate them across workflows, and keep the whole operation observable and governed — the infrastructure layer for the intelligent organization.
-            </p>
-            <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              {capabilities.map(c => (
-                <div key={c.t} style={{
-                  border: '1px solid var(--border-w)',
-                  borderLeftWidth: 2,
-                  borderLeftColor: 'var(--gold-border)',
-                  borderRadius: 'var(--radius)',
-                  padding: '1.5rem 1.7rem',
-                  background: 'var(--bg-card)',
-                }}>
-                  <div style={{ fontSize: '0.95rem', color: 'var(--text)', marginBottom: '0.4rem', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.01em' }}>{c.t}</div>
-                  <p style={{ fontSize: '0.86rem', color: 'var(--text-2)', lineHeight: 1.65 }}>{c.d}</p>
-                </div>
-              ))}
+          <div className="mob-p" style={{ padding: '2.5rem 0 6rem' }}>
+            <Eyebrow folio="01" label="The Problem" />
+            <div style={{ maxWidth: 760, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <p style={{ fontSize: '1.08rem', color: 'var(--text-2)', lineHeight: 1.8 }}>
+                AI can now perform real work across nearly every business function. But most organizations have no reliable way to deploy that capability at scale — no shared place to run, coordinate, observe, and govern AI workers the way they manage human teams and software systems.
+              </p>
+              <p style={{ fontSize: '1.08rem', color: 'var(--text-2)', lineHeight: 1.8 }}>
+                The result is fragmented experiments: isolated tools, no oversight, and no operating layer that treats AI work as core infrastructure rather than a collection of point solutions.
+              </p>
             </div>
           </div>
         </div>
+      </section>
 
-        <Divider />
+      {/* 02 · SOLUTION — mineral editorial band */}
+      <section style={{ background: 'var(--mineral)', color: 'var(--mineral-ink)' }}>
+        <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
+          <Eyebrow folio="02" label="The Solution" onMineral />
+          <h2 style={{ fontFamily: FONT.serif, fontWeight: 900, fontSize: 'clamp(1.8rem, 3.4vw, 2.8rem)', lineHeight: 1.1, letterSpacing: '-0.02em', color: 'var(--mineral-ink)', maxWidth: 820, marginBottom: '1.5rem', textWrap: 'balance' }}>
+            The operating system for AI work.
+          </h2>
+          <p style={{ fontSize: '1.05rem', color: 'var(--mineral-ink-2)', lineHeight: 1.75, maxWidth: 740, marginBottom: '3.5rem' }}>
+            Vytre AWOS gives enterprises one control plane to deploy AI workers, connect them to existing systems, coordinate them across workflows, and keep the whole operation observable and governed — the infrastructure layer for the intelligent organization.
+          </p>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 0, borderTop: '1px solid var(--mineral-line)' }}>
+            {capabilities.map((c, i) => (
+              <div key={c.t} style={{ padding: '1.8rem 1.6rem 1.8rem 0', borderBottom: '1px solid var(--mineral-line)' }}>
+                <div style={{ fontFamily: FONT.mono, fontSize: '0.6rem', letterSpacing: '0.12em', color: 'var(--bronze-deep)', marginBottom: '0.9rem' }}>{String(i + 1).padStart(2, '0')}</div>
+                <div style={{ fontFamily: FONT.display, fontSize: '1rem', color: 'var(--mineral-ink)', marginBottom: '0.45rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{c.t}</div>
+                <p style={{ fontSize: '0.86rem', color: 'var(--mineral-ink-2)', lineHeight: 1.6 }}>{c.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* Vision */}
-        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: '3rem', margin: '5rem 0' }}>
-          <SectionLabel>The Vision</SectionLabel>
-          <blockquote style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(1.4rem, 2.6vw, 2.1rem)',
-            fontWeight: 600,
-            lineHeight: 1.4,
-            color: 'var(--text)',
-            maxWidth: 780,
-            borderLeft: '3px solid var(--gold)',
-            paddingLeft: '2.25rem',
-            letterSpacing: '-0.02em',
-          }}>
-            &ldquo;Every organization will run on a blend of human and AI work. Vytre exists to make that blend deployable, coordinated, and accountable — so companies operate more intelligently while people keep more leverage over their time and creativity.&rdquo;
+      {/* 03 · VISION — graphite, Fraunces quote */}
+      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--hairline)' }}>
+        <div className="mob-p" style={{ maxWidth: 1000, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
+          <Eyebrow folio="03" label="The Vision" />
+          <blockquote style={{ fontFamily: FONT.serif, fontSize: 'clamp(1.5rem, 2.8vw, 2.3rem)', fontWeight: 500, lineHeight: 1.32, color: 'var(--text)', maxWidth: 860, borderLeft: '2px solid var(--bronze)', paddingLeft: '2.25rem', letterSpacing: '-0.015em' }}>
+            <span style={{ color: 'var(--bronze)', fontStyle: 'italic' }}>&ldquo;</span>Every organization will run on a blend of human and AI work. Vytre exists to make that blend deployable, coordinated, and accountable — so companies operate more intelligently while people keep more leverage over their time and creativity.<span style={{ color: 'var(--bronze)', fontStyle: 'italic' }}>&rdquo;</span>
           </blockquote>
         </div>
+      </section>
 
-        <Divider />
-
-        {/* Stage + Roadmap */}
-        <div style={{ margin: '5rem 0 0' }}>
-          <SectionLabel>Current Stage &amp; Roadmap</SectionLabel>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, margin: '2rem 0 2.5rem', border: '1px solid var(--gold-border)', color: 'var(--gold)', fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', padding: '6px 14px', fontWeight: 600, background: 'var(--gold-glow)', borderRadius: 999 }}>
-            <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--gold)' }} />
-            Flagship · Active development · Targeting 2026
+      {/* 04 · ROADMAP — graphite raised */}
+      <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--hairline)' }}>
+        <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
+          <Eyebrow folio="04" label="Current Stage & Roadmap" />
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, margin: '0 0 2.5rem', border: '1px solid var(--bronze-line)', color: 'var(--bronze)', fontFamily: FONT.mono, fontSize: '0.6rem', letterSpacing: '0.14em', textTransform: 'uppercase', padding: '6px 14px', fontWeight: 500, background: 'var(--bronze-soft)', borderRadius: 999 }}>
+            <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--bronze)' }} />
+            Flagship · Public Beta
           </div>
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
-            {roadmap.map(r => (
-              <div key={r.phase} style={{ border: '1px solid var(--border-w)', borderRadius: 'var(--radius-lg)', background: 'var(--bg-card)', padding: '2rem', boxShadow: 'var(--shadow-sm)' }}>
-                <div style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600, marginBottom: '1rem' }}>{r.phase}</div>
-                <div style={{ fontSize: '1.05rem', color: 'var(--text)', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em', marginBottom: '0.6rem' }}>{r.title}</div>
+            {roadmap.map((r, i) => (
+              <div key={r.phase} style={{ border: '1px solid var(--hairline)', borderTop: `2px solid ${i === 0 ? 'var(--bronze)' : 'var(--hairline)'}`, borderRadius: 'var(--radius-lg)', background: 'var(--bg-card)', padding: '2rem', boxShadow: 'var(--shadow-sm)' }}>
+                <div style={{ fontFamily: FONT.mono, fontSize: '0.58rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: i === 0 ? 'var(--bronze)' : 'var(--text-3)', fontWeight: 500, marginBottom: '1rem' }}>{r.phase}</div>
+                <div style={{ fontFamily: FONT.display, fontSize: '1.05rem', color: 'var(--text)', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '0.6rem' }}>{r.title}</div>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-2)', lineHeight: 1.65 }}>{r.desc}</p>
               </div>
             ))}
           </div>
         </div>
-
-      </div>
+      </section>
     </>
   )
 }

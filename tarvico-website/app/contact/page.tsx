@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { PageHero, SectionLabel, Button } from '@/components/ui'
 
 const channels = [
-  { label: 'Investor Inquiries', email: 'investors@tarvico.com', desc: 'For investment discussions, strategic partnerships, and financial inquiries.', color: 'var(--gold)', border: 'var(--gold-border)', bg: 'var(--gold-glow)' },
+  { label: 'Investor Inquiries', email: 'investors@tarvico.com', desc: 'For investment discussions, strategic partnerships, and financial inquiries.', color: 'var(--bronze)', border: 'var(--bronze-line)', bg: 'var(--bronze-soft)' },
   { label: 'Enterprise & Partnerships', email: 'partnerships@tarvico.com', desc: 'For enterprise access to Vytre AWOS and portfolio product partnerships.', color: 'var(--blue)', border: 'var(--blue-border)', bg: 'var(--blue-glow)' },
   { label: 'Press & Media', email: 'press@tarvico.com', desc: 'For media inquiries, press requests, and interview coordination.', color: 'var(--text-2)', border: 'var(--border-w)', bg: 'transparent' },
   { label: 'Careers', email: 'careers@tarvico.com', desc: "Interested in joining the team? Send your background and what you'd like to build.", color: 'var(--text-2)', border: 'var(--border-w)', bg: 'transparent' },
@@ -60,7 +60,7 @@ export default function ContactPage() {
     <>
       <PageHero
         label="Contact"
-        title={<>Let&apos;s build something <span className="text-gradient-gold">significant.</span></>}
+        title={<>Let&apos;s build something <span className="text-foundry">significant.</span></>}
         subtitle="Whether you're an investor, potential partner, future team member, or enterprise customer — we'd like to hear from you."
       />
 
@@ -108,7 +108,7 @@ export default function ContactPage() {
                 8 The Green, #5275<br />
                 Dover, DE 19901<br />
                 United States<br />
-                <a href="tel:+13024396442" style={{ color: 'var(--gold)', textDecoration: 'none', fontWeight: 500 }}>+1 (302) 439-6442</a><br />
+                <a href="tel:+13024396442" style={{ color: 'var(--bronze)', textDecoration: 'none', fontWeight: 500 }}>+1 (302) 439-6442</a><br />
                 <span style={{ color: 'var(--text-3)', fontSize: '0.75rem' }}>Distributed team · Global operations</span>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function ContactPage() {
                       onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                       style={inputStyle}
                       placeholder="Your name"
-                      onFocus={e => { e.target.style.borderColor = 'var(--gold-border)' }}
+                      onFocus={e => { e.target.style.borderColor = 'var(--bronze-line)' }}
                       onBlur={e => { e.target.style.borderColor = 'var(--border-w)' }}
                     />
                   </div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                       onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                       style={inputStyle}
                       placeholder="your@email.com"
-                      onFocus={e => { e.target.style.borderColor = 'var(--gold-border)' }}
+                      onFocus={e => { e.target.style.borderColor = 'var(--bronze-line)' }}
                       onBlur={e => { e.target.style.borderColor = 'var(--border-w)' }}
                     />
                   </div>
@@ -161,7 +161,7 @@ export default function ContactPage() {
                     value={form.type}
                     onChange={e => setForm(f => ({ ...f, type: e.target.value }))}
                     style={{ ...inputStyle, cursor: 'pointer' }}
-                    onFocus={e => { e.target.style.borderColor = 'var(--gold-border)' }}
+                    onFocus={e => { e.target.style.borderColor = 'var(--bronze-line)' }}
                     onBlur={e => { e.target.style.borderColor = 'var(--border-w)' }}
                   >
                     <option value="" style={{ background: 'var(--bg-card)', color: 'var(--text-3)' }}>Select inquiry type</option>
@@ -180,7 +180,7 @@ export default function ContactPage() {
                     onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                     style={{ ...inputStyle, resize: 'none' as const, lineHeight: 1.7 }}
                     placeholder="Tell us about your inquiry..."
-                    onFocus={e => { e.target.style.borderColor = 'var(--gold-border)' }}
+                    onFocus={e => { e.target.style.borderColor = 'var(--bronze-line)' }}
                     onBlur={e => { e.target.style.borderColor = 'var(--border-w)' }}
                   />
                 </div>

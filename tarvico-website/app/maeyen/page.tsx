@@ -17,7 +17,7 @@ export default function MaeyenPage() {
     <>
       <PageHero
         label="Product · Commerce Trust"
-        title={<><span className="text-gradient-gold">Maeyen</span></>}
+        title={<><span className="text-foundry">Maeyen</span></>}
         subtitle="Commerce trust infrastructure for Africa, starting from Nigeria — built to solve the biggest problem in online commerce: trust between buyers and sellers."
       />
 
@@ -55,7 +55,7 @@ export default function MaeyenPage() {
                 <div key={p.t} style={{
                   border: '1px solid var(--border-w)',
                   borderLeftWidth: 2,
-                  borderLeftColor: 'var(--gold-border)',
+                  borderLeftColor: 'var(--bronze-line)',
                   borderRadius: 'var(--radius)',
                   padding: '1.5rem 1.7rem',
                   background: 'var(--bg-card)',
@@ -80,7 +80,7 @@ export default function MaeyenPage() {
             lineHeight: 1.4,
             color: 'var(--text)',
             maxWidth: 780,
-            borderLeft: '3px solid var(--gold)',
+            borderLeft: '3px solid var(--bronze)',
             paddingLeft: '2.25rem',
             letterSpacing: '-0.02em',
           }}>
@@ -93,14 +93,14 @@ export default function MaeyenPage() {
         {/* Stage + Roadmap */}
         <div style={{ margin: '5rem 0 0' }}>
           <SectionLabel>Current Stage &amp; Roadmap</SectionLabel>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, margin: '2rem 0 2.5rem', border: '1px solid var(--gold-border)', color: 'var(--gold)', fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', padding: '6px 14px', fontWeight: 600, background: 'var(--gold-glow)', borderRadius: 999 }}>
-            <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--gold)' }} className="animate-pulse-gold" />
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, margin: '2rem 0 2.5rem', border: '1px solid var(--bronze-line)', color: 'var(--bronze)', fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', padding: '6px 14px', fontWeight: 600, background: 'var(--bronze-soft)', borderRadius: 999 }}>
+            <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--bronze)' }} className="animate-pulse-gold" />
             Building · Nigeria first
           </div>
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
             {roadmap.map(r => (
               <div key={r.phase} style={{ border: '1px solid var(--border-w)', borderRadius: 'var(--radius-lg)', background: 'var(--bg-card)', padding: '2rem', boxShadow: 'var(--shadow-sm)' }}>
-                <div style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600, marginBottom: '1rem' }}>{r.phase}</div>
+                <div style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 600, marginBottom: '1rem' }}>{r.phase}</div>
                 <div style={{ fontSize: '1.05rem', color: 'var(--text)', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em', marginBottom: '0.6rem' }}>{r.title}</div>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-2)', lineHeight: 1.65 }}>{r.desc}</p>
               </div>
