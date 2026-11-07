@@ -166,35 +166,35 @@ export default function HomePage() {
   return (
     <>
       {/* ── 00 · HERO ──────────────────────────────────────────────────────── */}
-      <section style={{ position: 'relative', minHeight: 'calc(100vh - 72px)', display: 'flex', alignItems: 'center', overflow: 'hidden', background: 'var(--bg)' }}>
+      <section className="home-hero" style={{ position: 'relative', display: 'flex', overflow: 'hidden', background: 'var(--bg)' }}>
         <div className="aurel-blueprint" style={{ position: 'absolute', inset: 0, opacity: 0.8 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 70% at 68% 42%, transparent 20%, var(--bg) 78%)' }} />
         {/* left bronze edge rule */}
         <div style={{ position: 'absolute', top: 0, bottom: 0, left: 'max(1.5rem, 4vw)', width: 1, background: 'linear-gradient(to bottom, transparent, var(--bronze-line) 20%, var(--bronze-line) 80%, transparent)' }} className="mob-hide" />
 
         <div className="mob-px" style={{ position: 'relative', zIndex: 2, maxWidth: 1280, margin: '0 auto', padding: '0 max(1.5rem, 4vw)', width: '100%' }}>
-          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1.15fr auto', gap: '3rem', alignItems: 'center' }}>
+          <div className="home-hero-grid">
             <div>
-              <div className="animate-fade-in delay-100" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+              <div className="home-hero-identity" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <span style={mono({ color: 'var(--text-3)' })}>00 — Tarvico Inc.</span>
                 <DimLine color="var(--hairline)" />
                 <span style={mono({ color: 'var(--petroleum-ink)' })}>Est. Delaware · USA</span>
               </div>
 
-              <div className="animate-fade-in delay-100" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, marginBottom: '2rem', padding: '7px 15px 7px 11px', border: '1px solid var(--bronze-line)', borderRadius: 999, background: 'var(--bronze-soft)' }}>
+              <div className="home-hero-identity animate-fade-in delay-100" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, padding: '7px 15px 7px 11px', border: '1px solid var(--bronze-line)', borderRadius: 999, background: 'var(--bronze-soft)' }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--bronze)', display: 'inline-block' }} className="animate-pulse-gold" />
                 <span style={mono({ color: 'var(--text-2)', fontSize: '0.6rem', letterSpacing: '0.16em' })}>U.S. Private Technology Company</span>
               </div>
 
-              <h1 className="aurel-display animate-aurel-clip delay-250" style={{ fontSize: 'clamp(2.9rem, 7vw, 6.4rem)', color: 'var(--text)', marginBottom: '1.9rem' }}>
+              <h1 className="home-hero-title aurel-display animate-aurel-clip delay-250" style={{ color: 'var(--text)' }}>
                 Building<br />Technology<br />for a <span className="text-foundry">Connected World</span>.
               </h1>
 
-              <p className="animate-fade-up delay-400" style={{ fontSize: '1.14rem', color: 'var(--text-2)', maxWidth: 540, lineHeight: 1.62, marginBottom: '2.5rem', fontWeight: 400 }}>
+              <p className="home-hero-summary animate-fade-up delay-400" style={{ color: 'var(--text-2)', maxWidth: 540, lineHeight: 1.62, fontWeight: 400 }}>
                 Tarvico Inc. is a privately held U.S. technology company building artificial intelligence, digital platforms, and emerging technology businesses — with a long-term vision spanning global technology, intelligent mobility, computing infrastructure, and sustainable energy.
               </p>
 
-              <div className="animate-fade-up delay-550" style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+              <div className="home-hero-actions animate-fade-up delay-550" style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
                 <Button href="/portfolio" variant="primary">Our Businesses →</Button>
                 <Button href="/investors" variant="secondary">Investor Relations</Button>
               </div>

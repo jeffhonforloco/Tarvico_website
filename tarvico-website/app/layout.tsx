@@ -459,7 +459,7 @@ export default function RootLayout({
       </head>
       <body>
         <Nav />
-        <main style={{ paddingTop: 72, minHeight: '100vh' }}>{children}</main>
+        <main style={{ paddingTop: 'var(--site-header-height)', minHeight: '100vh' }}>{children}</main>
         <Footer />
       </body>
     </html>

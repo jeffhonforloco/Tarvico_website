@@ -4,6 +4,8 @@
 @tailwind utilities;
 
 :root {
+  --site-header-height: calc(80px + env(safe-area-inset-top, 0px));
+
   /* Backgrounds — refined dark, slightly cool near-black */
   --bg:        #0A0A0C;
   --bg-raised: #101013;
@@ -473,8 +475,45 @@ body {
   }
 }
 
+.home-hero {
+  min-height: calc(100vh - var(--site-header-height));
+  min-height: calc(100svh - var(--site-header-height));
+  padding-block: 2rem;
+  align-items: center;
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+.home-hero-identity { margin-bottom: 2rem; }
+.home-hero-title { font-size: clamp(2.9rem, 7vw, 6.4rem); margin-bottom: 1.9rem; }
+.home-hero-summary { font-size: 1.14rem; margin-bottom: 2.5rem; }
+.home-hero-actions { margin-bottom: 3rem; }
+
+@media (max-width: 900px) {
+  .home-hero {
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .home-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* ── Mobile Responsive ────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
+  .home-hero { padding-block: 1.5rem; }
+  .home-hero-grid { gap: 1.5rem; }
+  .home-hero-identity, .home-hero-title { margin-bottom: 1rem; }
+  .home-hero-title { font-size: clamp(2rem, 9vw, 2.9rem); }
+  .home-hero-summary { font-size: 1rem; margin-bottom: 1.25rem; }
+  .home-hero-actions { margin-bottom: 1.5rem; }
+
   .mob-px  { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
   .mob-p   { padding: 4rem 1.25rem !important; }
   .mob-py  { padding-top: 4rem !important; padding-bottom: 4rem !important; }

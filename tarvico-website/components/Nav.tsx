@@ -63,11 +63,11 @@ export default function Nav() {
       left: 0,
       right: 0,
       zIndex: 100,
-      height: 80,
+      height: 'var(--site-header-height)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '0 3rem 0 1.5rem',
+      padding: 'env(safe-area-inset-top, 0px) 3rem 0 1.5rem',
       background: scrolled
         ? theme === 'light' ? 'rgba(247,245,241,0.95)' : 'rgba(7,7,10,0.94)'
         : theme === 'light' ? 'rgba(247,245,241,0.80)' : 'rgba(7,7,10,0.72)',
@@ -89,7 +89,7 @@ export default function Nav() {
         />
       </Link>
 
-      <div className="hidden md:flex" style={{ gap: '2.75rem', alignItems: 'center' }}>
+      <div className="hidden lg:flex" style={{ gap: '2.75rem', alignItems: 'center' }}>
         {links.map(({ href, label }) => {
           const active = pathname === href
           return (
@@ -126,7 +126,7 @@ export default function Nav() {
         })}
       </div>
 
-      <div className="hidden md:flex" style={{ alignItems: 'center', gap: '1rem' }}>
+      <div className="hidden lg:flex" style={{ alignItems: 'center', gap: '1rem' }}>
         <button
           onClick={toggleTheme}
           aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -179,7 +179,7 @@ export default function Nav() {
         </Link>
       </div>
 
-      <div className="flex md:hidden" style={{ alignItems: 'center', gap: '0.75rem' }}>
+      <div className="flex lg:hidden" style={{ alignItems: 'center', gap: '0.75rem' }}>
         <button
           onClick={toggleTheme}
           aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -208,6 +208,7 @@ export default function Nav() {
             lineHeight: 1,
           }}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           {open ? '✕' : '☰'}
         </button>
@@ -218,10 +219,11 @@ export default function Nav() {
     {mounted && open && createPortal(
       <div style={{
         position: 'fixed',
-        top: 80,
+        top: 'var(--site-header-height)',
         left: 0,
         right: 0,
         bottom: 0,
+        overflowY: 'auto',
         background: theme === 'light' ? 'rgba(247,245,241,0.98)' : 'rgba(7,7,10,0.98)',
         backdropFilter: 'blur(24px)',
         WebkitBackdropFilter: 'blur(24px)',
