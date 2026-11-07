@@ -66,30 +66,30 @@ const paragraphs = [
   { bold: true, text: 'We are only getting started.' },
 ]
 
-const DISPLAY = 'var(--font-archivo-stack)'
-const SERIF = 'var(--font-fraunces-stack)'
-const MONO = 'var(--mono)'
+const DISPLAY = 'var(--font-display)'
+const SERIF = 'var(--font-editorial)'
+const MONO = 'var(--font-body)'
 
 export default function VisionPage() {
   return (
-    <div style={{ background: 'var(--mineral)', color: 'var(--mineral-ink)', minHeight: '100vh' }}>
+    <div className="keystone-paper" style={{ minHeight: '100vh' }}>
       {/* Letter masthead */}
-      <div className="mob-px" style={{ maxWidth: 1100, margin: '0 auto', padding: '7rem max(1.5rem, 4vw) 3rem', borderBottom: '1px solid var(--mineral-line)' }}>
+      <div className="mob-px" style={{ maxWidth: 1100, margin: '0 auto', padding: '7rem max(1.5rem, 4vw) 3rem', borderBottom: '1px solid var(--paper-line)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.75rem' }}>
-          <span style={{ fontFamily: MONO, fontSize: '0.64rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--bronze-deep)', fontWeight: 500 }}>Founder Letter · 2026</span>
+          <span style={{ fontFamily: MONO, fontSize: '0.64rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--paper-ink)', fontWeight: 500 }}>Founder Letter · 2026</span>
           <span aria-hidden style={{ display: 'flex', alignItems: 'center', flex: 1, minWidth: 28 }}>
-            <span style={{ width: 1, height: 6, background: 'var(--mineral-line)' }} />
-            <span style={{ flex: 1, height: 1, background: 'var(--mineral-line)' }} />
-            <span style={{ width: 1, height: 6, background: 'var(--mineral-line)' }} />
+            <span style={{ width: 1, height: 6, background: 'var(--paper-line)' }} />
+            <span style={{ flex: 1, height: 1, background: 'var(--paper-line)' }} />
+            <span style={{ width: 1, height: 6, background: 'var(--paper-line)' }} />
           </span>
         </div>
         <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '3rem', alignItems: 'end' }}>
-          <h1 style={{ fontFamily: DISPLAY, fontSize: 'clamp(2.6rem, 5.5vw, 5rem)', fontWeight: 800, lineHeight: 0.98, color: 'var(--mineral-ink)', letterSpacing: '-0.035em' }}>
+          <h1 style={{ fontFamily: DISPLAY, fontSize: 'clamp(2.6rem, 5.5vw, 5rem)', fontWeight: 800, lineHeight: 0.98, color: 'var(--paper-ink)', letterSpacing: '-0.035em' }}>
             Building for<br />the Next Era
           </h1>
           <div style={{ paddingBottom: '0.4rem' }}>
-            <div style={{ fontFamily: SERIF, fontSize: '1.05rem', fontWeight: 500, fontStyle: 'italic', color: 'var(--mineral-ink)', marginBottom: '0.3rem' }}>Jeff Yèmalín Bienvenu Honforloco</div>
-            <div style={{ fontFamily: MONO, fontSize: '0.6rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--mineral-ink-2)', fontWeight: 500 }}>Founder &amp; Chief Executive Officer</div>
+            <div style={{ fontFamily: SERIF, fontSize: '1.05rem', fontWeight: 500, fontStyle: 'italic', color: 'var(--paper-ink)', marginBottom: '0.3rem' }}>Jeff Yèmalín Bienvenu Honforloco</div>
+            <div style={{ fontFamily: MONO, fontSize: '0.6rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--paper-muted)', fontWeight: 500 }}>Founder &amp; Chief Executive Officer</div>
           </div>
         </div>
       </div>
@@ -97,33 +97,33 @@ export default function VisionPage() {
       <article className="mob-px" style={{ maxWidth: 680, margin: '0 auto', padding: '5rem max(1.5rem, 4vw) 9rem' }}>
         {paragraphs.map((p, i) => {
           if (p.lead) return (
-            <p key={i} style={{ fontFamily: SERIF, fontSize: 'clamp(1.45rem, 2.6vw, 2rem)', fontWeight: 500, color: 'var(--mineral-ink)', lineHeight: 1.4, marginBottom: '3rem', paddingLeft: '2rem', borderLeft: '2px solid var(--bronze-deep)', letterSpacing: '-0.015em' }}>
-              <span style={{ color: 'var(--bronze-deep)', fontStyle: 'italic' }}>&ldquo;</span>{p.text}<span style={{ color: 'var(--bronze-deep)', fontStyle: 'italic' }}>&rdquo;</span>
+            <p key={i} style={{ fontFamily: SERIF, fontSize: 'clamp(1.45rem, 2.6vw, 2rem)', fontWeight: 500, color: 'var(--paper-ink)', lineHeight: 1.4, marginBottom: '3rem', paddingLeft: '2rem', borderLeft: '2px solid var(--paper-ink)', letterSpacing: '-0.015em' }}>
+              <span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>&ldquo;</span>{p.text}<span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>&rdquo;</span>
             </p>
           )
           if (p.bold) return (
-            <p key={i} style={{ fontFamily: SERIF, fontSize: 'clamp(1.2rem, 2.2vw, 1.5rem)', color: 'var(--mineral-ink)', lineHeight: 1.5, fontWeight: 500, margin: '2.5rem 0', letterSpacing: '-0.01em' }}>
+            <p key={i} style={{ fontFamily: SERIF, fontSize: 'clamp(1.2rem, 2.2vw, 1.5rem)', color: 'var(--paper-ink)', lineHeight: 1.5, fontWeight: 500, margin: '2.5rem 0', letterSpacing: '-0.01em' }}>
               {p.text}
             </p>
           )
           return (
-            <p key={i} style={{ fontSize: '1.08rem', color: 'var(--mineral-ink-2)', lineHeight: 1.85, fontWeight: 400, marginBottom: '1.75rem' }}>
+            <p key={i} style={{ fontSize: '1.08rem', color: 'var(--paper-muted)', lineHeight: 1.85, fontWeight: 400, marginBottom: '1.75rem' }}>
               {p.text}
             </p>
           )
         })}
 
-        <div style={{ marginTop: '5rem', paddingTop: '3rem', borderTop: '1px solid var(--mineral-line)' }}>
-          <div style={{ fontFamily: SERIF, fontSize: '1.7rem', fontWeight: 500, fontStyle: 'italic', color: 'var(--mineral-ink)', marginBottom: '0.6rem', letterSpacing: '-0.01em' }}>
+        <div style={{ marginTop: '5rem', paddingTop: '3rem', borderTop: '1px solid var(--paper-line)' }}>
+          <div style={{ fontFamily: SERIF, fontSize: '1.7rem', fontWeight: 500, fontStyle: 'italic', color: 'var(--paper-ink)', marginBottom: '0.6rem', letterSpacing: '-0.01em' }}>
             Jeff Yèmalín Bienvenu Honforloco
           </div>
-          <div style={{ fontFamily: MONO, fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--bronze-deep)', fontWeight: 500, marginBottom: '0.3rem' }}>
+          <div style={{ fontFamily: MONO, fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--paper-ink)', fontWeight: 500, marginBottom: '0.3rem' }}>
             Founder &amp; Chief Executive Officer
           </div>
-          <div style={{ fontFamily: MONO, fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--mineral-ink-2)', fontWeight: 400 }}>
+          <div style={{ fontFamily: MONO, fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--paper-muted)', fontWeight: 400 }}>
             Tarvico Inc. · 2026
           </div>
-          <Link href="/founder" style={{ display: 'inline-block', marginTop: '2rem', fontFamily: MONO, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--bronze-deep)', fontWeight: 500, textDecoration: 'none', borderBottom: '1px solid var(--bronze-line)', paddingBottom: 4 }}>
+          <Link href="/founder" style={{ display: 'inline-block', marginTop: '2rem', fontFamily: MONO, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--paper-ink)', fontWeight: 500, textDecoration: 'none', borderBottom: '1px solid var(--accent-line)', paddingBottom: 4 }}>
             View founder profile →
           </Link>
         </div>

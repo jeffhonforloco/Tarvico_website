@@ -1,6 +1,7 @@
+import ConceptImage from '@/components/ConceptImage'
 import { PageHero, Button, Eyebrow, MaturityTag } from '@/components/ui'
 
-const FONT = { display: 'var(--font-archivo-stack)', serif: 'var(--font-fraunces-stack)', mono: 'var(--mono)', body: 'var(--font-body)' }
+const FONT = { display: 'var(--font-display)', serif: 'var(--font-editorial)', mono: 'var(--font-body)', body: 'var(--font-body)' }
 
 const capabilities = [
   { t: 'Agent orchestration', d: 'Deploy and coordinate AI workers across tasks, teams, and systems from a single control plane.' },
@@ -20,10 +21,12 @@ export default function VytrePage() {
   return (
     <>
       <PageHero
-        label="Product · Flagship"
-        title={<>Vytre <span className="text-foundry">AWOS</span></>}
+        label="Flagship product · Public beta"
+        title={<>Vytre <span className="editorial-emphasis">AWOS</span></>}
         subtitle="An AI Workforce Operating System — the control plane enterprises use to deploy, manage, coordinate, and scale AI workers across operations, workflows, and systems."
       />
+
+      <div className="keystone-shell product-visual"><ConceptImage study="vytre" /></div>
 
       {/* 01 · PROBLEM — graphite */}
       <section style={{ background: 'var(--bg)' }}>
@@ -48,21 +51,21 @@ export default function VytrePage() {
       </section>
 
       {/* 02 · SOLUTION — mineral editorial band */}
-      <section style={{ background: 'var(--mineral)', color: 'var(--mineral-ink)' }}>
+      <section className="keystone-paper">
         <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
           <Eyebrow folio="02" label="The Solution" onMineral />
-          <h2 style={{ fontFamily: FONT.serif, fontWeight: 900, fontSize: 'clamp(1.8rem, 3.4vw, 2.8rem)', lineHeight: 1.1, letterSpacing: '-0.02em', color: 'var(--mineral-ink)', maxWidth: 820, marginBottom: '1.5rem', textWrap: 'balance' }}>
+          <h2 style={{ fontFamily: FONT.display, fontWeight: 670, fontSize: 'clamp(1.8rem, 3.4vw, 2.8rem)', lineHeight: 1.1, letterSpacing: '-0.02em', color: 'var(--paper-ink)', maxWidth: 820, marginBottom: '1.5rem', textWrap: 'balance' }}>
             The operating system for AI work.
           </h2>
-          <p style={{ fontSize: '1.05rem', color: 'var(--mineral-ink-2)', lineHeight: 1.75, maxWidth: 740, marginBottom: '3.5rem' }}>
+          <p style={{ fontSize: '1.05rem', color: 'var(--paper-muted)', lineHeight: 1.75, maxWidth: 740, marginBottom: '3.5rem' }}>
             Vytre AWOS gives enterprises one control plane to deploy AI workers, connect them to existing systems, coordinate them across workflows, and keep the whole operation observable and governed — the infrastructure layer for the intelligent organization.
           </p>
-          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 0, borderTop: '1px solid var(--mineral-line)' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 0, borderTop: '1px solid var(--paper-line)' }}>
             {capabilities.map((c, i) => (
-              <div key={c.t} style={{ padding: '1.8rem 1.6rem 1.8rem 0', borderBottom: '1px solid var(--mineral-line)' }}>
-                <div style={{ fontFamily: FONT.mono, fontSize: '0.6rem', letterSpacing: '0.12em', color: 'var(--bronze-deep)', marginBottom: '0.9rem' }}>{String(i + 1).padStart(2, '0')}</div>
-                <div style={{ fontFamily: FONT.display, fontSize: '1rem', color: 'var(--mineral-ink)', marginBottom: '0.45rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{c.t}</div>
-                <p style={{ fontSize: '0.86rem', color: 'var(--mineral-ink-2)', lineHeight: 1.6 }}>{c.d}</p>
+              <div key={c.t} style={{ padding: '1.8rem 1.6rem 1.8rem 0', borderBottom: '1px solid var(--paper-line)' }}>
+                <div style={{ fontFamily: FONT.mono, fontSize: '0.6rem', letterSpacing: '0.12em', color: 'var(--paper-ink)', marginBottom: '0.9rem' }}>{String(i + 1).padStart(2, '0')}</div>
+                <div style={{ fontFamily: FONT.display, fontSize: '1rem', color: 'var(--paper-ink)', marginBottom: '0.45rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{c.t}</div>
+                <p style={{ fontSize: '0.86rem', color: 'var(--paper-muted)', lineHeight: 1.6 }}>{c.d}</p>
               </div>
             ))}
           </div>
@@ -70,27 +73,27 @@ export default function VytrePage() {
       </section>
 
       {/* 03 · VISION — graphite, Fraunces quote */}
-      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--hairline)' }}>
+      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={{ maxWidth: 1000, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
           <Eyebrow folio="03" label="The Vision" />
-          <blockquote style={{ fontFamily: FONT.serif, fontSize: 'clamp(1.5rem, 2.8vw, 2.3rem)', fontWeight: 500, lineHeight: 1.32, color: 'var(--text)', maxWidth: 860, borderLeft: '2px solid var(--bronze)', paddingLeft: '2.25rem', letterSpacing: '-0.015em' }}>
-            <span style={{ color: 'var(--bronze)', fontStyle: 'italic' }}>&ldquo;</span>Every organization will run on a blend of human and AI work. Vytre exists to make that blend deployable, coordinated, and accountable — so companies operate more intelligently while people keep more leverage over their time and creativity.<span style={{ color: 'var(--bronze)', fontStyle: 'italic' }}>&rdquo;</span>
+          <blockquote style={{ fontFamily: FONT.serif, fontSize: 'clamp(1.5rem, 2.8vw, 2.3rem)', fontWeight: 500, lineHeight: 1.32, color: 'var(--text)', maxWidth: 860, borderLeft: '2px solid var(--text)', paddingLeft: '2.25rem', letterSpacing: '-0.015em' }}>
+            <span style={{ color: 'var(--text)', fontStyle: 'italic' }}>&ldquo;</span>Every organization will run on a blend of human and AI work. Vytre exists to make that blend deployable, coordinated, and accountable — so companies operate more intelligently while people keep more leverage over their time and creativity.<span style={{ color: 'var(--text)', fontStyle: 'italic' }}>&rdquo;</span>
           </blockquote>
         </div>
       </section>
 
       {/* 04 · ROADMAP — graphite raised */}
-      <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--hairline)' }}>
+      <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
           <Eyebrow folio="04" label="Current Stage & Roadmap" />
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, margin: '0 0 2.5rem', border: '1px solid var(--bronze-line)', color: 'var(--bronze)', fontFamily: FONT.mono, fontSize: '0.6rem', letterSpacing: '0.14em', textTransform: 'uppercase', padding: '6px 14px', fontWeight: 500, background: 'var(--bronze-soft)', borderRadius: 999 }}>
-            <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--bronze)' }} />
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, margin: '0 0 2.5rem', border: '1px solid var(--accent-line)', color: 'var(--text)', fontFamily: FONT.mono, fontSize: '0.6rem', letterSpacing: '0.14em', textTransform: 'uppercase', padding: '6px 14px', fontWeight: 500, background: 'var(--accent-soft)', borderRadius: 999 }}>
+            <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--text)' }} />
             Flagship · Public Beta
           </div>
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
             {roadmap.map((r, i) => (
-              <div key={r.phase} style={{ border: '1px solid var(--hairline)', borderTop: `2px solid ${i === 0 ? 'var(--bronze)' : 'var(--hairline)'}`, borderRadius: 'var(--radius-lg)', background: 'var(--bg-card)', padding: '2rem', boxShadow: 'var(--shadow-sm)' }}>
-                <div style={{ fontFamily: FONT.mono, fontSize: '0.58rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: i === 0 ? 'var(--bronze)' : 'var(--text-3)', fontWeight: 500, marginBottom: '1rem' }}>{r.phase}</div>
+              <div key={r.phase} style={{ border: '1px solid var(--border-w)', borderTop: `2px solid ${i === 0 ? 'var(--text)' : 'var(--border-w)'}`, borderRadius: 'var(--radius-lg)', background: 'var(--bg-card)', padding: '2rem', boxShadow: 'var(--shadow-sm)' }}>
+                <div style={{ fontFamily: FONT.mono, fontSize: '0.58rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: i === 0 ? 'var(--text)' : 'var(--text-3)', fontWeight: 500, marginBottom: '1rem' }}>{r.phase}</div>
                 <div style={{ fontFamily: FONT.display, fontSize: '1.05rem', color: 'var(--text)', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '0.6rem' }}>{r.title}</div>
                 <p style={{ fontSize: '0.86rem', color: 'var(--text-2)', lineHeight: 1.65 }}>{r.desc}</p>
               </div>

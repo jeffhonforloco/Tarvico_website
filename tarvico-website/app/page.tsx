@@ -1,21 +1,11 @@
-'use client'
-
 import Link from 'next/link'
-import { useEffect, useRef } from 'react'
-import { Button, FadeUp } from '@/components/ui'
+import ConceptImage from '@/components/ConceptImage'
+import { Button, FadeUp, MaturityTag } from '@/components/ui'
 import { featuredBusinesses, PILLARS } from '@/lib/businesses'
 
-/* ══════════════════════════════════════════════════════════════════════════
-   Project AUREL · FOUNDRY homepage prototype (A-led hybrid)
-   - Architectural Intelligence (A) as the core language
-   - Mineral-white editorial bands carry Direction C's institutional voice
-   - One signature 3D "computational keystone" sculpture (B's systems idea)
-   All factual copy is preserved verbatim from the approved content.
-   ══════════════════════════════════════════════════════════════════════════ */
-
-const DISPLAY = 'var(--font-archivo-stack)'
-const SERIF = 'var(--font-fraunces-stack)'
-const MONO = 'var(--mono)'
+const DISPLAY = 'var(--font-display)'
+const SERIF = 'var(--font-editorial)'
+const MONO = 'var(--font-body)'
 
 const mono = (extra: React.CSSProperties = {}): React.CSSProperties => ({
   fontFamily: MONO, fontSize: '0.62rem', letterSpacing: '0.22em',
@@ -23,7 +13,7 @@ const mono = (extra: React.CSSProperties = {}): React.CSSProperties => ({
 })
 
 /* Engineering dimension line: ─┬───────┬─ with end ticks */
-function DimLine({ color = 'var(--bronze-line)', flex = true }: { color?: string; flex?: boolean }) {
+function DimLine({ color = 'var(--accent-line)', flex = true }: { color?: string; flex?: boolean }) {
   return (
     <span aria-hidden style={{ display: flex ? 'flex' : 'inline-flex', alignItems: 'center', flex: flex ? 1 : undefined, minWidth: 28 }}>
       <span style={{ width: 1, height: 7, background: color }} />
@@ -33,90 +23,13 @@ function DimLine({ color = 'var(--bronze-line)', flex = true }: { color?: string
   )
 }
 
-/* ── Signature 3D sculpture — a crystalline "computational keystone" ──────────
-   Real depth: three wireframe layers at different translateZ inside a
-   preserve-3d stage. Continuous slow Y-spin + pointer parallax tilt.
-   Renders fully at rest; pointer tilt and spin disable under reduced-motion. */
-function FoundrySculpture() {
-  const stage = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    const el = stage.current
-    if (!el || typeof window === 'undefined') return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    let raf = 0
-    const onMove = (e: MouseEvent) => {
-      const r = el.getBoundingClientRect()
-      const dx = (e.clientX - (r.left + r.width / 2)) / Math.max(r.width, 1)
-      const dy = (e.clientY - (r.top + r.height / 2)) / Math.max(r.height, 1)
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(() => {
-        el.style.transform = `rotateX(${(-dy * 9).toFixed(2)}deg) rotateY(${(dx * 13).toFixed(2)}deg)`
-      })
-    }
-    window.addEventListener('mousemove', onMove, { passive: true })
-    return () => { window.removeEventListener('mousemove', onMove); cancelAnimationFrame(raf) }
-  }, [])
-
-  const node = (cx: number, cy: number, r: number, fill: string) => <circle cx={cx} cy={cy} r={r} fill={fill} />
-
-  return (
-    <div className="sculpt-wrap" style={{ width: 'min(82vw, 440px)', height: 'min(88vw, 460px)', position: 'relative', margin: '0 auto' }} aria-hidden>
-      {/* ambient glow (from alternative A) */}
-      <div className="animate-glow-breathe" style={{
-        position: 'absolute', inset: '10%', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(201,162,74,0.18) 0%, rgba(21,83,77,0.12) 45%, transparent 70%)',
-        filter: 'blur(8px)',
-      }} />
-      <div ref={stage} className="sculpt-stage" style={{ position: 'absolute', inset: 0 }}>
-        <div className="sculpt-sway animate-aurel-float" style={{ position: 'absolute', inset: 0 }}>
-          {/* back half — darker solid, gives the keystone thickness */}
-          <div className="sculpt-layer" style={{ transform: 'translateZ(-38px)' }}>
-            <svg width="300" height="400" viewBox="0 0 160 220" fill="none">
-              <polygon points="80,12 14,110 80,92" fill="#0C0D11" />
-              <polygon points="80,12 146,110 80,92" fill="#16171C" />
-              <polygon points="80,208 14,110 80,92" fill="#090A0D" />
-              <polygon points="80,208 146,110 80,92" fill="#101217" />
-            </svg>
-          </div>
-          {/* lit front faces — materiality + lighting (light from upper-right) */}
-          <div className="sculpt-layer" style={{ transform: 'translateZ(26px)' }}>
-            <svg width="300" height="400" viewBox="0 0 160 220" fill="none">
-              <defs>
-                <linearGradient id="kTL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#2A2B31" /><stop offset="1" stopColor="#111216" /></linearGradient>
-                <linearGradient id="kTR" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#E7CE84" /><stop offset=".5" stopColor="#A9883E" /><stop offset="1" stopColor="#5E4B24" /></linearGradient>
-                <linearGradient id="kBL" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#0A0B0E" /><stop offset="1" stopColor="#191B20" /></linearGradient>
-                <linearGradient id="kBR" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stopColor="#176B62" /><stop offset="1" stopColor="#0C2E2B" /></linearGradient>
-              </defs>
-              <polygon points="80,12 14,110 80,92" fill="url(#kTL)" stroke="var(--bronze)" strokeWidth="1" strokeLinejoin="round" />
-              <polygon points="80,12 146,110 80,92" fill="url(#kTR)" stroke="var(--bronze)" strokeWidth="1" strokeLinejoin="round" />
-              <polygon points="80,208 14,110 80,92" fill="url(#kBL)" stroke="var(--bronze-deep)" strokeWidth="1" strokeLinejoin="round" />
-              <polygon points="80,208 146,110 80,92" fill="url(#kBR)" stroke="var(--bronze-deep)" strokeWidth="1" strokeLinejoin="round" />
-              <line x1="80" y1="12" x2="80" y2="92" stroke="var(--bronze)" strokeWidth="0.8" opacity="0.7" />
-              <line x1="80" y1="92" x2="80" y2="208" stroke="var(--bronze-deep)" strokeWidth="0.8" opacity="0.5" />
-              {node(80, 12, 3.6, '#F4E4B0')}
-              {node(80, 92, 3, 'var(--bronze)')}
-              {node(146, 110, 2.8, 'var(--bronze)')}
-              {node(14, 110, 2.6, 'var(--titanium)')}
-              {node(80, 208, 3, 'var(--bronze-deep)')}
-            </svg>
-          </div>
-          {/* forward accent ring + core */}
-          <div className="sculpt-layer" style={{ transform: 'translateZ(72px)' }}>
-            <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-              <circle cx="60" cy="60" r="7" fill="var(--bronze)" />
-              <circle cx="60" cy="60" r="17" stroke="var(--bronze)" strokeWidth="0.7" fill="none" opacity="0.55" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div style={{ ...mono({ color: 'var(--text-3)', position: 'absolute', bottom: 2, left: 0, fontSize: '0.54rem' }) }}>
-        Fig. 01 — Computational Keystone · concept
-      </div>
-    </div>
-  )
-}
-
 const featured = featuredBusinesses()
+const productStudies = { SireIQ: 'sireiq', 'Vytre AWOS': 'vytre' } as const
+const currentProducts = Object.entries(productStudies).flatMap(([name, study]) => {
+  const business = featured.find(product => product.name === name)
+  return business ? [{ business, study }] : []
+})
+const developmentProduct = featured.find(business => business.name === 'Maeyen')
 
 // Verifiable execution signals only — no invented customers, revenue, metrics, or uptime.
 const evidence = [
@@ -133,7 +46,7 @@ const principles = [
   { t: 'Operational leverage', d: 'Small, capable teams with technological leverage, building more with less.' },
 ]
 
-const faqLink: React.CSSProperties = { color: 'var(--bronze-deep)', textDecoration: 'underline', textUnderlineOffset: 3, fontWeight: 600 }
+const faqLink: React.CSSProperties = { color: 'var(--text)', textDecoration: 'underline', textUnderlineOffset: 3, fontWeight: 600 }
 
 const faqs: { q: string; a: React.ReactNode }[] = [
   { q: 'What is Tarvico Inc.?', a: <>Tarvico Inc. is a privately held U.S. technology company, incorporated in Delaware, that builds and operates AI, digital platforms, and emerging technology products. It builds long-term businesses that solve foundational problems, with a long-term vision spanning global technology, mobility, infrastructure, and energy. <Link href="/about" style={faqLink}>About Tarvico →</Link></> },
@@ -148,9 +61,9 @@ const pillarStance = (stance: 'current' | 'long-term') => (stance === 'current' 
 
 /* ── Reusable band eyebrow (folio + label + dimension line) ───────────────── */
 function Eyebrow({ folio, label, onMineral = false }: { folio: string; label: string; onMineral?: boolean }) {
-  const acc = onMineral ? 'var(--bronze-deep)' : 'var(--bronze)'
-  const faint = onMineral ? 'var(--mineral-ink-2)' : 'var(--text-3)'
-  const line = onMineral ? 'var(--mineral-line)' : 'var(--hairline)'
+  const acc = onMineral ? 'var(--paper-ink)' : 'var(--text)'
+  const faint = onMineral ? 'var(--paper-muted)' : 'var(--text-3)'
+  const line = onMineral ? 'var(--paper-line)' : 'var(--border-w)'
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.75rem' }}>
       <span style={mono({ color: faint, fontSize: '0.64rem' })}>{folio}</span>
@@ -165,87 +78,98 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ── 00 · HERO ──────────────────────────────────────────────────────── */}
-      <section className="home-hero" style={{ position: 'relative', display: 'flex', overflow: 'hidden', background: 'var(--bg)' }}>
-        <div className="aurel-blueprint" style={{ position: 'absolute', inset: 0, opacity: 0.8 }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 70% at 68% 42%, transparent 20%, var(--bg) 78%)' }} />
-        {/* left bronze edge rule */}
-        <div style={{ position: 'absolute', top: 0, bottom: 0, left: 'max(1.5rem, 4vw)', width: 1, background: 'linear-gradient(to bottom, transparent, var(--bronze-line) 20%, var(--bronze-line) 80%, transparent)' }} className="mob-hide" />
-
-        <div className="mob-px" style={{ position: 'relative', zIndex: 2, maxWidth: 1280, margin: '0 auto', padding: '0 max(1.5rem, 4vw)', width: '100%' }}>
-          <div className="home-hero-grid">
-            <div>
-              <div className="home-hero-identity" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <span style={mono({ color: 'var(--text-3)' })}>00 — Tarvico Inc.</span>
-                <DimLine color="var(--hairline)" />
-                <span style={mono({ color: 'var(--petroleum-ink)' })}>Est. Delaware · USA</span>
-              </div>
-
-              <div className="home-hero-identity animate-fade-in delay-100" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, padding: '7px 15px 7px 11px', border: '1px solid var(--bronze-line)', borderRadius: 999, background: 'var(--bronze-soft)' }}>
-                <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--bronze)', display: 'inline-block' }} className="animate-pulse-gold" />
-                <span style={mono({ color: 'var(--text-2)', fontSize: '0.6rem', letterSpacing: '0.16em' })}>U.S. Private Technology Company</span>
-              </div>
-
-              <h1 className="home-hero-title aurel-display animate-aurel-clip delay-250" style={{ color: 'var(--text)' }}>
-                Building<br />Technology<br />for a <span className="text-foundry">Connected World</span>.
-              </h1>
-
-              <p className="home-hero-summary animate-fade-up delay-400" style={{ color: 'var(--text-2)', maxWidth: 540, lineHeight: 1.62, fontWeight: 400 }}>
-                Tarvico Inc. is a privately held U.S. technology company building artificial intelligence, digital platforms, and emerging technology businesses — with a long-term vision spanning global technology, intelligent mobility, computing infrastructure, and sustainable energy.
-              </p>
-
-              <div className="home-hero-actions animate-fade-up delay-550" style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
-                <Button href="/portfolio" variant="primary">Our Businesses →</Button>
-                <Button href="/investors" variant="secondary">Investor Relations</Button>
-              </div>
-
-              {/* engineering spec strip */}
-              <div className="animate-fade-up delay-700" style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
-                {[{ v: 'Delaware, USA', l: 'Incorporated' }, { v: '2026', l: 'Founded' }, { v: 'United States', l: 'Operating today' }].map(s => (
-                  <div key={s.l} style={{ borderTop: '1px solid var(--bronze-line)', paddingTop: '0.7rem', minWidth: 110 }}>
-                    <div style={{ fontFamily: DISPLAY, fontSize: '1.15rem', fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.02em' }}>{s.v}</div>
-                    <div style={mono({ color: 'var(--text-3)', fontSize: '0.56rem', marginTop: 5 })}>{s.l}</div>
-                  </div>
-                ))}
-              </div>
+      <section className="home-hero keystone-dark">
+        <div className="keystone-shell home-hero-grid">
+          <div className="home-hero-copy">
+            <p className="keystone-label home-hero-identity">Tarvico Inc. <span aria-hidden="true">/</span> Delaware, U.S.</p>
+            <h1 className="home-hero-title">We build and operate technology products.</h1>
+            <p className="home-hero-summary">
+              Tarvico Inc. is a privately held U.S. technology holding company building AI and digital products.
+            </p>
+            <div className="keystone-actions">
+              <Button href="/portfolio" variant="primary">Explore our businesses →</Button>
             </div>
-
-            <FoundrySculpture />
           </div>
+          <ConceptImage study="keystone" priority />
         </div>
+      </section>
 
-        <div className="mob-hide" style={{ position: 'absolute', bottom: '2rem', left: 'max(1.5rem, 4vw)', display: 'flex', alignItems: 'center', gap: 12, zIndex: 2 }}>
-          <div style={{ width: 1, height: 40, background: 'linear-gradient(to bottom, var(--bronze), transparent)' }} className="animate-scroll-line" />
-          <span style={mono({ color: 'var(--text-3)', fontSize: '0.54rem' })}>Scroll</span>
+      <section className="keystone-paper">
+        <div className="keystone-shell keystone-band">
+          <div className="keystone-heading-row">
+            <h2>Products today</h2>
+            <Link className="keystone-link" href="/portfolio">Full portfolio →</Link>
+          </div>
+          {currentProducts.map(({ business, study }) => (
+            <article className="keystone-product-row" key={business.name}>
+              <div>
+                <div className="keystone-product-heading">
+                  <h3>{business.name}</h3>
+                  <MaturityTag tier={business.maturity} />
+                </div>
+                <p>{business.tagline}</p>
+                {business.internal
+                  ? <Link className="keystone-link" href={business.internal}>Explore {business.name} →</Link>
+                  : <a className="keystone-link" href={business.url} target="_blank" rel="noopener noreferrer">Visit {business.name} ↗</a>}
+              </div>
+              <ConceptImage study={study} />
+            </article>
+          ))}
+          {developmentProduct && (
+            <div className="keystone-heading-row keystone-development">
+              <div>
+                <div className="keystone-product-heading">
+                  <h3>{developmentProduct.name}</h3>
+                  <MaturityTag tier={developmentProduct.maturity} />
+                </div>
+                <p>{developmentProduct.tagline}</p>
+              </div>
+              <Link className="keystone-link" href="/maeyen">Explore Maeyen →</Link>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="keystone-dark">
+        <div className="keystone-shell keystone-band keystone-feature">
+          <div>
+            <p className="keystone-label">Long-term direction</p>
+            <h2>Founded in the U.S. Building for the world.</h2>
+            <p>Tarvico operates from the United States today. Over the long term, we intend to expand internationally — with African markets, and Nigeria as a proposed first location, part of that future strategy — supported by growing technology, research, and engineering capabilities.</p>
+            <p>Our longer-range ambitions include company-owned computing infrastructure, AI data centers, and sustainable energy, and the application of our technology to intelligent mobility. These are future directions — subject to funding, feasibility, and execution — and not existing operations, offices, or facilities.</p>
+            <Link className="keystone-link" href="/vision">Read the founder letter →</Link>
+          </div>
+          <ConceptImage study="strategy" />
         </div>
       </section>
 
       {/* ── 01 · WHAT WE DO — MINERAL EDITORIAL BAND (Direction C voice) ────── */}
-      <section style={{ background: 'var(--mineral)', color: 'var(--mineral-ink)' }}>
-        <div className="mob-p" style={{ maxWidth: 1280, margin: '0 auto', padding: '7.5rem max(1.5rem, 4vw)' }}>
+      <section className="keystone-paper">
+        <div className="mob-p" style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) max(1.5rem, 4vw)' }}>
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
             <FadeUp>
               <Eyebrow folio="01" label="What We Do" onMineral />
-              <h2 style={{ fontFamily: SERIF, fontWeight: 900, fontSize: 'clamp(2.1rem, 4vw, 3.4rem)', lineHeight: 1.04, letterSpacing: '-0.02em', color: 'var(--mineral-ink)', marginBottom: '1.75rem', textWrap: 'balance' }}>
+              <h2 style={{ fontFamily: DISPLAY, fontWeight: 650, fontSize: 'clamp(2.1rem, 4vw, 3.4rem)', lineHeight: 1.04, letterSpacing: '-0.02em', color: 'var(--paper-ink)', marginBottom: '1.75rem', textWrap: 'balance' }}>
                 A U.S. technology company, built for the long&nbsp;term.
               </h2>
-              <div style={{ fontSize: '1.04rem', color: 'var(--mineral-ink-2)', lineHeight: 1.7, display: 'flex', flexDirection: 'column', gap: '1.25rem', maxWidth: '58ch' }}>
-                <p>Tarvico Inc. is a <strong style={{ color: 'var(--mineral-ink)', fontWeight: 600 }}>privately held U.S. technology company</strong>, incorporated in Delaware and operating from the United States. We design, build, and operate artificial intelligence and digital technology products.</p>
-                <p>We work as a company builder, combining the <strong style={{ color: 'var(--mineral-ink)', fontWeight: 600 }}>capital discipline of a long-term holding-company strategy</strong> with the velocity of a product studio — developing products internally and scaling through operational leverage.</p>
-                <p>What exists <strong style={{ color: 'var(--mineral-ink)', fontWeight: 600 }}>today</strong> is real technology development and live and in-development products. What lies <strong style={{ color: 'var(--mineral-ink)', fontWeight: 600 }}>ahead</strong> is a long-term vision across global technology, infrastructure, energy, and mobility — pursued deliberately, and clearly distinguished throughout this site.</p>
+              <div style={{ fontSize: '1.04rem', color: 'var(--paper-muted)', lineHeight: 1.7, display: 'flex', flexDirection: 'column', gap: '1.25rem', maxWidth: '58ch' }}>
+                <p>Tarvico Inc. is a <strong style={{ color: 'var(--paper-ink)', fontWeight: 600 }}>privately held U.S. technology company</strong>, incorporated in Delaware and operating from the United States. We design, build, and operate artificial intelligence and digital technology products.</p>
+                <p>We work as a company builder, combining the <strong style={{ color: 'var(--paper-ink)', fontWeight: 600 }}>capital discipline of a long-term holding-company strategy</strong> with the velocity of a product studio — developing products internally and scaling through operational leverage.</p>
+                <p>What exists <strong style={{ color: 'var(--paper-ink)', fontWeight: 600 }}>today</strong> is real technology development and live and in-development products. What lies <strong style={{ color: 'var(--paper-ink)', fontWeight: 600 }}>ahead</strong> is a long-term vision across global technology, infrastructure, energy, and mobility — pursued deliberately, and clearly distinguished throughout this site.</p>
               </div>
+              <p className="keystone-label keystone-company-meta">Founded 2026 · Incorporated in Delaware · Operating in the U.S.</p>
               <div style={{ marginTop: '2.5rem' }}>
-                <Link href="/about" style={{ ...mono({ color: 'var(--bronze-deep)', fontSize: '0.66rem' }), textDecoration: 'none', borderBottom: '1px solid var(--bronze-deep)', paddingBottom: 4 }}>About Tarvico →</Link>
+                <Link href="/about" style={{ ...mono({ color: 'var(--paper-ink)', fontSize: '0.66rem' }), textDecoration: 'none', borderBottom: '1px solid var(--paper-ink)', paddingBottom: 4 }}>About Tarvico →</Link>
               </div>
             </FadeUp>
 
             <FadeUp delay={120} style={{ display: 'flex', flexDirection: 'column' }}>
               {principles.map((p, i) => (
-                <div key={p.t} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1.4rem', padding: '1.6rem 0', borderTop: '1px solid var(--mineral-line)' }}>
-                  <span style={mono({ color: 'var(--bronze-deep)', fontSize: '0.7rem', paddingTop: 4 })}>{String(i + 1).padStart(2, '0')}</span>
+                <div key={p.t} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1.4rem', padding: '1.6rem 0', borderTop: '1px solid var(--paper-line)' }}>
+                  <span style={mono({ color: 'var(--paper-ink)', fontSize: '0.7rem', paddingTop: 4 })}>{String(i + 1).padStart(2, '0')}</span>
                   <div>
-                    <div style={{ fontFamily: DISPLAY, fontSize: '1.05rem', fontWeight: 700, color: 'var(--mineral-ink)', letterSpacing: '-0.01em', marginBottom: '0.4rem' }}>{p.t}</div>
-                    <div style={{ fontSize: '0.9rem', color: 'var(--mineral-ink-2)', lineHeight: 1.6 }}>{p.d}</div>
+                    <div style={{ fontFamily: DISPLAY, fontSize: '1.05rem', fontWeight: 700, color: 'var(--paper-ink)', letterSpacing: '-0.01em', marginBottom: '0.4rem' }}>{p.t}</div>
+                    <div style={{ fontSize: '0.9rem', color: 'var(--paper-muted)', lineHeight: 1.6 }}>{p.d}</div>
                   </div>
                 </div>
               ))}
@@ -254,55 +178,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 02 · SELECTED BUSINESSES — EDITORIAL ROWS (graphite) ────────────── */}
-      <section style={{ background: 'var(--bg)' }}>
-        <div className="mob-p" style={{ maxWidth: 1280, margin: '0 auto', padding: '7.5rem max(1.5rem, 4vw)' }}>
+      {/* ── 06 · LEADERSHIP — EDITORIAL SERIF QUOTE (mineral) ──────────────── */}
+      <section className="keystone-paper">
+        <div className="mob-p" style={{ maxWidth: 940, margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) max(1.5rem, 4vw)' }}>
           <FadeUp>
-            <Eyebrow folio="02" label="Selected Businesses" />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3.5rem', flexWrap: 'wrap', gap: '1.25rem' }}>
-              <h2 className="aurel-display" style={{ ...H2, fontSize: 'clamp(2.1rem, 4vw, 3.4rem)', color: 'var(--text)', maxWidth: 560 }}>Products we build and operate.</h2>
-              <Link href="/portfolio" style={{ ...mono({ color: 'var(--bronze)', fontSize: '0.66rem' }), textDecoration: 'none' }}>All businesses →</Link>
+            <Eyebrow folio="06" label="Leadership" onMineral />
+            <blockquote style={{ fontFamily: SERIF, fontWeight: 500, fontSize: 'clamp(1.7rem, 3.4vw, 2.9rem)', color: 'var(--paper-ink)', lineHeight: 1.26, letterSpacing: '-0.015em', marginBottom: '2.5rem', textWrap: 'balance' }}>
+              <span style={{ fontStyle: 'italic', color: 'var(--paper-ink)' }}>“</span>The next generation of great companies will not just build software. They will build systems that improve how people operate, create, communicate, and solve problems in everyday life.<span style={{ fontStyle: 'italic', color: 'var(--paper-ink)' }}>”</span>
+            </blockquote>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '2.5rem' }}>
+              <DimLine color="var(--paper-line)" flex={false} />
+              <span style={mono({ color: 'var(--paper-muted)', fontSize: '0.64rem' })}>Jeff Yèmalín Bienvenu Honforloco — Founder &amp; CEO</span>
+            </div>
+            <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
+              <Link href="/founder" style={{ ...mono({ color: 'var(--paper-ink)', fontSize: '0.66rem' }), textDecoration: 'none', borderBottom: '1px solid var(--paper-ink)', paddingBottom: 4 }}>Founder Profile →</Link>
+              <Link href="/vision" style={{ ...mono({ color: 'var(--paper-muted)', fontSize: '0.66rem' }), textDecoration: 'none', marginLeft: '1.5rem' }}>Read the Founder Letter →</Link>
             </div>
           </FadeUp>
-
-          <div style={{ borderTop: '1px solid var(--hairline)' }}>
-            {featured.map((b, i) => {
-              const href = b.internal ?? b.url ?? '/portfolio'
-              const external = !b.internal && !!b.url
-              const Inner = (
-                <div className="biz-row" style={{ display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: '2rem', alignItems: 'center', padding: '2.25rem 0', borderBottom: '1px solid var(--hairline)', transition: 'background 0.25s, padding 0.25s' }}
-                  onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-raised)' }}
-                  onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}>
-                  <span style={{ ...mono({ color: 'var(--text-3)', fontSize: '0.8rem' }) }}>{String(i + 1).padStart(2, '0')}</span>
-                  <div style={{ minWidth: 0 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
-                      <span style={{ fontFamily: DISPLAY, fontSize: 'clamp(1.5rem, 3vw, 2.3rem)', fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.03em', lineHeight: 1 }}>{b.name}</span>
-                      <MaturityDot tier={b.maturity} />
-                    </div>
-                    <p style={{ fontSize: '0.95rem', color: 'var(--text-2)', lineHeight: 1.55, maxWidth: '54ch' }}>{b.tagline}</p>
-                  </div>
-                  <span className="mob-hide" style={{ ...mono({ color: 'var(--bronze)', fontSize: '0.64rem' }), whiteSpace: 'nowrap' }}>{b.internal ? 'Overview →' : 'Visit ↗'}</span>
-                </div>
-              )
-              return external ? (
-                <FadeUp key={b.name} delay={i * 70}><a href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block' }}>{Inner}</a></FadeUp>
-              ) : (
-                <FadeUp key={b.name} delay={i * 70}><Link href={href} style={{ textDecoration: 'none', display: 'block' }}>{Inner}</Link></FadeUp>
-              )
-            })}
-          </div>
-          <p style={{ fontSize: '0.78rem', color: 'var(--text-3)', lineHeight: 1.6, marginTop: '1.75rem', maxWidth: 640, fontWeight: 300 }}>
-            Maturity labels reflect each product’s current stage. Tarvico features a selective set of businesses; additional products are listed on the businesses page.
-          </p>
         </div>
       </section>
 
       {/* ── 03 · THREE PILLARS — CONNECTED SPATIAL (graphite + petroleum) ───── */}
-      <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--hairline)', borderBottom: '1px solid var(--hairline)' }}>
-        <div className="mob-p" style={{ maxWidth: 1280, margin: '0 auto', padding: '7.5rem max(1.5rem, 4vw)' }}>
+      <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)', borderBottom: '1px solid var(--border-w)' }}>
+        <div className="mob-p" style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) max(1.5rem, 4vw)' }}>
           <FadeUp>
             <Eyebrow folio="03" label="Strategic Direction" />
-            <h2 className="aurel-display" style={{ ...H2, fontSize: 'clamp(2.1rem, 4vw, 3.4rem)', color: 'var(--text)', maxWidth: 640, marginBottom: '1.25rem' }}>Three connected pillars.</h2>
+            <h2 className="editorial-display" style={{ ...H2, fontSize: 'clamp(2.1rem, 4vw, 3.4rem)', color: 'var(--text)', maxWidth: 640, marginBottom: '1.25rem' }}>Three connected pillars.</h2>
             <p style={{ fontSize: '1.02rem', color: 'var(--text-2)', maxWidth: 620, lineHeight: 1.65, marginBottom: '3.5rem' }}>
               Corporate directions, not existing operating divisions. One is where we build today; two are long-term ambitions we are clear not to overstate.
             </p>
@@ -310,13 +211,13 @@ export default function HomePage() {
           <div className="mob-stack pillar-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0, position: 'relative' }}>
             {PILLARS.map((p, i) => {
               const current = p.stance === 'current'
-              const acc = current ? 'var(--bronze)' : 'var(--petroleum-ink)'
+              const acc = current ? 'var(--text)' : 'var(--text-3)'
               return (
                 <FadeUp key={p.id} delay={i * 90}>
-                  <div style={{ padding: '2.5rem', height: '100%', borderLeft: i === 0 ? '1px solid var(--hairline)' : 'none', borderRight: '1px solid var(--hairline)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ padding: '2.5rem', height: '100%', borderLeft: i === 0 ? '1px solid var(--border-w)' : 'none', borderRight: '1px solid var(--border-w)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '2rem' }}>
                       <span style={{ fontFamily: MONO, fontSize: '0.78rem', color: acc, fontWeight: 600 }}>P{i + 1}</span>
-                      <span style={{ width: 7, height: 7, borderRadius: '50%', background: acc, boxShadow: current ? '0 0 0 4px var(--bronze-soft)' : '0 0 0 4px var(--petroleum-soft)' }} />
+                      <span style={{ width: 7, height: 7, borderRadius: '50%', background: acc, boxShadow: current ? '0 0 0 4px var(--accent-soft)' : '0 0 0 4px var(--accent-soft)' }} />
                       <span style={mono({ color: acc, fontSize: '0.56rem' })}>{pillarStance(p.stance)}</span>
                     </div>
                     <div style={{ fontFamily: DISPLAY, fontSize: '1.2rem', color: 'var(--text)', marginBottom: '0.9rem', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2 }}>{p.title}</div>
@@ -331,24 +232,24 @@ export default function HomePage() {
       </section>
 
       {/* ── 04 · EVIDENCE OF EXECUTION — MINERAL BAND ──────────────────────── */}
-      <section style={{ background: 'var(--mineral)', color: 'var(--mineral-ink)' }}>
-        <div className="mob-p" style={{ maxWidth: 1280, margin: '0 auto', padding: '7.5rem max(1.5rem, 4vw)' }}>
+      <section className="keystone-paper">
+        <div className="mob-p" style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) max(1.5rem, 4vw)' }}>
           <FadeUp>
             <Eyebrow folio="04" label="Evidence of Execution" onMineral />
-            <h2 style={{ fontFamily: SERIF, fontWeight: 900, fontSize: 'clamp(2.1rem, 4vw, 3.4rem)', lineHeight: 1.04, letterSpacing: '-0.02em', color: 'var(--mineral-ink)', maxWidth: 640, marginBottom: '1.25rem', textWrap: 'balance' }}>What exists today.</h2>
-            <p style={{ fontSize: '1.02rem', color: 'var(--mineral-ink-2)', maxWidth: 600, lineHeight: 1.65, marginBottom: '3.5rem' }}>
+            <h2 style={{ fontFamily: DISPLAY, fontWeight: 650, fontSize: 'clamp(2.1rem, 4vw, 3.4rem)', lineHeight: 1.04, letterSpacing: '-0.02em', color: 'var(--paper-ink)', maxWidth: 640, marginBottom: '1.25rem', textWrap: 'balance' }}>What exists today.</h2>
+            <p style={{ fontSize: '1.02rem', color: 'var(--paper-muted)', maxWidth: 600, lineHeight: 1.65, marginBottom: '3.5rem' }}>
               Verifiable progress, stated plainly. We do not publish customer counts, revenue, usage metrics, or uptime.
             </p>
           </FadeUp>
-          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 0, borderTop: '1px solid var(--mineral-line)' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 0, borderTop: '1px solid var(--paper-line)' }}>
             {evidence.map((e, i) => (
               <FadeUp key={e.t} delay={i * 60}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1.1rem', padding: '2rem 2rem 2rem 0', borderBottom: '1px solid var(--mineral-line)', height: '100%' }}>
-                  <span style={{ color: 'var(--petroleum)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 700 }}>✓</span>
+                <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1.1rem', padding: '2rem 2rem 2rem 0', borderBottom: '1px solid var(--paper-line)', height: '100%' }}>
+                  <span style={{ color: 'var(--paper-ink)', fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 700 }}>✓</span>
                   <div>
-                    <div style={{ fontFamily: DISPLAY, fontSize: '1.05rem', color: 'var(--mineral-ink)', marginBottom: '0.4rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{e.t}</div>
-                    <p style={{ fontSize: '0.88rem', color: 'var(--mineral-ink-2)', lineHeight: 1.6, marginBottom: e.href ? '0.75rem' : 0 }}>{e.d}</p>
-                    {e.href && <a href={e.href} target="_blank" rel="noopener noreferrer" style={mono({ color: 'var(--bronze-deep)', fontSize: '0.6rem', textDecoration: 'none' } as React.CSSProperties)}>{e.cta}</a>}
+                    <div style={{ fontFamily: DISPLAY, fontSize: '1.05rem', color: 'var(--paper-ink)', marginBottom: '0.4rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{e.t}</div>
+                    <p style={{ fontSize: '0.88rem', color: 'var(--paper-muted)', lineHeight: 1.6, marginBottom: e.href ? '0.75rem' : 0 }}>{e.d}</p>
+                    {e.href && <a href={e.href} target="_blank" rel="noopener noreferrer" style={mono({ color: 'var(--paper-ink)', fontSize: '0.6rem', textDecoration: 'none' } as React.CSSProperties)}>{e.cta}</a>}
                   </div>
                 </div>
               </FadeUp>
@@ -357,67 +258,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 05 · LONG-TERM VISION — CINEMATIC (graphite + abstract field) ───── */}
-      <section style={{ position: 'relative', background: 'var(--bg)', overflow: 'hidden' }}>
-        <div className="aurel-blueprint-fine" style={{ position: 'absolute', inset: 0, opacity: 0.6 }} />
-        <svg aria-hidden style={{ position: 'absolute', right: '-6%', top: '50%', transform: 'translateY(-50%)', width: 'min(55vw, 680px)', opacity: 0.5 }} viewBox="0 0 600 600" fill="none" className="mob-hide">
-          <g stroke="var(--petroleum-ink)" strokeWidth="0.6" opacity="0.5">
-            {Array.from({ length: 10 }).map((_, i) => <circle key={i} cx="300" cy="300" r={40 + i * 26} />)}
-          </g>
-          <g stroke="var(--bronze-line)" strokeWidth="0.8">
-            <path d="M300 40 L560 300 L300 560 L40 300 Z" />
-            <path d="M300 40 L300 560 M40 300 L560 300" />
-          </g>
-          <circle cx="300" cy="300" r="5" fill="var(--bronze)" />
-        </svg>
-        <div className="mob-p" style={{ position: 'relative', zIndex: 2, maxWidth: 1280, margin: '0 auto', padding: '8rem max(1.5rem, 4vw)' }}>
-          <FadeUp style={{ maxWidth: 760 }}>
-            <Eyebrow folio="05" label="Long-Term Vision" />
-            <h2 className="aurel-display" style={{ ...H2, fontSize: 'clamp(2.3rem, 4.6vw, 4rem)', color: 'var(--text)', marginBottom: '1.75rem' }}>
-              Founded in the U.S. <span className="text-foundry">Building for the world.</span>
-            </h2>
-            <div style={{ fontSize: '1.05rem', color: 'var(--text-2)', lineHeight: 1.7, display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
-              <p>Tarvico operates from the United States today. Over the long term, we intend to expand internationally — with African markets, and Nigeria as a proposed first location, part of that future strategy — supported by growing technology, research, and engineering capabilities.</p>
-              <p>Our longer-range ambitions include company-owned computing infrastructure, AI data centers, and sustainable energy, and the application of our technology to intelligent mobility. These are future directions — subject to funding, feasibility, and execution — and not existing operations, offices, or facilities.</p>
-            </div>
-            <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
-              <Button href="/investors" variant="secondary">Investor Relations →</Button>
-              <Button href="/vision" variant="ghost">Read the Founder Letter</Button>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* ── 06 · LEADERSHIP — EDITORIAL SERIF QUOTE (mineral) ──────────────── */}
-      <section style={{ background: 'var(--mineral)', color: 'var(--mineral-ink)' }}>
-        <div className="mob-p" style={{ maxWidth: 940, margin: '0 auto', padding: '8rem max(1.5rem, 4vw)' }}>
-          <FadeUp>
-            <Eyebrow folio="06" label="Leadership" onMineral />
-            <blockquote style={{ fontFamily: SERIF, fontWeight: 500, fontSize: 'clamp(1.7rem, 3.4vw, 2.9rem)', color: 'var(--mineral-ink)', lineHeight: 1.26, letterSpacing: '-0.015em', marginBottom: '2.5rem', textWrap: 'balance' }}>
-              <span style={{ fontStyle: 'italic', color: 'var(--bronze-deep)' }}>“</span>The next generation of great companies will not just build software. They will build systems that improve how people operate, create, communicate, and solve problems in everyday life.<span style={{ fontStyle: 'italic', color: 'var(--bronze-deep)' }}>”</span>
-            </blockquote>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '2.5rem' }}>
-              <DimLine color="var(--mineral-line)" flex={false} />
-              <span style={mono({ color: 'var(--mineral-ink-2)', fontSize: '0.64rem' })}>Jeff Yèmalín Bienvenu Honforloco — Founder &amp; CEO</span>
-            </div>
-            <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
-              <Link href="/founder" style={{ ...mono({ color: 'var(--bronze-deep)', fontSize: '0.66rem' }), textDecoration: 'none', borderBottom: '1px solid var(--bronze-deep)', paddingBottom: 4 }}>Founder Profile →</Link>
-              <Link href="/vision" style={{ ...mono({ color: 'var(--mineral-ink-2)', fontSize: '0.66rem' }), textDecoration: 'none', marginLeft: '1.5rem' }}>Read the Founder Letter →</Link>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
       {/* ── 07 · FAQ (graphite) ────────────────────────────────────────────── */}
-      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--hairline)' }}>
-        <div className="mob-p" style={{ maxWidth: 900, margin: '0 auto', padding: '7.5rem max(1.5rem, 4vw)' }}>
+      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--border-w)' }}>
+        <div className="mob-p" style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) max(1.5rem, 4vw)' }}>
           <FadeUp>
             <Eyebrow folio="07" label="Common Questions" />
-            <h2 className="aurel-display" style={{ ...H2, fontSize: 'clamp(2rem, 4vw, 3.2rem)', color: 'var(--text)', marginBottom: '3rem' }}>What is <span className="text-foundry">Tarvico?</span></h2>
+            <h2 className="editorial-display" style={{ ...H2, fontSize: 'clamp(2rem, 4vw, 3.2rem)', color: 'var(--text)', marginBottom: '3rem' }}>What is <span className="editorial-emphasis">Tarvico?</span></h2>
             <div>
               {faqs.map((f, i) => (
-                <div key={f.q} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1.4rem', padding: '1.9rem 0', borderTop: '1px solid var(--hairline)' }}>
-                  <span style={mono({ color: 'var(--bronze)', fontSize: '0.66rem', paddingTop: 6 })}>{String(i + 1).padStart(2, '0')}</span>
+                <div key={f.q} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1.4rem', padding: '1.9rem 0', borderTop: '1px solid var(--border-w)' }}>
+                  <span style={mono({ color: 'var(--text)', fontSize: '0.66rem', paddingTop: 6 })}>{String(i + 1).padStart(2, '0')}</span>
                   <div>
                     <h3 style={{ fontFamily: DISPLAY, fontSize: '1.15rem', fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.02em', marginBottom: '0.7rem' }}>{f.q}</h3>
                     <p style={{ fontSize: '0.98rem', color: 'var(--text-2)', lineHeight: 1.72 }}>{f.a}</p>
@@ -430,13 +280,11 @@ export default function HomePage() {
       </section>
 
       {/* ── 08 · INVESTORS & PARTNERS (graphite, sculpture echo) ───────────── */}
-      <section style={{ position: 'relative', background: 'var(--bg-raised)', borderTop: '1px solid var(--hairline)', overflow: 'hidden' }}>
-        <div className="aurel-blueprint" style={{ position: 'absolute', inset: 0, opacity: 0.5 }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 70% at 50% 40%, var(--bronze-soft) 0%, transparent 55%)' }} />
-        <div className="mob-p" style={{ position: 'relative', zIndex: 2, maxWidth: 820, margin: '0 auto', padding: '8rem max(1.5rem, 4vw)', textAlign: 'center' }}>
+      <section className="keystone-dark">
+        <div className="mob-p" style={{ position: 'relative', zIndex: 2, maxWidth: 820, margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) max(1.5rem, 4vw)', textAlign: 'center' }}>
           <FadeUp>
-            <div style={{ display: 'inline-flex', marginBottom: '2rem' }}><span style={mono({ color: 'var(--bronze)', fontSize: '0.64rem' })}>Investors &amp; Partners</span></div>
-            <h2 className="aurel-display" style={{ ...H2, fontSize: 'clamp(2.1rem, 4.4vw, 3.8rem)', color: 'var(--text)', maxWidth: 780, margin: '0 auto 1.5rem', lineHeight: 1.04 }}>
+            <div style={{ display: 'inline-flex', marginBottom: '2rem' }}><span style={mono({ color: 'var(--text)', fontSize: '0.64rem' })}>Investors &amp; Partners</span></div>
+            <h2 className="editorial-display" style={{ ...H2, fontSize: 'clamp(2.1rem, 4.4vw, 3.8rem)', color: 'var(--text)', maxWidth: 780, margin: '0 auto 1.5rem', lineHeight: 1.04 }}>
               Building a U.S. technology company for the long term.
             </h2>
             <p style={{ fontSize: '1.05rem', color: 'var(--text-2)', maxWidth: 520, margin: '0 auto 2.75rem', lineHeight: 1.65 }}>
@@ -450,24 +298,5 @@ export default function HomePage() {
         </div>
       </section>
     </>
-  )
-}
-
-/* Small inline maturity dot+label styled for the FOUNDRY rows (keeps the
-   canonical maturity wording; does not alter the shared MaturityTag used
-   elsewhere). */
-function MaturityDot({ tier }: { tier: string }) {
-  const map: Record<string, { label: string; color: string }> = {
-    operational: { label: 'Operational Today', color: 'var(--emerald)' },
-    'public-beta': { label: 'Public Beta', color: 'var(--bronze)' },
-    'in-development': { label: 'In Development', color: 'var(--petroleum-ink)' },
-    'long-term': { label: 'Long-Term Vision', color: 'var(--blue)' },
-  }
-  const m = map[tier] ?? map['in-development']
-  return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, border: '1px solid var(--hairline)', borderRadius: 999, padding: '4px 11px' }}>
-      <span style={{ width: 6, height: 6, borderRadius: '50%', background: m.color }} />
-      <span style={{ fontFamily: MONO, fontSize: '0.56rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: m.color, fontWeight: 500 }}>{m.label}</span>
-    </span>
   )
 }

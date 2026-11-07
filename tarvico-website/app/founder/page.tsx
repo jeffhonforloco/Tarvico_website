@@ -1,6 +1,6 @@
 import { PageHero, Button, Eyebrow } from '@/components/ui'
 
-const FONT = { display: 'var(--font-archivo-stack)', serif: 'var(--font-fraunces-stack)', mono: 'var(--mono)', body: 'var(--font-body)' }
+const FONT = { display: 'var(--font-display)', serif: 'var(--font-editorial)', mono: 'var(--font-body)', body: 'var(--font-body)' }
 
 const principles = [
   {
@@ -33,7 +33,7 @@ export default function FounderPage() {
     <>
       <PageHero
         label="Founder"
-        title={<>Jeff <span className="text-foundry">Honforloco</span></>}
+        title={<>Jeff <span className="editorial-emphasis">Honforloco</span></>}
         subtitle="Founder & Chief Executive Officer of Tarvico Inc. — building enduring, AI-native technology companies designed to solve foundational problems over the long term."
       />
 
@@ -51,12 +51,12 @@ export default function FounderPage() {
                 <p key={i} style={{ fontSize: '1.05rem', color: 'var(--text-2)', lineHeight: 1.8 }}>{p}</p>
               ))}
             </div>
-            <div style={{ border: '1px solid var(--hairline)', borderTop: '2px solid var(--bronze)', borderRadius: 'var(--radius-lg)', background: 'var(--bg-card)', padding: '2.25rem', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ width: 60, height: 60, background: 'var(--bronze-soft)', border: '1px solid var(--bronze-line)', borderRadius: 'var(--radius)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.display, fontSize: '1.4rem', fontWeight: 800, color: 'var(--bronze)', marginBottom: '1.75rem' }}>JH</div>
+            <div style={{ border: '1px solid var(--border-w)', borderTop: '2px solid var(--text)', borderRadius: 'var(--radius-lg)', background: 'var(--bg-card)', padding: '2.25rem', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ width: 60, height: 60, background: 'var(--accent-soft)', border: '1px solid var(--accent-line)', borderRadius: 'var(--radius)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.display, fontSize: '1.4rem', fontWeight: 800, color: 'var(--text)', marginBottom: '1.75rem' }}>JH</div>
               <dl style={{ margin: 0 }}>
                 {facts.map((f, i) => (
-                  <div key={f.k} style={{ paddingBottom: i < facts.length - 1 ? '1.1rem' : 0, marginBottom: i < facts.length - 1 ? '1.1rem' : 0, borderBottom: i < facts.length - 1 ? '1px solid var(--hairline)' : 'none' }}>
-                    <dt style={{ fontFamily: FONT.mono, fontSize: '0.56rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 500, marginBottom: '0.4rem' }}>{f.k}</dt>
+                  <div key={f.k} style={{ paddingBottom: i < facts.length - 1 ? '1.1rem' : 0, marginBottom: i < facts.length - 1 ? '1.1rem' : 0, borderBottom: i < facts.length - 1 ? '1px solid var(--border-w)' : 'none' }}>
+                    <dt style={{ fontFamily: FONT.mono, fontSize: '0.56rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text)', fontWeight: 500, marginBottom: '0.4rem' }}>{f.k}</dt>
                     <dd style={{ margin: 0, fontSize: '0.92rem', color: 'var(--text)', lineHeight: 1.55 }}>{f.v}</dd>
                   </div>
                 ))}
@@ -67,19 +67,19 @@ export default function FounderPage() {
       </section>
 
       {/* 02 · PHILOSOPHY — mineral editorial band */}
-      <section style={{ background: 'var(--mineral)', color: 'var(--mineral-ink)' }}>
+      <section className="keystone-paper">
         <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
           <Eyebrow folio="02" label="Philosophy & Long-Term Thinking" onMineral />
-          <blockquote style={{ fontFamily: FONT.serif, fontSize: 'clamp(1.6rem, 3.4vw, 2.7rem)', fontWeight: 500, lineHeight: 1.28, color: 'var(--mineral-ink)', maxWidth: 900, margin: '0 0 4rem', letterSpacing: '-0.015em', textWrap: 'balance' }}>
-            <span style={{ color: 'var(--bronze-deep)', fontStyle: 'italic' }}>&ldquo;</span>The companies that endure are not defined by a single product. They are defined by their ability to evolve, experiment, and keep building for the future.<span style={{ color: 'var(--bronze-deep)', fontStyle: 'italic' }}>&rdquo;</span>
+          <blockquote style={{ fontFamily: FONT.serif, fontSize: 'clamp(1.6rem, 3.4vw, 2.7rem)', fontWeight: 500, lineHeight: 1.28, color: 'var(--paper-ink)', maxWidth: 900, margin: '0 0 4rem', letterSpacing: '-0.015em', textWrap: 'balance' }}>
+            <span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>&ldquo;</span>The companies that endure are not defined by a single product. They are defined by their ability to evolve, experiment, and keep building for the future.<span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>&rdquo;</span>
           </blockquote>
-          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderTop: '1px solid var(--mineral-line)' }}>
+          <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderTop: '1px solid var(--paper-line)' }}>
             {principles.map((p, i) => (
-              <div key={p.t} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1.4rem', padding: '1.8rem 2rem 1.8rem 0', borderBottom: '1px solid var(--mineral-line)', borderLeft: i % 2 === 1 ? '1px solid var(--mineral-line)' : 'none', paddingLeft: i % 2 === 1 ? '2rem' : 0 }}>
-                <span style={{ fontFamily: FONT.mono, fontSize: '0.7rem', color: 'var(--bronze-deep)', paddingTop: 4 }}>{String(i + 1).padStart(2, '0')}</span>
+              <div key={p.t} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1.4rem', padding: '1.8rem 2rem 1.8rem 0', borderBottom: '1px solid var(--paper-line)', borderLeft: i % 2 === 1 ? '1px solid var(--paper-line)' : 'none', paddingLeft: i % 2 === 1 ? '2rem' : 0 }}>
+                <span style={{ fontFamily: FONT.mono, fontSize: '0.7rem', color: 'var(--paper-ink)', paddingTop: 4 }}>{String(i + 1).padStart(2, '0')}</span>
                 <div>
-                  <div style={{ fontFamily: FONT.display, fontSize: '1.02rem', color: 'var(--mineral-ink)', marginBottom: '0.45rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{p.t}</div>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--mineral-ink-2)', lineHeight: 1.65 }}>{p.d}</p>
+                  <div style={{ fontFamily: FONT.display, fontSize: '1.02rem', color: 'var(--paper-ink)', marginBottom: '0.45rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{p.t}</div>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--paper-muted)', lineHeight: 1.65 }}>{p.d}</p>
                 </div>
               </div>
             ))}
@@ -88,7 +88,7 @@ export default function FounderPage() {
       </section>
 
       {/* 03 · WHY TARVICO — graphite */}
-      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--hairline)' }}>
+      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={{ maxWidth: 820, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
           <Eyebrow folio="03" label="Why Tarvico Exists" />
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>

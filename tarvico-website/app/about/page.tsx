@@ -32,30 +32,30 @@ export default function AboutPage() {
     <>
       <PageHero
         label="About"
-        title={<>Built with <span className="text-foundry">conviction.</span></>}
+        title={<>Built with <span className="editorial-emphasis">conviction.</span></>}
         subtitle="Tarvico is a privately held U.S. technology company founded on the belief that the most enduring businesses are built with long-term thinking, operational discipline, and a genuine purpose."
       />
 
       {/* 01 · MISSION — mineral editorial band */}
-      <section style={{ background: 'var(--mineral)', color: 'var(--mineral-ink)' }}>
+      <section className="keystone-paper">
         <div className="mob-p" style={WRAP}>
           <Eyebrow folio="01" label="Mission & Philosophy" onMineral />
-          <blockquote style={{ fontFamily: FONT.serif, fontWeight: 500, fontSize: 'clamp(1.6rem, 3.4vw, 2.7rem)', lineHeight: 1.26, letterSpacing: '-0.015em', color: 'var(--mineral-ink)', maxWidth: 940, marginBottom: '4rem', textWrap: 'balance' }}>
-            <span style={{ color: 'var(--bronze-deep)', fontStyle: 'italic' }}>“</span>We exist to build companies and systems that give people and organizations more leverage over their work, creativity, and potential — at any scale, in any domain.<span style={{ color: 'var(--bronze-deep)', fontStyle: 'italic' }}>”</span>
+          <blockquote style={{ fontFamily: FONT.serif, fontWeight: 500, fontSize: 'clamp(1.6rem, 3.4vw, 2.7rem)', lineHeight: 1.26, letterSpacing: '-0.015em', color: 'var(--paper-ink)', maxWidth: 940, marginBottom: '4rem', textWrap: 'balance' }}>
+            <span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>“</span>We exist to build companies and systems that give people and organizations more leverage over their work, creativity, and potential — at any scale, in any domain.<span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>”</span>
           </blockquote>
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4.5rem', alignItems: 'start' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.4rem' }}>
               {mission.map((p, i) => (
-                <p key={i} style={{ fontSize: '1.02rem', color: 'var(--mineral-ink-2)', lineHeight: 1.75, maxWidth: '56ch' }}>{p}</p>
+                <p key={i} style={{ fontSize: '1.02rem', color: 'var(--paper-muted)', lineHeight: 1.75, maxWidth: '56ch' }}>{p}</p>
               ))}
             </div>
             <div>
               {principles.map((p, i) => (
-                <div key={p.t} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1.4rem', padding: '1.5rem 0', borderTop: '1px solid var(--mineral-line)' }}>
-                  <span style={{ fontFamily: FONT.mono, fontSize: '0.7rem', letterSpacing: '0.1em', color: 'var(--bronze-deep)', paddingTop: 4 }}>{String(i + 1).padStart(2, '0')}</span>
+                <div key={p.t} style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '1.4rem', padding: '1.5rem 0', borderTop: '1px solid var(--paper-line)' }}>
+                  <span style={{ fontFamily: FONT.mono, fontSize: '0.7rem', letterSpacing: '0.1em', color: 'var(--paper-ink)', paddingTop: 4 }}>{String(i + 1).padStart(2, '0')}</span>
                   <div>
-                    <div style={{ fontFamily: FONT.display, fontSize: '1.02rem', fontWeight: 700, color: 'var(--mineral-ink)', letterSpacing: '-0.01em', marginBottom: '0.35rem' }}>{p.t}</div>
-                    <div style={{ fontSize: '0.88rem', color: 'var(--mineral-ink-2)', lineHeight: 1.6 }}>{p.d}</div>
+                    <div style={{ fontFamily: FONT.display, fontSize: '1.02rem', fontWeight: 700, color: 'var(--paper-ink)', letterSpacing: '-0.01em', marginBottom: '0.35rem' }}>{p.t}</div>
+                    <div style={{ fontSize: '0.88rem', color: 'var(--paper-muted)', lineHeight: 1.6 }}>{p.d}</div>
                   </div>
                 </div>
               ))}
@@ -65,42 +65,42 @@ export default function AboutPage() {
       </section>
 
       {/* 02 · LEADERSHIP — graphite */}
-      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--hairline)' }}>
+      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={WRAP}>
           <Eyebrow folio="02" label="Leadership" />
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-            <div style={{ border: '1px solid var(--hairline)', background: 'var(--bg-card)', borderTop: '2px solid var(--bronze)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ width: 60, height: 60, background: 'var(--bronze-soft)', border: '1px solid var(--bronze-line)', borderRadius: 'var(--radius)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.display, fontSize: '1.4rem', fontWeight: 800, color: 'var(--bronze)', marginBottom: '1.5rem' }}>JH</div>
+            <div style={{ border: '1px solid var(--border-w)', background: 'var(--bg-card)', borderTop: '2px solid var(--text)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ width: 60, height: 60, background: 'var(--accent-soft)', border: '1px solid var(--accent-line)', borderRadius: 'var(--radius)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.display, fontSize: '1.4rem', fontWeight: 800, color: 'var(--text)', marginBottom: '1.5rem' }}>JH</div>
               <div style={{ fontFamily: FONT.display, fontSize: '1.15rem', color: 'var(--text)', marginBottom: '0.35rem', fontWeight: 700, letterSpacing: '-0.02em' }}>Jeff Yèmalín Bienvenu Honforloco</div>
-              <div style={{ fontFamily: FONT.mono, fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--bronze)', marginBottom: '1rem', fontWeight: 500 }}>Founder &amp; Chief Executive Officer</div>
+              <div style={{ fontFamily: FONT.mono, fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text)', marginBottom: '1rem', fontWeight: 500 }}>Founder &amp; Chief Executive Officer</div>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', lineHeight: 1.7 }}>
                 Founder of Tarvico Inc. Began as a professional photographer, developed a passion for software, AI, and systems thinking. Self-taught builder who believes creative thinking and technological persistence can open any door. Leads vision, strategy, and product direction across the entire portfolio.
               </p>
-              <Link href="/founder" style={{ display: 'inline-block', marginTop: '1.5rem', fontFamily: FONT.mono, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 500, textDecoration: 'none', borderBottom: '1px solid var(--bronze-line)', paddingBottom: 4 }}>
+              <Link href="/founder" style={{ display: 'inline-block', marginTop: '1.5rem', fontFamily: FONT.mono, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text)', fontWeight: 500, textDecoration: 'none', borderBottom: '1px solid var(--accent-line)', paddingBottom: 4 }}>
                 Full founder profile →
               </Link>
             </div>
             <blockquote style={{ fontFamily: FONT.serif, fontWeight: 500, fontSize: 'clamp(1.4rem, 2.6vw, 2.1rem)', lineHeight: 1.32, color: 'var(--text)', letterSpacing: '-0.015em' }}>
-              <span style={{ color: 'var(--bronze)', fontStyle: 'italic' }}>“</span>Creative thinking and technological persistence can open any door.<span style={{ color: 'var(--bronze)', fontStyle: 'italic' }}>”</span>
+              <span style={{ color: 'var(--text)', fontStyle: 'italic' }}>“</span>Creative thinking and technological persistence can open any door.<span style={{ color: 'var(--text)', fontStyle: 'italic' }}>”</span>
             </blockquote>
           </div>
         </div>
       </section>
 
       {/* 03 · TIMELINE — mineral editorial band */}
-      <section style={{ background: 'var(--mineral)', color: 'var(--mineral-ink)' }}>
+      <section className="keystone-paper">
         <div className="mob-p" style={WRAP}>
           <Eyebrow folio="03" label="Company Timeline" onMineral />
-          <div style={{ borderTop: '1px solid var(--mineral-line)' }}>
+          <div style={{ borderTop: '1px solid var(--paper-line)' }}>
             {timeline.map((item, i) => (
-              <div key={i} className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '2.5rem', padding: '2.25rem 0', borderBottom: '1px solid var(--mineral-line)', alignItems: 'start' }}>
+              <div key={i} className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '2.5rem', padding: '2.25rem 0', borderBottom: '1px solid var(--paper-line)', alignItems: 'start' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                  <span style={{ fontFamily: FONT.display, fontSize: '1.4rem', fontWeight: 800, letterSpacing: '-0.02em', color: item.accent ? 'var(--bronze-deep)' : 'var(--mineral-ink-2)' }}>{item.year}</span>
-                  {item.accent && <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--bronze-deep)' }} />}
+                  <span style={{ fontFamily: FONT.display, fontSize: '1.4rem', fontWeight: 800, letterSpacing: '-0.02em', color: item.accent ? 'var(--paper-ink)' : 'var(--paper-muted)' }}>{item.year}</span>
+                  {item.accent && <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--paper-ink)' }} />}
                 </div>
                 <div>
-                  <div style={{ fontFamily: FONT.display, fontSize: '1.05rem', color: 'var(--mineral-ink)', marginBottom: '0.5rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{item.title}</div>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--mineral-ink-2)', lineHeight: 1.65, maxWidth: '62ch' }}>{item.desc}</p>
+                  <div style={{ fontFamily: FONT.display, fontSize: '1.05rem', color: 'var(--paper-ink)', marginBottom: '0.5rem', fontWeight: 700, letterSpacing: '-0.01em' }}>{item.title}</div>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--paper-muted)', lineHeight: 1.65, maxWidth: '62ch' }}>{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -109,23 +109,23 @@ export default function AboutPage() {
       </section>
 
       {/* 04 · BUSINESSES — graphite */}
-      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--hairline)' }}>
+      <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={WRAP}>
           <Eyebrow folio="04" label="Businesses We Build & Operate" />
           <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.75, maxWidth: 620, marginBottom: '2.5rem' }}>
             Tarvico Inc. is the U.S. parent company, incorporated in Delaware. It builds and operates the products and businesses below — these are products and initiatives Tarvico develops, not separately incorporated public companies. Each carries an honest maturity label.
           </p>
-          <div style={{ border: '1px solid var(--hairline)', background: 'var(--bg-card)', overflow: 'hidden', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
-            <div style={{ padding: '1.4rem 2rem', borderBottom: '1px solid var(--hairline)', background: 'var(--bg-raised)', display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--bronze)' }} />
+          <div style={{ border: '1px solid var(--border-w)', background: 'var(--bg-card)', overflow: 'hidden', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
+            <div style={{ padding: '1.4rem 2rem', borderBottom: '1px solid var(--border-w)', background: 'var(--bg-raised)', display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--text)' }} />
               <span style={{ fontFamily: FONT.display, fontSize: '0.95rem', color: 'var(--text)', fontWeight: 700, letterSpacing: '-0.01em' }}>Tarvico Inc.</span>
               <span style={{ fontFamily: FONT.mono, fontSize: '0.56rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-3)', marginLeft: 'auto' }}>U.S. Parent Company · Delaware</span>
             </div>
             {publicBusinesses().map((b, i, arr) => (
-              <div key={b.name} style={{ padding: '1.3rem 2rem 1.3rem 3rem', borderBottom: i < arr.length - 1 ? '1px solid var(--hairline)' : 'none', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', transition: 'background 0.2s' }}
+              <div key={b.name} style={{ padding: '1.3rem 2rem 1.3rem 3rem', borderBottom: i < arr.length - 1 ? '1px solid var(--border-w)' : 'none', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', transition: 'background 0.2s' }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-raised)' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'transparent' }}>
-                <span style={{ fontFamily: FONT.mono, fontSize: '0.7rem', color: 'var(--bronze)' }}>{String(i + 1).padStart(2, '0')}</span>
+                <span style={{ fontFamily: FONT.mono, fontSize: '0.7rem', color: 'var(--text)' }}>{String(i + 1).padStart(2, '0')}</span>
                 {b.internal
                   ? <Link href={b.internal} style={{ fontFamily: FONT.display, fontSize: '1rem', color: 'var(--text)', fontWeight: 700, textDecoration: 'none', letterSpacing: '-0.01em' }}>{b.name}</Link>
                   : <span style={{ fontFamily: FONT.display, fontSize: '1rem', color: 'var(--text)', fontWeight: 700, letterSpacing: '-0.01em' }}>{b.name}</span>}

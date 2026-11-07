@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
 
 const cols = [
   {
@@ -49,19 +48,9 @@ const cols = [
 ]
 
 export default function Footer() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
-
-  useEffect(() => {
-    const el = document.documentElement
-    const sync = () => setTheme((el.getAttribute('data-theme') as 'dark' | 'light') || 'dark')
-    sync()
-    const observer = new MutationObserver(sync)
-    observer.observe(el, { attributes: true, attributeFilter: ['data-theme'] })
-    return () => observer.disconnect()
-  }, [])
 
   return (
-    <footer style={{
+    <footer className="keystone-dark" style={{
       background: 'var(--bg-raised)',
       borderTop: '1px solid var(--border-w)',
     }}>
@@ -74,11 +63,11 @@ export default function Footer() {
           <div>
             <div style={{ marginBottom: '0.25rem' }}>
               <Image
-                src={theme === 'light' ? '/logo-black-wordmark.webp' : '/logo-white-wordmark.webp'}
+                src="/keystone/wordmark.webp"
                 alt="Tarvico"
-                width={160}
-                height={66}
-                style={{ objectFit: 'contain', display: 'block', height: 127 }}
+                width={320}
+                height={37}
+                style={{ width: 150, height: 'auto', marginBottom: '1.4rem' }}
               />
             </div>
             <p style={{
@@ -103,15 +92,15 @@ export default function Footer() {
               Tarvico Inc.<br />
               8 The Green, #5275<br />
               Dover, DE 19901, United States<br />
-              <a href="tel:+13024396442" style={{ color: 'var(--bronze)', textDecoration: 'none', fontWeight: 500 }}>+1 (302) 439-6442</a>
+              <a href="tel:+13024396442" style={{ color: 'var(--text)', textDecoration: 'none', fontWeight: 500 }}>+1 (302) 439-6442</a>
             </address>
             <div style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
               padding: '6px 14px',
-              border: '1px solid var(--bronze-line)',
-              background: 'var(--bronze-soft)',
+              border: '1px solid var(--accent-line)',
+              background: 'var(--accent-soft)',
               borderRadius: 999,
             }}>
               <span style={{
@@ -119,14 +108,14 @@ export default function Footer() {
                 width: 6,
                 height: 6,
                 borderRadius: '50%',
-                background: 'var(--bronze)',
+                background: 'var(--text)',
                 flexShrink: 0,
               }} />
               <span style={{
                 fontSize: '0.58rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: 'var(--bronze)',
+                color: 'var(--text)',
                 fontWeight: 500,
               }}>
                 Incorporated in Delaware, USA
@@ -158,8 +147,8 @@ export default function Footer() {
                     transition: 'border-color 0.2s, color 0.2s',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'var(--bronze-line)'
-                    e.currentTarget.style.color = 'var(--bronze)'
+                    e.currentTarget.style.borderColor = 'var(--accent-line)'
+                    e.currentTarget.style.color = 'var(--text)'
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.borderColor = 'var(--border-m)'

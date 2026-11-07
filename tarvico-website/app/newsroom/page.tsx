@@ -78,7 +78,7 @@ export default function NewsroomPage() {
           background: 'var(--bg-card)',
           marginBottom: '4rem',
           overflow: 'hidden',
-          borderTop: '2px solid var(--bronze)',
+          borderTop: '2px solid var(--text)',
           borderRadius: 'var(--radius-xl)',
           boxShadow: 'var(--shadow)',
           textDecoration: 'none',
@@ -88,7 +88,7 @@ export default function NewsroomPage() {
           onMouseLeave={e => { e.currentTarget.style.boxShadow = 'var(--shadow)'; e.currentTarget.style.transform = 'translateY(0)' }}
         >
           <div style={{ padding: '3rem', borderRight: '1px solid var(--border-w)' }}>
-            <div style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--bronze)', marginBottom: '1.5rem', fontWeight: 600 }}>
+            <div style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text)', marginBottom: '1.5rem', fontWeight: 600 }}>
               {featured.category}
             </div>
             <h2 style={{
@@ -122,7 +122,7 @@ export default function NewsroomPage() {
               ))}
             </div>
             <div style={{ marginTop: '2rem' }}>
-              <span style={{ fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 600 }}>
+              <span style={{ fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text)', fontWeight: 600 }}>
                 Read Full Story →
               </span>
             </div>
@@ -139,10 +139,10 @@ export default function NewsroomPage() {
               transition: 'border-color 0.25s, box-shadow 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1)', cursor: 'pointer',
               border: '1px solid var(--border-w)', borderTop: '2px solid var(--border-w)', borderRadius: 'var(--radius-lg)',
             }}
-              onMouseEnter={e => { e.currentTarget.style.borderTopColor = 'var(--bronze)'; e.currentTarget.style.boxShadow = 'var(--shadow)'; e.currentTarget.style.transform = 'translateY(-3px)' }}
+              onMouseEnter={e => { e.currentTarget.style.borderTopColor = 'var(--text)'; e.currentTarget.style.boxShadow = 'var(--shadow)'; e.currentTarget.style.transform = 'translateY(-3px)' }}
               onMouseLeave={e => { e.currentTarget.style.borderTopColor = 'var(--border-w)'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)' }}
             >
-              <div style={{ fontSize: '0.56rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--bronze)', marginBottom: '1rem', fontWeight: 600 }}>{item.category}</div>
+              <div style={{ fontSize: '0.56rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text)', marginBottom: '1rem', fontWeight: 600 }}>{item.category}</div>
               <h3 style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(1.1rem, 2vw, 1.45rem)',
@@ -159,7 +159,7 @@ export default function NewsroomPage() {
               </p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-w)', paddingTop: '1rem' }}>
                 <span style={{ fontSize: '0.6rem', color: 'var(--text-3)', fontWeight: 400 }}>{item.date}</span>
-                <span style={{ fontSize: '0.6rem', color: 'var(--bronze)', fontWeight: 600 }}>Read →</span>
+                <span style={{ fontSize: '0.6rem', color: 'var(--text)', fontWeight: 600 }}>Read →</span>
               </div>
             </Link>
           ))}
@@ -168,7 +168,7 @@ export default function NewsroomPage() {
         <div style={{ marginTop: '4rem', padding: '2.5rem', border: '1px solid var(--border-w)', background: 'var(--bg-card)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           <div>
             <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 600 }}>Press & Media Inquiries</div>
-            <a href="mailto:press@tarvico.com" style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--bronze)', textDecoration: 'none' }}>press@tarvico.com</a>
+            <a href="mailto:press@tarvico.com" style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text)', textDecoration: 'none' }}>press@tarvico.com</a>
           </div>
           <div style={{ fontSize: '0.8rem', color: 'var(--text-2)', maxWidth: 360, fontWeight: 400, lineHeight: 1.7 }}>
             For media inquiries, interview requests, and press assets, contact our communications team directly.

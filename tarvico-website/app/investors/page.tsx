@@ -25,7 +25,7 @@ export default function InvestorsPage() {
     <>
       <PageHero
         label="Investor Relations"
-        title={<>Built for long-term <span className="text-foundry">value creation.</span></>}
+        title={<>Built for long-term <span className="editorial-emphasis">value creation.</span></>}
         subtitle="Tarvico is designed from first principles to compound value over decades — a portfolio approach to AI-native company building with institutional discipline and founder conviction."
       />
 
@@ -36,13 +36,13 @@ export default function InvestorsPage() {
           fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
           fontWeight: 500,
           lineHeight: 1.3,
-          borderLeft: '2px solid var(--bronze)',
+          borderLeft: '2px solid var(--text)',
           paddingLeft: '2.5rem',
           margin: '2rem 0 6rem',
           color: 'var(--text)',
           letterSpacing: '-0.015em',
         }}>
-          <span style={{ color: 'var(--bronze)', fontStyle: 'italic' }}>&ldquo;</span>We are not building for an exit. We are building an enduring technology institution — the kind of company that shapes industries and creates lasting value over decades.<span style={{ color: 'var(--bronze)', fontStyle: 'italic' }}>&rdquo;</span>
+          <span style={{ color: 'var(--text)', fontStyle: 'italic' }}>&ldquo;</span>We are not building for an exit. We are building an enduring technology institution — the kind of company that shapes industries and creates lasting value over decades.<span style={{ color: 'var(--text)', fontStyle: 'italic' }}>&rdquo;</span>
           <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', color: 'var(--text-2)', marginTop: '1.25rem', fontWeight: 500, letterSpacing: '0.02em' }}>
             — Jeff Honforloco, Founder & CEO · 2026
           </div>
@@ -56,13 +56,13 @@ export default function InvestorsPage() {
           {evidence.map(e => (
             <div key={e.t} style={{
               background: 'var(--bg-card)', padding: '2rem',
-              border: '1px solid var(--border-w)', borderTop: '2px solid var(--bronze)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)',
+              border: '1px solid var(--border-w)', borderTop: '2px solid var(--text)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)',
               display: 'flex', flexDirection: 'column',
             }}>
               <div style={{ fontSize: '0.95rem', color: 'var(--text)', fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{e.t}</div>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-2)', lineHeight: 1.6, fontWeight: 400, flex: 1 }}>{e.d}</p>
               {e.href && (
-                <a href={e.href} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1rem', fontSize: '0.72rem', letterSpacing: '0.04em', color: 'var(--bronze)', fontWeight: 600, textDecoration: 'none' }}>{e.cta}</a>
+                <a href={e.href} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1rem', fontSize: '0.72rem', letterSpacing: '0.04em', color: 'var(--text)', fontWeight: 600, textDecoration: 'none' }}>{e.cta}</a>
               )}
             </div>
           ))}
@@ -91,10 +91,10 @@ export default function InvestorsPage() {
                 border: '1px solid var(--border-w)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)',
                 transition: 'border-color 0.25s, box-shadow 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1)',
               }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--bronze-line)'; e.currentTarget.style.boxShadow = 'var(--shadow)'; e.currentTarget.style.transform = 'translateY(-3px)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-line)'; e.currentTarget.style.boxShadow = 'var(--shadow)'; e.currentTarget.style.transform = 'translateY(-3px)' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-w)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; e.currentTarget.style.transform = 'translateY(0)' }}
               >
-                <div style={{ fontSize: '1.3rem', color: 'var(--bronze)', marginBottom: '1.5rem', opacity: 0.8 }}>{t.icon}</div>
+                <div style={{ fontSize: '1.3rem', color: 'var(--text)', marginBottom: '1.5rem', opacity: 0.8 }}>{t.icon}</div>
                 <div style={{ fontSize: '1rem', color: 'var(--text)', marginBottom: '0.75rem', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{t.title}</div>
                 <p style={{ fontSize: '0.84rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 400 }}>{t.desc}</p>
               </div>
@@ -119,7 +119,7 @@ export default function InvestorsPage() {
                 { label: 'Research & New Products', desc: 'Measured investment in validating the next generation of products before they scale.' },
               ].map((item, i) => (
                 <div key={item.label} style={{ display: 'flex', gap: '1.5rem', padding: '1.25rem 0', borderBottom: '1px solid var(--border-w)' }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--bronze)', minWidth: 52, lineHeight: 1.2, opacity: 0.85 }}>{String(i + 1).padStart(2, '0')}</div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text)', minWidth: 52, lineHeight: 1.2, opacity: 0.85 }}>{String(i + 1).padStart(2, '0')}</div>
                   <div>
                     <div style={{ fontSize: '0.9rem', color: 'var(--text)', fontWeight: 600, marginBottom: '0.25rem', fontFamily: 'var(--font-display)', letterSpacing: '-0.01em' }}>{item.label}</div>
                     <div style={{ fontSize: '0.78rem', color: 'var(--text-2)', fontWeight: 400, lineHeight: 1.55 }}>{item.desc}</div>
@@ -128,7 +128,7 @@ export default function InvestorsPage() {
               ))}
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div style={{ border: '1px solid var(--border-w)', padding: '2.5rem', background: 'var(--bg-card)', borderTop: '2px solid var(--bronze)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ border: '1px solid var(--border-w)', padding: '2.5rem', background: 'var(--bg-card)', borderTop: '2px solid var(--text)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
                 <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.85rem', fontWeight: 600 }}>Investor Deck</div>
                 <div style={{ fontSize: '1rem', color: 'var(--text)', marginBottom: '0.5rem', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>Tarvico Inc. — Strategic Overview</div>
                 <div style={{ fontSize: '0.78rem', color: 'var(--text-3)', marginBottom: '1.5rem', fontWeight: 400 }}>2026 Edition · Confidential</div>
@@ -140,11 +140,11 @@ export default function InvestorsPage() {
                 <div style={{ fontSize: '0.78rem', color: 'var(--text-3)', marginBottom: '1.5rem', fontWeight: 400 }}>Jeff Honforloco · 2026</div>
                 <Button href="/vision" variant="secondary">Read Letter →</Button>
               </div>
-              <div style={{ border: '1px solid var(--bronze-line)', padding: '2rem', background: 'var(--bronze-soft)', borderRadius: 'var(--radius-lg)' }}>
+              <div style={{ border: '1px solid var(--accent-line)', padding: '2rem', background: 'var(--accent-soft)', borderRadius: 'var(--radius-lg)' }}>
                 <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.75rem', fontWeight: 600 }}>Investor Inquiries</div>
                 <a href="mailto:investors@tarvico.com" style={{
                   fontFamily: 'var(--font-display)', fontSize: '1.3rem', fontWeight: 600, letterSpacing: '-0.02em',
-                  color: 'var(--bronze)', textDecoration: 'none', display: 'block',
+                  color: 'var(--text)', textDecoration: 'none', display: 'block',
                 }}>investors@tarvico.com</a>
               </div>
             </div>
@@ -174,11 +174,11 @@ export default function InvestorsPage() {
               ].map(item => (
                 <div key={item.label} style={{
                   padding: '1.4rem 1.6rem', background: 'var(--bg-card)',
-                  border: '1px solid var(--border-w)', borderLeftWidth: 2, borderLeftColor: 'var(--bronze-line)',
+                  border: '1px solid var(--border-w)', borderLeftWidth: 2, borderLeftColor: 'var(--accent-line)',
                   borderRadius: 'var(--radius)', transition: 'border-color 0.2s, transform 0.3s cubic-bezier(0.16,1,0.3,1)',
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.borderLeftColor = 'var(--bronze)'; e.currentTarget.style.transform = 'translateX(4px)' }}
-                  onMouseLeave={e => { e.currentTarget.style.borderLeftColor = 'var(--bronze-line)'; e.currentTarget.style.transform = 'translateX(0)' }}
+                  onMouseEnter={e => { e.currentTarget.style.borderLeftColor = 'var(--text)'; e.currentTarget.style.transform = 'translateX(4px)' }}
+                  onMouseLeave={e => { e.currentTarget.style.borderLeftColor = 'var(--accent-line)'; e.currentTarget.style.transform = 'translateX(0)' }}
                 >
                   <div style={{ fontSize: '0.92rem', color: 'var(--text)', fontWeight: 600, marginBottom: '0.3rem', fontFamily: 'var(--font-display)', letterSpacing: '-0.01em' }}>{item.label}</div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-2)', fontWeight: 400 }}>{item.desc}</div>

@@ -152,7 +152,7 @@ export default function LegalPage() {
     <>
       <PageHero
         label="Legal Disclosures"
-        title={<>Governed by <span className="text-foundry">integrity.</span></>}
+        title={<>Governed by <span className="editorial-emphasis">integrity.</span></>}
         subtitle="Last Updated: May 2026 — Legal disclosures, regulatory compliance statements, and corporate governance information for Tarvico Inc."
       />
 
@@ -178,7 +178,7 @@ export default function LegalPage() {
                   fontSize: '0.72rem',
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
-                  color: 'var(--bronze)',
+                  color: 'var(--text)',
                   fontWeight: 500,
                   marginBottom: '0.6rem',
                 }}>

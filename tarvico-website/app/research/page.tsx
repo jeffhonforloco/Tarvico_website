@@ -12,7 +12,7 @@ export default function ResearchPage() {
     <>
       <PageHero
         label="Research"
-        title={<>Research &amp; <span className="text-foundry">white papers.</span></>}
+        title={<>Research &amp; <span className="editorial-emphasis">white papers.</span></>}
         subtitle="Tarvico’s research library — where the company publishes white papers, AI and commerce research, and technical documents intended to be durable and citable over time."
       />
 
@@ -25,7 +25,7 @@ export default function ResearchPage() {
             <div key={a.t} style={{
               border: '1px solid var(--border-w)',
               borderLeftWidth: 2,
-              borderLeftColor: 'var(--bronze-line)',
+              borderLeftColor: 'var(--accent-line)',
               borderRadius: 'var(--radius)',
               padding: '1.75rem 1.9rem',
               background: 'var(--bg-card)',
@@ -43,7 +43,7 @@ export default function ResearchPage() {
           padding: '3rem',
           textAlign: 'center',
         }}>
-          <div style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--bronze)', fontWeight: 600, marginBottom: '1rem' }}>Coming Soon</div>
+          <div style={{ fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text)', fontWeight: 600, marginBottom: '1rem' }}>Coming Soon</div>
           <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, color: 'var(--text)', letterSpacing: '-0.02em', marginBottom: '1rem' }}>First publications in progress.</div>
           <p style={{ fontSize: '0.95rem', color: 'var(--text-2)', lineHeight: 1.7, maxWidth: 540, margin: '0 auto 2rem' }}>
             The research library is being established. To be notified when the first white papers and technical documents are published, get in touch.

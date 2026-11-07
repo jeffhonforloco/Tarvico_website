@@ -4,40 +4,13 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-// Fonts are vendored into app/fonts/ and self-hosted with next/font/local.
-// There is NO build-time or runtime request to Google Fonts — this is what
-// keeps the Cloudflare Pages build deterministic and offline-safe. Variable
-// woff2 (latin subset) carry the full weight axis in a single file each, so
-// the whole AUREL type system is ~194 KB across six files.
-//
-// Project AUREL "FOUNDRY" type roles:
-//   Inter       → body workhorse            (--font-inter)
-//   Archivo     → monumental display        (--font-archivo)
-//   IBM Plex Mono → technical annotations    (--font-plex-mono)
-//   Fraunces    → editorial serif (Dir. C)  (--font-fraunces)
+// Inter and the editorial Fraunces faces are self-hosted.
 const inter = localFont({
   src: './fonts/inter-latin-wght-normal.woff2',
   weight: '100 900',
   style: 'normal',
   display: 'swap',
   variable: '--font-inter',
-})
-
-const archivo = localFont({
-  src: './fonts/archivo-latin-wght-normal.woff2',
-  weight: '100 900',
-  style: 'normal',
-  display: 'swap',
-  variable: '--font-archivo',
-})
-
-const plexMono = localFont({
-  src: [
-    { path: './fonts/ibm-plex-mono-latin-400-normal.woff2', weight: '400', style: 'normal' },
-    { path: './fonts/ibm-plex-mono-latin-500-normal.woff2', weight: '500', style: 'normal' },
-  ],
-  display: 'swap',
-  variable: '--font-plex-mono',
 })
 
 const fraunces = localFont({
@@ -47,13 +20,14 @@ const fraunces = localFont({
   ],
   display: 'swap',
   variable: '--font-fraunces',
+  preload: false,
 })
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#0A0A0C',
+  themeColor: '#000000',
 }
 
 export const metadata: Metadata = {
@@ -104,7 +78,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
     other: [
-      { rel: 'mask-icon', url: '/logo-icon.png', color: '#C9A447' },
+      { rel: 'mask-icon', url: '/logo-icon.png', color: '#000000' },
     ],
   },
   manifest: '/manifest.webmanifest',
@@ -164,8 +138,9 @@ export const metadata: Metadata = {
     google: 'jQeeSN9bYApYMV3WoeseoMXsY4ZLszdTgaHo7mHaQ5M',
   },
   other: {
-    'msapplication-TileColor': '#0A0A0C',
+    'msapplication-TileColor': '#000000',
     'msapplication-TileImage': '/logo-icon.png',
+    'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'apple-mobile-web-app-title': 'Tarvico',
@@ -436,7 +411,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${archivo.variable} ${plexMono.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -459,7 +434,7 @@ export default function RootLayout({
       </head>
       <body>
         <Nav />
-        <main style={{ paddingTop: 'var(--site-header-height)', minHeight: '100vh' }}>{children}</main>
+        <main id="main-content" tabIndex={-1} style={{ paddingTop: 'var(--site-header-height)', minHeight: '100vh' }}>{children}</main>
         <Footer />
       </body>
     </html>

@@ -145,7 +145,7 @@ export default function TermsPage() {
     <>
       <PageHero
         label="Terms of Use"
-        title={<>Clear terms. <span className="text-foundry">Honest standards.</span></>}
+        title={<>Clear terms. <span className="editorial-emphasis">Honest standards.</span></>}
         subtitle="Last Updated: May 2026 — These Terms of Use govern your access to and use of tarvico.com and are binding upon all visitors."
       />
 
@@ -171,7 +171,7 @@ export default function TermsPage() {
                   fontSize: '0.72rem',
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
-                  color: 'var(--bronze)',
+                  color: 'var(--text)',
                   fontWeight: 500,
                   marginBottom: '0.6rem',
                 }}>
