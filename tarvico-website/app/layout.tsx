@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import { appearanceBootstrap } from '@/lib/appearance'
 
 // Inter and the editorial Fraunces faces are self-hosted.
 const inter = localFont({
@@ -411,8 +412,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${fraunces.variable}`}>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: appearanceBootstrap }} />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

@@ -1,11 +1,11 @@
 import Image from 'next/image'
 
 const studies = {
-  keystone: { alt: 'A solid brushed-metal keystone lit against a black studio backdrop', caption: 'Keystone · material study' },
-  sireiq: { alt: 'Repeating folded steel surfaces arranged in a precise rhythm', caption: 'SireIQ · information flow concept' },
-  vytre: { alt: 'An aluminum plane aligns and connects parallel graphite modules', caption: 'Vytre AWOS · orchestration concept' },
-  maeyen: { alt: 'Two ceramic forms fitted together along a precise dark seam', caption: 'Maeyen · transaction trust concept' },
-  strategy: { alt: 'A hypothetical infrastructure campus with concrete fins, solar panels and a service lane', caption: 'Future infrastructure concept · illustrative' },
+  keystone: { alt: '', caption: '' },
+  sireiq: { alt: '', caption: '' },
+  vytre: { alt: '', caption: '' },
+  maeyen: { alt: '', caption: '' },
+  strategy: { alt: 'A hypothetical infrastructure campus with concrete fins, solar panels and a service lane', caption: 'Future AI infrastructure · Concept rendering' },
 } as const
 
 export type Study = keyof typeof studies
@@ -26,7 +26,7 @@ export default function ConceptImage({ study, priority = false }: { study: Study
           unoptimized
         />
       </picture>
-      <figcaption>{caption}</figcaption>
+      {caption && <figcaption>{caption}</figcaption>}
     </figure>
   )
 }

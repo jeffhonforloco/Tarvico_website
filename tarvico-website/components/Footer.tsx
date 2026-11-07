@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import BrandWordmark from '@/components/BrandWordmark'
 
 const cols = [
   {
@@ -50,7 +50,7 @@ const cols = [
 export default function Footer() {
 
   return (
-    <footer className="keystone-dark" style={{
+    <footer style={{
       background: 'var(--bg-raised)',
       borderTop: '1px solid var(--border-w)',
     }}>
@@ -61,14 +61,8 @@ export default function Footer() {
           marginBottom: '4rem',
         }}>
           <div>
-            <div style={{ marginBottom: '0.25rem' }}>
-              <Image
-                src="/keystone/wordmark.webp"
-                alt="Tarvico"
-                width={320}
-                height={37}
-                style={{ width: 150, height: 'auto', marginBottom: '1.4rem' }}
-              />
+            <div className="footer-wordmark">
+              <BrandWordmark />
             </div>
             <p style={{
               fontSize: '0.82rem',

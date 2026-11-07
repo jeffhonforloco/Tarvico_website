@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import BrandWordmark from '@/components/BrandWordmark'
+import { getAppearance, getServerAppearance, subscribeToAppearance, toggleAppearance } from '@/lib/appearance'
 import { usePathname } from 'next/navigation'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 
 const links = [
   { href: '/portfolio', label: 'Businesses' },
@@ -17,7 +18,7 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname()
-  const [dark, setDark] = useState(false)
+  const dark = useSyncExternalStore(subscribeToAppearance, getAppearance, getServerAppearance) === 'dark'
   const [openPath, setOpenPath] = useState<string | null>(null)
   const open = openPath === pathname
   const menuButton = useRef<HTMLButtonElement>(null)
@@ -50,11 +51,6 @@ export default function Nav() {
     }
   }, [open])
 
-  const toggleTheme = () => {
-    document.documentElement.dataset.theme = dark ? 'light' : 'dark'
-    setDark(!dark)
-  }
-
   const navigationLinks = () => links.map(({ href, label }) => (
     <Link key={href} href={href} aria-current={pathname === href ? 'page' : undefined} onClick={() => setOpenPath(null)}>
       {label}
@@ -62,16 +58,17 @@ export default function Nav() {
   ))
 
   return (
-    <header className="site-header keystone-dark">
+    <header className="site-header">
       <a className="skip-link" href="#main-content" hidden={open}>Skip to content</a>
       <nav aria-label="Main navigation" className="keystone-shell site-nav">
-        <Link className="site-wordmark" href="/">
-          <Image src="/keystone/wordmark.webp" alt="Tarvico Inc." width={320} height={37} priority />
+        <Link className="site-wordmark" href="/" onClick={() => setOpenPath(null)}>
+          <BrandWordmark />
         </Link>
         <div className="site-nav-desktop">{navigationLinks()}</div>
         <div className="site-nav-controls">
-          <button className="site-nav-control" type="button" aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'} onClick={toggleTheme}>
-            <span aria-hidden="true">{dark ? '☀' : '◐'}</span>
+          <button className="site-nav-control" type="button" aria-label="Dark appearance" aria-pressed={dark} onClick={toggleAppearance}>
+            <span className="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+            <span className="theme-icon theme-icon--moon" aria-hidden="true">◐</span>
           </button>
           <button className="site-nav-control site-menu-toggle" ref={menuButton} type="button"
             aria-label="Toggle menu" aria-controls="site-mobile-menu" aria-expanded={open}
