@@ -494,6 +494,12 @@ body {
 .home-hero-summary { font-size: 1.14rem; margin-bottom: 2.5rem; }
 .home-hero-actions { margin-bottom: 3rem; }
 
+.site-footer-grid { grid-template-columns: 2fr repeat(5, 1fr); }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 @media (max-width: 900px) {
   .home-hero {
     min-height: auto;
