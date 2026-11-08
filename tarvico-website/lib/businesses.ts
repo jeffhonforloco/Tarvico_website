@@ -47,18 +47,18 @@ export type Business = {
 export const BUSINESSES: Business[] = [
   {
     name: 'Vytre AWOS',
-    tagline: 'AI Workforce Operating System — the enterprise control plane for AI work.',
+    tagline: 'An AI Workforce Operating System for coordinating AI workers with human approvals.',
     pillar: 'ai',
     maturity: 'public-beta',
     visibility: 'featured',
     url: 'https://www.vytre.com',
     internal: '/vytre',
     provenance: 'management-confirmed',
-    note: 'Public beta announced at vytre.com (management-confirmed). Site previously linked vytre.io — confirm canonical URL. tarvico/vytre-core exists on Hugging Face (repo-verified).',
+    note: 'Public beta announced at vytre.com (management-confirmed). Hugging Face model at tarvico/vytre_core (management-confirmed canonical slug).',
   },
   {
     name: 'SireIQ',
-    tagline: 'An intelligent assistant for chat, content creation, and workflow automation.',
+    tagline: 'An AI assistant for research, creation, planning and problem-solving.',
     pillar: 'ai',
     maturity: 'operational',
     visibility: 'featured',

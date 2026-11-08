@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       'Enduring, AI-native products from Tarvico Inc. — Vytre AWOS (AI Workforce Operating System) and Maeyen (commerce trust infrastructure for Africa).',
     url: 'https://www.tarvico.com/products',
-    images: [{ url: 'https://www.tarvico.com/og-image.png', width: 1200, height: 630, alt: 'Tarvico Products — Vytre AWOS & Maeyen' }],
+    images: [{ url: 'https://www.tarvico.com/og-image.png', width: 1200, height: 630, alt: 'Tarvico Inc. logo, white chevron and gold triangle on black' }],
   },
   twitter: {
     card: 'summary_large_image',

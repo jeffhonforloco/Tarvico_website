@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Tarvico Inc. — Our Businesses',
+        alt: 'Tarvico Inc. logo, white chevron and gold triangle on black',
       },
     ],
   },

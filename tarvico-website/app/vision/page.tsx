@@ -1,10 +1,12 @@
+import CorporateImage from '@/components/CorporateImage'
+import { PageHero } from '@/components/ui'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Founder Letter — Building for the Next Era | Tarvico Inc.',
+  title: 'Vision and Founder Letter | Tarvico Inc.',
   description:
-    'A letter from Jeff Yèmalín Bienvenu Honforloco, Founder & CEO of Tarvico Inc. On the origins of Tarvico, the conviction behind building a privately held U.S. technology company, and the long-term vision for enduring AI-native technology ventures.',
+    'Explore Tarvico’s long-term interests in AI infrastructure, energy and intelligent mobility, including the proposed Lagos AI campus, the Vytreon V7 concept and the founder’s letter.',
   keywords: [
     'Tarvico founder letter',
     'Jeff Honforloco letter',
@@ -17,24 +19,24 @@ export const metadata: Metadata = {
     'Tarvico Inc origins',
   ],
   openGraph: {
-    title: 'Founder Letter — Building for the Next Era | Tarvico Inc.',
+    title: 'Vision and Founder Letter | Tarvico Inc.',
     description:
-      'A letter from Jeff Yèmalín Bienvenu Honforloco (Jeff Hon), Founder & CEO of Tarvico Inc. On the origins, conviction, and long-term vision behind building enduring AI-native technology companies.',
+      'Tarvico’s long-term vision, including the proposed Lagos AI campus and Vytreon V7 concept.',
     url: 'https://www.tarvico.com/vision',
     images: [
       {
         url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Tarvico Inc. Founder Letter — Jeff Hon',
+        alt: 'Tarvico Inc. logo, white chevron and gold triangle on black',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Founder Letter — Tarvico Inc. | Jeff Hon',
+    title: 'Vision and Founder Letter | Tarvico Inc.',
     description:
-      'On the origins of Tarvico Inc. and the long-term vision for enduring AI-native technology companies — from Founder & CEO Jeff Yèmalín Bienvenu Honforloco.',
+      'Tarvico’s long-term vision for AI infrastructure, energy and intelligent mobility.',
     images: ['https://www.tarvico.com/og-image.png'],
   },
   alternates: {
@@ -66,94 +68,76 @@ const paragraphs = [
   { bold: true, text: 'We are only getting started.' },
 ]
 
+const SERIF = 'var(--font-display)'
+const BODY = 'var(--font-body)'
+
 export default function VisionPage() {
   return (
-    <div style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: '72px' }}>
-      <div className="mob-px" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem 3rem', borderBottom: '1px solid var(--border-w)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.5rem' }}>
-          <span style={{ display: 'block', width: 20, height: 1, background: 'var(--gold)' }} />
-          <span style={{ fontSize: '0.58rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500 }}>Founder Letter · 2026</span>
+    <>
+      <PageHero layout="feature" title="Our vision" subtitle="Tarvico builds AI and digital products today. Its long-term interests include AI infrastructure, energy and intelligent mobility." />
+      <section id="lagos-campus" className="keystone-shell keystone-band vision-feature vision-feature--campus" aria-labelledby="lagos-heading">
+        <div>
+          <h2 id="lagos-heading">Proposed Lagos AI campus</h2>
+          <p>Tarvico is exploring a long-term concept for an AI data center campus in Lagos, Nigeria. The proposal illustrates how modular computing halls could be supported by power, cooling and network connectivity.</p>
+          <p>No site acquisition, permits, financing or construction are confirmed.</p>
         </div>
-        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'end' }}>
-          <h1 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(2.8rem, 5.5vw, 5.2rem)',
-            fontWeight: 700,
-            lineHeight: 1.02,
-            color: 'var(--text)',
-            letterSpacing: '-0.04em',
-          }}>
-            Building for<br />
-            <span className="text-gradient-gold">the Next Era</span>
-          </h1>
-          <div style={{ paddingBottom: '0.5rem' }}>
-            <div style={{ fontSize: '0.72rem', color: 'var(--text-2)', fontWeight: 300, marginBottom: '0.25rem' }}>
-              Jeff Yèmalín Bienvenu Honforloco
-            </div>
-            <div style={{ fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 500 }}>
-              Founder & Chief Executive Officer
-            </div>
+        <CorporateImage name="lagos" caption="Architectural concept for a proposed campus in Lagos, Nigeria" />
+        <dl className="vision-systems">
+          <div><dt>Computing and connectivity</dt><dd>Modular halls for AI computing, supported by fiber connections.</dd></div>
+          <div><dt>Power and storage</dt><dd>Illustrative solar, wind, battery storage and grid interconnection.</dd></div>
+          <div><dt>Cooling and water</dt><dd>Cooling equipment and water infrastructure are part of the concept.</dd></div>
+        </dl>
+      </section>
+      <section id="vytreon" className="keystone-dark" aria-labelledby="vytreon-heading">
+        <div className="keystone-shell keystone-band vision-feature vision-feature--mobility">
+          <div>
+            <h2 id="vytreon-heading">Vytreon V7</h2>
+            <p>Vytreon is a proposed electric mobility initiative. The V7 is an exterior design concept for a future electric SUV. Tarvico has no vehicle manufacturing or sales operation.</p>
+            <p>Escazo’s <a className="keystone-link" href="https://escazo.com">travel platform ↗</a> operates today. Premium transportation remains a future ambition.</p>
           </div>
+          <CorporateImage name="v7" caption="Future vehicle concept · Vytreon V7 exterior" />
         </div>
-      </div>
-
-      <article className="mob-px" style={{ maxWidth: 680, margin: '0 auto', padding: '6rem 3rem 10rem' }}>
+      </section>
+      <section className="keystone-shell keystone-band company-questions">
+        <details>
+          <summary>Read the founder’s letter</summary>
+          <article className="founder-letter">
+            <h2>Building for the Next Era</h2>
         {paragraphs.map((p, i) => {
           if (p.lead) return (
-            <p key={i} style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)',
-              fontWeight: 600,
-              color: 'var(--text)',
-              lineHeight: 1.45,
-              marginBottom: '3rem',
-              paddingLeft: '2rem',
-              borderLeft: '3px solid var(--gold)',
-              letterSpacing: '-0.02em',
-            }}>
-              &ldquo;{p.text}&rdquo;
+            <p key={i} style={{ fontFamily: SERIF, fontSize: 'clamp(1.45rem, 2.6vw, 2rem)', fontWeight: 500, color: 'var(--paper-ink)', lineHeight: 1.4, marginBottom: '3rem', paddingLeft: '2rem', borderLeft: '2px solid var(--paper-ink)', letterSpacing: '-0.015em' }}>
+              <span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>&ldquo;</span>{p.text}<span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>&rdquo;</span>
             </p>
           )
           if (p.bold) return (
-            <p key={i} style={{
-              fontSize: '1.05rem',
-              color: 'var(--text)',
-              lineHeight: 1.9,
-              fontWeight: 400,
-              marginBottom: '2rem',
-              marginTop: i > 0 ? '1rem' : 0,
-            }}>
+            <p key={i} style={{ fontFamily: SERIF, fontSize: 'clamp(1.2rem, 2.2vw, 1.5rem)', color: 'var(--paper-ink)', lineHeight: 1.5, fontWeight: 500, margin: '2.5rem 0', letterSpacing: '-0.01em' }}>
               {p.text}
             </p>
           )
           return (
-            <p key={i} style={{
-              fontSize: '1.08rem',
-              color: 'var(--text-2)',
-              lineHeight: 1.8,
-              fontWeight: 400,
-              marginBottom: '1.75rem',
-            }}>
+            <p key={i} style={{ fontSize: '1.08rem', color: 'var(--paper-muted)', lineHeight: 1.85, fontWeight: 400, marginBottom: '1.75rem' }}>
               {p.text}
             </p>
           )
         })}
 
-        <div style={{ marginTop: '5rem', paddingTop: '3rem', borderTop: '1px solid var(--border-w)' }}>
-          <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.5rem', letterSpacing: '-0.03em' }}>
+        <div style={{ marginTop: '5rem', paddingTop: '3rem', borderTop: '1px solid var(--paper-line)' }}>
+          <div style={{ fontFamily: SERIF, fontSize: '1.7rem', fontWeight: 500, fontStyle: 'italic', color: 'var(--paper-ink)', marginBottom: '0.6rem', letterSpacing: '-0.01em' }}>
             Jeff Yèmalín Bienvenu Honforloco
           </div>
-          <div style={{ fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500, marginBottom: '0.3rem' }}>
-            Founder & Chief Executive Officer
+          <div style={{ fontFamily: BODY, fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--paper-ink)', fontWeight: 500, marginBottom: '0.3rem' }}>
+            Founder &amp; Chief Executive Officer
           </div>
-          <div style={{ fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-3)', fontWeight: 400 }}>
+          <div style={{ fontFamily: BODY, fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--paper-muted)', fontWeight: 400 }}>
             Tarvico Inc. · 2026
           </div>
-          <Link href="/founder" style={{ display: 'inline-block', marginTop: '2rem', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>
+          <Link href="/founder" style={{ display: 'inline-block', marginTop: '2rem', fontFamily: BODY, fontSize: '0.66rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--paper-ink)', fontWeight: 500, textDecoration: 'none', borderBottom: '1px solid var(--accent-line)', paddingBottom: 4 }}>
             View founder profile →
           </Link>
         </div>
-      </article>
-    </div>
+          </article>
+        </details>
+      </section>
+    </>
   )
 }

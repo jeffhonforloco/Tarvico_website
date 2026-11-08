@@ -1,279 +1,81 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import BrandWordmark from '@/components/BrandWordmark'
+import { getAppearance, getServerAppearance, subscribeToAppearance, toggleAppearance } from '@/lib/appearance'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect, useCallback } from 'react'
-import { createPortal } from 'react-dom'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 
 const links = [
-  { href: '/portfolio',  label: 'Businesses' },
-  { href: '/about',      label: 'About' },
-  { href: '/investors',  label: 'Investors' },
-  { href: '/vision',     label: 'Vision' },
-  { href: '/careers',    label: 'Careers' },
-  { href: '/newsroom',   label: 'Newsroom' },
+  { href: '/products', label: 'Products' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/vision', label: 'Vision' },
+  { href: '/about', label: 'Company' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 export default function Nav() {
   const pathname = usePathname()
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const toggleTheme = () => {
-    const next = theme === 'dark' ? 'light' : 'dark'
-    setTheme(next)
-    document.documentElement.setAttribute('data-theme', next)
-  }
-
-  const close = useCallback(() => setOpen(false), [])
+  const dark = useSyncExternalStore(subscribeToAppearance, getAppearance, getServerAppearance) === 'dark'
+  const [openPath, setOpenPath] = useState<string | null>(null)
+  const open = openPath === pathname
+  const menuButton = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     if (!open) return
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') close() }
-    window.addEventListener('keydown', handler)
-    document.body.style.overflow = 'hidden'
-    return () => {
-      window.removeEventListener('keydown', handler)
-      document.body.style.overflow = ''
+    const media = window.matchMedia('(min-width: 1024px)')
+    const close = () => setOpenPath(null)
+    const closeOnDesktop = () => { if (media.matches) close() }
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        close()
+        menuButton.current?.focus()
+      }
     }
-  }, [open, close])
+    const pageContent = Array.from(document.querySelectorAll<HTMLElement>('body > main, body > footer'))
+    const originalInert = pageContent.map(element => element.inert)
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    pageContent.forEach(element => { element.inert = true })
+    media.addEventListener('change', closeOnDesktop)
+    window.addEventListener('keydown', onKey)
+    window.addEventListener('popstate', close)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      pageContent.forEach((element, index) => { element.inert = originalInert[index] })
+      media.removeEventListener('change', closeOnDesktop)
+      window.removeEventListener('keydown', onKey)
+      window.removeEventListener('popstate', close)
+    }
+  }, [open])
 
-  useEffect(() => {
-    setOpen(false)
-  }, [pathname])
-
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 32)
-    window.addEventListener('scroll', handler, { passive: true })
-    return () => window.removeEventListener('scroll', handler)
-  }, [])
+  const navigationLinks = () => links.map(({ href, label }) => (
+    <Link key={href} href={href} aria-current={pathname === href ? 'page' : undefined} onClick={() => setOpenPath(null)}>
+      {label}
+    </Link>
+  ))
 
   return (
-    <>
-    <nav className="mob-px" style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      zIndex: 100,
-      height: 80,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '0 3rem 0 1.5rem',
-      background: scrolled
-        ? theme === 'light' ? 'rgba(247,245,241,0.95)' : 'rgba(7,7,10,0.94)'
-        : theme === 'light' ? 'rgba(247,245,241,0.80)' : 'rgba(7,7,10,0.72)',
-      backdropFilter: 'blur(20px)',
-      WebkitBackdropFilter: 'blur(20px)',
-      borderBottom: scrolled
-        ? `1px solid ${theme === 'light' ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.07)'}`
-        : '1px solid transparent',
-      transition: 'background 0.4s ease, border-color 0.4s ease',
-    }}>
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-        <Image
-          src={theme === 'light' ? '/logo-black-wordmark.webp' : '/logo-white-wordmark.webp'}
-          alt="Tarvico Inc. — Building Technology for a Connected World"
-          width={240}
-          height={100}
-          style={{ objectFit: 'contain', height: 127, width: 'auto', transition: 'opacity 0.4s ease' }}
-          priority
-        />
-      </Link>
-
-      <div className="hidden md:flex" style={{ gap: '2.75rem', alignItems: 'center' }}>
-        {links.map(({ href, label }) => {
-          const active = pathname === href
-          return (
-            <Link
-              key={href}
-              href={href}
-              style={{
-                fontSize: '0.9rem',
-                letterSpacing: '-0.005em',
-                color: active ? 'var(--text)' : 'var(--text-2)',
-                textDecoration: 'none',
-                fontWeight: active ? 600 : 500,
-                transition: 'color 0.2s',
-                position: 'relative',
-                paddingBottom: '4px',
-              }}
-              onMouseEnter={e => { if (!active) e.currentTarget.style.color = 'var(--text)' }}
-              onMouseLeave={e => { if (!active) e.currentTarget.style.color = 'var(--text-2)' }}
-            >
-              {label}
-              {active && (
-                <span style={{
-                  position: 'absolute',
-                  bottom: -2,
-                  left: 0,
-                  right: 0,
-                  height: '2px',
-                  borderRadius: 2,
-                  background: 'var(--gold)',
-                }} />
-              )}
-            </Link>
-          )
-        })}
-      </div>
-
-      <div className="hidden md:flex" style={{ alignItems: 'center', gap: '1rem' }}>
-        <button
-          onClick={toggleTheme}
-          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-          style={{
-            background: 'none',
-            border: '1px solid var(--border-m)',
-            color: 'var(--text-2)',
-            cursor: 'pointer',
-            padding: '7px 11px',
-            fontSize: '1rem',
-            lineHeight: 1,
-            borderRadius: 'var(--radius-sm)',
-            transition: 'border-color 0.2s, color 0.2s',
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.borderColor = 'var(--gold-border)'
-            e.currentTarget.style.color = 'var(--text)'
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.borderColor = 'var(--border-m)'
-            e.currentTarget.style.color = 'var(--text-2)'
-          }}
-        >
-          {theme === 'dark' ? '☀' : '☾'}
-        </button>
-
-        <Link
-          href="/contact"
-          style={{
-            fontSize: '0.85rem',
-            letterSpacing: '-0.005em',
-            background: 'var(--gold)',
-            color: '#0A0A0C',
-            padding: '9px 20px',
-            textDecoration: 'none',
-            fontWeight: 600,
-            borderRadius: 'var(--radius-sm)',
-            transition: 'transform 0.2s, box-shadow 0.2s',
-          }}
-          onMouseEnter={e => {
-            e.currentTarget.style.transform = 'translateY(-2px)'
-            e.currentTarget.style.boxShadow = 'var(--shadow-gold)'
-          }}
-          onMouseLeave={e => {
-            e.currentTarget.style.transform = 'translateY(0)'
-            e.currentTarget.style.boxShadow = 'none'
-          }}
-        >
-          Contact
+    <header className="site-header">
+      <a className="skip-link" href="#main-content" hidden={open}>Skip to content</a>
+      <nav aria-label="Main navigation" className="keystone-shell site-nav">
+        <Link className="site-wordmark" href="/" onClick={() => setOpenPath(null)}>
+          <BrandWordmark />
         </Link>
-      </div>
-
-      <div className="flex md:hidden" style={{ alignItems: 'center', gap: '0.75rem' }}>
-        <button
-          onClick={toggleTheme}
-          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: 'var(--text-2)',
-            cursor: 'pointer',
-            fontSize: '1rem',
-            padding: '4px',
-            lineHeight: 1,
-          }}
-        >
-          {theme === 'dark' ? '☀' : '☾'}
-        </button>
-
-        <button
-          onClick={() => setOpen(!open)}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: 'var(--text-2)',
-            cursor: 'pointer',
-            fontSize: '1.2rem',
-            padding: '4px',
-            lineHeight: 1,
-          }}
-          aria-label="Toggle menu"
-        >
-          {open ? '✕' : '☰'}
-        </button>
-      </div>
-
-    </nav>
-
-    {mounted && open && createPortal(
-      <div style={{
-        position: 'fixed',
-        top: 80,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: theme === 'light' ? 'rgba(247,245,241,0.98)' : 'rgba(7,7,10,0.98)',
-        backdropFilter: 'blur(24px)',
-        WebkitBackdropFilter: 'blur(24px)',
-        borderTop: '1px solid var(--border-w)',
-        padding: '3rem 3rem',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '0',
-        zIndex: 999,
-      }}>
-        {links.map(({ href, label }, i) => (
-          <Link
-            key={href}
-            href={href}
-            onClick={close}
-            style={{
-              fontSize: 'clamp(1.8rem, 6vw, 2.8rem)',
-              fontFamily: 'var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif',
-              fontWeight: 300,
-              color: pathname === href ? 'var(--text)' : 'var(--text-2)',
-              textDecoration: 'none',
-              padding: '0.9rem 0',
-              borderBottom: '1px solid var(--border-w)',
-              transition: 'color 0.2s',
-              animationDelay: `${i * 60}ms`,
-            }}
-          >
-            {label}
-          </Link>
-        ))}
-        <Link
-          href="/contact"
-          onClick={close}
-          style={{
-            marginTop: '2.5rem',
-            fontSize: '0.68rem',
-            letterSpacing: '0.2em',
-            textTransform: 'uppercase',
-            color: 'var(--gold)',
-            textDecoration: 'none',
-            fontWeight: 500,
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-          }}
-        >
-          <span style={{ display: 'block', width: 24, height: 1, background: 'var(--gold)' }} />
-          Contact Tarvico
-        </Link>
-      </div>,
-      document.body
-    )}
-    </>
+        <div className="site-nav-desktop">{navigationLinks()}</div>
+        <div className="site-nav-controls">
+          <button className="site-nav-control" type="button" aria-label="Dark appearance" aria-pressed={dark} onClick={toggleAppearance}>
+            <span className="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+            <span className="theme-icon theme-icon--moon" aria-hidden="true">◐</span>
+          </button>
+          <button className="site-nav-control site-menu-toggle" ref={menuButton} type="button"
+            aria-label="Toggle menu" aria-controls="site-mobile-menu" aria-expanded={open}
+            onClick={() => setOpenPath(open ? null : pathname)}>
+            <span aria-hidden="true">{open ? '✕' : '☰'}</span>
+          </button>
+        </div>
+        <div className="site-nav-mobile" id="site-mobile-menu" hidden={!open}>{navigationLinks()}</div>
+      </nav>
+    </header>
   )
 }

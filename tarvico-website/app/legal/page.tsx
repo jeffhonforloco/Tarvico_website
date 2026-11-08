@@ -1,6 +1,6 @@
 'use client'
 
-import { PageHero, SectionLabel, Divider } from '@/components/ui'
+import { PageHero, Divider } from '@/components/ui'
 
 const sections = [
   {
@@ -9,6 +9,10 @@ const sections = [
       {
         subtitle: 'Legal Entity',
         body: 'Tarvico Inc. is a privately held U.S. technology company incorporated under the General Corporation Law of the State of Delaware, United States. Tarvico Inc. is not a publicly traded company and its securities are not registered with the U.S. Securities and Exchange Commission (SEC) pursuant to a public offering.',
+      },
+      {
+        subtitle: 'Corporate Structure',
+        body: 'Tarvico Inc. builds and operates its products and brands — including Vytre AWOS, SireIQ, SEOAgentPro, Maeyen, and Racym — directly, as products and initiatives of the company. These products are not separately incorporated companies or independent subsidiaries unless and until Tarvico Inc. expressly states otherwise in writing. Where any product is or becomes operated through a separate legal entity, Tarvico Inc. will identify that entity in the applicable product terms.',
       },
       {
         subtitle: 'Registered Agent',
@@ -25,11 +29,11 @@ const sections = [
     content: [
       {
         subtitle: 'No Public Offering',
-        body: 'This website does not constitute an offer to sell or the solicitation of an offer to buy any securities of Tarvico Inc. or any of its portfolio companies. Any information regarding investment opportunities is directed solely to accredited investors and qualified institutional buyers as defined under applicable U.S. securities laws.',
+        body: 'This website does not constitute an offer to sell or the solicitation of an offer to buy any securities of Tarvico Inc. Any information regarding investment opportunities is directed solely to accredited investors and qualified institutional buyers as defined under applicable U.S. securities laws.',
       },
       {
         subtitle: 'Private Placement',
-        body: 'Any securities of Tarvico Inc. are offered and sold in reliance upon exemptions from the registration requirements of the Securities Act of 1933, as amended, and applicable state securities laws. Prospective investors must satisfy applicable suitability standards and complete required documentation before participating in any offering.',
+        body: 'Tarvico Inc. is not conducting a public securities offering through this Site. To the extent Tarvico Inc. offers any securities, such securities would be offered and sold only in reliance upon exemptions from the registration requirements of the Securities Act of 1933, as amended, and applicable state securities laws. Any prospective investor would be required to satisfy applicable suitability standards and complete required documentation before participating in any such offering.',
       },
       {
         subtitle: 'No Investment Advice',
@@ -37,7 +41,7 @@ const sections = [
       },
       {
         subtitle: 'Risk Factors',
-        body: 'Investment in early-stage private technology companies involves substantial risk, including the possible loss of the entire investment. Past performance of any portfolio company is not indicative of future results. Tarvico Inc. makes no representation or warranty regarding the future performance of any venture within its portfolio.',
+        body: 'Investment in an early-stage private technology company involves substantial risk, including the possible loss of the entire investment. Past performance is not indicative of future results. Tarvico Inc. makes no representation or warranty regarding the future performance of any of its products or business lines.',
       },
     ],
   },
@@ -63,7 +67,7 @@ const sections = [
       },
       {
         subtitle: 'Trademark Notice',
-        body: '"TARVICO," the Tarvico logo with the gold triangle motif, and the names of portfolio companies including "Vytre AWOS," "SireIQ," "SEOAgentPro," "Fycra," "Fycera," and "Urs79" are trademarks or service marks of Tarvico Inc. or its affiliated entities. Unauthorized use of any Tarvico trademark, trade name, or logo is prohibited and may constitute trademark infringement.',
+        body: '"TARVICO," the Tarvico logo with the gold triangle motif, and the names of Tarvico products and brands including "Vytre AWOS," "SireIQ," "SEOAgentPro," "Maeyen," "Racym," "Fycra," "Fycera," and "Urs79" are trademarks or service marks of Tarvico Inc. Unauthorized use of any Tarvico trademark, trade name, or logo is prohibited and may constitute trademark infringement.',
       },
       {
         subtitle: 'Copyright Notice',
@@ -89,15 +93,19 @@ const sections = [
     ],
   },
   {
-    title: 'Portfolio Company Liability',
+    title: 'Products and Business Lines',
     content: [
       {
-        subtitle: 'Subsidiary Autonomy',
-        body: 'Each company within the Tarvico Inc. portfolio operates as a legally distinct entity. Tarvico Inc. is not responsible for the products, services, statements, or actions of its portfolio companies, including Vytre AWOS, SireIQ, SEOAgentPro, Fycra, Fycera, or Urs79, except as expressly stated.',
+        subtitle: 'Operated by Tarvico Inc.',
+        body: 'The products and business lines referenced on this Site — including Vytre AWOS, SireIQ, SEOAgentPro, Maeyen, and Racym — are built and operated by Tarvico Inc. They are products and initiatives of the company, not separately incorporated public companies, except where expressly stated in writing.',
       },
       {
-        subtitle: 'No Cross-Liability',
-        body: 'The obligations and liabilities of Tarvico Inc. are separate and distinct from those of any portfolio company. Nothing on this Site should be construed to create joint or several liability between Tarvico Inc. and any portfolio entity.',
+        subtitle: 'Product-Specific Terms',
+        body: 'Where a Tarvico product is made available through its own website or service, that product may be governed by its own terms of service and privacy policy. Those terms apply to your use of that product in addition to, or in place of, the terms on this Site.',
+      },
+      {
+        subtitle: 'No Agency or Endorsement',
+        body: 'References on this Site to Tarvico products, brands, programs, or third parties — including membership in the NVIDIA Developer Program — do not create any partnership, joint venture, agency, or employment relationship, and do not constitute an investment in, endorsement by, or official partnership with any third party, except where expressly stated in a separate written agreement.',
       },
     ],
   },
@@ -142,9 +150,8 @@ export default function LegalPage() {
   const year = new Date().getFullYear()
   return (
     <>
-      <PageHero
-        label="Legal Disclosures"
-        title={<>Governed by <span className="text-gradient-gold">integrity.</span></>}
+      <PageHero layout="document"
+        title="Legal disclosures"
         subtitle="Last Updated: May 2026 — Legal disclosures, regulatory compliance statements, and corporate governance information for Tarvico Inc."
       />
 
@@ -152,7 +159,6 @@ export default function LegalPage() {
 
         {sections.map((section, si) => (
           <div key={section.title} style={{ marginBottom: '3.5rem' }}>
-            <SectionLabel>{String(si + 1).padStart(2, '0')}</SectionLabel>
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(1.5rem, 3vw, 2.1rem)',
@@ -170,7 +176,7 @@ export default function LegalPage() {
                   fontSize: '0.72rem',
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase',
-                  color: 'var(--gold)',
+                  color: 'var(--text)',
                   fontWeight: 500,
                   marginBottom: '0.6rem',
                 }}>

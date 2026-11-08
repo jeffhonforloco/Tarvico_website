@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Investor Relations — Tarvico Inc. | Investment Thesis & Governance',
   description:
-    'Tarvico Inc. investor relations: $4.7T AI market opportunity, investment thesis, portfolio strategy, and governance structure. A privately held U.S. technology company engineered for long-term compounding value. Contact: investors@tarvico.com.',
+    'Tarvico Inc. investor relations: investment thesis, portfolio strategy, capital philosophy, and governance structure. A privately held U.S. technology company engineered for long-term compounding value. Contact: investors@tarvico.com.',
   keywords: [
     'Tarvico investor relations',
     'AI company investment',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Tarvico Inc. — Investor Relations',
+        alt: 'Tarvico Inc. logo, white chevron and gold triangle on black',
       },
     ],
   },

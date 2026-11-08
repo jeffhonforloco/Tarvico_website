@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       'A privately held U.S. technology company building enduring AI-native ventures for the next global economy.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#070707',
-    theme_color: '#070707',
+    background_color: '#000000',
+    theme_color: '#000000',
     orientation: 'portrait-primary',
     icons: [
       {

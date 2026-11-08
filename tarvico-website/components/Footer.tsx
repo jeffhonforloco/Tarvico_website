@@ -1,8 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import BrandWordmark from '@/components/BrandWordmark'
 
 const cols = [
   {
@@ -10,7 +9,7 @@ const cols = [
     links: [
       { href: '/about',    label: 'About Tarvico' },
       { href: '/founder',  label: 'Founder' },
-      { href: '/vision',   label: 'Founder Letter' },
+      { href: '/vision',   label: 'Vision' },
       { href: '/newsroom', label: 'Newsroom' },
     ],
   },
@@ -19,7 +18,7 @@ const cols = [
     links: [
       { href: '/vytre',     label: 'Vytre AWOS' },
       { href: '/maeyen',    label: 'Maeyen' },
-      { href: '/portfolio', label: 'All Businesses' },
+      { href: '/portfolio', label: 'Portfolio' },
     ],
   },
   {
@@ -34,8 +33,6 @@ const cols = [
     title: 'Investors',
     links: [
       { href: '/investors', label: 'Investor Relations' },
-      { href: '/investors', label: 'Strategic Thesis' },
-      { href: '/investors', label: 'Governance' },
     ],
   },
   {
@@ -49,38 +46,20 @@ const cols = [
 ]
 
 export default function Footer() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
-
-  useEffect(() => {
-    const el = document.documentElement
-    const sync = () => setTheme((el.getAttribute('data-theme') as 'dark' | 'light') || 'dark')
-    sync()
-    const observer = new MutationObserver(sync)
-    observer.observe(el, { attributes: true, attributeFilter: ['data-theme'] })
-    return () => observer.disconnect()
-  }, [])
 
   return (
-    <footer style={{
-      background: 'var(--bg-raised)',
+    <footer className="keystone-dark" style={{
+      background: '#171716',
       borderTop: '1px solid var(--border-w)',
     }}>
-      <div className="mob-px" style={{ padding: '5rem 3rem 0' }}>
-        <div className="mob-stack" style={{
+      <div className="site-footer-main mob-px" style={{ padding: 'clamp(2.5rem, 4vw, 4rem) var(--editorial-gutter) 0' }}>
+        <div className="site-footer-grid mob-stack" style={{
           display: 'grid',
-          gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr 1fr',
-          gap: '3rem',
-          marginBottom: '4rem',
+          marginBottom: '2.5rem',
         }}>
           <div>
-            <div style={{ marginBottom: '0.25rem' }}>
-              <Image
-                src={theme === 'light' ? '/logo-black-wordmark.webp' : '/logo-white-wordmark.webp'}
-                alt="Tarvico"
-                width={160}
-                height={66}
-                style={{ objectFit: 'contain', display: 'block', height: 127 }}
-              />
+            <div className="footer-wordmark">
+              <BrandWordmark />
             </div>
             <p style={{
               fontSize: '0.82rem',
@@ -104,15 +83,15 @@ export default function Footer() {
               Tarvico Inc.<br />
               8 The Green, #5275<br />
               Dover, DE 19901, United States<br />
-              <a href="tel:+13024396442" style={{ color: 'var(--gold)', textDecoration: 'none', fontWeight: 500 }}>+1 (302) 439-6442</a>
+              <a href="tel:+13024396442" style={{ color: 'var(--text)', textDecoration: 'none', fontWeight: 500 }}>+1 (302) 439-6442</a>
             </address>
             <div style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
               padding: '6px 14px',
-              border: '1px solid var(--gold-border)',
-              background: 'var(--gold-glow)',
+              border: '1px solid var(--accent-line)',
+              background: 'var(--accent-soft)',
               borderRadius: 999,
             }}>
               <span style={{
@@ -120,14 +99,14 @@ export default function Footer() {
                 width: 6,
                 height: 6,
                 borderRadius: '50%',
-                background: 'var(--gold)',
+                background: 'var(--text)',
                 flexShrink: 0,
               }} />
               <span style={{
                 fontSize: '0.58rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: 'var(--gold)',
+                color: 'var(--text)',
                 fontWeight: 500,
               }}>
                 Incorporated in Delaware, USA
@@ -159,8 +138,8 @@ export default function Footer() {
                     transition: 'border-color 0.2s, color 0.2s',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'var(--gold-border)'
-                    e.currentTarget.style.color = 'var(--gold)'
+                    e.currentTarget.style.borderColor = 'var(--accent-line)'
+                    e.currentTarget.style.color = 'var(--text)'
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.borderColor = 'var(--border-m)'
