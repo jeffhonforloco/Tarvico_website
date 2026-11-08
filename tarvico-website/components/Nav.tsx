@@ -56,7 +56,7 @@ export default function Nav() {
   ))
 
   return (
-    <header className="site-header keystone-dark">
+    <header className="site-header">
       <a className="skip-link" href="#main-content" hidden={open}>Skip to content</a>
       <nav aria-label="Main navigation" className="keystone-shell site-nav">
         <Link className="site-wordmark" href="/" onClick={() => setOpenPath(null)}>

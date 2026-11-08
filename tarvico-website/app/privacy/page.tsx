@@ -126,7 +126,7 @@ export default function PrivacyPage() {
   const year = new Date().getFullYear()
   return (
     <>
-      <PageHero
+      <PageHero layout="document"
         title="Privacy policy"
         subtitle="Last Updated: May 2026 — This Privacy Policy describes how Tarvico Inc. collects, uses, and protects information about visitors to tarvico.com."
       />

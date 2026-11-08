@@ -31,14 +31,14 @@ const facts = [
 export default function FounderPage() {
   return (
     <>
-      <PageHero
+      <PageHero layout="profile"
         title="Jeff Honforloco"
         subtitle="Founder and Chief Executive Officer of Tarvico Inc."
       />
 
       {/* 01 · THE FOUNDER — graphite */}
       <section style={{ background: 'var(--bg)' }}>
-        <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
+        <div className="mob-p" style={{ maxWidth: 1640, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
           <Eyebrow label="The Founder" />
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '5rem', alignItems: 'start' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -67,7 +67,7 @@ export default function FounderPage() {
 
       {/* 02 · PHILOSOPHY — mineral editorial band */}
       <section className="keystone-paper">
-        <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
+        <div className="mob-p" style={{ maxWidth: 1640, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
           <Eyebrow label="Philosophy & Long-Term Thinking" />
           <blockquote style={{ fontFamily: FONT.serif, fontSize: 'clamp(1.6rem, 3.4vw, 2.7rem)', fontWeight: 500, lineHeight: 1.28, color: 'var(--paper-ink)', maxWidth: 900, margin: '0 0 4rem', letterSpacing: '-0.015em', textWrap: 'balance' }}>
             <span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>&ldquo;</span>The companies that endure are not defined by a single product. They are defined by their ability to evolve, experiment, and keep building for the future.<span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>&rdquo;</span>

@@ -72,13 +72,15 @@ export function PageHero({
   label,
   title,
   subtitle,
+  layout = 'split',
 }: {
   label?: string
   title: ReactNode
   subtitle?: string
+  layout?: 'split' | 'feature' | 'index' | 'document' | 'profile'
 }) {
   return (
-    <header className="page-masthead">
+    <header className="page-masthead" data-layout={layout}>
       <div className="keystone-shell">
         {label && <p className="page-status">{label}</p>}
         <h1>{title}</h1>

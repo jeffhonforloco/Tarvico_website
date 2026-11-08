@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       'White papers, AI and commerce research, and technical documents from Tarvico Inc.',
     url: 'https://www.tarvico.com/research',
-    images: [{ url: 'https://www.tarvico.com/og-image.png', width: 1200, height: 630, alt: 'Research & White Papers — Tarvico Inc.' }],
+    images: [{ url: 'https://www.tarvico.com/og-image.png', width: 1200, height: 630, alt: 'Tarvico Inc. logo, white chevron and gold triangle on black' }],
   },
   twitter: {
     card: 'summary_large_image',

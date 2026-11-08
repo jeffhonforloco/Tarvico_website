@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       'A long-term technical knowledge base on AI, agent systems, infrastructure, architecture, security, and scaling AI-native software.',
     url: 'https://www.tarvico.com/engineering',
-    images: [{ url: 'https://www.tarvico.com/og-image.png', width: 1200, height: 630, alt: 'Engineering at Tarvico' }],
+    images: [{ url: 'https://www.tarvico.com/og-image.png', width: 1200, height: 630, alt: 'Tarvico Inc. logo, white chevron and gold triangle on black' }],
   },
   twitter: {
     card: 'summary_large_image',

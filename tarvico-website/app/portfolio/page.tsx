@@ -93,7 +93,7 @@ function ProductRow({ product, study }: { product: Product; study?: CorporateIma
 export default function BusinessesPage() {
   return (
     <>
-      <PageHero
+      <PageHero layout="index"
         title="Portfolio"
         subtitle="The products Tarvico builds and operates, grouped by stage. Product brands sit within Tarvico Inc. unless otherwise disclosed."
       />

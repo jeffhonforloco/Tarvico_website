@@ -60,18 +60,18 @@ export default function NewsroomPage() {
 
   return (
     <>
-      <PageHero
+      <PageHero layout="index"
         title="Newsroom"
         subtitle="Company announcements and product updates."
       />
 
-      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1640, margin: '0 auto', padding: '6rem 3rem' }}>
 
         <SectionLabel>Featured</SectionLabel>
 
-        <Link href={featured.href} className="mob-stack" style={{
+        <Link href={featured.href} className="mob-stack newsroom-feature" style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
+          gridTemplateColumns: 'minmax(0, 1.6fr) minmax(0, 1fr)',
           gap: '0',
           border: '1px solid var(--border-w)',
           background: 'var(--bg-card)',
@@ -86,13 +86,13 @@ export default function NewsroomPage() {
           onMouseEnter={e => { e.currentTarget.style.boxShadow = 'var(--shadow-lg)'; e.currentTarget.style.transform = 'translateY(-3px)' }}
           onMouseLeave={e => { e.currentTarget.style.boxShadow = 'var(--shadow)'; e.currentTarget.style.transform = 'translateY(0)' }}
         >
-          <div style={{ padding: '3rem', borderRight: '1px solid var(--border-w)' }}>
+          <div style={{ padding: 'clamp(1.25rem, 4vw, 4.5rem)', borderRight: '1px solid var(--border-w)' }}>
             <div style={{ fontSize: '0.58rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text)', marginBottom: '1.5rem', fontWeight: 600 }}>
               {featured.category}
             </div>
             <h2 style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.6rem, 3vw, 2.5rem)',
+              fontSize: 'clamp(1.65rem, 4vw, 4.25rem)',
               fontWeight: 700,
               color: 'var(--text)',
               lineHeight: 1.12,
@@ -105,7 +105,7 @@ export default function NewsroomPage() {
               {featured.excerpt}
             </p>
           </div>
-          <div style={{ padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div style={{ padding: 'clamp(1.25rem, 4vw, 4.5rem)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '2rem', fontWeight: 500 }}>Publication Details</div>
               {[

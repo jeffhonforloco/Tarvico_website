@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       'A commerce trust network for Africa, starting from Nigeria — verifying participants and protecting transactions so buyers and sellers can transact with confidence.',
     url: 'https://www.tarvico.com/maeyen',
-    images: [{ url: 'https://www.tarvico.com/og-image.png', width: 1200, height: 630, alt: 'Maeyen — Commerce Trust Infrastructure for Africa' }],
+    images: [{ url: 'https://www.tarvico.com/og-image.png', width: 1200, height: 630, alt: 'Tarvico Inc. logo, white chevron and gold triangle on black' }],
   },
   twitter: {
     card: 'summary_large_image',

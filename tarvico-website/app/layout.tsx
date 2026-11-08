@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import './editorial.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { appearanceBootstrap } from '@/lib/appearance'
@@ -31,7 +32,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.tarvico.com'),
   title: {
-    default: 'Tarvico Inc. — Technology for a connected future',
+    default: 'Tarvico Inc. logo, white chevron and gold triangle on black',
     template: '%s | Tarvico Inc.',
   },
   description:
@@ -107,7 +108,7 @@ export const metadata: Metadata = {
         secureUrl: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Tarvico Inc. — Technology for a connected future',
+        alt: 'Tarvico Inc. logo, white chevron and gold triangle on black',
         type: 'image/png',
       },
     ],
@@ -122,7 +123,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://www.tarvico.com/og-image.png',
-        alt: 'Tarvico Inc. — Technology for a connected future',
+        alt: 'Tarvico Inc. logo, white chevron and gold triangle on black',
       },
     ],
   },
@@ -164,7 +165,7 @@ const organizationSchema = {
     contentUrl: 'https://www.tarvico.com/logo-icon.png',
     width: 512,
     height: 512,
-    caption: 'Tarvico Inc. — Technology for a connected future',
+    caption: 'Tarvico Inc. logo, white chevron and gold triangle on black',
   },
   image: [
     {

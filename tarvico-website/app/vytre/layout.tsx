@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       'The enterprise control plane to deploy, coordinate, observe, and govern AI workers at scale. Vytre AWOS is Tarvico’s flagship product.',
     url: 'https://www.tarvico.com/vytre',
-    images: [{ url: 'https://www.tarvico.com/og-image.png', width: 1200, height: 630, alt: 'Vytre AWOS — AI Workforce Operating System' }],
+    images: [{ url: 'https://www.tarvico.com/og-image.png', width: 1200, height: 630, alt: 'Tarvico Inc. logo, white chevron and gold triangle on black' }],
   },
   twitter: {
     card: 'summary_large_image',

@@ -61,8 +61,8 @@ export default function ContactPage() {
         subtitle="Find the right contact for investor, business, press or career inquiries."
       />
 
-      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
-        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1640, margin: '0 auto', padding: '6rem 3rem' }}>
+        <div className="contact-spread">
 
           <div>
             <SectionLabel>Direct Channels</SectionLabel>
@@ -74,10 +74,7 @@ export default function ContactPage() {
                   border: `1px solid ${c.border}`,
                   borderRadius: 'var(--radius-lg)',
                   boxShadow: 'var(--shadow-sm)',
-                  transition: 'transform 0.3s cubic-bezier(0.16,1,0.3,1)',
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)' }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)' }}
                 >
                   <div style={{ fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-3)', marginBottom: '0.5rem', fontWeight: 600 }}>{c.label}</div>
                   <a href={`mailto:${c.email}`} style={{
@@ -88,6 +85,7 @@ export default function ContactPage() {
                     color: c.color,
                     textDecoration: 'none',
                     display: 'block',
+                    overflowWrap: 'anywhere',
                     marginBottom: '0.4rem',
                     transition: 'opacity 0.2s',
                   }}>
@@ -111,7 +109,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div>
+          <div className="contact-form-panel">
             <SectionLabel>Send a Message</SectionLabel>
 
             {sent ? (

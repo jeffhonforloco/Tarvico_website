@@ -12,30 +12,24 @@ const topics = [
 export default function EngineeringPage() {
   return (
     <>
-      <PageHero
+      <PageHero layout="feature"
         title="Engineering"
         subtitle="Engineering topics behind Tarvico’s AI and software products, including system design, reliability and security."
       />
 
-      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1640, margin: '0 auto', padding: '7rem 3rem' }}>
 
-        <SectionLabel>What We Write About</SectionLabel>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem', marginTop: '2.5rem', marginBottom: '5rem' }}>
-          {topics.map(t => (
-            <div key={t.t} style={{
-              border: '1px solid var(--border-w)',
-              borderLeftWidth: 2,
-              borderLeftColor: 'var(--accent-line)',
-              borderRadius: 'var(--radius)',
-              padding: '1.75rem 1.9rem',
-              background: 'var(--bg-card)',
-            }}>
-              <div style={{ fontSize: '1rem', color: 'var(--text)', marginBottom: '0.5rem', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.01em' }}>{t.t}</div>
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-2)', lineHeight: 1.7 }}>{t.d}</p>
-            </div>
-          ))}
-        </div>
+        <section className="editorial-overview" aria-label="What We Write About">
+          <SectionLabel>What We Write About</SectionLabel>
+          <div className="editorial-topic-grid">
+            {topics.map(topic => (
+              <article key={topic.t}>
+                <h3>{topic.t}</h3>
+                <p>{topic.d}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <div style={{
           border: '1px solid var(--border-w)',

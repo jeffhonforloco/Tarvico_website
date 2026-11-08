@@ -1,31 +1,28 @@
 import Link from 'next/link'
 import { PageHero, MaturityTag } from '@/components/ui'
+import ProductShowcases from '@/components/ProductShowcases'
 import { BUSINESSES } from '@/lib/businesses'
 
 export default function ProductsPage() {
-  const names = ['SireIQ', 'Vytre AWOS', 'Maeyen']
+  const product = BUSINESSES.find(business => business.name === 'Maeyen')
   return (
     <>
-      <PageHero title="Products" subtitle="Explore the products Tarvico builds and operates." />
-      <section className="keystone-shell keystone-band portfolio-index" aria-labelledby="featured-products">
-        <h2 id="featured-products">Featured products</h2>
-        {names.map(name => {
-          const product = BUSINESSES.find(business => business.name === name)
-          if (!product) return null
-          return (
-            <article className="portfolio-row" key={product.name}>
-              <div className="portfolio-row-name">
-                <h3>{product.name}</h3>
-                <MaturityTag tier={product.maturity} />
-              </div>
-              <div className="portfolio-row-copy">
-                <p>{product.tagline}</p>
-                {product.internal ? <Link className="keystone-link" href={product.internal}>Explore {product.name} →</Link>
-                  : <a className="keystone-link" href={product.url}>Visit {product.name} ↗</a>}
-              </div>
-            </article>
-          )
-        })}
+      <PageHero layout="feature" title="Products" subtitle="Explore the products Tarvico builds and operates." />
+      <ProductShowcases showHeading={false} />
+      <section className="keystone-shell keystone-band portfolio-index" aria-labelledby="developing-products">
+        <h2 id="developing-products">In development</h2>
+        {product && (
+          <article className="portfolio-row">
+            <div className="portfolio-row-name">
+              <h3>{product.name}</h3>
+              <MaturityTag tier={product.maturity} />
+            </div>
+            <div className="portfolio-row-copy">
+              <p>{product.tagline}</p>
+              <Link className="keystone-link" href="/maeyen">Explore Maeyen →</Link>
+            </div>
+          </article>
+        )}
         <Link className="keystone-link" href="/portfolio">View the full portfolio →</Link>
       </section>
     </>

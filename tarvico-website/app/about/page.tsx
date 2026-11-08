@@ -26,18 +26,18 @@ const principles = [
   { t: 'Accessible innovation', d: 'The future belongs to builders of all backgrounds. We are proof that ambition and persistence can open doors that once felt impossible.' },
 ]
 
-const WRAP: CSSProperties = { maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }
+const WRAP: CSSProperties = { maxWidth: 1640, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
+      <PageHero layout="profile"
         title="About Tarvico"
         subtitle="Tarvico Inc. is a privately held technology company incorporated in Delaware. It builds and operates AI and digital products."
       />
 
       {/* 01 · MISSION — mineral editorial band */}
-      <section className="keystone-paper">
+      <section className="keystone-paper company-mission">
         <div className="mob-p" style={WRAP}>
           <Eyebrow label="Mission & Philosophy" />
           <blockquote style={{ fontFamily: FONT.serif, fontWeight: 500, fontSize: 'clamp(1.6rem, 3.4vw, 2.7rem)', lineHeight: 1.26, letterSpacing: '-0.015em', color: 'var(--paper-ink)', maxWidth: 940, marginBottom: '4rem', textWrap: 'balance' }}>

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Tarvico Inc. Founder Letter — Jeff Hon',
+        alt: 'Tarvico Inc. logo, white chevron and gold triangle on black',
       },
     ],
   },
@@ -74,8 +74,8 @@ const BODY = 'var(--font-body)'
 export default function VisionPage() {
   return (
     <>
-      <PageHero title="Our vision" subtitle="Tarvico builds AI and digital products today. Its long-term interests include AI infrastructure, energy and intelligent mobility." />
-      <section id="lagos-campus" className="keystone-shell keystone-band vision-feature" aria-labelledby="lagos-heading">
+      <PageHero layout="feature" title="Our vision" subtitle="Tarvico builds AI and digital products today. Its long-term interests include AI infrastructure, energy and intelligent mobility." />
+      <section id="lagos-campus" className="keystone-shell keystone-band vision-feature vision-feature--campus" aria-labelledby="lagos-heading">
         <div>
           <h2 id="lagos-heading">Proposed Lagos AI campus</h2>
           <p>Tarvico is exploring a long-term concept for an AI data center campus in Lagos, Nigeria. The proposal illustrates how modular computing halls could be supported by power, cooling and network connectivity.</p>
@@ -89,7 +89,7 @@ export default function VisionPage() {
         </dl>
       </section>
       <section id="vytreon" className="keystone-dark" aria-labelledby="vytreon-heading">
-        <div className="keystone-shell keystone-band vision-feature">
+        <div className="keystone-shell keystone-band vision-feature vision-feature--mobility">
           <div>
             <h2 id="vytreon-heading">Vytreon V7</h2>
             <p>Vytreon is a proposed electric mobility initiative. The V7 is an exterior design concept for a future electric SUV. Tarvico has no vehicle manufacturing or sales operation.</p>

@@ -21,7 +21,7 @@ export default function MaeyenPage() {
         subtitle="Maeyen is developing seller verification and transaction protection for online commerce in Africa, starting from Nigeria."
       />
 
-      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1640, margin: '0 auto', padding: '7rem 3rem' }}>
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '5rem' }}>
           <Button href="https://www.maeyen.com" variant="primary">Visit maeyen.com ↗</Button>

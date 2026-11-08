@@ -49,13 +49,13 @@ export default function Footer() {
 
   return (
     <footer className="keystone-dark" style={{
-      background: 'var(--bg-raised)',
+      background: '#171716',
       borderTop: '1px solid var(--border-w)',
     }}>
-      <div className="site-footer-main mob-px" style={{ padding: '5rem 3rem 0' }}>
+      <div className="site-footer-main mob-px" style={{ padding: 'clamp(2.5rem, 4vw, 4rem) var(--editorial-gutter) 0' }}>
         <div className="site-footer-grid mob-stack" style={{
           display: 'grid',
-          marginBottom: '4rem',
+          marginBottom: '2.5rem',
         }}>
           <div>
             <div className="footer-wordmark">

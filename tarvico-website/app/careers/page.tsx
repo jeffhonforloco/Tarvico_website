@@ -22,12 +22,12 @@ const roles = [
 export default function CareersPage() {
   return (
     <>
-      <PageHero
+      <PageHero layout="profile"
         title="Careers"
         subtitle="Explore the roles Tarvico builds around and how to apply."
       />
 
-      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1640, margin: '0 auto', padding: '6rem 3rem' }}>
 
         <div style={{ padding: '5rem 0' }}>
           <SectionLabel>Culture & Values</SectionLabel>

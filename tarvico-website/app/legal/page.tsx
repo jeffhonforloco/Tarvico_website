@@ -150,7 +150,7 @@ export default function LegalPage() {
   const year = new Date().getFullYear()
   return (
     <>
-      <PageHero
+      <PageHero layout="document"
         title="Legal disclosures"
         subtitle="Last Updated: May 2026 — Legal disclosures, regulatory compliance statements, and corporate governance information for Tarvico Inc."
       />

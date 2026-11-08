@@ -28,7 +28,7 @@ export default function InvestorsPage() {
         subtitle="Company information, operating progress and investor contact for privately held Tarvico Inc."
       />
 
-      <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
+      <div className="mob-px mob-py" style={{ maxWidth: 1640, margin: '0 auto', padding: '6rem 3rem' }}>
 
         <SectionLabel>Operating progress</SectionLabel>
         <p style={{ fontSize: '0.94rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 400, marginTop: '1rem', marginBottom: '2rem', maxWidth: 720 }}>

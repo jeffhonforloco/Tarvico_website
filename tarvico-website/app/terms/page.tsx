@@ -143,7 +143,7 @@ export default function TermsPage() {
   const year = new Date().getFullYear()
   return (
     <>
-      <PageHero
+      <PageHero layout="document"
         title="Terms of use"
         subtitle="Last Updated: May 2026 — These Terms of Use govern your access to and use of tarvico.com and are binding upon all visitors."
       />

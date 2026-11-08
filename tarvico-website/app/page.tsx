@@ -1,106 +1,76 @@
+import Image from 'next/image'
 import Link from 'next/link'
-import CorporateImage from '@/components/CorporateImage'
+import ProductShowcases from '@/components/ProductShowcases'
 import { MaturityTag } from '@/components/ui'
-import { BUSINESSES } from '@/lib/businesses'
-
-const currentProducts = [
-  { name: 'SireIQ', description: 'An AI assistant for research, creation, planning and problem-solving.', image: 'sireiqPrompt', caption: 'SireIQ public interface', link: 'Visit SireIQ' },
-  { name: 'Vytre AWOS', description: 'An AI Workforce Operating System for coordinating executives, managers and worker agents with human approvals.', image: 'vytre', caption: 'Vytre product demo', link: 'Visit Vytre' },
-] as const
 
 export default function HomePage() {
   return (
     <>
-      <section className="home-intro keystone-dark">
-        <div className="keystone-shell home-intro-grid">
-          <div>
-            <h1>Technology for a connected future.</h1>
-            <p>Tarvico Inc. is a U.S.-incorporated technology company that builds and operates AI and digital products.</p>
-            <a className="keystone-button keystone-button--primary" href="#products">Explore products →</a>
-          </div>
-          <CorporateImage name="sireiq" caption="SireIQ · Public interface" eager />
+      <section className="ed-hero ed-gutter" aria-labelledby="hero-title">
+        <h1 id="hero-title">Technology for<br className="ed-desktop-break" /> a connected<br className="ed-desktop-break" /> future.</h1>
+        <div className="ed-hero-copy">
+          <p>Tarvico Inc. is a U.S.-incorporated technology company that builds and operates AI and digital products.</p>
+          <a className="ed-primary" href="#products">Explore our products <span aria-hidden="true">↘</span></a>
         </div>
-      </section>
-
-      <section id="products" className="keystone-shell keystone-band" aria-labelledby="current-products">
-        <h2 className="corporate-section-title" id="current-products">Our products</h2>
-        {currentProducts.map(product => {
-          const business = BUSINESSES.find(item => item.name === product.name)
-          if (!business?.url) return null
-          return (
-            <article className="home-product" key={product.name}>
-              <div>
-                <h3>{product.name}</h3>
-                <MaturityTag tier={business.maturity} />
-                <p>{product.description}</p>
-                <a className="keystone-link" href={business.url}>{product.link} ↗</a>
-              </div>
-              <CorporateImage name={product.image} caption={product.caption} />
-            </article>
-          )
-        })}
-      </section>
-
-      <section className="home-portfolio" aria-labelledby="selected-portfolio">
-        <div className="keystone-shell keystone-band">
-          <div className="keystone-heading-row">
-            <h2 id="selected-portfolio">Selected portfolio</h2>
-            <Link className="keystone-link" href="/portfolio">Full portfolio →</Link>
+        <figure className="ed-hero-visual">
+          <div className="ed-hero-image">
+            <Image width={1100} height={670} src="/images/sireiq-public-interface.webp" priority alt="SireIQ’s public interface with its prompt box and tools for research, planning and problem-solving" />
           </div>
-          <article className="home-portfolio-row">
-            <div><h3>Maeyen</h3><MaturityTag tier="in-development" /></div>
-            <p>Trust infrastructure for digital commerce.</p>
-            <Link className="keystone-link" href="/maeyen">About Maeyen →</Link>
+          <Image className="ed-hero-detail" width={820} height={255} src="/images/sireiq-prompt-detail.webp" alt="" />
+          <figcaption>SireIQ <span>Public interface</span></figcaption>
+        </figure>
+      </section>
+
+      <ProductShowcases />
+
+      <section id="portfolio" className="ed-portfolio ed-gutter" aria-labelledby="portfolio-title">
+        <div className="ed-section-heading"><h2 id="portfolio-title">Selected portfolio</h2><Link className="ed-arrow-link" href="/portfolio">View portfolio <span aria-hidden="true">↗</span></Link></div>
+        <div className="ed-portfolio-spread">
+          <article>
+            <MaturityTag tier="in-development" />
+            <h3>Maeyen</h3>
+            <p>Developing seller verification and transaction protection for online commerce in Africa, starting in Nigeria.</p>
+            <Link className="ed-arrow-link" href="/maeyen">About Maeyen <span aria-hidden="true">↗</span></Link>
           </article>
-          <article className="home-portfolio-row">
-            <div><h3>Escazo</h3><MaturityTag tier="operational" label="Operating travel platform" /></div>
-            <p>Monitors trips and helps travelers respond to disruptions.</p>
-            <a className="keystone-link" href="https://escazo.com">Visit Escazo ↗</a>
+          <article>
+            <MaturityTag tier="operational" label="Operating travel platform" />
+            <h3>Escazo</h3>
+            <p>Monitors trips and helps travelers respond when plans change.</p>
+            <a className="ed-arrow-link" href="https://escazo.com">Visit Escazo <span aria-hidden="true">↗</span></a>
           </article>
         </div>
       </section>
 
-      <section className="keystone-dark" aria-labelledby="our-vision">
-        <div className="keystone-shell keystone-band">
-          <h2 className="corporate-section-title" id="our-vision">Our vision</h2>
-          <p className="vision-intro">Our long-term interests include AI infrastructure, energy and intelligent mobility.</p>
-          <div className="future-grid">
-            <article>
-              <CorporateImage name="lagos" />
-              <p className="future-stage">Architectural concept</p>
-              <h3>Proposed Lagos AI campus</h3>
-              <p>A concept for modular computing, power, cooling and connectivity in Lagos, Nigeria.</p>
-              <Link className="keystone-link" href="/vision#lagos-campus">Explore the campus proposal →</Link>
-            </article>
-            <article>
-              <CorporateImage name="v7" />
-              <p className="future-stage">Future vehicle concept</p>
-              <h3>Vytreon V7</h3>
-              <p>An electric SUV concept for a proposed future mobility initiative.</p>
-              <Link className="keystone-link" href="/vision#vytreon">Explore the mobility concept →</Link>
-            </article>
-          </div>
+      <section id="vision" className="ed-vision" aria-labelledby="vision-title">
+        <div className="ed-vision-title ed-gutter">
+          <h2 id="vision-title">Our long-term vision</h2>
+          <p>Tarvico is exploring the future of AI infrastructure, energy and intelligent mobility.</p>
         </div>
+        <article className="ed-campus">
+          <picture><source media="(max-width: 600px)" srcSet="/images/lagos-campus-640.webp" /><Image width={1280} height={720} src="/images/lagos-campus.webp" alt="Concept rendering of a modular data center campus with solar fields and a reservoir near Lagos" /></picture>
+          <div className="ed-vision-story">
+            <p className="ed-stage">Proposed concept</p>
+            <h3>Lagos AI campus</h3>
+            <p>A long-term proposal for modular computing, power, cooling and connectivity in Lagos, Nigeria. Site acquisition, permits, financing and construction remain unconfirmed.</p>
+            <Link className="ed-arrow-link" href="/vision#lagos-campus">Explore the proposal <span aria-hidden="true">↗</span></Link>
+          </div>
+        </article>
+        <article className="ed-mobility ed-gutter">
+          <div className="ed-vision-story">
+            <p className="ed-stage">Future vehicle concept</p>
+            <h3>Vytreon V7</h3>
+            <p>An electric SUV design for a proposed mobility initiative. It is a design concept with no announced production availability.</p>
+            <Link className="ed-arrow-link" href="/vision#vytreon">Explore the concept <span aria-hidden="true">↗</span></Link>
+          </div>
+          <Image width={990} height={381} src="/images/vytreon-v7-reference.webp" alt="Vytreon V7 electric SUV concept rendering, viewed from the front three-quarter angle" />
+        </article>
       </section>
 
-      <div className="keystone-shell keystone-band home-closing">
-        <section aria-labelledby="about-tarvico">
-          <h2 id="about-tarvico">About Tarvico</h2>
-          <p>Tarvico Inc. is privately held and incorporated in Delaware. Its product brands sit within the parent company unless otherwise disclosed.</p>
-          <div className="keystone-actions">
-            <Link className="keystone-link" href="/about">Company →</Link>
-            <Link className="keystone-link" href="/founder">Leadership →</Link>
-          </div>
-        </section>
-        <section aria-labelledby="contact-tarvico">
-          <h2 id="contact-tarvico">Contact</h2>
-          <p>Contact Tarvico for investor information or business inquiries.</p>
-          <div className="keystone-actions">
-            <Link className="keystone-link" href="/investors">Investor information →</Link>
-            <Link className="keystone-link" href="/contact">Contact Tarvico →</Link>
-          </div>
-        </section>
-      </div>
+      <section id="company" className="ed-company ed-gutter" aria-labelledby="company-title">
+        <h2 id="company-title">About Tarvico</h2>
+        <div><p>Tarvico Inc. is privately held and incorporated in Delaware. Its product brands sit within the parent company unless otherwise disclosed.</p>
+        <div className="ed-company-links"><Link className="ed-arrow-link" href="/about">Company <span aria-hidden="true">↗</span></Link><Link className="ed-arrow-link" href="/investors">Investor information <span aria-hidden="true">↗</span></Link></div></div>
+      </section>
     </>
   )
 }
