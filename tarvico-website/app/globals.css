@@ -136,13 +136,22 @@ main:focus { outline: none; }
 [data-theme="dark"] .brand-wordmark-dark, .keystone-dark .brand-wordmark-dark { display: block; }
 .footer-wordmark { width: min(100%, 150px); margin-bottom: 1.4rem; }
 .theme-icon--sun, [data-theme="dark"] .theme-icon--moon { display: none; }
-[data-theme="dark"] .theme-icon--sun { display: inline; }
+[data-theme="dark"] .theme-icon--sun { display: block; }
 .site-nav-desktop { display: flex; align-items: center; gap: clamp(1.25rem, 2.8vw, 3.25rem); margin-left: auto; }
 .site-nav a { color: var(--text); font-size: 1rem; font-weight: 600; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: .35em; }
 .site-nav-controls { display: flex; gap: .25rem; }
 .site-nav-control { min-width: 44px; min-height: 44px; color: var(--text); font-size: 1.1rem; }
 .site-nav-control:hover { background: var(--bg-raised); }
+.site-appearance-toggle {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-w);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  -webkit-tap-highlight-color: transparent;
+}
 .site-menu-toggle, .site-nav-mobile { display: none; }
 .skip-link { position: fixed; top: 8px; left: 8px; z-index: 102; padding: .6rem 1rem; background: #f8f8f6; color: #000; transform: translateY(-180%); }
 .skip-link:focus { transform: none; }

@@ -86,11 +86,15 @@ export async function onRequestPost(context) {
 
   const { name, email, type, message } = body || {}
 
-  if (!name?.trim() || !email?.trim() || !message?.trim()) {
+  if (![name, email, message].every(value => typeof value === 'string' && value.trim())) {
     return Response.json(
       { error: 'Name, email, and message are required.' },
       { status: 400, headers: corsHeaders }
     )
+  }
+
+  if (type != null && typeof type !== 'string') {
+    return Response.json({ error: 'Invalid inquiry type.' }, { status: 400, headers: corsHeaders })
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -130,17 +134,17 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify(resendPayload),
     })
-  } catch (err) {
-    console.error('Resend fetch error:', err)
+  } catch {
+    console.error('Contact email provider request failed.')
     return Response.json(
       { error: 'Failed to reach email service. Please try again.' },
       { status: 502, headers: corsHeaders }
     )
   }
 
-  if (!resendRes.ok) {
-    const detail = await resendRes.text().catch(() => '')
-    console.error('Resend error response:', resendRes.status, detail)
+  const receipt = resendRes.ok ? await resendRes.json().catch(() => null) : null
+  if (!resendRes.ok || typeof receipt?.id !== 'string' || !receipt.id.trim()) {
+    console.error('Contact email provider did not confirm acceptance.', resendRes.status)
     return Response.json(
       { error: 'Failed to send email. Please try again or contact us directly.' },
       { status: 502, headers: corsHeaders }
