@@ -24,12 +24,31 @@ export default function InvestorsPage() {
   return (
     <>
       <PageHero
-        label="Investor Relations"
-        title={<>Built for long-term <span className="editorial-emphasis">value creation.</span></>}
-        subtitle="Tarvico is designed from first principles to compound value over decades — a portfolio approach to AI-native company building with institutional discipline and founder conviction."
+        title="Investor relations"
+        subtitle="Company information, operating progress and investor contact for privately held Tarvico Inc."
       />
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>
+
+        <SectionLabel>Operating progress</SectionLabel>
+        <p style={{ fontSize: '0.94rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 400, marginTop: '1rem', marginBottom: '2rem', maxWidth: 720 }}>
+          Current products, Vytre’s public beta and an openly published model.
+        </p>
+        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem', marginTop: '0.5rem', marginBottom: '6rem' }}>
+          {evidence.map(e => (
+            <div key={e.t} style={{
+              background: 'var(--bg-card)', padding: '2rem',
+              border: '1px solid var(--border-w)', borderTop: '2px solid var(--text)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)',
+              display: 'flex', flexDirection: 'column',
+            }}>
+              <div style={{ fontSize: '0.95rem', color: 'var(--text)', fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{e.t}</div>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-2)', lineHeight: 1.6, fontWeight: 400, flex: 1 }}>{e.d}</p>
+              {e.href && (
+                <a href={e.href} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1rem', fontSize: '0.72rem', letterSpacing: '0.04em', color: 'var(--text)', fontWeight: 600, textDecoration: 'none' }}>{e.cta}</a>
+              )}
+            </div>
+          ))}
+        </div>
 
         <blockquote style={{
           fontFamily: FONT.serif,
@@ -48,30 +67,10 @@ export default function InvestorsPage() {
           </div>
         </blockquote>
 
-        <SectionLabel>Execution to Date</SectionLabel>
-        <p style={{ fontSize: '0.94rem', color: 'var(--text-2)', lineHeight: 1.75, fontWeight: 400, marginTop: '1rem', marginBottom: '2rem', maxWidth: 720 }}>
-          We believe the clearest signal of a company&apos;s potential is what it has actually shipped. The following are verifiable — live products, a public beta, and an openly published model — not projections or forecasts.
-        </p>
-        <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem', marginTop: '0.5rem', marginBottom: '6rem' }}>
-          {evidence.map(e => (
-            <div key={e.t} style={{
-              background: 'var(--bg-card)', padding: '2rem',
-              border: '1px solid var(--border-w)', borderTop: '2px solid var(--text)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)',
-              display: 'flex', flexDirection: 'column',
-            }}>
-              <div style={{ fontSize: '0.95rem', color: 'var(--text)', fontWeight: 600, marginBottom: '0.5rem', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>{e.t}</div>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-2)', lineHeight: 1.6, fontWeight: 400, flex: 1 }}>{e.d}</p>
-              {e.href && (
-                <a href={e.href} target="_blank" rel="noopener noreferrer" style={{ marginTop: '1rem', fontSize: '0.72rem', letterSpacing: '0.04em', color: 'var(--text)', fontWeight: 600, textDecoration: 'none' }}>{e.cta}</a>
-              )}
-            </div>
-          ))}
-        </div>
-
         <Divider />
 
         <div style={{ padding: '6rem 0' }}>
-          <SectionLabel>Strategic Thesis</SectionLabel>
+          <SectionLabel>Business strategy</SectionLabel>
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(2rem, 3.5vw, 3.2rem)',

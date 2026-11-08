@@ -1,6 +1,6 @@
 'use client'
 
-import { PageHero, SectionLabel, Divider } from '@/components/ui'
+import { PageHero, Divider } from '@/components/ui'
 
 const sections = [
   {
@@ -151,8 +151,7 @@ export default function LegalPage() {
   return (
     <>
       <PageHero
-        label="Legal Disclosures"
-        title={<>Governed by <span className="editorial-emphasis">integrity.</span></>}
+        title="Legal disclosures"
         subtitle="Last Updated: May 2026 — Legal disclosures, regulatory compliance statements, and corporate governance information for Tarvico Inc."
       />
 
@@ -160,7 +159,6 @@ export default function LegalPage() {
 
         {sections.map((section, si) => (
           <div key={section.title} style={{ marginBottom: '3.5rem' }}>
-            <SectionLabel>{String(si + 1).padStart(2, '0')}</SectionLabel>
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(1.5rem, 3vw, 2.1rem)',

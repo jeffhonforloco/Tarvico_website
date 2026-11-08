@@ -57,9 +57,8 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        label="Contact"
-        title={<>Let&apos;s build something <span className="editorial-emphasis">significant.</span></>}
-        subtitle="Whether you're an investor, potential partner, future team member, or enterprise customer — we'd like to hear from you."
+        title="Contact Tarvico"
+        subtitle="Find the right contact for investor, business, press or career inquiries."
       />
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>

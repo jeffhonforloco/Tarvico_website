@@ -1,4 +1,4 @@
-import ConceptImage from '@/components/ConceptImage'
+import CorporateImage from '@/components/CorporateImage'
 import { PageHero, Button, Eyebrow, MaturityTag } from '@/components/ui'
 
 const FONT = { display: 'var(--font-display)', serif: 'var(--font-editorial)', mono: 'var(--font-body)', body: 'var(--font-body)' }
@@ -21,12 +21,12 @@ export default function VytrePage() {
   return (
     <>
       <PageHero
-        label="Flagship product · Public beta"
+        label="Public beta"
         title={<>Vytre <span className="editorial-emphasis">AWOS</span></>}
-        subtitle="An AI Workforce Operating System — the control plane enterprises use to deploy, manage, coordinate, and scale AI workers across operations, workflows, and systems."
+        subtitle="An AI Workforce Operating System for coordinating executives, managers and worker agents with human approvals."
       />
 
-      <div className="keystone-shell product-visual"><ConceptImage study="vytre" /></div>
+      <div className="keystone-shell product-visual"><CorporateImage name="vytre" caption="Vytre product demo · Human approval and AI workforce coordination" /></div>
 
       {/* 01 · PROBLEM — graphite */}
       <section style={{ background: 'var(--bg)' }}>
@@ -37,7 +37,7 @@ export default function VytrePage() {
             <span style={{ marginLeft: '0.25rem' }}><MaturityTag tier="public-beta" /></span>
           </div>
           <div className="mob-p" style={{ padding: '2.5rem 0 6rem' }}>
-            <Eyebrow folio="01" label="The Problem" />
+            <Eyebrow label="The Problem" />
             <div style={{ maxWidth: 760, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <p style={{ fontSize: '1.08rem', color: 'var(--text-2)', lineHeight: 1.8 }}>
                 AI can now perform real work across nearly every business function. But most organizations have no reliable way to deploy that capability at scale — no shared place to run, coordinate, observe, and govern AI workers the way they manage human teams and software systems.
@@ -53,7 +53,6 @@ export default function VytrePage() {
       {/* 02 · SOLUTION — mineral editorial band */}
       <section className="keystone-paper">
         <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
-          <Eyebrow folio="02" label="The Solution" onMineral />
           <h2 style={{ fontFamily: FONT.display, fontWeight: 670, fontSize: 'clamp(1.8rem, 3.4vw, 2.8rem)', lineHeight: 1.1, letterSpacing: '-0.02em', color: 'var(--paper-ink)', maxWidth: 820, marginBottom: '1.5rem', textWrap: 'balance' }}>
             The operating system for AI work.
           </h2>
@@ -75,7 +74,7 @@ export default function VytrePage() {
       {/* 03 · VISION — graphite, Fraunces quote */}
       <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={{ maxWidth: 1000, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
-          <Eyebrow folio="03" label="The Vision" />
+          <Eyebrow label="The Vision" />
           <blockquote style={{ fontFamily: FONT.serif, fontSize: 'clamp(1.5rem, 2.8vw, 2.3rem)', fontWeight: 500, lineHeight: 1.32, color: 'var(--text)', maxWidth: 860, borderLeft: '2px solid var(--text)', paddingLeft: '2.25rem', letterSpacing: '-0.015em' }}>
             <span style={{ color: 'var(--text)', fontStyle: 'italic' }}>&ldquo;</span>Every organization will run on a blend of human and AI work. Vytre exists to make that blend deployable, coordinated, and accountable — so companies operate more intelligently while people keep more leverage over their time and creativity.<span style={{ color: 'var(--text)', fontStyle: 'italic' }}>&rdquo;</span>
           </blockquote>
@@ -85,7 +84,7 @@ export default function VytrePage() {
       {/* 04 · ROADMAP — graphite raised */}
       <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
-          <Eyebrow folio="04" label="Current Stage & Roadmap" />
+          <Eyebrow label="Current Stage & Roadmap" />
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, margin: '0 0 2.5rem', border: '1px solid var(--accent-line)', color: 'var(--text)', fontFamily: FONT.mono, fontSize: '0.6rem', letterSpacing: '0.14em', textTransform: 'uppercase', padding: '6px 14px', fontWeight: 500, background: 'var(--accent-soft)', borderRadius: 999 }}>
             <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--text)' }} />
             Flagship · Public Beta

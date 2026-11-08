@@ -11,9 +11,8 @@ export default function ResearchPage() {
   return (
     <>
       <PageHero
-        label="Research"
-        title={<>Research &amp; <span className="editorial-emphasis">white papers.</span></>}
-        subtitle="Tarvico’s research library — where the company publishes white papers, AI and commerce research, and technical documents intended to be durable and citable over time."
+        title="Research"
+        subtitle="Research and publications on AI, software and commerce."
       />
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>

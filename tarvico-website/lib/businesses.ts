@@ -47,7 +47,7 @@ export type Business = {
 export const BUSINESSES: Business[] = [
   {
     name: 'Vytre AWOS',
-    tagline: 'AI Workforce Operating System — the enterprise control plane for AI work.',
+    tagline: 'An AI Workforce Operating System for coordinating AI workers with human approvals.',
     pillar: 'ai',
     maturity: 'public-beta',
     visibility: 'featured',
@@ -58,7 +58,7 @@ export const BUSINESSES: Business[] = [
   },
   {
     name: 'SireIQ',
-    tagline: 'An intelligent assistant for chat, content creation, and workflow automation.',
+    tagline: 'An AI assistant for research, creation, planning and problem-solving.',
     pillar: 'ai',
     maturity: 'operational',
     visibility: 'featured',

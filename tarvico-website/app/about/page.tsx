@@ -1,8 +1,9 @@
 'use client'
 
+import { companyFaq } from '@/lib/company-faq'
 import Link from 'next/link'
 import { CSSProperties } from 'react'
-import { PageHero, MaturityTag, Eyebrow, DimLine, Button, FONT } from '@/components/ui'
+import { PageHero, MaturityTag, Eyebrow, Button, FONT } from '@/components/ui'
 import { publicBusinesses } from '@/lib/businesses'
 
 const timeline = [
@@ -31,15 +32,14 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        label="About"
-        title={<>Built with <span className="editorial-emphasis">conviction.</span></>}
-        subtitle="Tarvico is a privately held U.S. technology company founded on the belief that the most enduring businesses are built with long-term thinking, operational discipline, and a genuine purpose."
+        title="About Tarvico"
+        subtitle="Tarvico Inc. is a privately held technology company incorporated in Delaware. It builds and operates AI and digital products."
       />
 
       {/* 01 · MISSION — mineral editorial band */}
       <section className="keystone-paper">
         <div className="mob-p" style={WRAP}>
-          <Eyebrow folio="01" label="Mission & Philosophy" onMineral />
+          <Eyebrow label="Mission & Philosophy" />
           <blockquote style={{ fontFamily: FONT.serif, fontWeight: 500, fontSize: 'clamp(1.6rem, 3.4vw, 2.7rem)', lineHeight: 1.26, letterSpacing: '-0.015em', color: 'var(--paper-ink)', maxWidth: 940, marginBottom: '4rem', textWrap: 'balance' }}>
             <span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>“</span>We exist to build companies and systems that give people and organizations more leverage over their work, creativity, and potential — at any scale, in any domain.<span style={{ color: 'var(--paper-ink)', fontStyle: 'italic' }}>”</span>
           </blockquote>
@@ -67,7 +67,7 @@ export default function AboutPage() {
       {/* 02 · LEADERSHIP — graphite */}
       <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={WRAP}>
-          <Eyebrow folio="02" label="Leadership" />
+          <Eyebrow label="Leadership" />
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
             <div style={{ border: '1px solid var(--border-w)', background: 'var(--bg-card)', borderTop: '2px solid var(--text)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', boxShadow: 'var(--shadow-sm)' }}>
               <div style={{ width: 60, height: 60, background: 'var(--accent-soft)', border: '1px solid var(--accent-line)', borderRadius: 'var(--radius)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.display, fontSize: '1.4rem', fontWeight: 800, color: 'var(--text)', marginBottom: '1.5rem' }}>JH</div>
@@ -90,7 +90,7 @@ export default function AboutPage() {
       {/* 03 · TIMELINE — mineral editorial band */}
       <section className="keystone-paper">
         <div className="mob-p" style={WRAP}>
-          <Eyebrow folio="03" label="Company Timeline" onMineral />
+          <Eyebrow label="Company Timeline" />
           <div style={{ borderTop: '1px solid var(--paper-line)' }}>
             {timeline.map((item, i) => (
               <div key={i} className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '2.5rem', padding: '2.25rem 0', borderBottom: '1px solid var(--paper-line)', alignItems: 'start' }}>
@@ -111,7 +111,7 @@ export default function AboutPage() {
       {/* 04 · BUSINESSES — graphite */}
       <section style={{ background: 'var(--bg)', borderTop: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={WRAP}>
-          <Eyebrow folio="04" label="Businesses We Build & Operate" />
+          <Eyebrow label="Businesses We Build & Operate" />
           <p style={{ fontSize: '0.92rem', color: 'var(--text-2)', lineHeight: 1.75, maxWidth: 620, marginBottom: '2.5rem' }}>
             Tarvico Inc. is the U.S. parent company, incorporated in Delaware. It builds and operates the products and businesses below — these are products and initiatives Tarvico develops, not separately incorporated public companies. Each carries an honest maturity label.
           </p>
@@ -138,6 +138,16 @@ export default function AboutPage() {
             <Button href="/portfolio" variant="secondary">All businesses →</Button>
           </div>
         </div>
+      </section>
+      <section className="keystone-shell keystone-band company-questions" aria-labelledby="company-questions">
+        <h2 className="corporate-section-title" id="company-questions">Common questions</h2>
+        {companyFaq.mainEntity.map(question => (
+          <details key={question.name}>
+            <summary>{question.name}</summary>
+            <p>{question.acceptedAnswer.text}</p>
+          </details>
+        ))}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(companyFaq) }} />
       </section>
     </>
   )

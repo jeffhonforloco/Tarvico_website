@@ -1,4 +1,3 @@
-import ConceptImage from '@/components/ConceptImage'
 import { PageHero, SectionLabel, Button } from '@/components/ui'
 
 const topics = [
@@ -14,12 +13,9 @@ export default function EngineeringPage() {
   return (
     <>
       <PageHero
-        label="Engineering"
-        title={<>Engineering at <span className="editorial-emphasis">Tarvico.</span></>}
-        subtitle="Notes from the teams building Tarvico’s products — a long-term knowledge base on AI, infrastructure, architecture, security, and the systems behind AI-native software."
+        title="Engineering"
+        subtitle="Engineering topics behind Tarvico’s AI and software products, including system design, reliability and security."
       />
-
-      <div className="keystone-shell product-visual"><ConceptImage study="vytre" /></div>
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>
 

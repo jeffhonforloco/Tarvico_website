@@ -9,7 +9,7 @@ const cols = [
     links: [
       { href: '/about',    label: 'About Tarvico' },
       { href: '/founder',  label: 'Founder' },
-      { href: '/vision',   label: 'Founder Letter' },
+      { href: '/vision',   label: 'Vision' },
       { href: '/newsroom', label: 'Newsroom' },
     ],
   },
@@ -18,7 +18,7 @@ const cols = [
     links: [
       { href: '/vytre',     label: 'Vytre AWOS' },
       { href: '/maeyen',    label: 'Maeyen' },
-      { href: '/portfolio', label: 'All Businesses' },
+      { href: '/portfolio', label: 'Portfolio' },
     ],
   },
   {
@@ -33,8 +33,6 @@ const cols = [
     title: 'Investors',
     links: [
       { href: '/investors', label: 'Investor Relations' },
-      { href: '/investors', label: 'Strategic Thesis' },
-      { href: '/investors', label: 'Governance' },
     ],
   },
   {
@@ -50,14 +48,13 @@ const cols = [
 export default function Footer() {
 
   return (
-    <footer style={{
+    <footer className="keystone-dark" style={{
       background: 'var(--bg-raised)',
       borderTop: '1px solid var(--border-w)',
     }}>
-      <div className="mob-px" style={{ padding: '5rem 3rem 0' }}>
+      <div className="site-footer-main mob-px" style={{ padding: '5rem 3rem 0' }}>
         <div className="site-footer-grid mob-stack" style={{
           display: 'grid',
-          gap: '3rem',
           marginBottom: '4rem',
         }}>
           <div>

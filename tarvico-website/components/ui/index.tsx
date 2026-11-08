@@ -63,31 +63,7 @@ export function Button({ children, href, onClick, variant = 'secondary', style, 
 // ─── SectionLabel ─────────────────────────────────────────────────────────────
 
 export function SectionLabel({ children, center }: { children: ReactNode; center?: boolean }) {
-  const dim = <span aria-hidden style={{ display: 'inline-flex', alignItems: 'center', flex: center ? 'none' : 1, minWidth: 28, width: center ? 28 : undefined }}>
-    <span style={{ width: 1, height: 6, background: 'var(--accent-line)' }} />
-    <span style={{ flex: 1, height: 1, background: 'var(--accent-line)' }} />
-    <span style={{ width: 1, height: 6, background: 'var(--accent-line)' }} />
-  </span>
-  return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      alignSelf: 'start',
-      justifyContent: center ? 'center' : 'flex-start',
-      gap: '1rem',
-      fontFamily: 'var(--font-body)',
-      fontSize: '0.64rem',
-      letterSpacing: '0.22em',
-      textTransform: 'uppercase',
-      color: 'var(--text)',
-      marginBottom: '1.75rem',
-      fontWeight: 500,
-    }}>
-      {center && dim}
-      {children}
-      {dim}
-    </div>
-  )
+  return <h2 className={`section-heading${center ? ' section-heading--center' : ''}`}>{children}</h2>
 }
 
 // ─── PageHero ─────────────────────────────────────────────────────────────────
@@ -97,14 +73,14 @@ export function PageHero({
   title,
   subtitle,
 }: {
-  label: string
+  label?: string
   title: ReactNode
   subtitle?: string
 }) {
   return (
     <header className="page-masthead">
       <div className="keystone-shell">
-        <p className="keystone-label">{label}</p>
+        {label && <p className="page-status">{label}</p>}
         <h1>{title}</h1>
         {subtitle && <p className="page-masthead-summary">{subtitle}</p>}
       </div>
@@ -156,28 +132,6 @@ export const FONT = {
   body: 'var(--font-body)',
 }
 
-/** Engineering dimension line: ─┬───────┬─ with end ticks. */
-export function DimLine({ color = 'var(--accent-line)', flex = true }: { color?: string; flex?: boolean }) {
-  return (
-    <span aria-hidden style={{ display: flex ? 'flex' : 'inline-flex', alignItems: 'center', flex: flex ? 1 : undefined, minWidth: 28 }}>
-      <span style={{ width: 1, height: 7, background: color }} />
-      <span style={{ flex: 1, height: 1, background: color }} />
-      <span style={{ width: 1, height: 7, background: color }} />
-    </span>
-  )
-}
-
-/** Section eyebrow: folio number + mono label + dimension line. */
-export function Eyebrow({ folio, label, onMineral = false, center = false }: { folio?: string; label: string; onMineral?: boolean; center?: boolean }) {
-  const acc = onMineral ? 'var(--paper-ink)' : 'var(--text)'
-  const faint = onMineral ? 'var(--paper-muted)' : 'var(--text-3)'
-  const line = onMineral ? 'var(--paper-line)' : 'var(--border-w)'
-  const m = (c: string): CSSProperties => ({ fontFamily: 'var(--font-body)', fontSize: '0.64rem', letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 500, color: c })
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.75rem', justifyContent: center ? 'center' : 'flex-start' }}>
-      {folio && <span style={m(faint)}>{folio}</span>}
-      <span style={m(acc)}>{label}</span>
-      <DimLine color={line} />
-    </div>
-  )
+export function Eyebrow({ label, center = false }: { label: string; center?: boolean }) {
+  return <SectionLabel center={center}>{label}</SectionLabel>
 }

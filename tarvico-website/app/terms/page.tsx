@@ -1,6 +1,6 @@
 'use client'
 
-import { PageHero, SectionLabel, Divider } from '@/components/ui'
+import { PageHero, Divider } from '@/components/ui'
 
 const sections = [
   {
@@ -144,8 +144,7 @@ export default function TermsPage() {
   return (
     <>
       <PageHero
-        label="Terms of Use"
-        title={<>Clear terms. <span className="editorial-emphasis">Honest standards.</span></>}
+        title="Terms of use"
         subtitle="Last Updated: May 2026 — These Terms of Use govern your access to and use of tarvico.com and are binding upon all visitors."
       />
 
@@ -153,7 +152,6 @@ export default function TermsPage() {
 
         {sections.map((section, si) => (
           <div key={section.title} style={{ marginBottom: '3.5rem' }}>
-            <SectionLabel>{String(si + 1).padStart(2, '0')}</SectionLabel>
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(1.5rem, 3vw, 2.1rem)',

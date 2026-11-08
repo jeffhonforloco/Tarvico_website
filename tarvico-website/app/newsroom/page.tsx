@@ -61,9 +61,8 @@ export default function NewsroomPage() {
   return (
     <>
       <PageHero
-        label="Newsroom"
-        title="Updates from Tarvico."
-        subtitle="Announcements, product updates, research, and strategic communications from Tarvico Inc. and its products."
+        title="Newsroom"
+        subtitle="Company announcements and product updates."
       />
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 3rem' }}>

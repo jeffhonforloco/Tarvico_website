@@ -5,36 +5,33 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { appearanceBootstrap } from '@/lib/appearance'
 
-// Inter and the editorial Fraunces faces are self-hosted.
-const inter = localFont({
-  src: './fonts/inter-latin-wght-normal.woff2',
-  weight: '100 900',
-  style: 'normal',
+const display = localFont({
+  src: './fonts/space-grotesk.woff2',
+  weight: '300 700',
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-space-grotesk',
 })
 
-const fraunces = localFont({
+const body = localFont({
   src: [
-    { path: './fonts/fraunces-latin-wght-normal.woff2', weight: '100 900', style: 'normal' },
-    { path: './fonts/fraunces-latin-wght-italic.woff2', weight: '100 900', style: 'italic' },
+    { path: './fonts/plex-400.woff2', weight: '400' },
+    { path: './fonts/plex-600.woff2', weight: '600' },
   ],
   display: 'swap',
-  variable: '--font-fraunces',
-  preload: false,
+  variable: '--font-plex-sans',
 })
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#000000',
+  themeColor: '#101B2A',
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.tarvico.com'),
   title: {
-    default: 'Tarvico Inc. — Building Technology for a Connected World',
+    default: 'Tarvico Inc. — Technology for a connected future',
     template: '%s | Tarvico Inc.',
   },
   description:
@@ -79,7 +76,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
     other: [
-      { rel: 'mask-icon', url: '/logo-icon.png', color: '#000000' },
+      { rel: 'mask-icon', url: '/logo-icon.png', color: '#101B2A' },
     ],
   },
   manifest: '/manifest.webmanifest',
@@ -101,7 +98,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.tarvico.com',
     siteName: 'Tarvico Inc.',
-    title: 'Tarvico Inc. — Building Technology for a Connected World',
+    title: 'Tarvico Inc. — Technology for a connected future',
     description:
       'Tarvico Inc. is a privately held U.S. technology company building artificial intelligence, digital platforms, and emerging technology businesses for global markets. Incorporated in Delaware; operating from the United States.',
     images: [
@@ -110,7 +107,7 @@ export const metadata: Metadata = {
         secureUrl: 'https://www.tarvico.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Tarvico Inc. — Building Technology for a Connected World',
+        alt: 'Tarvico Inc. — Technology for a connected future',
         type: 'image/png',
       },
     ],
@@ -119,13 +116,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@tarvicoinc',
     creator: '@tarvicoinc',
-    title: 'Tarvico Inc. — Building Technology for a Connected World',
+    title: 'Tarvico Inc. — Technology for a connected future',
     description:
       'A privately held U.S. technology company building AI, digital platforms, and emerging technology businesses — with a long-term vision spanning global technology, mobility, infrastructure, and energy.',
     images: [
       {
         url: 'https://www.tarvico.com/og-image.png',
-        alt: 'Tarvico Inc. — Building Technology for a Connected World',
+        alt: 'Tarvico Inc. — Technology for a connected future',
       },
     ],
   },
@@ -139,7 +136,7 @@ export const metadata: Metadata = {
     google: 'jQeeSN9bYApYMV3WoeseoMXsY4ZLszdTgaHo7mHaQ5M',
   },
   other: {
-    'msapplication-TileColor': '#000000',
+    'msapplication-TileColor': '#101B2A',
     'msapplication-TileImage': '/logo-icon.png',
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
@@ -167,7 +164,7 @@ const organizationSchema = {
     contentUrl: 'https://www.tarvico.com/logo-icon.png',
     width: 512,
     height: 512,
-    caption: 'Tarvico Inc. — Building Technology for a Connected World',
+    caption: 'Tarvico Inc. — Technology for a connected future',
   },
   image: [
     {
@@ -327,92 +324,13 @@ const websiteSchema = {
   },
 }
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is Tarvico Inc.?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Tarvico Inc. is a privately held U.S. technology company, incorporated in Delaware, that builds and operates artificial intelligence, digital platforms, and emerging technology businesses. Founded by Jeff Honforloco, it has a long-term vision spanning global technology, intelligent mobility, computing infrastructure, and sustainable energy.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Who founded Tarvico?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Tarvico was founded by Jeff Yèmalín Bienvenu Honforloco (Jeff Hon), who serves as Founder and Chief Executive Officer. Tarvico was founded in 2026 and is incorporated in Delaware, USA.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What products does Tarvico build?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Tarvico builds and operates a portfolio of technology products. Featured products include Vytre AWOS (an AI Workforce Operating System for enterprise, in public beta), SireIQ (a publicly available AI assistant for chat, content, and workflow), and Maeyen (commerce trust infrastructure for Africa, in development), alongside additional products such as SEOAgentPro and Racym. Tarvico Inc. is the U.S. parent company that builds and operates these products.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is Vytre AWOS?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vytre AWOS is Tarvico\'s flagship product — an AI Workforce Operating System: an enterprise control plane to deploy, coordinate, observe, and govern AI workers across operations and workflows. It is currently in public beta.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is Maeyen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Maeyen is a Tarvico product, currently in development, building commerce trust infrastructure for Africa, starting from Nigeria. By verifying participants and protecting transactions, Maeyen is designed to let buyers and sellers transact online with confidence — addressing one of the biggest problems in African online commerce: trust.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What industries does Tarvico serve?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Tarvico builds across AI workforce infrastructure and enterprise software, commerce and trust networks, and productivity, developer, and creative software. Its products are built for enterprises, businesses, and consumers globally.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How can I invest in Tarvico?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Tarvico is a private company. Investor inquiries can be directed to investors@tarvico.com or through the Investor Relations page at tarvico.com/investors.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Where is Tarvico located?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Tarvico Inc. is incorporated in Delaware, United States, with a registered office at 8 The Green, #5275, Dover, DE 19901, and currently operates from the United States. Its future international expansion strategy includes African markets such as Nigeria. The company can be reached at +1 (302) 439-6442.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What does Tarvico do?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Tarvico is a privately held U.S. technology company that builds and operates artificial intelligence, digital platforms, and emerging technology products. Its long-term vision spans global technology, intelligent mobility, computing infrastructure, and sustainable energy, with international expansion — including African markets — as a future strategy.',
-      },
-    },
-  ],
-}
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${display.variable} ${body.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: appearanceBootstrap }} />
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -428,10 +346,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
       <body>

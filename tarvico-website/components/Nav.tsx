@@ -7,12 +7,10 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 
 const links = [
-  { href: '/portfolio', label: 'Businesses' },
-  { href: '/about', label: 'About' },
-  { href: '/investors', label: 'Investors' },
+  { href: '/products', label: 'Products' },
+  { href: '/portfolio', label: 'Portfolio' },
   { href: '/vision', label: 'Vision' },
-  { href: '/careers', label: 'Careers' },
-  { href: '/newsroom', label: 'Newsroom' },
+  { href: '/about', label: 'Company' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -58,7 +56,7 @@ export default function Nav() {
   ))
 
   return (
-    <header className="site-header">
+    <header className="site-header keystone-dark">
       <a className="skip-link" href="#main-content" hidden={open}>Skip to content</a>
       <nav aria-label="Main navigation" className="keystone-shell site-nav">
         <Link className="site-wordmark" href="/" onClick={() => setOpenPath(null)}>

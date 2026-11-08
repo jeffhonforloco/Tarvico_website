@@ -1,14 +1,13 @@
-import ConceptImage from '@/components/ConceptImage'
 import { PageHero, SectionLabel, Divider, Button } from '@/components/ui'
 
 const pillars = [
-  { t: 'Verified participants', d: 'Confirm who buyers and sellers actually are, so identity is established before money moves.' },
-  { t: 'Protected transactions', d: 'Structure payments so both sides are protected, reducing the risk that keeps people from transacting online.' },
+  { t: 'Verified participants', d: 'Verify who is buying and selling before money moves.' },
+  { t: 'Protected transactions', d: 'Protect both sides while the transaction is completed.' },
   { t: 'Earned reputation', d: 'Build reputation from real, completed transactions — a durable trust signal rather than appearances.' },
 ]
 
 const roadmap = [
-  { phase: 'Now', title: 'Building in Nigeria', desc: 'Establishing the core trust primitives — verification and transaction protection — for the first market.' },
+  { phase: 'Now', title: 'Building in Nigeria', desc: 'Developing verification and transaction protection for the first market.' },
   { phase: 'Next', title: 'Trusted commerce', desc: 'A place where buyers and sellers in Nigeria can transact with confidence, backed by verified reputation.' },
   { phase: 'Then', title: 'Across Africa', desc: 'Extend the trust network to more markets, making verified commerce the default rather than the exception.' },
 ]
@@ -17,12 +16,10 @@ export default function MaeyenPage() {
   return (
     <>
       <PageHero
-        label="Product · In development"
+        label="In development"
         title={<><span className="editorial-emphasis">Maeyen</span></>}
-        subtitle="Commerce trust infrastructure for Africa, starting from Nigeria — built to solve the biggest problem in online commerce: trust between buyers and sellers."
+        subtitle="Maeyen is developing seller verification and transaction protection for online commerce in Africa, starting from Nigeria."
       />
-
-      <div className="keystone-shell product-visual"><ConceptImage study="maeyen" /></div>
 
       <div className="mob-px mob-py" style={{ maxWidth: 1200, margin: '0 auto', padding: '7rem 3rem' }}>
 
@@ -33,7 +30,7 @@ export default function MaeyenPage() {
 
         {/* Problem */}
         <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 220px) minmax(0, 1fr)', gap: '3rem', marginBottom: '5rem' }}>
-          <SectionLabel>The Problem</SectionLabel>
+          <SectionLabel>Why trust matters</SectionLabel>
           <div style={{ maxWidth: 720 }}>
             <p style={{ fontSize: '1.05rem', color: 'var(--text-2)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
               Across much of Africa, the single biggest barrier to online commerce is not payments or logistics — it is trust. Buyers hesitate to pay people they cannot verify, and sellers cannot prove they are legitimate. Every transaction carries the risk that the other side will not hold up their end.
@@ -48,14 +45,14 @@ export default function MaeyenPage() {
 
         {/* Solution */}
         <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 220px) minmax(0, 1fr)', gap: '3rem', margin: '5rem 0' }}>
-          <SectionLabel>The Solution</SectionLabel>
+          <SectionLabel>How it would work</SectionLabel>
           <div style={{ maxWidth: 720 }}>
             <p style={{ fontSize: '1.05rem', color: 'var(--text-2)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
-              Maeyen is a commerce trust network — not just another marketplace. By verifying participants and protecting transactions, it lets buyers and sellers transact with confidence. Trust becomes the infrastructure underneath commerce, so people can do business with strangers as safely as with someone they know.
+              Maeyen is designed to help buyers and sellers verify who they are dealing with and complete protected transactions. The following steps describe the proposed workflow.
             </p>
-            <div className="maeyen-pillars">
+            <ol className="maeyen-pillars" aria-label="Proposed transaction steps">
               {pillars.map(p => (
-                <div key={p.t} style={{
+                <li key={p.t} style={{
                   border: '1px solid var(--border-w)',
                   borderLeftWidth: 2,
                   borderLeftColor: 'var(--accent-line)',
@@ -65,9 +62,9 @@ export default function MaeyenPage() {
                 }}>
                   <div style={{ fontSize: '0.95rem', color: 'var(--text)', marginBottom: '0.4rem', fontWeight: 600, fontFamily: 'var(--font-display)', letterSpacing: '-0.01em' }}>{p.t}</div>
                   <p style={{ fontSize: '0.86rem', color: 'var(--text-2)', lineHeight: 1.65 }}>{p.d}</p>
-                </div>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </div>
 
