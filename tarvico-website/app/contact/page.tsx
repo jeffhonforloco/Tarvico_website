@@ -28,9 +28,11 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
-      const data = await res.json()
-      if (!res.ok) {
-        setError(data.error || 'Something went wrong. Please try again.')
+      const data = await res.json().catch(() => null)
+      if (!res.ok || data?.success !== true) {
+        setError(typeof data?.error === 'string' && data.error
+          ? data.error
+          : 'We couldn’t confirm your message. Please try again or use one of the direct contact options.')
       } else {
         setSent(true)
       }
