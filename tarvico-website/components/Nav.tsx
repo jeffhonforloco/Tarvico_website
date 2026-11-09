@@ -58,21 +58,21 @@ export default function Nav() {
   return (
     <header className="site-header">
       <a className="skip-link" href="#main-content" hidden={open}>Skip to content</a>
-      <nav aria-label="Main navigation" className="keystone-shell site-nav">
+      <nav aria-label="Main navigation" className="site-nav">
         <Link className="site-wordmark" href="/" onClick={() => setOpenPath(null)}>
           <BrandWordmark />
         </Link>
         <div className="site-nav-desktop">{navigationLinks()}</div>
         <div className="site-nav-controls">
           <button className="site-nav-control site-appearance-toggle" type="button" aria-label="Dark appearance" aria-pressed={dark} onClick={toggleAppearance}>
-            <svg className="theme-icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4" />
+            <svg className="theme-icon--sun" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <circle cx="8" cy="8" r="3.45" />
+              <path d="M8 .5v2.8m0 9.4v2.8M.5 8h2.8m9.4 0h2.8M2.7 2.7l2 2m6.6 6.6 2 2m0-10.6-2 2m-6.6 6.6-2 2"
+                fill="none" stroke="currentColor" strokeWidth=".7" />
             </svg>
-            <svg className="theme-icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" aria-hidden="true">
-              <path d="M20.8 14.6A8.8 8.8 0 0 1 9.4 3.2a9 9 0 1 0 11.4 11.4Z" />
+            <svg className="theme-icon--moon" width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" />
+              <path d="M8 1a7 7 0 0 0 0 14Z" />
             </svg>
           </button>
           <button className="site-nav-control site-menu-toggle" ref={menuButton} type="button"

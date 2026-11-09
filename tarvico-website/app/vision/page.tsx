@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   keywords: [
     'Tarvico founder letter',
     'Jeff Honforloco letter',
-    'Jeff Hon CEO Tarvico',
-    'Jeff Yèmalín Bienvenu Honforloco',
+    'Jeff Honforloco CEO Tarvico',
+    'Jeff Honforloco',
     'Tarvico vision statement',
     'AI company founder story',
     'U.S. technology company vision',
@@ -123,7 +123,7 @@ export default function VisionPage() {
 
         <div style={{ marginTop: '5rem', paddingTop: '3rem', borderTop: '1px solid var(--paper-line)' }}>
           <div style={{ fontFamily: SERIF, fontSize: '1.7rem', fontWeight: 500, fontStyle: 'italic', color: 'var(--paper-ink)', marginBottom: '0.6rem', letterSpacing: '-0.01em' }}>
-            Jeff Yèmalín Bienvenu Honforloco
+            Jeff Honforloco
           </div>
           <div style={{ fontFamily: BODY, fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--paper-ink)', fontWeight: 500, marginBottom: '0.3rem' }}>
             Founder &amp; Chief Executive Officer

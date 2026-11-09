@@ -27,7 +27,7 @@ export default function VytrePage() {
         subtitle="An AI Workforce Operating System for coordinating executives, managers and worker agents with human approvals."
       />
 
-      <div className="keystone-shell product-visual"><ProductDemo product="vytre"><CorporateImage name="vytre" caption="Vytre product demo · Human approval and AI workforce coordination" /></ProductDemo></div>
+      <div className="keystone-shell product-visual"><ProductDemo product="vytre"><CorporateImage name="vytre" wide caption="Vytre product demo · Human approval and AI workforce coordination" /></ProductDemo></div>
 
       {/* 01 · PROBLEM — graphite */}
       <section style={{ background: 'var(--bg)' }}>

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import ProductScreenshot from '@/components/ProductScreenshot'
 import ProductShowcases from '@/components/ProductShowcases'
 import { MaturityTag } from '@/components/ui'
 
@@ -14,9 +15,11 @@ export default function HomePage() {
         </div>
         <figure className="ed-hero-visual">
           <div className="ed-hero-image">
-            <Image width={1100} height={670} src="/images/sireiq-public-interface.webp" priority alt="SireIQ’s public interface with its prompt box and tools for research, planning and problem-solving" />
+            <ProductScreenshot name="sireiq" sizes="(max-width: 950px) 89vw, min(57vw, 1200px)" eager />
           </div>
-          <Image className="ed-hero-detail" width={820} height={255} src="/images/sireiq-prompt-detail.webp" alt="" />
+          <div className="ed-hero-detail">
+            <ProductScreenshot name="sireiqPrompt" sizes="(max-width: 950px) 36vw, min(16vw, 324px)" decorative />
+          </div>
           <figcaption>SireIQ <span>Public interface</span></figcaption>
         </figure>
       </section>

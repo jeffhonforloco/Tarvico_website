@@ -43,7 +43,7 @@ export default function FounderPage() {
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '5rem', alignItems: 'start' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {[
-                'Jeff Yèmalín Bienvenu Honforloco — known as Jeff Hon — is the founder and chief executive officer of Tarvico Inc. He leads the vision, strategy, and product direction across the company’s portfolio of AI-native products.',
+                'Jeff Honforloco is the founder and chief executive officer of Tarvico Inc. He leads the vision, strategy, and product direction across the company’s portfolio of AI-native products.',
                 'His path into technology was not conventional. He began as a professional photographer, drawn to people, storytelling, design, and the way technology shapes human experience. That work trained an eye for detail and a habit of seeing possibility where others might not.',
                 'Over time, curiosity expanded from creative work into software, systems, automation, and artificial intelligence. Without a traditional technical background, he taught himself to build using modern AI tools — experimenting constantly, learning through iteration, and turning ideas into working products. That journey became the foundation for Tarvico.',
               ].map((p, i) => (

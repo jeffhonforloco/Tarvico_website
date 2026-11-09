@@ -19,6 +19,8 @@
 .ed-hero {
   position:relative;
   isolation:isolate;
+  max-width: 2400px;
+  margin-inline: auto;
   display:grid;
   grid-template-columns:36% 64%;
   grid-template-rows:auto 1fr;
@@ -63,7 +65,7 @@
   z-index:1;
   top:clamp(257px,21vw,410px);
   right:0;
-  width:57%;
+  width:min(57%, 1200px);
   padding-bottom:32px;
 }
 .ed-hero-visual::before {
@@ -80,9 +82,9 @@
 .ed-hero-image img { width:100%; aspect-ratio:1.85; object-fit:cover; object-position:top }
 .ed-hero-detail {
   position:absolute;
-  right:8.9%;
+  right:4%;
   bottom:9px;
-  width:36%;
+  width:27%;
   border:1px solid #62605a;
   box-shadow:0 18px 28px #0004;
 }
@@ -105,6 +107,7 @@
   align-items:center;
   position:relative;
   min-width:0;
+  max-width: 1050px;
   min-height:clamp(215px,24vw,490px);
   background:#0c0b0b;
   border:1px solid #53514e;
@@ -157,7 +160,9 @@
   background:var(--bg-raised);
   clip-path:polygon(0 0,100% 0,100% 83%,88% 100%,0 100%);
 }
-.ed-vytre-visual img { width:min(90%,740px); border:1px solid #53484a }
+.ed-vytre-visual picture { width:min(90%,740px) }
+.ed-vytre-visual img { width:100%; border:1px solid #53484a }
+.ed-sireiq-image img { width:100%; }
 .ed-vytre-visual figcaption { margin-top:12px; color:var(--text-2) }
 .ed-portfolio { background:var(--bg-raised); padding-block:var(--editorial-band) }
 .ed-section-heading {
@@ -230,7 +235,7 @@
    margin:13px 0 0 10px;
  }
  .ed-hero-visual::before { width:24%; left:-10px; bottom:38px }
- .ed-hero-detail { right:5%; bottom:12px; width:40% }
+ .ed-hero-detail { display:none }
  .ed-sireiq,.ed-vytre { gap:32px }
  .ed-sireiq-image { min-height:160px }
  .ed-campus { grid-template-columns:64% 36% }
@@ -241,7 +246,6 @@
  .ed-hero h1 { font-size:clamp(3rem,13.1vw,4.8rem); max-width:12ch; letter-spacing:-.077em }
  .ed-hero-visual { margin-top:8px }
  .ed-hero-image img { aspect-ratio:1.6 }
- .ed-hero-detail { bottom:16px }
  .ed-product-heading { align-items:baseline; padding-block:17px }
  .ed-product-heading>span { display:none }
  .ed-sireiq,.ed-vytre,.ed-company,.ed-portfolio-spread,.ed-mobility { grid-template-columns:1fr }

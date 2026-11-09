@@ -15,7 +15,7 @@ export const companyFaq = {
       name: 'Who founded Tarvico?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tarvico was founded by Jeff Yèmalín Bienvenu Honforloco (Jeff Hon), who serves as Founder and Chief Executive Officer. Tarvico was founded in 2026 and is incorporated in Delaware, USA.',
+        text: 'Tarvico was founded by Jeff Honforloco, who serves as Founder and Chief Executive Officer. Tarvico was founded in 2026 and is incorporated in Delaware, USA.',
       },
     },
     {
