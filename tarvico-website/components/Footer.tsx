@@ -59,7 +59,7 @@ export default function Footer() {
         }}>
           <div>
             <div className="footer-wordmark">
-              <BrandWordmark />
+              <BrandWordmark footer />
             </div>
             <p style={{
               fontSize: '0.82rem',
