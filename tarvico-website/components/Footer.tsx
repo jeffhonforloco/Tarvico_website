@@ -49,7 +49,7 @@ export default function Footer() {
 
   return (
     <footer className="keystone-dark" style={{
-      background: '#171716',
+      background: 'var(--footer-bg, #171716)',
       borderTop: '1px solid var(--border-w)',
     }}>
       <div className="site-footer-main mob-px" style={{ padding: 'clamp(2.5rem, 4vw, 4rem) var(--editorial-gutter) 0' }}>

@@ -29,14 +29,16 @@ export const viewport: Viewport = {
   themeColor: '#101B2A',
 }
 
+const homeTitle = 'Tarvico Inc. | Technology for a Connected Future'
+const homeDescription = 'Tarvico Inc. is a privately held U.S. technology company building and developing technology products across artificial intelligence, software, and emerging technology sectors.'
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.tarvico.com'),
   title: {
-    default: 'Tarvico Inc. logo, white chevron and gold triangle on black',
+    default: homeTitle,
     template: '%s | Tarvico Inc.',
   },
-  description:
-    'Tarvico Inc. is a privately held U.S. technology company, incorporated in Delaware, building artificial intelligence, digital platforms, and emerging technology businesses — with a long-term vision spanning global technology, intelligent mobility, computing infrastructure, and sustainable energy. Founded by Jeff Honforloco.',
+  description: homeDescription,
   keywords: [
     'Tarvico',
     'Tarvico Inc.',
@@ -97,9 +99,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.tarvico.com',
     siteName: 'Tarvico Inc.',
-    title: 'Tarvico Inc. — Technology for a connected future',
-    description:
-      'Tarvico Inc. is a privately held U.S. technology company building artificial intelligence, digital platforms, and emerging technology businesses for global markets. Incorporated in Delaware; operating from the United States.',
+    title: homeTitle,
+    description: homeDescription,
     images: [
       {
         url: '/og-image.png',
@@ -115,9 +116,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@tarvicoinc',
     creator: '@tarvicoinc',
-    title: 'Tarvico Inc. — Technology for a connected future',
-    description:
-      'A privately held U.S. technology company building AI, digital platforms, and emerging technology businesses — with a long-term vision spanning global technology, mobility, infrastructure, and energy.',
+    title: homeTitle,
+    description: homeDescription,
     images: [
       {
         url: 'https://www.tarvico.com/og-image.png',

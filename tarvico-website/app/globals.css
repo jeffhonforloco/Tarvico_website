@@ -5,6 +5,7 @@
 :root {
   --bg: #f8f8f6;
   --bg-raised: #eeede9;
+  --section-bg-raised: var(--bg-raised);
   --bg-card: #fff;
   --text: #171716;
   --text-2: #53534e;
@@ -62,6 +63,12 @@
 }
 
 html { scroll-padding-top: calc(var(--site-header-height) + 1rem); }
+html[data-theme="dark"] {
+  --bg: #000;
+  --section-bg-raised: var(--bg);
+  --footer-bg: var(--bg);
+  background: var(--bg);
+}
 body {
   background: var(--bg);
   color: var(--text);
@@ -78,8 +85,8 @@ main:focus { outline: none; }
   margin-inline: auto;
 }
 .keystone-dark, .keystone-paper { background: var(--bg); color: var(--text); }
-[data-theme="dark"] .keystone-dark { --bg: #171716; }
-[data-theme="dark"] .keystone-paper { background: var(--bg-raised); }
+[data-theme="dark"] .keystone-dark { --bg: #000; }
+[data-theme="dark"] .keystone-paper { background: var(--section-bg-raised); }
 .keystone-band { padding-block: clamp(2.6rem, 6vw, 5.5rem); }
 .keystone-band h2 {
   font-size: clamp(1.85rem, 4vw, 3.2rem);
@@ -242,7 +249,7 @@ footer a { overflow-wrap: anywhere; }
 }
 
 .corporate-section-title { margin-bottom: 1.15rem; font-size: clamp(2rem, 4vw, 3.3rem); }
-.home-portfolio { background: var(--bg-raised); }
+.home-portfolio { background: var(--section-bg-raised); }
 .vision-intro { margin-bottom: 1.5rem; color: var(--text-2); }
 .vision-feature h2 { font-size: clamp(2rem, 4vw, 3.3rem); }
 .vision-feature p { margin-block: .75rem; max-width: 61ch; color: var(--text-2); }
