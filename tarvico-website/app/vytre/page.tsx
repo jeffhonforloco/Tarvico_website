@@ -83,7 +83,7 @@ export default function VytrePage() {
       </section>
 
       {/* 04 · ROADMAP — graphite raised */}
-      <section style={{ background: 'var(--bg-raised)', borderTop: '1px solid var(--border-w)' }}>
+      <section style={{ background: 'var(--section-bg-raised)', borderTop: '1px solid var(--border-w)' }}>
         <div className="mob-p" style={{ maxWidth: 1640, margin: '0 auto', padding: '7rem max(1.5rem, 4vw)' }}>
           <Eyebrow label="Current Stage & Roadmap" />
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, margin: '0 0 2.5rem', border: '1px solid var(--accent-line)', color: 'var(--text)', fontFamily: FONT.mono, fontSize: '0.6rem', letterSpacing: '0.14em', textTransform: 'uppercase', padding: '6px 14px', fontWeight: 500, background: 'var(--accent-soft)', borderRadius: 999 }}>
