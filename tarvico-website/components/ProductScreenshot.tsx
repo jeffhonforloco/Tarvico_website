@@ -11,7 +11,7 @@ const screenshots = {
     alt: 'The SireIQ prompt composer and its Research, Build, Understand and Plan shortcuts',
   },
   vytre: {
-    file: 'vytre-command-map', width: 2016, height: 2133, widths: [480, 900, 1080, 1500, 2016],
+    file: 'vytre-command-map', width: 2016, height: 2133, widths: [480, 640, 900, 1080, 1500, 2016],
     alt: 'Vytre’s public command map with its founder approval checkpoint, managers and worker-agent pools',
   },
 } as const
