@@ -71,7 +71,7 @@ export default function AboutPage() {
           <div className="mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
             <div style={{ border: '1px solid var(--border-w)', background: 'var(--bg-card)', borderTop: '2px solid var(--text)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', boxShadow: 'var(--shadow-sm)' }}>
               <div style={{ width: 60, height: 60, background: 'var(--accent-soft)', border: '1px solid var(--accent-line)', borderRadius: 'var(--radius)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.display, fontSize: '1.4rem', fontWeight: 800, color: 'var(--text)', marginBottom: '1.5rem' }}>JH</div>
-              <div style={{ fontFamily: FONT.display, fontSize: '1.15rem', color: 'var(--text)', marginBottom: '0.35rem', fontWeight: 700, letterSpacing: '-0.02em' }}>Jeff Yèmalín Bienvenu Honforloco</div>
+              <div style={{ fontFamily: FONT.display, fontSize: '1.15rem', color: 'var(--text)', marginBottom: '0.35rem', fontWeight: 700, letterSpacing: '-0.02em' }}>Jeff Honforloco</div>
               <div style={{ fontFamily: FONT.mono, fontSize: '0.62rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text)', marginBottom: '1rem', fontWeight: 500 }}>Founder &amp; Chief Executive Officer</div>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-2)', lineHeight: 1.7 }}>
                 Founder of Tarvico Inc. Began as a professional photographer, developed a passion for software, AI, and systems thinking. Self-taught builder who believes creative thinking and technological persistence can open any door. Leads vision, strategy, and product direction across the entire portfolio.

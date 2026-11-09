@@ -3,11 +3,10 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'About Tarvico Inc. — Founding Story, Leadership & Corporate Structure',
   description:
-    'Tarvico Inc. is a privately held U.S. technology company founded by Jeff Hon in 2026. Learn about the founding story, leadership, corporate structure, and the philosophy behind building enduring AI-native technology ventures.',
+    'Tarvico Inc. is a privately held U.S. technology company founded by Jeff Honforloco in 2026. Learn about the founding story, leadership, corporate structure, and the philosophy behind building enduring AI-native technology ventures.',
   keywords: [
     'Tarvico about',
     'Tarvico Inc. history',
-    'Jeff Hon founder',
     'Jeff Honforloco founder',
     'U.S. technology company leadership',
     'AI company founding story',

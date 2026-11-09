@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ProductScreenshot from '@/components/ProductScreenshot'
 import Link from 'next/link'
 import ProductDemo from '@/components/ProductDemo'
 import { MaturityTag } from '@/components/ui'
@@ -21,8 +21,7 @@ export default function ProductShowcases({ showHeading = true }: { showHeading?:
         </div>
         <ProductDemo product="sireiq">
           <div className="ed-sireiq-image">
-            <Image width={820} height={255} src="/images/sireiq-prompt-detail.webp"
-              alt="SireIQ prompt composer with Research, Build, Understand and Plan shortcuts" />
+            <ProductScreenshot name="sireiqPrompt" sizes="(max-width: 610px) calc(100vw - 74px), min(50vw, 940px)" />
           </div>
         </ProductDemo>
       </article>
@@ -38,8 +37,7 @@ export default function ProductShowcases({ showHeading = true }: { showHeading?:
         </div>
         <ProductDemo product="vytre">
           <figure className="ed-vytre-visual">
-            <Image width={674} height={548} src="/images/vytre-public-product-page.webp"
-              alt="Vytre’s public product demo showing the organization command map and founder approval checkpoint" />
+            <ProductScreenshot name="vytre" sizes="(max-width: 610px) calc(90vw - 40px), min(48vw, 740px)" />
             <figcaption>Vytre <span>Public product demo</span></figcaption>
           </figure>
         </ProductDemo>

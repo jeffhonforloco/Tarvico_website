@@ -3,11 +3,9 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Jeff Honforloco — Founder & CEO of Tarvico Inc.',
   description:
-    'Jeff Yèmalín Bienvenu Honforloco (Jeff Hon) is the founder and CEO of Tarvico Inc., a privately held U.S. technology company building enduring AI-native companies. A self-taught builder and former professional photographer, he leads vision, strategy, and product across the Tarvico portfolio.',
+    'Jeff Honforloco is the founder and CEO of Tarvico Inc., a privately held U.S. technology company building enduring AI-native companies. A self-taught builder and former professional photographer, he leads vision, strategy, and product across the Tarvico portfolio.',
   keywords: [
     'Jeff Honforloco',
-    'Jeff Hon',
-    'Jeff Yèmalín Bienvenu Honforloco',
     'Tarvico founder',
     'Tarvico CEO',
     'founder of Tarvico',
@@ -54,8 +52,7 @@ const founderSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   '@id': 'https://www.tarvico.com/#founder',
-  name: 'Jeff Yèmalín Bienvenu Honforloco',
-  alternateName: ['Jeff Hon', 'Jeff Honforloco'],
+  name: 'Jeff Honforloco',
   jobTitle: 'Founder & Chief Executive Officer',
   description:
     'Founder and CEO of Tarvico Inc. A self-taught builder and former professional photographer, he leads vision, strategy, and product direction across Tarvico’s portfolio of AI-native products.',
