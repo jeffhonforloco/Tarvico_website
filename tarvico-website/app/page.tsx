@@ -1,8 +1,31 @@
+import type { Metadata, ResolvingMetadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import ProductScreenshot from '@/components/ProductScreenshot'
 import ProductShowcases from '@/components/ProductShowcases'
 import { MaturityTag } from '@/components/ui'
+
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const title = 'Tarvico Inc. — Private Technology Holding Company'
+  const { openGraph, twitter } = await parent
+
+  return {
+    title: { absolute: title },
+    openGraph: { ...openGraph, url: openGraph?.url ?? undefined, title },
+    twitter: {
+      ...twitter,
+      site: twitter?.site ?? undefined,
+      siteId: twitter?.siteId ?? undefined,
+      creator: twitter?.creator ?? undefined,
+      creatorId: twitter?.creatorId ?? undefined,
+      description: twitter?.description ?? undefined,
+      title,
+    },
+  }
+}
 
 export default function HomePage() {
   return (
